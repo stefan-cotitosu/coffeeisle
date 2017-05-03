@@ -1,0 +1,55 @@
+/*
+ Theme Name: Oblique Child
+ Theme URI: https://www.themeisle.com/
+ Description: This is a custom child theme I have created.
+ Author: ThemeIsle
+ URI: https://www.themeisle.com/
+ Template: oblique
+ Version: 0.1
+ */
+
+body {
+    color: #8c8c8c;
+    background-color: #f8f9fb;
+}
+
+.entry-title a,
+a {
+    color: #d1b586;
+}
+
+.grid-layout .hentry{
+    width: 525px;
+}
+
+.grid-layout .hentry:nth-of-type(3) .post-svg {
+    margin-top: initial;
+}
+
+.svg-block {
+    fill: #f8f9fb;
+}
+
+.read-more {
+    background-color: #d1b586;
+}
+
+.top-bar {
+    position: absolute;
+    top: 0;
+    right: 245px;
+}
+
+.social-navigation {
+    position: relative;
+    z-index: 100;
+    top: 8px;
+    right: 0;
+}
+
+.header-search {
+    position: relative;
+    z-index: 100;
+    top: 8px;
+}
+
