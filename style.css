@@ -11,6 +11,11 @@
 body {
     color: #8c8c8c;
     background-color: #f8f9fb;
+    font-family: 'Athiti', sans-serif;
+}
+
+.entry-title, .entry-meta {
+    font-family: 'Lora', serif;
 }
 
 .entry-title a,
@@ -26,6 +31,7 @@ a {
     margin-top: initial;
 }
 
+
 .svg-block {
     fill: #f8f9fb;
 }
@@ -37,7 +43,8 @@ a {
 .top-bar {
     position: absolute;
     top: 0;
-    right: 245px;
+    right: 0;
+    padding: 10px 245px 10px 15px;
 }
 
 .social-navigation {
@@ -53,3 +60,68 @@ a {
     top: 8px;
 }
 
+.post-inner {
+    padding: 47px 55px 20px;
+}
+
+.entry-meta,
+.entry-content,
+.read-more {
+    font-size: 15px;
+}
+
+.entry-title {
+    margin: 0 0 16px;
+}
+
+h2.entry-title a {
+   font-size: 35px;
+}
+
+.entry-meta {
+    margin-bottom: 22px;
+}
+
+.read-more {
+    padding: 20px 55px 58px;
+}
+
+
+
+@media only screen and (max-width: 1024px) {
+
+    .top-bar {
+        padding: 10px 125px 10px 15px;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+
+    .top-bar {
+        padding: 10px 70px 10px 15px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    .top-bar {
+        right: 0;
+        top: 29px;
+        padding: 10px 70px 10px 15px;
+    }
+
+    .sidebar-toggle {
+        top: 38px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .search-form {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+
+}
