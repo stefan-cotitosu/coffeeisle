@@ -9,51 +9,52 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="svg-container post-svg svg-block">
 		<?php echo oblique_svg_3(); ?>
-	</div>
+	</div>	
 
 	<?php if ( has_post_thumbnail() && ( get_theme_mod( 'index_feat_image' ) != 1 ) ) : ?>
 		<div class="entry-thumb">
-			<?php the_post_thumbnail( 'oblique-entry-thumb' ); ?>
+			<?php the_post_thumbnail( 'oblique-coffeeshop-entry-thumb' ); ?>
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="thumb-link-wrap">
 				<span class="thumb-link"><i class="fa fa-link"></i></span>
 			</a>
 		</div>
-	<?php endif; ?>
+	<?php endif; ?>	
 
 	<?php if ( has_post_thumbnail() && ( get_theme_mod( 'index_feat_image' ) != 1 ) ) : ?>
 	<div class="post-inner">
-		<?php else : ?>
-		<div class="post-inner no-thumb">
+	<?php else : ?>
+	<div class="post-inner no-thumb">
+	<?php endif; ?>		
+		<header class="entry-header">
+			<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+
+			<?php if ( 'post' == get_post_type() && ! get_theme_mod( 'meta_index' ) ) : ?>
+			<div class="entry-meta">
+				<?php oblique_posted_on(); ?>
+			</div><!-- .entry-meta -->
 			<?php endif; ?>
-			<header class="entry-header">
-				<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+		</header><!-- .entry-header -->
 
-				<?php if ( 'post' == get_post_type() && ! get_theme_mod( 'meta_index' ) ) : ?>
-					<div class="entry-meta">
-						<?php oblique_posted_on(); ?>
-					</div><!-- .entry-meta -->
-				<?php endif; ?>
-			</header><!-- .entry-header -->
+		<div class="entry-content">
+			<?php the_excerpt(); ?>
 
-			<div class="entry-content">
-				<?php the_excerpt(); ?>
-
-				<?php
+			<?php
 				wp_link_pages( array(
 					'before' => '<div class="page-links">' . __( 'Pages:', 'oblique' ),
 					'after'  => '</div>',
 				) );
-				?>
-			</div><!-- .entry-content -->
-		</div>
+			?>
+		</div><!-- .entry-content -->
 		<?php if ( ! get_theme_mod( 'read_more' ) ) : ?>
-			<a href="<?php the_permalink(); ?>">
-				<div class="read-more">
-					<?php echo __( 'Keep Reading &rarr;','oblique' ); ?>
-				</div>
-			</a>
+            <a href="<?php the_permalink(); ?>" class="entry-content-link">
+
+				<?php echo __( 'Keep Reading &rarr;','oblique' ); ?>
+
+            </a>
 		<?php endif; ?>
-		<div class="svg-container post-bottom-svg svg-block">
-			<?php echo oblique_svg_1(); ?>
-		</div>
+	</div>
+
+	<div class="svg-container post-bottom-svg svg-block">
+		<?php echo svg_new(); ?>
+	</div>	
 </article><!-- #post-## -->

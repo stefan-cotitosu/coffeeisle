@@ -82,10 +82,30 @@ h2.entry-title a {
     margin-bottom: 22px;
 }
 
+.posted-on:after {
+    content: "|";
+}
+
+.author:after {
+    content: "";
+}
+
+.entry-content {
+    margin: 0 0 51px;
+}
+
+.entry-content-link {
+    display: block;
+    margin: 0 0 58px;
+}
+
 .read-more {
     padding: 20px 55px 58px;
 }
 
+.post-bottom-svg-line {
+    stroke-width: 2;
+}
 
 
 @media only screen and (max-width: 1024px) {

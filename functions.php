@@ -81,9 +81,15 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 	}
 
 	// Entry more
-	$entry_more_color = get_theme_mod( 'entry_more', '#ffffff');
+	$entry_more_color = get_theme_mod( 'entry_more', '#d1b586');
 	if ( !empty( $entry_more_color ) ) {
-		$custom .= 'div.read-more { color:' . $entry_more_color . ';}' . "\n";
+		$custom .= '.entry-content-link { color:' . $entry_more_color . ';}' . "\n";
+	}
+
+	// Entry Bottom Line
+	$entry_bottom_line = get_theme_mod( 'entry_bottom_line', '#d1b586');
+	if ( !empty( $entry_bottom_line ) ) {
+		$custom .= '.post-bottom-svg-line { stroke: ' . $entry_bottom_line . ';}' . "\n";
 	}
 
 	// Output all the styles
@@ -115,7 +121,7 @@ function oblique_coffeeshop_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'entry_more',
 		array(
-			'default'           => '#ffffff',
+			'default'           => '#d1b586',
 			'sanitize_callback' => 'sanitize_hex_color'
 		)
 	);
@@ -130,13 +136,96 @@ function oblique_coffeeshop_customize_register( $wp_customize ) {
 			)
 		)
 	);
+
+	// Post Bottom Line
+	$wp_customize->add_setting(
+		'entry_bottom_line',
+		array(
+			'default'           => '#d1b586',
+			'sanitize_callback' => 'sanitize_hex_color'
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'entry_bottom_line',
+			array(
+				'label'     => esc_html__('Entry Bottom Line', 'oblique_coffeeshop'),
+				'section'   => 'colors',
+				'priority'  => 17
+			)
+		)
+	);
+
+
 }
 add_action( 'customize_register', 'oblique_coffeeshop_customize_register', 20 );
 
 
 function oblique_coffeeshop_post_thumbnail_size () {
 	add_theme_support( 'post-thumbnails' );
-	add_image_size( 'oblique-entry-thumb', 525);
-	add_image_size( 'oblique-single-thumb', 1040 );
+	add_image_size( 'oblique-coffeeshop-entry-thumb', 525);
 }
 add_action( 'after_setup_theme', 'oblique_coffeeshop_post_thumbnail_size' );
+
+
+/**
+ * Svg1 function.
+ */
+function svg_new() {
+	echo '
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1890 150">
+			<g transform="translate(0,-902.36218)"/>
+			  <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"/>
+			  <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"/>
+			  <path d="m 1925,0 0,150 -1925,0"/>
+			  <line x1="1890" y1="0" x2="0" y2="150" width="100%" height="50" class="bottom post-bottom-svg-line" />
+			  
+		</svg>
+	';
+}
+
+/**
+ * Change post format
+ */
+function oblique_posted_on() {
+	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+	}
+
+	$time_string = sprintf( $time_string,
+		esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date() ),
+		esc_attr( get_the_modified_date( 'c' ) ),
+		esc_html( get_the_modified_date() )
+	);
+
+	$posted_on = sprintf(
+		_x( '%s', 'post date', 'oblique' ),
+		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+	);
+
+	$category = get_the_category();
+	if ( $category ) {
+		$cat = '<a href="' . esc_url( get_category_link( $category[0]->term_id ) ) . '">' . esc_attr( $category[0]->cat_name ) . '</a>';
+	}
+
+	$byline = sprintf(
+		_x( '%s', 'post author', 'oblique' ),
+		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+	);
+
+	if ( ! is_singular() ) {
+		echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
+	} elseif ( ! get_theme_mod( 'meta_singles' ) ) {
+		echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
+		if ( 'post' == get_post_type() ) {
+			/* translators: used between list items, there is a space after the comma */
+			$categories_list = get_the_category_list( __( ', ', 'oblique' ) );
+			if ( $categories_list ) {
+				printf( '<span class="cat-links">' . __( '%1$s', 'oblique' ) . '</span>', $categories_list );
+			}
+		}
+	}
+}
