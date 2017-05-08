@@ -73,17 +73,40 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.entry-thumb:after { background-color:' . esc_attr( $rgba ) . ';}' . "\n";
 	}
 
-
 	// Header padding
 	$branding_padding = get_theme_mod( 'branding_padding', '300' );
 	if ( ! empty( $branding_padding ) ) {
 		$custom .= 'div.site-branding { padding:' . intval( $branding_padding ) . 'px 0; }' . "\n";
 	}
 
+	// Entry background
+	$entry_background = get_theme_mod( 'entry_background', '#ffffff');
+	if ( !empty( $entry_background ) ) {
+		$custom .= 'div.post-inner { background-color:' . $entry_background . ';}' . "\n";
+	}
+
+	// Entry title hover
+	$entry_title_hover_color = get_theme_mod( 'entry_title_hover', '#23b6b6');
+	if ( !empty( $entry_title_hover_color ) ) {
+		$custom .= 'h2.entry-title a:hover{ color:' . $entry_title_hover_color . ';}' . "\n";
+	}
+
+	// Entry meta hover
+	$entry_meta_hover_color = get_theme_mod( 'entry_meta_hover', '#23b6b6');
+	if ( !empty( $entry_meta_hover_color ) ) {
+		$custom .= 'div.entry-meta a:hover { color:' . $entry_meta_hover_color . ';}' . "\n";
+	}
+
 	// Entry more
 	$entry_more_color = get_theme_mod( 'entry_more', '#d1b586');
 	if ( !empty( $entry_more_color ) ) {
 		$custom .= '.entry-content-link { color:' . $entry_more_color . ';}' . "\n";
+	}
+
+	// Entry more hover
+	$entry_more_hover_color = get_theme_mod( 'entry_more_hover', '#d1b586' );
+	if ( !empty( $entry_more_hover_color ) ) {
+		$custom .= '.entry-content-link:hover { color:' . $entry_more_hover_color . ';}' . "\n";
 	}
 
 	// Entry Bottom Line
@@ -117,6 +140,69 @@ function oblique_coffeeshop_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'branding_padding' )->default = '300';
 	$wp_customize->get_control('branding_padding' )->description = esc_html__('Top&amp;bottom padding for the branding. Default: 300px','oblique-coffeeshop');
 
+	// Remove Primary Color
+	$wp_customize->remove_control( 'primary_color' );
+
+	// Entry background
+	$wp_customize->add_setting(
+		'entry_background',
+		array(
+			'default'           => '#ffffff',
+			'sanitize_callback' => 'sanitize_hex_color'
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'entry_background',
+			array(
+				'label'     => esc_html__('Entry background', 'oblique_coffeeshop'),
+				'section'   => 'colors',
+				'priority'  => 15
+			)
+		)
+	);
+
+	// Entry title hover
+	$wp_customize->add_setting(
+		'entry_title_hover',
+		array(
+			'default'           => '#23b6b6',
+			'sanitize_callback' => 'sanitize_hex_color'
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'entry_title_hover',
+			array(
+				'label'     => esc_html__('Entry title hover', 'oblique_coffeeshop'),
+				'section'   => 'colors',
+				'priority'  => 16
+			)
+		)
+	);
+
+	// Entry meta hover
+	$wp_customize->add_setting(
+		'entry_meta_hover',
+		array(
+			'default'           => '#23b6b6',
+			'sanitize_callback' => 'sanitize_hex_color'
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'entry_meta_hover',
+			array(
+				'label'     => esc_html__('Entry meta hover', 'oblique_coffeeshop'),
+				'section'   => 'colors',
+				'priority'  => 17
+			)
+		)
+	);
+
 	// Entry more
 	$wp_customize->add_setting(
 		'entry_more',
@@ -131,6 +217,26 @@ function oblique_coffeeshop_customize_register( $wp_customize ) {
 			'entry_more',
 			array(
 				'label'     => esc_html__('Entry more', 'oblique_coffeeshop'),
+				'section'   => 'colors',
+				'priority'  => 17
+			)
+		)
+	);
+
+	//Entry more hover
+	$wp_customize->add_setting(
+		'entry_more_hover',
+		array(
+			'default'           => '#d1b586',
+			'sanitize_callback' => 'sanitize_hex_color'
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'entry_more_hover',
+			array(
+				'label'     => esc_html__('Entry more hover', 'oblique_coffeeshop'),
 				'section'   => 'colors',
 				'priority'  => 17
 			)
@@ -229,3 +335,137 @@ function oblique_posted_on() {
 		}
 	}
 }
+
+/**
+ * Change footer credits
+ */
+
+function oblique_coffeeshop_footer_credits() {
+	printf( __('%s Copyright 2016'), '&copy' );
+	echo '<span class="sep"> | </span>';
+	printf( __('Oblique Coffeeshop Blog Theme') );
+	echo '<span class="sep"> | </span>';
+	printf( __('All Rights Reserved.') );
+}
+add_action( 'oblique_footer', 'oblique_coffeeshop_footer_credits' );
+
+/**
+ * Remove overwritten functions from the parent theme
+ * Child theme is loaded before the parrent theme
+ * This helps overriding some function
+ */
+function remove_actions(){
+	remove_action( 'oblique_footer', 'oblique_footer_credits' );
+}
+add_action('after_setup_theme', 'remove_actions');
+
+/**
+ * Pagination
+ */
+function rokophotolite_pagination() {
+
+	if( is_singular() )
+		return;
+
+	global $wp_query;
+
+	/** Stop execution if there's only 1 page */
+	if( $wp_query->max_num_pages <= 1 )
+		return;
+
+	$paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
+	$max   = intval( $wp_query->max_num_pages );
+
+	/**	Add current page to the array */
+	if ( $paged >= 1 )
+		$links[] = $paged;
+
+	/**	Add the pages around the current page to the array */
+	if ( $paged >= 3 ) {
+		$links[] = $paged - 1;
+		$links[] = $paged - 2;
+	}
+
+	if ( ( $paged + 2 ) <= $max ) {
+		$links[] = $paged + 2;
+		$links[] = $paged + 1;
+	}
+
+	echo '<ul class="pagination">' . "\n";
+
+	/**	Previous Post Link */
+	if ( get_previous_posts_link() )
+		printf( '<li>%s</li>' . "\n", get_previous_posts_link('&laquo;') );
+
+	/**	Link to first page, plus ellipses if necessary */
+	if ( ! in_array( 1, $links ) ) {
+		$class = 1 == $paged ? ' class="active"' : '';
+
+		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '1' );
+
+		if ( ! in_array( 2, $links ) )
+			echo '<li>…</li>';
+	}
+
+	/**	Link to current page, plus 2 pages in either direction if necessary */
+	sort( $links );
+	foreach ( (array) $links as $link ) {
+		$class = $paged == $link ? ' class="active"' : '';
+		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), $link );
+	}
+
+	/**	Link to last page, plus ellipses if necessary */
+	if ( ! in_array( $max, $links ) ) {
+		if ( ! in_array( $max - 1, $links ) )
+			echo '<li>…</li>' . "\n";
+
+		$class = $paged == $max ? ' class="active"' : '';
+		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), $max );
+	}
+
+	/**	Next Post Link */
+	if ( get_next_posts_link() )
+		printf( '<li>%s</li>' . "\n", get_next_posts_link('&raquo;') );
+
+	echo '</ul>' . "\n";
+
+}
+
+function oblique_coffeeshop_custom_pagination() {
+
+	if ( $GLOBALS['wp_query']->max_num_pages < 2) {
+		return;
+	}
+
+	echo '<nav class="navigation posts-navigation" role="navigation">';
+
+	echo '<h2 class="screen-reader-text">';
+	_e( 'Posts navigation', 'oblique' );
+	echo '</h2>';
+
+	echo '<div class="nav-links">';
+//		if ( get_next_posts_link() ) {
+//			echo '<div class="nav-previous">';
+//			next_posts_link( __( 'Older posts', 'oblique' ) );
+//			echo '</div>';
+//		}
+
+		the_posts_pagination(
+			array(
+				'mid_size' => 1,
+				'prev_text' => __( 'Prev' ),
+				'next_text' => __( 'Next' ),
+				'screen_reader_text' => 'Posts navigation'
+			)
+		);
+
+//		if ( get_previous_post_link() ) {
+//			echo '<div class="nav-next">';
+//			previous_posts_link( __( 'Newer posts', 'oblique' ) );
+//			echo '</div>';
+//		}
+	echo '</div>';
+
+	echo '</nav>';
+}
+

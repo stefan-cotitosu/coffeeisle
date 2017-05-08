@@ -107,6 +107,72 @@ h2.entry-title a {
     stroke-width: 2;
 }
 
+.site-main .posts-navigation {
+    text-align: center;
+}
+
+.site-main .posts-navigation a {
+    color: #8c8c8c;
+}
+
+.nav-links .prev,
+.nav-links .next {
+    font-family: 'Lora', serif;
+    font-size: 13px;
+    line-height: 22px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.nav-links .page-numbers {
+    margin: 0 11px;
+}
+
+.nav-links .page-numbers {
+    color: #f3ebdf;
+}
+
+.nav-links .current {
+    color: #f3ebdf;
+    background-color: #d1b586;
+    padding: 7px 7px;
+}
+
+.nav-links .prev,
+.nav-links .next,
+.nav-links .dots {
+    color: initial;
+    background-color: initial;
+    padding: 0;
+}
+
+.nav-links .prev {
+    margin: 0 40px 0 0;
+}
+
+.nav-links .next {
+    margin:  0 0 0 40px;
+}
+
+.nav-links .prev::before {
+    content: "\2190";
+}
+
+.nav-links .next:after {
+    content: "\2192";
+}
+
+.site-footer {
+    background-color: #f8f9fb;
+    padding: 0 0 25px;
+    font-size: 11.25px;
+}
+
+.site-info {
+    text-align: center;
+}
+
+
 
 @media only screen and (max-width: 1024px) {
 
