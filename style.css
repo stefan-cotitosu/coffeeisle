@@ -125,7 +125,7 @@ h2.entry-title a {
 }
 
 .nav-links .page-numbers {
-    margin: 0 11px;
+    margin: 0 2px;
 }
 
 .nav-links .page-numbers {
@@ -136,6 +136,9 @@ h2.entry-title a {
     color: #f3ebdf;
     background-color: #d1b586;
     padding: 7px 7px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
 }
 
 .nav-links .prev,
