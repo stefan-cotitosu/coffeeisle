@@ -25,7 +25,7 @@ function oblique_coffeeshop_include_google_fonts() {
 add_action( 'wp_enqueue_scripts', 'oblique_coffeeshop_include_google_fonts' );
 
 /**
- * Remove functions from the parent theme
+ * Remove functions from the parrent theme
  * That are replaced with child theme function
  * Because Child theme is loaded before the parrent theme
  * after_setup_theme
@@ -59,14 +59,34 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
 	$custom = '';
 
-	// Primary color
-	$primary_color = get_theme_mod( 'primary_color', '#d1b586' );
-	if ( ! empty( $primary_color ) && ( $primary_color != '#d1b586' ) ) {
-		$custom .= '.entry-meta a:hover, .entry-title a:hover, .widget-area a:hover, .social-navigation li a:hover, a { color:' . esc_attr( $primary_color ) . '}' . "\n";
-		$custom .= '.read-more, .nav-previous:hover, .nav-next:hover, button, .button, input[type="button"], input[type="reset"], input[type="submit"] { background-color:' . esc_attr( $primary_color ) . '}' . "\n";
+	$background_color = get_background_color();
+	if( !empty( $background_color ) ){
+		$custom .= 'div.svg-block{ fill: #'. $background_color .';}';
+    }
+
+    // Primary color
+	$primary_color = get_theme_mod( 'primary_color', '#925D34' );
+	if ( ! empty( $primary_color ) ) {
+		$custom .= 'div.entry-meta a:hover, h2.entry-title a:hover, div.widget-area a:hover, nav.social-navigation li a:hover, a.entry-content-link:hover { color:' . esc_attr( $primary_color ) . ';}' . "\n";
 		$rgba 	= oblique_hex2rgba( $primary_color, 0.3 );
 		$custom .= '.entry-thumb:after { background-color:' . esc_attr( $rgba ) . ';}' . "\n";
 	}
+
+	$entry_titles = get_theme_mod('entry_titles', '#d1b586' );
+	if ( ! empty( $entry_titles ) ) {
+		$rgba 	= oblique_hex2rgba( $entry_titles, 0.3 );
+		$custom .= 'div.entry-thumb:after { background-color:' . esc_attr( $rgba ) . ';}' . "\n";
+
+		$custom .= 'h2.entry-title, h2.entry-title a, a.entry-content-link { color:' . esc_attr( $entry_titles ) . ';}' . "\n";
+	    $custom .= 'line.post-bottom-svg-line { stroke: '. esc_attr( $entry_titles ) . ';}' . "\n";
+	    $custom .= 'div.nav-links .current { background-color:'. esc_attr( $entry_titles ). ';}' . "\n";
+	}
+
+	// Footer color
+    $footer_background_color = get_theme_mod( 'footer_background', '#f8f9fb' );
+	if ( ! empty( $footer_background_color ) ) {
+	    $custom .= 'footer.site-footer { background-color:' . esc_attr( $footer_background_color ) . ';}' . "\n";
+    }
 
 	// Header padding
 	$branding_padding = get_theme_mod( 'branding_padding', '300' );
@@ -88,18 +108,6 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.entry-content-link:hover { color:' . $entry_more_color . ';}' . "\n";
 	}
 
-	// Entry Bottom Line
-	$entry_bottom_line = get_theme_mod( 'entry_bottom_line', '#d1b586');
-	if ( !empty( $entry_bottom_line ) ) {
-		$custom .= '.post-bottom-svg-line { stroke: ' . $entry_bottom_line . ';}' . "\n";
-
-        // Entry title hover
-		$custom .= 'h2.entry-title a:hover{ color:' . $entry_bottom_line . ';}' . "\n";
-
-        // Entry meta hover
-		$custom .= 'div.entry-meta a:hover { color:' . $entry_bottom_line . ';}' . "\n";
-	}
-
 	// Output all the styles
 	wp_add_inline_style( 'oblique-style', $custom );
 }
@@ -117,7 +125,7 @@ function oblique_coffeeshop_customize_register( $wp_customize ) {
 	$wp_customize->get_control('branding_padding' )->description = esc_html__('Top&amp;bottom padding for the branding. Default: 300px','oblique-coffeeshop');
 
 	// Remove Primary Color
-	$wp_customize->remove_control( 'primary_color' );
+	//$wp_customize->remove_control( 'primary_color' );
 
 	// Entry background
 	$wp_customize->add_setting(
@@ -139,47 +147,6 @@ function oblique_coffeeshop_customize_register( $wp_customize ) {
 		)
 	);
 
-	// Entry more
-	$wp_customize->add_setting(
-		'entry_more',
-		array(
-			'default'           => '#d1b586',
-			'sanitize_callback' => 'sanitize_hex_color'
-		)
-	);
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'entry_more',
-			array(
-				'label'     => esc_html__('Entry more', 'oblique_coffeeshop'),
-				'section'   => 'colors',
-				'priority'  => 17
-			)
-		)
-	);
-
-	// Post Bottom Line
-	$wp_customize->add_setting(
-		'entry_bottom_line',
-		array(
-			'default'           => '#d1b586',
-			'sanitize_callback' => 'sanitize_hex_color'
-		)
-	);
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'entry_bottom_line',
-			array(
-				'label'     => esc_html__('Entry Bottom Line', 'oblique_coffeeshop'),
-				'section'   => 'colors',
-				'priority'  => 17
-			)
-		)
-	);
-
-
 }
 add_action( 'customize_register', 'oblique_coffeeshop_customize_register', 20 );
 
@@ -198,9 +165,9 @@ add_filter( 'oblique_custom_background_args', 'oblique_coffeeshop_background_fil
  * Primary Color Filter
  */
 function oblique_coffeeshop_default_primary_color(){
-	return '#d1b586';
+	return '#925D34';
 }
-apply_filters('oblique_primary_color', 'oblique_coffeeshop_default_primary_color');
+add_filter('oblique_primary_color', 'oblique_coffeeshop_default_primary_color');
 
 /**
  * Color
@@ -209,7 +176,7 @@ apply_filters('oblique_primary_color', 'oblique_coffeeshop_default_primary_color
 function oblique_coffeeshop_body_text_color() {
 	return '#50545C';
 }
-apply_filters( 'oblique_body_text_color', 'oblique_coffeeshop_body_text_color' );
+add_filter( 'oblique_body_text_color', 'oblique_coffeeshop_body_text_color' );
 
 /**
  * Color
@@ -218,7 +185,7 @@ apply_filters( 'oblique_body_text_color', 'oblique_coffeeshop_body_text_color' )
 function oblique_coffeeshop_site_title_color() {
 	return '#ffffff';
 }
-apply_filters( 'oblique_site_title_color', 'oblique_coffeeshop_site_title_color' );
+add_filter( 'oblique_site_title_color', 'oblique_coffeeshop_site_title_color' );
 
 /**
  * Color
@@ -227,7 +194,7 @@ apply_filters( 'oblique_site_title_color', 'oblique_coffeeshop_site_title_color'
 function oblique_coffeeshop_site_desc_color() {
 	return '#ffffff';
 }
-apply_filters( 'oblique_site_desc_color', 'oblique_coffeeshop_site_desc_color' );
+add_filter( 'oblique_site_desc_color', 'oblique_coffeeshop_site_desc_color' );
 
 /**
  * Color
@@ -236,7 +203,7 @@ apply_filters( 'oblique_site_desc_color', 'oblique_coffeeshop_site_desc_color' )
 function oblique_coffeeshop_entry_titles_color() {
 	return '#d1b586';
 }
-apply_filters( 'oblique_entry_titles_color', 'oblique_coffeeshop_entry_titles_color' );
+add_filter( 'oblique_entry_titles_color', 'oblique_coffeeshop_entry_titles_color' );
 
 /**
  * Color
@@ -245,7 +212,7 @@ apply_filters( 'oblique_entry_titles_color', 'oblique_coffeeshop_entry_titles_co
 function oblique_coffeeshop_entry_meta_color() {
 	return '#8c8c8c';
 }
-apply_filters( 'oblique_entry_meta_color', 'oblique_coffeeshop_entry_meta_color' );
+add_filter( 'oblique_entry_meta_color', 'oblique_coffeeshop_entry_meta_color' );
 
 /**
  * Color
@@ -254,7 +221,16 @@ apply_filters( 'oblique_entry_meta_color', 'oblique_coffeeshop_entry_meta_color'
 function oblique_coffeeshop_menu_icon_color() {
 	return '#f8f9fb';
 }
-apply_filters( 'oblique_menu_icon_color', 'oblique_coffeeshop_menu_icon_color' );
+add_filter( 'oblique_menu_icon_color', 'oblique_coffeeshop_menu_icon_color' );
+
+/**
+ * Color
+ * Footer background color
+ */
+function oblique_coffeeshop_footer_background_color() {
+    return '#f8f9fb';
+}
+add_filter( 'oblique_footer_background_color', 'oblique_coffeeshop_footer_background_color' );
 
 /**
  * Image
@@ -284,7 +260,7 @@ add_action( 'after_setup_theme', 'oblique_coffeeshop_post_thumbnail_size', 15 );
 function oblique_coffeeshop_post_read_more() {
 	return esc_html__( 'Keep Reading &rarr;','oblique' );
 }
-apply_filters( 'oblique_post_read_more', 'oblique_coffeeshop_post_read_more' );
+add_filter( 'oblique_post_read_more', 'oblique_coffeeshop_post_read_more' );
 
 /**
  * Post
