@@ -60,6 +60,10 @@ a {
     top: 8px;
 }
 
+.site-title  a:hover {
+    text-decoration: underline;
+}
+
 .post-inner {
     padding: 47px 55px 20px;
 }
@@ -181,6 +185,27 @@ h2.entry-title a {
     text-align: center;
 }
 
+/* archive.php */
+.page-header {
+    background-color: #fcfdff;
+}
+
+.page-header .page-title {
+    color: #d1b586;
+}
+
+.archive_title_svg {
+    stroke-width: 3;
+    stroke: #d1b586;
+}
+
+div.svg-container.svg-block.page-header-svg {
+    fill: #fcfdff;
+}
+
+header.page-header {
+    padding: 78px 0 15px;
+}
 
 
 @media only screen and (max-width: 1024px) {

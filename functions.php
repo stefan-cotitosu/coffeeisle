@@ -47,6 +47,12 @@ function remove_actions(){
 	// Index posts navigation
     remove_action( 'oblique_posts_navigation', 'oblique_posts_navigation' );
 
+    // Archive title top svg
+    remove_action( 'oblique_archive_title_top_svg', 'oblique_archive_title_top_svg' );
+
+    // Archive title bottom svg
+    remove_action( 'oblique_archive_title_bottom_svg', 'oblique_archive_title_bottom_svg' );
+
 }
 add_action('after_setup_theme', 'remove_actions');
 
@@ -77,7 +83,7 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$rgba 	= oblique_hex2rgba( $entry_titles, 0.3 );
 		$custom .= 'div.entry-thumb:after { background-color:' . esc_attr( $rgba ) . ';}' . "\n";
 
-		$custom .= 'h2.entry-title, h2.entry-title a, a.entry-content-link { color:' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= 'h2.entry-title, h2.entry-title a, .entry-content a.entry-content-link { color:' . esc_attr( $entry_titles ) . ';}' . "\n";
 	    $custom .= 'line.post-bottom-svg-line { stroke: '. esc_attr( $entry_titles ) . ';}' . "\n";
 	    $custom .= 'div.nav-links .current { background-color:'. esc_attr( $entry_titles ). ';}' . "\n";
 	}
@@ -96,17 +102,41 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
 	// Entry background
 	$entry_background = get_theme_mod( 'entry_background', '#ffffff');
-	if ( !empty( $entry_background ) ) {
+	if ( ! empty( $entry_background ) ) {
 		$custom .= 'div.post-inner { background-color:' . $entry_background . ';}' . "\n";
 	}
 
 	// Entry more
 	$entry_more_color = get_theme_mod( 'entry_more', '#d1b586');
-	if ( !empty( $entry_more_color ) ) {
+	if ( ! empty( $entry_more_color ) ) {
 		$custom .= '.entry-content-link { color:' . $entry_more_color . ';}' . "\n";
 
 		$custom .= '.entry-content-link:hover { color:' . $entry_more_color . ';}' . "\n";
 	}
+
+	// Menu icon/leave color
+    $menu_icon_color = get_theme_mod( 'menu_icon_color', '#f8f9fb' );
+	if ( ! empty( $menu_icon_color ) ) {
+	    $custom .= 'div.sidebar-toggle { color:' . $menu_icon_color . ';}' . "\n";
+    }
+
+    // Site title
+    $site_title_color = get_theme_mod( 'site_title_color', '#f9f9f9' );
+    if ( ! empty( $site_title_color ) ) {
+        $custom .= 'h1.site-title a, h1.site-title a:hover {color:' . $site_title_color . ';}' . "\n" ;
+    }
+
+    // Site description
+	$site_desc_color = get_theme_mod( 'site_desc_color', '#f9f9f9' );
+    if ( ! empty( $site_desc_color ) ) {
+        $custom .= 'h2.site-description { color:' . $site_desc_color . ';}' . "\n";
+    }
+
+    // Social color
+    $social_color = get_theme_mod( 'social_color', '#f9f9f9' );
+    if ( ! empty( $social_color ) ) {
+        $custom .= 'nav.social-navigation li a { color:' . $social_color . ';}' . "\n";
+    }
 
 	// Output all the styles
 	wp_add_inline_style( 'oblique-style', $custom );
@@ -123,9 +153,6 @@ function oblique_coffeeshop_customize_register( $wp_customize ) {
 	// Branding Padding
 	$wp_customize->get_setting( 'branding_padding' )->default = '300';
 	$wp_customize->get_control('branding_padding' )->description = esc_html__('Top&amp;bottom padding for the branding. Default: 300px','oblique-coffeeshop');
-
-	// Remove Primary Color
-	//$wp_customize->remove_control( 'primary_color' );
 
 	// Entry background
 	$wp_customize->add_setting(
@@ -152,7 +179,7 @@ add_action( 'customize_register', 'oblique_coffeeshop_customize_register', 20 );
 
 /**
  * Color
- * Background color filter
+ * Background default color filter
  */
 function oblique_coffeeshop_background_filter($input) {
     $input['default-color'] = 'f8f9fb';
@@ -162,7 +189,7 @@ add_filter( 'oblique_custom_background_args', 'oblique_coffeeshop_background_fil
 
 /**
  * Color
- * Primary Color Filter
+ * Primary default color filter
  */
 function oblique_coffeeshop_default_primary_color(){
 	return '#925D34';
@@ -171,7 +198,7 @@ add_filter('oblique_primary_color', 'oblique_coffeeshop_default_primary_color');
 
 /**
  * Color
- * Body text color
+ * Body text default color
  */
 function oblique_coffeeshop_body_text_color() {
 	return '#50545C';
@@ -180,7 +207,7 @@ add_filter( 'oblique_body_text_color', 'oblique_coffeeshop_body_text_color' );
 
 /**
  * Color
- * Site title color
+ * Site title default color
  */
 function oblique_coffeeshop_site_title_color() {
 	return '#ffffff';
@@ -216,21 +243,30 @@ add_filter( 'oblique_entry_meta_color', 'oblique_coffeeshop_entry_meta_color' );
 
 /**
  * Color
- * Entry meta color
- */
-function oblique_coffeeshop_menu_icon_color() {
-	return '#f8f9fb';
-}
-add_filter( 'oblique_menu_icon_color', 'oblique_coffeeshop_menu_icon_color' );
-
-/**
- * Color
  * Footer background color
  */
 function oblique_coffeeshop_footer_background_color() {
     return '#f8f9fb';
 }
 add_filter( 'oblique_footer_background_color', 'oblique_coffeeshop_footer_background_color' );
+
+/**
+ * Color
+ * Menu icon default color
+ */
+function oblique_coffeeshop_menu_icon_color() {
+    return '#f8f9fb';
+}
+add_filter( 'oblique_menu_icon_color', 'oblique_coffeeshop_menu_icon_color' );
+
+/**
+ * Color
+ * Social icon default color
+ */
+function oblique_coffeeshop_social_color() {
+    return '#f8f9fb';
+}
+add_filter( 'oblique_social_color', 'oblique_coffeeshop_social_color' );
 
 /**
  * Image
@@ -276,7 +312,8 @@ function oblique_coffeeshop_post_link_to_single(){
 add_action( 'oblique_post_entry_content_bottom', 'oblique_coffeeshop_post_link_to_single' );
 
 /**
- * Svg1 function.
+ * Svg new
+ * Post bottom svg
  */
 function svg_new() {
 	echo '
@@ -291,6 +328,21 @@ function svg_new() {
 	';
 }
 add_action( 'oblique_post_bottom_svg', 'svg_new' );
+
+/**
+ * Svg
+ * Archive page title svg
+ */
+function oblique_archive_title_svg() {
+	echo '<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1950 150">
+		  <g transform="translate(0,-902.36218)"/>
+		  <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z" />
+		  <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"/>
+		  <path d="M 0,150 0,0 1925,0"/>
+		  <line x1="1950" y1="0" x2="0" y2="150" width="100%" height="50" class="archive_title_svg" />
+    </svg>';
+}
+add_action( 'oblique_archive_title_bottom_svg', 'oblique_archive_title_svg' );
 
 /**
  * Post
