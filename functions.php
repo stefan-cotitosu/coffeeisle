@@ -48,10 +48,13 @@ function remove_actions(){
     remove_action( 'oblique_posts_navigation', 'oblique_posts_navigation' );
 
     // Archive title top svg
-    remove_action( 'oblique_archive_title_top_svg', 'oblique_archive_title_top_svg' );
+    //remove_action( 'oblique_archive_title_top_svg', 'oblique_archive_title_top_svg' );
 
     // Archive title bottom svg
     remove_action( 'oblique_archive_title_bottom_svg', 'oblique_archive_title_bottom_svg' );
+
+    // Content single post bottom svg
+    remove_action( 'oblique_single_post_bottom_svg', 'oblique_single_post_bottom_svg' );
 
 }
 add_action('after_setup_theme', 'remove_actions');
@@ -68,6 +71,7 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 	$background_color = get_background_color();
 	if( !empty( $background_color ) ){
 		$custom .= 'div.svg-block{ fill: #'. $background_color .';}';
+
     }
 
     // Primary color
@@ -82,6 +86,12 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 	if ( ! empty( $entry_titles ) ) {
 		$rgba 	= oblique_hex2rgba( $entry_titles, 0.3 );
 		$custom .= 'div.entry-thumb:after { background-color:' . esc_attr( $rgba ) . ';}' . "\n";
+
+		$custom .= '.pirate-forms-submit-button { background-color: ' . esc_attr($entry_titles) . ';}' . "\n";
+
+		$custom .= 'div.entry-content li:first-of-type { color: ' . $entry_titles . ';}' . "\n";
+
+		$custom .= '.single_post_bottom_svg { stroke: ' . $entry_titles . ';}' . "\n";
 
 		$custom .= 'h2.entry-title, h2.entry-title a, .entry-content a.entry-content-link { color:' . esc_attr( $entry_titles ) . ';}' . "\n";
 	    $custom .= 'line.post-bottom-svg-line { stroke: '. esc_attr( $entry_titles ) . ';}' . "\n";
@@ -435,3 +445,20 @@ function oblique_coffeeshop_custom_pagination() {
 	echo '</nav>';
 }
 add_action( 'oblique_posts_navigation', 'oblique_coffeeshop_custom_pagination' );
+
+/**
+ * Single content
+ * single post bottom svg
+ */
+function oblique_coffeeshop_single_post_bottom_svg() {
+	echo '
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1950 150">
+		  <g transform="translate(0,-902.36218)"/>
+		  <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z" />
+		  <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"/>
+		  <path d="M 0,150 0,0 1925,0"/>
+		  <line x1="1950" y1="0" x2="0" y2="150" width="100%" height="50" class="bottom single_post_bottom_svg" />
+		</svg>
+	';
+}
+add_action( 'oblique_single_post_bottom_svg', 'oblique_coffeeshop_single_post_bottom_svg' );

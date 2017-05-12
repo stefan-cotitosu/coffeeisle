@@ -204,9 +204,60 @@ div.svg-container.svg-block.page-header-svg {
 }
 
 header.page-header {
-    padding: 78px 0 15px;
+    padding: 12px 0 14px;
 }
 
+header.page-header h1.page-title {
+    font-family: 'Athiti', sans-serif;
+    font-size: 35px;
+    line-height: 44px;
+}
+
+/* Contact page */
+header.entry-header h1.entry-title {
+    margin: 0 0 4px;
+}
+
+.contact-subtitle {
+    text-align: center;
+    font-family: 'Lora', serif;
+    font-size: 15px;
+    line-height: 44px;
+    margin: 0 0 34px;
+}
+
+.intergeo_map_canvas {
+    margin-bottom: 20px;
+}
+
+div.entry-content p {
+    font-family: 'Athiti', sans-serif;
+    font-size:15px;
+    line-height: 23px;
+}
+
+div.entry-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+div.entry-content li:first-of-type {
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    line-height: 11.8px;
+    margin: 0 0 20px;
+}
+
+div.entry-content ul li,
+div.entry-content ul li a{
+    color: inherit;
+}
+
+.single_post_bottom_svg {
+    stroke-width: 3;
+    stroke: #d1b586;
+}
 
 @media only screen and (max-width: 1024px) {
 
