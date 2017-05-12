@@ -214,6 +214,10 @@ header.page-header h1.page-title {
 }
 
 /* Contact page */
+.hentry {
+    padding: 60px 60px 120px;
+}
+
 header.entry-header h1.entry-title {
     margin: 0 0 4px;
 }
@@ -245,7 +249,7 @@ div.entry-content ul {
 div.entry-content li:first-of-type {
     font-family: 'Lora', serif;
     font-size: 20px;
-    line-height: 11.8px;
+    line-height: 20.8px;
     margin: 0 0 20px;
 }
 
@@ -257,6 +261,30 @@ div.entry-content ul li a{
 .single_post_bottom_svg {
     stroke-width: 3;
     stroke: #d1b586;
+}
+
+.contact-details-container {
+    display: table;
+    width: 100%;
+    overflow: hidden;
+}
+
+.contact-details-list {
+    display: table-cell;
+    padding-left: 58px;
+    border-right: 1px solid;
+}
+
+.contact-details-list:first-of-type {
+    padding-left: 15px;
+}
+
+.contact-details-list:last-of-type {
+    border: none;
+}
+
+form.comment-form {
+    color: #000;
 }
 
 @media only screen and (max-width: 1024px) {

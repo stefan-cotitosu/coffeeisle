@@ -56,6 +56,9 @@ function remove_actions(){
     // Content single post bottom svg
     remove_action( 'oblique_single_post_bottom_svg', 'oblique_single_post_bottom_svg' );
 
+    // Comments form
+    remove_action( 'oblique_custom_comments_form', 'oblique_custom_comments_form' );
+
 }
 add_action('after_setup_theme', 'remove_actions');
 
@@ -92,6 +95,8 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= 'div.entry-content li:first-of-type { color: ' . $entry_titles . ';}' . "\n";
 
 		$custom .= '.single_post_bottom_svg { stroke: ' . $entry_titles . ';}' . "\n";
+
+		$custom .= '.comment-respond h3.comment-reply-title { color: ' . $entry_titles . ';}' . "\n";
 
 		$custom .= 'h2.entry-title, h2.entry-title a, .entry-content a.entry-content-link { color:' . esc_attr( $entry_titles ) . ';}' . "\n";
 	    $custom .= 'line.post-bottom-svg-line { stroke: '. esc_attr( $entry_titles ) . ';}' . "\n";
@@ -462,3 +467,18 @@ function oblique_coffeeshop_single_post_bottom_svg() {
 	';
 }
 add_action( 'oblique_single_post_bottom_svg', 'oblique_coffeeshop_single_post_bottom_svg' );
+
+/**
+ * Comments
+ * changing the default comment form
+ */
+function oblique_coffeeshop_comments_form() {
+    comment_form(
+        array(
+            'title_reply' => 'Leave us a Message',
+            'comment_notes_before' => ''
+
+        )
+    );
+}
+add_action( 'oblique_custom_comments_form', 'oblique_coffeeshop_comments_form' );
