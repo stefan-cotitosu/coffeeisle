@@ -283,9 +283,40 @@ div.entry-content ul li a{
     border: none;
 }
 
-form.comment-form {
-    color: #000;
+.comment-respond h3 {
+    font-family: 'Lora', serif;
+    font-size: 30px;
+    line-height: 33.34px;
+    margin: 0 0 9px;
 }
+
+form.comment-form {
+    color: #8c8c8c;
+    font-family: 'Athiti', sans-serif;
+    font-size: 15px;
+    line-height: 33.34px;
+}
+
+form.comment-form p label {
+    margin: 20px 0 14px;
+    display: block;
+}
+
+.comment-form-author input,
+.comment-form-email input,
+.comment-form-url input {
+    max-width: 632px;
+    padding: 4px;
+}
+
+.comment-form .form-submit {
+    margin: 20px 0 0;
+}
+
+.form-submit input[type="submit"] {
+    padding: 14px 54px 15px 55px;
+}
+
 
 @media only screen and (max-width: 1024px) {
 
