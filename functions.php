@@ -38,9 +38,6 @@ function remove_actions(){
 	// Header svg
     remove_action( 'oblique_nav_container', 'oblique_nav_svg_container' );
 
-    // Footer svg
-	remove_action( 'oblique_footer_svg', 'oblique_footer_svg_container' );
-
     // Footer credits
 	remove_action( 'oblique_footer', 'oblique_footer_credits' );
 
@@ -105,9 +102,10 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 	}
 
 	// Footer color
-    $footer_background_color = get_theme_mod( 'footer_background', '#f8f9fb' );
+    $footer_background_color = get_theme_mod( 'footer_background', '#ffffff' );
 	if ( ! empty( $footer_background_color ) ) {
 	    $custom .= 'footer.site-footer { background-color:' . esc_attr( $footer_background_color ) . ';}' . "\n";
+	    $custom .= 'div.footer-svg.svg-block { fill:' . esc_attr( $footer_background_color ) . ';}' . "\n";
     }
 
 	// Header padding
@@ -262,7 +260,7 @@ add_filter( 'oblique_entry_meta_color', 'oblique_coffeeshop_entry_meta_color' );
  * Footer background color
  */
 function oblique_coffeeshop_footer_background_color() {
-    return '#f8f9fb';
+    return '#ffffff';
 }
 add_filter( 'oblique_footer_background_color', 'oblique_coffeeshop_footer_background_color' );
 
