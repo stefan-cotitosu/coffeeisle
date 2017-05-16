@@ -356,6 +356,92 @@ form.comment-form p label {
     margin-bottom: 33px;
 }
 
+/* Single page with comments */
+.single h2.comments-title {
+    background-color: inherit;
+    font-family: 'Lora', serif;
+    font-size: 30px;
+    line-height: 34.66px;
+    text-transform: capitalize;
+    border: none;
+    padding: 0;
+    margin: 58px 0 37px;
+}
+
+.single .comment-body {
+    padding: 25px 94px 67px 25px;
+    margin: 0;
+    position: relative;
+}
+
+.single .comment-body .comment-author img {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.single .comment-body .comment-content {
+    margin-left: 100px;
+}
+
+.single .comment-body .comment-author {
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    line-height: 23px;
+    margin-bottom: 11px;
+}
+
+.single .comment-body .comment-author .fn {
+    margin-left: 100px;
+}
+
+.single .comment-body .comment-author .fn:after {
+    content: ":";
+}
+
+.single .says {
+    display: none;
+}
+
+.single .comment-body .comment-metadata {
+    margin: 0 0 13px 100px;
+}
+
+.single .comment-body .comment-metadata a {
+    font-family: 'Athiti', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 23px;
+}
+
+.single .comment-body .comment-content {
+    font-family: 'Athiti', sans-serif;
+    font-size: 15px;
+    line-height: 27px;
+}
+
+.single .comment-body .reply {
+    position: absolute;
+    top: 26px;
+    right: 94px;
+}
+
+.single .comment-body .reply a {
+    font-family: 'Athiti', sans-serif;
+    font-size: 15px;
+    line-height: 23px;
+}
+
+.single .comment-body .reply a:hover {
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transition: none;
+    border: none;
+    box-shadow: none;
+}
+
 @media only screen and (max-width: 1024px) {
 
     .top-bar {

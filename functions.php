@@ -20,7 +20,7 @@ if ( get_stylesheet() !== get_template() ) {
  */
 function oblique_coffeeshop_include_google_fonts() {
 	wp_enqueue_style( 'custom-google-fonts', 'https://fonts.googleapis.com/css?family=Lora', false );
-	wp_enqueue_style( 'custom-google-fonts', 'https://fonts.googleapis.com/css?family=Athiti', false );
+	wp_enqueue_style( 'custom-google-fonts', 'https://fonts.googleapis.com/css?family=Athiti:300,400', false );
 }
 add_action( 'wp_enqueue_scripts', 'oblique_coffeeshop_include_google_fonts' );
 
@@ -56,6 +56,12 @@ function remove_actions(){
     // Single page post bottom svg
     remove_action( 'oblique_single_page_post_svg', 'oblique_single_page_post_svg' );
 
+    // Comments title
+    remove_action( 'oblique_comments_title', 'oblique_comments_title_text' );
+
+    // Comments list
+    remove_action( 'oblique_comments_list', 'oblique_comments_list' );
+
 
 }
 add_action('after_setup_theme', 'remove_actions');
@@ -88,6 +94,8 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.form-submit input[type="submit"]:hover { border: 1px solid' . esc_attr( $primary_color ) . ';}' . "\n";
 
 		$custom .= '.single a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+
+		$custom .= '.single .comment-body .reply a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 	}
 
 	$entry_titles = get_theme_mod('entry_titles', '#d1b586' );
@@ -115,7 +123,19 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
 		$custom .= '.single a { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
+		$custom .= '.single h2.comments-title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+		$custom .= '.single .comment-body .comment-author { color:' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+		$custom .= '.single .comment-body .reply a { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
 	}
+
+	// Body text color
+    $body_text_color = get_theme_mod( 'body_text_color', '#8c8c8c' );
+	if ( ! empty( $body_text_color ) ) {
+	    $custom .= '.single .comment-body .comment-metadata a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
+    }
 
 	// Footer color
     $footer_background_color = get_theme_mod( 'footer_background', '#ffffff' );
@@ -231,7 +251,7 @@ add_filter('oblique_primary_color', 'oblique_coffeeshop_default_primary_color');
  * Body text default color
  */
 function oblique_coffeeshop_body_text_color() {
-	return '#50545C';
+	return '#8c8c8c';
 }
 add_filter( 'oblique_body_text_color', 'oblique_coffeeshop_body_text_color' );
 
@@ -550,8 +570,34 @@ function oblique_coffeeshop_single_page_post_svg() {
 }
 add_action( 'oblique_single_page_post_svg', 'oblique_coffeeshop_single_page_post_svg' );
 
+/**
+ * Single page post tags message
+ */
 function oblique_coffeeshop_post_tags_message() {
     $args = 'Tags: %1$s';
     return $args;
 }
 add_filter( 'oblique_post_tags_message', 'oblique_coffeeshop_post_tags_message' );
+
+/**
+ * Comments title text
+ */
+function oblique_coffeeshop_comments_title_text() {
+	echo '<h2 class="comments-title">';
+	echo 'Comments';
+	echo '</h2>';
+}
+add_action( 'oblique_comments_title', 'oblique_coffeeshop_comments_title_text' );
+
+/**
+ * Comments list
+ */
+function oblique_coffeeshop_comments_list() {
+	wp_list_comments( array(
+		'style'      => 'ol',
+		'short_ping' => true,
+		'avatar_size' => 60,
+        'reply_text' => 'Reply',
+	) );
+}
+add_action( 'oblique_comments_list', 'oblique_coffeeshop_comments_list' );
