@@ -50,6 +50,12 @@ function remove_actions(){
     // Content single post bottom svg
     remove_action( 'oblique_single_post_bottom_svg', 'oblique_single_post_bottom_svg' );
 
+    // Single post navigation
+    remove_action( 'oblique_single_post_navigation', 'oblique_single_post_navigation' );
+
+    // Single page post bottom svg
+    remove_action( 'oblique_single_page_post_svg', 'oblique_single_page_post_svg' );
+
 
 }
 add_action('after_setup_theme', 'remove_actions');
@@ -74,9 +80,14 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 	if ( ! empty( $primary_color ) ) {
 		$custom .= 'div.entry-meta a:hover, h2.entry-title a:hover, div.widget-area a:hover, nav.social-navigation li a:hover, a.entry-content-link:hover { color:' . esc_attr( $primary_color ) . ';}' . "\n";
 		$rgba 	= oblique_hex2rgba( $primary_color, 0.3 );
+
+		$custom .= '.page .contact-details-list a:hover { color:' . esc_attr( $primary_color ) . ';}' . "\n";
+
 		$custom .= '.entry-thumb:after { background-color:' . esc_attr( $rgba ) . ';}' . "\n";
 		$custom .= '.form-submit input[type="submit"]:hover { background-color:' . esc_attr( $primary_color ) . ';}' . "\n";
 		$custom .= '.form-submit input[type="submit"]:hover { border: 1px solid' . esc_attr( $primary_color ) . ';}' . "\n";
+
+		$custom .= '.single a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 	}
 
 	$entry_titles = get_theme_mod('entry_titles', '#d1b586' );
@@ -86,7 +97,8 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
 		$custom .= '.pirate-forms-submit-button { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
-		$custom .= 'div.entry-content li:first-of-type { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.page div.entry-content li:first-of-type { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+        $custom .= '.page .contact-details-list a { color:' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= '.single_post_bottom_svg { stroke: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
@@ -98,6 +110,10 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
         $custom .= '.form-submit input[type="submit"] { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 		$custom .= '.form-submit input[type="submit"] { border: 1px solid ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+		$custom .= '.single_page_post_svg { stroke:' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+		$custom .= '.single a { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 	}
 
@@ -484,20 +500,20 @@ function oblique_coffeeshop_comments_template() {
         'label_submit' => esc_html__('Submit'),
         'fields' => apply_filters( 'comment_form_default_fields', array(
                 'author' =>
-                '<p class="comment-form-author"><label for="author">Name</label><input id="author" name="author" type="text" value="' .
+                '<p class="comment-form-author"><label for="author">' . esc_html__( 'Name', 'oblique_coffeeshop' ) . '</label><input id="author" name="author" type="text" value="' .
                 esc_attr( $commenter['comment_author'] ) . '" size ="30" ' . esc_html( $aria_req ) . '/></p>',
 
                 'email' =>
-                '<p class="comment-form-email"><label for="email">Email</label><input id="email" type="text" value="' .
+                '<p class="comment-form-email"><label for="email">' . esc_html__( 'Email', 'oblique_coffeeshop' ) . '</label><input id="email" type="text" value="' .
                 esc_attr( $commenter['comment_author'] ) . '" size="30" ' . esc_html( $aria_req ) . ' /></p>',
 
                 'url' =>
-                '<p class="comment-form-url"><label for="url">'.esc_html__('Subject','oblique-coffeeshop').'</label><input id="url" name="url" type="text" value="' .
+                '<p class="comment-form-url"><label for="url">' . esc_html__('Subject','oblique-coffeeshop') . '</label><input id="url" name="url" type="text" value="' .
                 esc_attr( $commenter['comment_author_url'] ) . '" /></p>',
 
         ) ),
         'comment_field' =>
-        '<p class="comment-form-comment"><label for="comment">Comment</label><textarea id="comment" name="comment" cols="45" rows="15" placeholder="' .
+        '<p class="comment-form-comment"><label for="comment">' . esc_html__( 'Comment', 'oblique_coffeeshop' ) . '</label><textarea id="comment" name="comment" cols="45" rows="15" placeholder="' .
         '" aria-required="true"></textarea></p>'
     );
 
@@ -516,3 +532,26 @@ function wpb_move_comment_field_to_bottom( $fields ) {
 	return $fields;
 }
 add_filter( 'comment_form_fields', 'wpb_move_comment_field_to_bottom' );
+
+/**
+ * SVG
+ * changing post bottom svg on single page
+ */
+function oblique_coffeeshop_single_page_post_svg() {
+	echo '
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1920 150">
+		  <g transform="translate(0,-902.36218)"/>
+		  <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z" />
+		  <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"/>
+		  <path d="M 0,150 0,0 1925,0"/>
+		  <line x1="1920" y1="0" x2="0" y2="150" width="100%" height="50" class="single_page_post_svg" />
+		</svg>
+	';
+}
+add_action( 'oblique_single_page_post_svg', 'oblique_coffeeshop_single_page_post_svg' );
+
+function oblique_coffeeshop_post_tags_message() {
+    $args = 'Tags: %1$s';
+    return $args;
+}
+add_filter( 'oblique_post_tags_message', 'oblique_coffeeshop_post_tags_message' );

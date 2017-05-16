@@ -175,13 +175,7 @@ h2.entry-title a {
     content: "\2192";
 }
 
-.footer-svg.svg-block {
-    /*fill: #fff;*/
-}
-
 footer.site-footer {
-    /*background-color: #fff;*/
-
     padding: 0;
 }
 
@@ -220,11 +214,11 @@ header.page-header h1.page-title {
 }
 
 /* Contact page */
-.hentry {
-    padding: 60px 60px 120px;
+.page .hentry {
+    padding: 26px 95px 121px;
 }
 
-header.entry-header h1.entry-title {
+.page header.entry-header h1.entry-title {
     margin: 0 0 4px;
 }
 
@@ -240,27 +234,26 @@ header.entry-header h1.entry-title {
     margin-bottom: 20px;
 }
 
-div.entry-content p {
+.page div.entry-content p {
     font-family: 'Athiti', sans-serif;
     font-size:15px;
     line-height: 23px;
 }
 
-div.entry-content ul {
+.page div.entry-content ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-div.entry-content li:first-of-type {
+.page div.entry-content li:first-of-type {
     font-family: 'Lora', serif;
     font-size: 20px;
     line-height: 20.8px;
     margin: 0 0 20px;
 }
 
-div.entry-content ul li,
-div.entry-content ul li a{
+.page div.entry-content ul li {
     color: inherit;
 }
 
@@ -323,6 +316,45 @@ form.comment-form p label {
     padding: 14px 54px 15px 55px;
 }
 
+/* Single page */
+.single_page_post_svg {
+    stroke-width: 3;
+}
+
+.single .hentry {
+    padding: 20px 95px 45px;
+}
+
+.single .entry-header {
+    margin: 0 0 35px;
+}
+
+.single h1.entry-title {
+    font-family: 'Lora', serif;
+    font-size: 35px;
+    line-height: 44px;
+    margin: 0 auto 24px;
+}
+
+.single .entry-meta {
+    margin: 0;
+}
+
+.single .posted-on {
+    margin-right: 10px;
+}
+
+.single .byline {
+    margin-right: 10px;
+}
+
+.single .byline:after {
+    content: "|";
+}
+
+.single div.single-thumb {
+    margin-bottom: 33px;
+}
 
 @media only screen and (max-width: 1024px) {
 
