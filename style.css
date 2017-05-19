@@ -442,6 +442,44 @@ form.comment-form p label {
     box-shadow: none;
 }
 
+.single article.comment-body {
+    margin-bottom: 27px;
+}
+
+.single .comment-list .comment:nth-of-type(even) .comment-body {
+    margin-left: 35px;
+}
+
+.single div.comment-respond {
+    margin-top: 54px;
+}
+
+/* Sidebar */
+.widget .widget-title {
+    font-family: 'Lora', serif;
+    font-size: 22px;
+    line-height: 26px;
+    margin: 0 0 25px;
+}
+
+/* Search */
+.widget .search-submit {
+    display: inline;
+    margin: 0;
+}
+
+.widget .search-form label {
+    margin: 0;
+}
+
+/* Calendar */
+
+/* Recent Posts */
+
+/* Category List */
+
+/* Tgas */
+
 @media only screen and (max-width: 1024px) {
 
     .top-bar {

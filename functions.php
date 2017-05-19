@@ -96,6 +96,8 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.single a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
 		$custom .= '.single .comment-body .reply a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+
+		$custom .= '.widget .search-submit:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 	}
 
 	$entry_titles = get_theme_mod('entry_titles', '#d1b586' );
@@ -128,6 +130,12 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.single .comment-body .comment-author { color:' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= '.single .comment-body .reply a { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+		$custom .= '.single .comment-list .comment:nth-of-type(even) { border-left: 2px solid ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+		$custom .= '.widget .widget-title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+		$custom .= '.widget .search-submit { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 	}
 
@@ -601,3 +609,46 @@ function oblique_coffeeshop_comments_list() {
 	) );
 }
 add_action( 'oblique_comments_list', 'oblique_coffeeshop_comments_list' );
+
+/**
+ * Main classes
+ *
+ */
+function oblique_coffeeshop_main_classes( $input ) {
+	if ( is_active_sidebar( 'single-sidebar' ) ) :
+        $input .= ' col-md-8';
+    endif;
+
+	return $input;
+}
+add_filter( 'oblique_main_classes', 'oblique_coffeeshop_main_classes' );
+
+/**
+ * Sidebar
+ * Register the second sidebar
+ */
+function oblique_coffeeshop_single_sidebar() {
+	register_sidebar( array(
+		'name'          => __( 'Single Sidebar', 'oblique-coffeeshop' ),
+		'id'            => 'single-sidebar',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+}
+add_action( 'widgets_init', 'oblique_coffeeshop_single_sidebar' );
+
+/**
+ * Sidebar
+ * Show the second sidebar
+ */
+function oblique_coffeeshop_sidebar_on_single(){
+    if ( is_active_sidebar( 'single-sidebar' ) ) : ?>
+        <aside id="secondary" class="col-md-4 single-sidebar" role="complementary">
+            <?php dynamic_sidebar( 'single-sidebar' ); ?>
+        </aside><!-- .sidebar .widget-area -->
+        <?php
+    endif;
+}
+add_action('oblique_single_sidebar', 'oblique_coffeeshop_sidebar_on_single');
