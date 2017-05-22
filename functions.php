@@ -19,7 +19,7 @@ if ( get_stylesheet() !== get_template() ) {
  * Google Fonts
  */
 function oblique_coffeeshop_include_google_fonts() {
-	wp_enqueue_style( 'custom-google-fonts', 'https://fonts.googleapis.com/css?family=Lora', false );
+	wp_enqueue_style( 'custom-google-fonts', 'https://fonts.googleapis.com/css?family=Lora:400,700', false );
 	wp_enqueue_style( 'custom-google-fonts', 'https://fonts.googleapis.com/css?family=Athiti:300,400', false );
 }
 add_action( 'wp_enqueue_scripts', 'oblique_coffeeshop_include_google_fonts' );
@@ -97,7 +97,19 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
 		$custom .= '.single .comment-body .reply a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
-		$custom .= '.widget .search-submit:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+		$custom .= '.single-sidebar .widget .search-submit:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+
+		$custom .= '.single-sidebar .widget_categories ul li a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+
+		$custom .= '.single-sidebar .widget_archive ul li a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+
+		$custom .= '.single-sidebar .widget_pages ul li a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+
+		$custom .= '.single-sidebar .widget_meta ul li a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+
+		$custom .= '.single-sidebar .widget_nav_menu ul li a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+
+		$custom .= '.single-sidebar .widget_recent_entries ul li a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 	}
 
 	$entry_titles = get_theme_mod('entry_titles', '#d1b586' );
@@ -133,16 +145,47 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
 		$custom .= '.single .comment-list .comment:nth-of-type(even) { border-left: 2px solid ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
-		$custom .= '.widget .widget-title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.single-sidebar .widget .widget-title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
-		$custom .= '.widget .search-submit { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.single-sidebar .widget .search-submit { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
+		$custom .= '.single-sidebar .widget_categories ul li:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+		$custom .= '.single-sidebar .widget_categories ul li { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+		$custom .= '.single-sidebar .widget_tag_cloud .tagcloud a:hover { color: #ffffff; background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+		$custom .= '.single-sidebar .widget_archive ul li:before, .single-sidebar .widget_archive ul li { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+		$custom .= '.single-sidebar .widget_pages ul li:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+		$custom .= '.single-sidebar .widget_meta ul li:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+		$custom .= '.single-sidebar .widget_nav_menu ul li:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+		$custom .= '.single-sidebar .widget_recent_entries ul li:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+		$custom .= '.single-sidebar .widget_rss ul li:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 	}
 
 	// Body text color
     $body_text_color = get_theme_mod( 'body_text_color', '#8c8c8c' );
 	if ( ! empty( $body_text_color ) ) {
 	    $custom .= '.single .comment-body .comment-metadata a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
+
+        $custom .= '.single-sidebar .widget_categories ul li a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
+
+        $custom .= '.single-sidebar .widget_tag_cloud .tagcloud a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
+
+        $custom .= '.single-sidebar .widget_archive ul li a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
+
+		$custom .= '.single-sidebar .widget_pages ul li a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
+
+		$custom .= '.single-sidebar .widget_meta ul li a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
+
+		$custom .= '.single-sidebar .widget_nav_menu ul li a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
+
+		$custom .= '.single-sidebar .widget_recent_entries ul li a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
     }
 
 	// Footer color

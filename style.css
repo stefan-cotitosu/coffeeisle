@@ -454,8 +454,13 @@ form.comment-form p label {
     margin-top: 54px;
 }
 
+/* Widget */
+.single-sidebar .widget {
+    margin: 0 0 30px;
+}
+
 /* Sidebar */
-.widget .widget-title {
+.single-sidebar .widget .widget-title {
     font-family: 'Lora', serif;
     font-size: 22px;
     line-height: 26px;
@@ -463,22 +468,188 @@ form.comment-form p label {
 }
 
 /* Search */
-.widget .search-submit {
+.single-sidebar .widget .search-submit {
     display: inline;
     margin: 0;
 }
 
-.widget .search-form label {
+.single-sidebar .widget .search-form label {
     margin: 0;
 }
 
+.single-sidebar .widget .search-field::placeholder {
+   content: "Search";
+}
+
 /* Calendar */
+.single-sidebar .widget_calendar .calendar_wrap table {
+    background-color: #ffffff;
+    position: relative;
+}
 
-/* Recent Posts */
+.single-sidebar .widget_calendar .calendar_wrap table caption {
+    color: #ffffff;
+    background-color: #d1b586;
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 15px 0 17px;
+}
 
-/* Category List */
+.single-sidebar .widget_calendar .calendar_wrap table thead {
+    display: block;
+    margin: 21px 0 19px;
+}
 
-/* Tgas */
+.single-sidebar .widget_calendar .calendar_wrap table tbody {
+    display: block;
+    padding: 0 7px 7px;
+}
+
+.single-sidebar .widget_calendar .calendar_wrap table th {
+    display: inline-block;
+    margin: 0 17px;
+}
+
+.single-sidebar .widget_calendar .calendar_wrap table td {
+    display: inline-block;
+    background-color: #f1f1f1;
+    height: 44px;
+    width: 43px;
+    padding: 9px;
+    margin: 3px 2px;
+    text-align: center;
+}
+
+.single-sidebar .widget_calendar .calendar_wrap td#prev {
+    background-color: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(15%);
+}
+.single-sidebar .widget_calendar .calendar_wrap td#prev::before {
+    content: "\0003C";
+    color: #ffffff;
+}
+
+.single-sidebar .widget_calendar .calendar_wrap td#next {
+    background-color: inherit;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(15%);
+}
+.single-sidebar .widget_calendar .calendar_wrap td#next::after {
+    content: "\0003E";
+    color: #ffffff;
+}
+
+.single-sidebar .widget_calendar .calendar_wrap td#prev a,
+.single-sidebar .widget_calendar .calendar_wrap td#next a {
+    display: none;
+}
+
+.single-sidebar .widget_calendar .calendar_wrap table td.pad {
+    display: none;
+}
+
+/* Tags */
+.single-sidebar .widget_tag_cloud .tagcloud a {
+    display: inline-block;
+    background-color: #ffffff;
+    padding: 9px;
+    margin: 5px;
+}
+
+/* Archive List */
+.single-sidebar .widget_archive ul {
+    list-style-type: none;
+}
+
+.single-sidebar .widget_archive ul li:before {
+    content: '\25C6';
+    float: left;
+}
+.single-sidebar .widget_archive ul li {
+    text-align: right;
+}
+
+.single-sidebar .widget_archive ul li a {
+    float: left;
+}
+
+/* Pages */
+.single-sidebar .widget_pages ul {
+    list-style-type: none;
+}
+
+.single-sidebar .widget_pages ul li:before {
+    content: '\25C6';
+}
+
+/* Meta */
+.single-sidebar .widget_meta ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.single-sidebar .widget_meta ul li:before {
+    content: '\25C6';
+    margin-right: 4px;
+}
+
+/* Nav Menu */
+.single-sidebar .widget_nav_menu ul {
+    list-style-type: none;
+}
+
+.single-sidebar .widget_nav_menu ul li:before {
+    content: '\25C6';
+    margin-right: 4px;
+}
+
+/* Widget Recent Entries */
+.single-sidebar .widget_recent_entries ul {
+    list-style-type: none;
+}
+
+.single-sidebar .widget_recent_entries ul li:before {
+    content: '\25C6';
+    margin-right: 4px;
+}
+
+/* RSS */
+.single-sidebar .widget_rss ul {
+    list-style-type: none;
+}
+
+.single-sidebar .widget_rss ul li:before {
+    content: '\25C6';
+    margin-right: 4px;
+}
+
+/* Categories List */
+.single-sidebar .widget_categories ul {
+    list-style-type: none;
+}
+
+.single-sidebar .widget_categories ul li {
+    text-align: right;
+}
+
+.single-sidebar .widget_categories ul li:before {
+    content: '\25C6';
+    float: left;
+}
+
+.single-sidebar .widget_categories ul li a {
+    display: block;
+    float: left;
+    font-family: 'Athiti', sans-serif;
+    font-size: 15px;
+    line-height: 27px;
+}
 
 @media only screen and (max-width: 1024px) {
 
