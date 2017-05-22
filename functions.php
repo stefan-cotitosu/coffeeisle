@@ -166,6 +166,10 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.single-sidebar .widget_recent_entries ul li:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_rss ul li:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+		$custom .= '.single-sidebar .widget_recent_comments ul li:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+		$custom .= '.single-sidebar .widget_calendar .calendar_wrap table td a { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 	}
 
 	// Body text color

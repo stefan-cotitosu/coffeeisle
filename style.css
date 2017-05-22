@@ -508,7 +508,11 @@ form.comment-form p label {
 
 .single-sidebar .widget_calendar .calendar_wrap table th {
     display: inline-block;
-    margin: 0 17px;
+    width: 44px;
+    padding: 9px;
+    height: 43px;
+    margin: 3px 2px;
+    text-align: center;
 }
 
 .single-sidebar .widget_calendar .calendar_wrap table td {
@@ -519,40 +523,69 @@ form.comment-form p label {
     padding: 9px;
     margin: 3px 2px;
     text-align: center;
+    position: relative;
 }
 
-.single-sidebar .widget_calendar .calendar_wrap td#prev {
-    background-color: inherit;
+.single-sidebar .widget_calendar .calendar_wrap table td a {
+    display: block;
     position: absolute;
     top: 0;
     left: 0;
-    transform: translateY(15%);
-}
-.single-sidebar .widget_calendar .calendar_wrap td#prev::before {
-    content: "\0003C";
+    width: 100%;
+    padding: 11px;
     color: #ffffff;
+}
+
+.single-sidebar .widget_calendar .calendar_wrap td#prev {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%;
+    margin: 9px 0 0;
 }
 
 .single-sidebar .widget_calendar .calendar_wrap td#next {
-    background-color: inherit;
     position: absolute;
     top: 0;
     right: 0;
-    transform: translateY(15%);
-}
-.single-sidebar .widget_calendar .calendar_wrap td#next::after {
-    content: "\0003E";
-    color: #ffffff;
+    width: 20%;
+    margin: 9px 0 0;
 }
 
-.single-sidebar .widget_calendar .calendar_wrap td#prev a,
-.single-sidebar .widget_calendar .calendar_wrap td#next a {
+.single-sidebar .widget_calendar .calendar_wrap table tfoot td.pad {
     display: none;
 }
 
-.single-sidebar .widget_calendar .calendar_wrap table td.pad {
-    display: none;
-}
+/*.single-sidebar .widget_calendar .calendar_wrap td#prev {*/
+    /*background-color: inherit;*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*transform: translateY(15%);*/
+/*}*/
+/*.single-sidebar .widget_calendar .calendar_wrap td#prev::before {*/
+    /*content: "\0003C";*/
+    /*color: #ffffff;*/
+/*}*/
+
+/*.single-sidebar .widget_calendar .calendar_wrap td#next {*/
+    /*background-color: inherit;*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*right: 0;*/
+    /*transform: translateY(15%);*/
+/*}*/
+/*.single-sidebar .widget_calendar .calendar_wrap td#next::after {*/
+    /*content: "\0003E";*/
+    /*color: #ffffff;*/
+/*}*/
+
+/*.single-sidebar .widget_calendar .calendar_wrap td#prev a,*/
+/*.single-sidebar .widget_calendar .calendar_wrap td#next a {*/
+    /*display: none;*/
+/*}*/
+
+
 
 /* Tags */
 .single-sidebar .widget_tag_cloud .tagcloud a {
@@ -622,6 +655,7 @@ form.comment-form p label {
 /* RSS */
 .single-sidebar .widget_rss ul {
     list-style-type: none;
+    padding: 0;
 }
 
 .single-sidebar .widget_rss ul li:before {
@@ -636,6 +670,7 @@ form.comment-form p label {
 
 .single-sidebar .widget_categories ul li {
     text-align: right;
+    clear: both;
 }
 
 .single-sidebar .widget_categories ul li:before {
@@ -649,6 +684,16 @@ form.comment-form p label {
     font-family: 'Athiti', sans-serif;
     font-size: 15px;
     line-height: 27px;
+}
+
+/* Recent Comments */
+.single-sidebar .widget_recent_comments ul {
+    list-style-type: none;
+}
+
+.single-sidebar .widget_recent_comments ul li:before {
+    content: '\25C6';
+    margin-right: 4px;
 }
 
 @media only screen and (max-width: 1024px) {
