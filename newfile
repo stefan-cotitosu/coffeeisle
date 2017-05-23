@@ -1,0 +1,23 @@
+.page .hentry {
+    background-color: #00A8EF;
+}
+
+.page .single-post-svg {
+    fill: #00A8EF !important;
+}
+
+.page .comments-area .comment-body {
+    background-color: #00A8EF;
+}
+
+.page .comment-body .reply a {
+    background-color: #00A8EF;
+}
+
+.page .comment-form input {
+    background-color: #00A8EF;
+}
+
+.page .comment-form textarea {
+    background-color: #00A8EF;
+}

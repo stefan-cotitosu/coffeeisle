@@ -77,7 +77,9 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
 	$background_color = get_background_color();
 	if( !empty( $background_color ) ){
-		$custom .= 'div.svg-block{ fill: #'. $background_color .';}';
+		$custom .= 'div.svg-block{ fill: #'. esc_attr($background_color) .';}';
+
+		$custom .= '.single-sidebar .widget_calendar .calendar_wrap table td { background-color: ' . esc_attr($background_color) . ';}' . "\n";
 
     }
 
@@ -90,8 +92,8 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.page .contact-details-list a:hover { color:' . esc_attr( $primary_color ) . ';}' . "\n";
 
 		$custom .= '.entry-thumb:after { background-color:' . esc_attr( $rgba ) . ';}' . "\n";
-		$custom .= '.form-submit input[type="submit"]:hover { background-color:' . esc_attr( $primary_color ) . ';}' . "\n";
-		$custom .= '.form-submit input[type="submit"]:hover { border: 1px solid' . esc_attr( $primary_color ) . ';}' . "\n";
+		$custom .= '.comment-form .form-submit input[type="submit"]:hover { background-color:' . esc_attr( $primary_color ) . ';}' . "\n";
+		$custom .= '.comment-form .form-submit input[type="submit"]:hover { border: 1px solid' . esc_attr( $primary_color ) . ';}' . "\n";
 
 		$custom .= '.single a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
@@ -130,8 +132,8 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 	    $custom .= 'line.post-bottom-svg-line { stroke: '. esc_attr( $entry_titles ) . ';}' . "\n";
 	    $custom .= 'div.nav-links .current { background-color:'. esc_attr( $entry_titles ). ';}' . "\n";
 
-        $custom .= '.form-submit input[type="submit"] { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
-		$custom .= '.form-submit input[type="submit"] { border: 1px solid ' . esc_attr( $entry_titles ) . ';}' . "\n";
+        $custom .= '.comment-form .form-submit input[type="submit"] { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.comment-form .form-submit input[type="submit"] { border: 1px solid ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= '.single_page_post_svg { stroke:' . esc_attr( $entry_titles ) . ';}' . "\n";
 
@@ -170,6 +172,10 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.single-sidebar .widget_recent_comments ul li:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_calendar .calendar_wrap table td a { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+		$custom .= '.page h2.comments-title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+		$custom .= '.page .comment-body .comment-author .fn { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 	}
 
 	// Body text color
@@ -208,39 +214,75 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 	// Entry background
 	$entry_background = get_theme_mod( 'entry_background', '#ffffff');
 	if ( ! empty( $entry_background ) ) {
-		$custom .= 'div.post-inner { background-color:' . $entry_background . ';}' . "\n";
+		$custom .= 'div.post-inner { background-color:' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		// Single Sidebar Page
+        $custom .= '.single .hentry { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+        $custom .= '.single .single-post-svg { fill: ' . esc_attr( $entry_background ) . ' !important;}' . "\n";
+
+		$custom .= '.single .comment-body { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.single .reply a { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.single .comment-form input, .single .comment-form textarea { background-color: ' .
+                   esc_attr( $entry_background ) .
+                   ';}' . "\n";
+
+		$custom .= '.single-sidebar .widget_calendar .calendar_wrap table { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.single-sidebar .widget_calendar .calendar_wrap table caption { color:  ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.single-sidebar .widget_calendar .calendar_wrap table td a { color:  ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.single-sidebar .widget_tag_cloud .tagcloud a { background-color:  ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.single-sidebar .widget_tag_cloud .tagcloud a:hover { color:  ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.page .hentry {background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.page .single-post-svg {fill: ' . esc_attr( $entry_background ) . ' !important;}' . "\n";
+
+		$custom .= '.page .comments-area .comment-body { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.page .comment-body .reply a { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.page .comment-form input { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.page .comment-form textarea { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
 	}
 
 	// Entry more
 	$entry_more_color = get_theme_mod( 'entry_more', '#d1b586');
 	if ( ! empty( $entry_more_color ) ) {
-		$custom .= '.entry-content-link { color:' . $entry_more_color . ';}' . "\n";
+		$custom .= '.entry-content-link { color:' . esc_attr( $entry_more_color ) . ';}' . "\n";
 
-		$custom .= '.entry-content-link:hover { color:' . $entry_more_color . ';}' . "\n";
+		$custom .= '.entry-content-link:hover { color:' . esc_attr( $entry_more_color ) . ';}' . "\n";
 	}
 
 	// Menu icon/leave color
     $menu_icon_color = get_theme_mod( 'menu_icon_color', '#f8f9fb' );
 	if ( ! empty( $menu_icon_color ) ) {
-	    $custom .= 'div.sidebar-toggle { color:' . $menu_icon_color . ';}' . "\n";
+	    $custom .= 'div.sidebar-toggle { color:' . esc_attr( $menu_icon_color ) . ';}' . "\n";
     }
 
     // Site title
     $site_title_color = get_theme_mod( 'site_title_color', '#f9f9f9' );
     if ( ! empty( $site_title_color ) ) {
-        $custom .= 'h1.site-title a, h1.site-title a:hover {color:' . $site_title_color . ';}' . "\n" ;
+        $custom .= 'h1.site-title a, h1.site-title a:hover {color:' . esc_attr( $site_title_color ) . ';}' . "\n" ;
     }
 
     // Site description
 	$site_desc_color = get_theme_mod( 'site_desc_color', '#f9f9f9' );
     if ( ! empty( $site_desc_color ) ) {
-        $custom .= 'h2.site-description { color:' . $site_desc_color . ';}' . "\n";
+        $custom .= 'h2.site-description { color:' . esc_attr( $site_desc_color ) . ';}' . "\n";
     }
 
     // Social color
     $social_color = get_theme_mod( 'social_color', '#f9f9f9' );
     if ( ! empty( $social_color ) ) {
-        $custom .= 'nav.social-navigation li a { color:' . $social_color . ';}' . "\n";
+        $custom .= 'nav.social-navigation li a { color:' . esc_attr( $social_color ) . ';}' . "\n";
     }
 
 	// Output all the styles
