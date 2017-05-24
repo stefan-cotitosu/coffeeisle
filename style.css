@@ -995,10 +995,6 @@ form.comment-form p label {
     margin: 0 0 38px;
 }
 
-.single-product div.woocommerce-product-rating {
-    display: none;
-}
-
 .single-product .price {
     margin: 0 0 30px 8px;
 }
@@ -1079,8 +1075,4 @@ form.comment-form p label {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
-}
-
-.single-product div.product_meta {
-    display: none;
 }

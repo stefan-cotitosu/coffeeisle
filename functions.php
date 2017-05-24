@@ -854,11 +854,12 @@ function oblique_coffeeshop_products_per_row() {
 }
 add_filter( 'loop_shop_columns', 'oblique_coffeeshop_products_per_row' );
 
-
-
+/**
+ * Single Product Page
+ */
 
 function woo_single_product_before_main_content() {
-    echo '<h2 style="color:red;">Before Main Content</h2>';
+	echo '<h2 style="color:red;">Before Main Content</h2>';
 }
 add_action( 'woocommerce_before_main_content', 'woo_single_product_before_main_content' );
 
@@ -867,6 +868,15 @@ function woo_single_product_after_main_content() {
 }
 add_action( 'woocommerce_after_main_content', 'woo_single_product_after_main_content' );
 
+// Change single product price position
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 25 );
+
+// Remove categories information from single product page
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+
+// Remove reviews on single product page
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
 
 /**
  * Show quantity text before quantity form
@@ -876,11 +886,11 @@ function oblique_coffeeshop_single_product_quantity_title() {
 }
 add_action( 'woocommerce_before_add_to_cart_quantity', 'oblique_coffeeshop_single_product_quantity_title' );
 
-// Change single product price position
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
-add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 25 );
-
+/**
+ * Add icon on add to cart button
+ */
 function oblique_cpffeeshop_single_product_add_to_cart_icon() {
     echo '<p class="single-product-add-cart-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></p>';
 }
 add_action( 'woocommerce_after_add_to_cart_button', 'oblique_cpffeeshop_single_product_add_to_cart_icon' );
+
