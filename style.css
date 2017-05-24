@@ -785,7 +785,6 @@ form.comment-form p label {
     margin-right: 4px;
 }
 
-
 @media only screen and (max-width: 1024px) {
 
     .top-bar {
@@ -865,26 +864,32 @@ form.comment-form p label {
         width: 100%;
     }
 
+    .page article.comment-body,
     .single article.comment-body {
         padding: 92px 94px 67px 25px;
     }
 
+    .page .comment-body .comment-author img,
     .single .comment-body .comment-author img {
         top: 15px;
     }
 
+    .page .comment-body .comment-author .fn,
     .single .comment-body .comment-author .fn {
         margin-left: 0;
     }
 
+    .page .comment-body .comment-metadata,
     .single .comment-body .comment-metadata {
         margin: 0 0 13px 0;
     }
 
+    .page .comment-body .comment-content,
     .single .comment-body .comment-content {
         margin-left: 0;
     }
 
+    .page .comment-body .reply,
     .single .comment-body .reply {
         right: 20px;
     }
@@ -893,4 +898,39 @@ form.comment-form p label {
         padding: 25px 10px;
     }
 
+}
+
+/** WooCommerce style **/
+.woocommerce-page ul.products {
+    margin: 30px 0 0;
+}
+
+.product .post-svg {
+    top: 0;
+}
+
+.product .post-bottom-svg {
+    bottom: -27px;
+}
+
+/*ul.products li.product:nth-of-type(2) {*/
+    /*margin-top: -1.98%;*/
+/*}*/
+/*ul.products li.product:nth-of-type(3) {*/
+    /*margin-top: -3.98%;*/
+/*}*/
+
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
+    width: 30.7%;
+}
+
+.woocommerce ul.products li.product:nth-of-type(3n+2),
+.woocommerce-page ul.products li.product:nth-of-type(3n+2) {
+    margin-top: -3%;
+}
+
+.woocommerce ul.products li.product:nth-of-type(3n+3),
+.woocommerce-page ul.products li.product:nth-of-type(3n+3) {
+    margin-top: -6%;
 }

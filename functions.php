@@ -251,6 +251,9 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
 		$custom .= '.page .comment-form textarea { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
+		$custom .= '.archive .page-header { background-color:' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.archive div.svg-container.svg-block.page-header-svg { fill:' . esc_attr( $entry_background ) . ';}' . "\n";
 	}
 
 	// Entry more
@@ -470,7 +473,6 @@ function svg_new() {
 			  <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"/>
 			  <path d="m 1925,0 0,150 -1925,0"/>
 			  <line x1="1890" y1="0" x2="0" y2="150" width="100%" height="50" class="bottom post-bottom-svg-line" />
-			  
 		</svg>
 	';
 }
@@ -741,3 +743,92 @@ function oblique_coffeeshop_sidebar_on_single(){
     endif;
 }
 add_action('oblique_single_sidebar', 'oblique_coffeeshop_sidebar_on_single');
+
+/**
+ * WooCommerce
+ */
+// Remove pages navigation
+remove_action( 'woocommerce_before_main_content','woocommerce_breadcrumb', 20, 0);
+
+// Remove sorting results after loop
+remove_action( 'woocommerce_after_shop_loop', 'woocommerce_result_count', 20 );
+
+// Remove sorting results before loop
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+
+// Remove drop down sort before loop
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+
+/**
+ * Remove page title
+ */
+function oblique_coffeeshop_remove_woo_title(){
+    return false;
+}
+add_filter( 'woocommerce_show_page_title', 'oblique_coffeeshop_remove_woo_title' );
+
+
+remove_action('woocommerce_archive_description','woocommerce_taxonomy_archive_description ',10);
+remove_action('woocommerce_archive_description','woocommerce_product_archive_description  ',10);
+
+/**
+ * Add custom title on shop page
+ * title between svg *
+ */
+function oblique_coffeeshop_shop_title(){
+
+	do_action('oblique_archive_title_top_svg'); ?>
+
+    <header class="page-header">
+        <h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
+    </header><!-- .page-header -->
+    <?php
+
+    /**
+     * woocommerce_archive_description hook.
+     *
+     * @hooked woocommerce_taxonomy_archive_description - 10
+     * @hooked woocommerce_product_archive_description - 10
+     */
+    do_action( 'woocommerce_archive_description' ); ?>
+
+    <div class="svg-container svg-block page-header-svg">
+		<?php do_action( 'oblique_archive_title_bottom_svg' ); ?>
+    </div>
+    <?php
+
+}
+add_action( 'woocommerce_before_main_content', 'oblique_coffeeshop_shop_title', 40);
+
+// Remove product rating on shop page
+remove_action('woocommerce_after_shop_loop_item_title','woocommerce_template_loop_rating', 5 );
+
+/**
+ * Adding top svg for item on shop page
+ */
+function oblique_coffeeshop_product_top_svg(){ ?>
+    <div class="svg-container post-svg svg-block">
+            <?php echo oblique_svg_3(); ?>
+    </div>
+    <?php
+}
+add_action( 'woocommerce_before_shop_loop_item', 'oblique_coffeeshop_product_top_svg', 5 );
+
+/**
+ * Adding bottom svg for item on shop page
+ */
+function oblique_coffeeshop_product_bottom_svg() { ?>
+    <div class="svg-container post-bottom-svg svg-block">
+               <?php echo svg_new(); ?>
+    </div>
+    <?php
+}
+add_action( 'woocommerce_after_shop_loop_item', 'oblique_coffeeshop_product_bottom_svg' );
+
+/**
+ * Number the number of products per row
+ */
+function oblique_coffeeshop_products_per_row() {
+    return 3;
+}
+add_filter( 'loop_shop_columns', 'oblique_coffeeshop_products_per_row' );
