@@ -112,6 +112,10 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.single-sidebar .widget_nav_menu ul li a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_recent_entries ul li a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+
+		$custom .= '.woocommerce-page ul.products li.product a.add_to_cart_button:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+
+		$custom .= '.single-product .single_add_to_cart_button:hover { background-color: ' . esc_attr( $primary_color ) . ' !important;}' . "\n";
 	}
 
 	$entry_titles = get_theme_mod('entry_titles', '#d1b586' );
@@ -176,6 +180,14 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.page h2.comments-title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= '.page .comment-body .comment-author .fn { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+		$custom .= '.woocommerce-page ul.products li.product h2.woocommerce-loop-product__title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+		$custom .= '.woocommerce-page ul.products li.product a.add_to_cart_button { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+		$custom .= '.single-product h1.product_title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+		$custom .= '.single-product .single_add_to_cart_button { background-color: ' . esc_attr( $entry_titles ) . ' !important;}' . "\n";
 	}
 
 	// Body text color
@@ -254,6 +266,15 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.archive .page-header { background-color:' . esc_attr( $entry_background ) . ';}' . "\n";
 
 		$custom .= '.archive div.svg-container.svg-block.page-header-svg { fill:' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.woocommerce ul.products li.product,' . ' .woocommerce-page ul.products li.product ' .
+                   '{ background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.product .post-bottom-svg { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.woocommerce-page ul.products li.product a.add_to_cart_button { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.single-product .single_add_to_cart_button { color: ' . esc_attr( $entry_background ) . ' !important;}' . "\n";
 	}
 
 	// Entry more
@@ -832,3 +853,34 @@ function oblique_coffeeshop_products_per_row() {
     return 3;
 }
 add_filter( 'loop_shop_columns', 'oblique_coffeeshop_products_per_row' );
+
+
+
+
+function woo_single_product_before_main_content() {
+    echo '<h2 style="color:red;">Before Main Content</h2>';
+}
+add_action( 'woocommerce_before_main_content', 'woo_single_product_before_main_content' );
+
+function woo_single_product_after_main_content() {
+	echo '<h2 style="color:red;">After Main Content</h2>';
+}
+add_action( 'woocommerce_after_main_content', 'woo_single_product_after_main_content' );
+
+
+/**
+ * Show quantity text before quantity form
+ */
+function oblique_coffeeshop_single_product_quantity_title() {
+    echo '<p class="quantity-title">Quantity</p>';
+}
+add_action( 'woocommerce_before_add_to_cart_quantity', 'oblique_coffeeshop_single_product_quantity_title' );
+
+// Change single product price position
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 25 );
+
+function oblique_cpffeeshop_single_product_add_to_cart_icon() {
+    echo '<p class="single-product-add-cart-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></p>';
+}
+add_action( 'woocommerce_after_add_to_cart_button', 'oblique_cpffeeshop_single_product_add_to_cart_icon' );

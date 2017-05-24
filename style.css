@@ -911,18 +911,14 @@ form.comment-form p label {
 
 .product .post-bottom-svg {
     bottom: -27px;
+    background-color: #ffffff;
 }
-
-/*ul.products li.product:nth-of-type(2) {*/
-    /*margin-top: -1.98%;*/
-/*}*/
-/*ul.products li.product:nth-of-type(3) {*/
-    /*margin-top: -3.98%;*/
-/*}*/
 
 .woocommerce ul.products li.product,
 .woocommerce-page ul.products li.product {
     width: 30.7%;
+    padding-bottom: 46px;
+    text-align: center;
 }
 
 .woocommerce ul.products li.product:nth-of-type(3n+2),
@@ -933,4 +929,158 @@ form.comment-form p label {
 .woocommerce ul.products li.product:nth-of-type(3n+3),
 .woocommerce-page ul.products li.product:nth-of-type(3n+3) {
     margin-top: -6%;
+}
+
+.woocommerce-page ul.products li.product .woocommerce-LoopProduct-link img {
+    margin: 0 0 28px;
+}
+
+.woocommerce-page ul.products li.product h2.woocommerce-loop-product__title {
+    text-align: center;
+    padding: 0;
+    margin: 0 auto 10px;
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    line-height: 35px;
+}
+
+.woocommerce-page ul.products li.product .price {
+    text-align: center;
+    margin-bottom: 19px;
+    font-family: 'Lora', serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 35px;
+}
+
+.woocommerce-page ul.products li.product .price del {
+    display: inline-block;
+    color: #333333;
+    margin-right: 5px;
+}
+
+.woocommerce-page ul.products li.product .price ins {
+    display: inline-block;
+    text-decoration: none;
+    color: #333333;
+}
+
+.woocommerce-page ul.products li.product .price .woocommerce-Price-amount {
+    position: relative;
+    color: #333333;
+}
+
+.woocommerce-page ul.products li.product .price .woocommerce-Price-amount .woocommerce-Price-currencySymbol {
+    position: absolute;
+    top: -4px;
+    left: -14%;
+    font-size: 12px;
+}
+
+.woocommerce-page ul.products li.product a.add_to_cart_button {
+    border: none;
+    margin: 0;
+    padding: 15px 31px 16px 32px;
+}
+
+.single-product div.page-header-svg,
+.single-product header.page-header {
+    display: none;
+}
+
+.single-product h1.product_title {
+    font-family: 'Lora', serif;
+    font-size: 30px;
+    line-height: 40px;
+    margin: 0 0 38px;
+}
+
+.single-product div.woocommerce-product-rating {
+    display: none;
+}
+
+.single-product .price {
+    margin: 0 0 30px 8px;
+}
+
+.single-product .price .woocommerce-Price-amount {
+    position: relative;
+    color: #333333;
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 40.55px;
+}
+
+.single-product .price .woocommerce-Price-amount .woocommerce-Price-currencySymbol {
+    position: absolute;
+    top: -8px;
+    left: -14%;
+    font-size: 13px;
+}
+
+.single-product div.woocommerce-product-details__short-description {
+    margin: 0 0 13px;
+}
+
+.single-product div.woocommerce-product-details__short-description p {
+    font-family: 'Athiti', sans-serif;
+    font-size: 15px;
+    line-height: 23px;
+    margin: 0;
+}
+
+.single-product form.cart {
+    position: relative;
+}
+
+.single-product form.cart p.quantity-title {
+    position: absolute;
+    top: 2%;
+    left: 0;
+    display: inline-block;
+    margin: 0;
+    color: #333333;
+    font-family: 'Athiti', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 22px;
+}
+
+.single-product form.cart div.quantity {
+    position: absolute;
+    top: 0;
+    left: 13%;
+    display: inline-block;
+    float: none !important;
+    margin: 0;
+    color: #333333;
+}
+
+.single-product form.cart div.quantity input {
+    font-weight: 700;
+}
+
+.single-product form.cart .single-product-add-cart-icon {
+    position: absolute;
+    bottom: 4px;
+    left: 6%;
+    color: #ffffff;
+}
+
+.single-product button.single_add_to_cart_button {
+    display: block;
+    clear: both;
+    margin: 59px 0 0;
+    padding: 15px 33px 17px 55px;
+    font-family: 'Lora', serif;
+    font-size: 15px;
+    line-height: 14.89px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+.single-product div.product_meta {
+    display: none;
 }
