@@ -20,7 +20,7 @@ if ( get_stylesheet() !== get_template() ) {
  */
 function oblique_coffeeshop_include_google_fonts() {
 	wp_enqueue_style( 'custom-google-fonts', 'https://fonts.googleapis.com/css?family=Lora:400,700', false );
-	wp_enqueue_style( 'custom-google-fonts', 'https://fonts.googleapis.com/css?family=Athiti:300,400', false );
+	wp_enqueue_style( 'custom-google-fonts', 'https://fonts.googleapis.com/css?family=Athiti:300,400,600', false );
 }
 add_action( 'wp_enqueue_scripts', 'oblique_coffeeshop_include_google_fonts' );
 
@@ -30,7 +30,7 @@ add_action( 'wp_enqueue_scripts', 'oblique_coffeeshop_include_google_fonts' );
  * Because Child theme is loaded before the parrent theme
  * after_setup_theme
  */
-function remove_actions(){
+function remove_actions() {
 
     // Post read more
 	remove_action( 'oblique_link_to_single', 'oblique_post_link_to_single' );
@@ -61,7 +61,6 @@ function remove_actions(){
 
     // Comments list
     remove_action( 'oblique_comments_list', 'oblique_comments_list' );
-
 
 }
 add_action('after_setup_theme', 'remove_actions');
@@ -188,6 +187,8 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.single-product h1.product_title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= '.single-product .single_add_to_cart_button { background-color: ' . esc_attr( $entry_titles ) . ' !important;}' . "\n";
+
+
 	}
 
 	// Body text color
@@ -856,14 +857,6 @@ function oblique_coffeeshop_product_bottom_svg() { ?>
 add_action( 'woocommerce_after_shop_loop_item', 'oblique_coffeeshop_product_bottom_svg', 10 );
 
 /**
- * Add cart icon on shop page
- */
-function oblique_coffeeshop_shop_page_add_cart_icon() {
-	echo '<p class="shop_page_add_cart_icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></p>';
-}
-//add_action( 'woocommerce_after_shop_loop_item', 'oblique_coffeeshop_shop_page_add_cart_icon', 11 );
-
-/**
  * Number the number of products per row
  */
 function oblique_coffeeshop_products_per_row() {
@@ -876,38 +869,6 @@ add_filter( 'loop_shop_columns', 'oblique_coffeeshop_products_per_row' );
  */
 remove_action( 'woocommerce_after_shop_loop', 'woocommerce_pagination', 10 );
 add_action( 'woocommerce_after_shop_loop', 'oblique_coffeeshop_custom_pagination', 10 );
-
-
-
-
-
-
-
-function woo_single_product_before_main_content() {
-	echo '<h2 style="color:red;">Before Main Content</h2>';
-}
-//add_action( 'woocommerce_before_main_content', 'woo_single_product_before_main_content' );
-
-function woo_single_product_after_main_content() {
-	echo '<h2 style="color:red;">After Main Content</h2>';
-}
-//add_action( 'woocommerce_after_main_content', 'woo_single_product_after_main_content' );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Change single product price position
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
@@ -927,13 +888,34 @@ function oblique_coffeeshop_single_product_quantity_title() {
 }
 add_action( 'woocommerce_before_add_to_cart_quantity', 'oblique_coffeeshop_single_product_quantity_title' );
 
-/**
- * Add icon on add to cart button
- */
-function oblique_coffeeshop_single_product_add_to_cart_icon() {
-    echo '<p class="single-product-add-cart-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></p>';
+//function woo_single_product_before_main_content() {
+//	echo '<h2 style="color:red;">Before Main Content</h2>';
+//}
+//add_action( 'woocommerce_before_main_content', 'woo_single_product_before_main_content' );
+
+//function woo_single_product_after_main_content() {
+//	echo '<h2 style="color:red;">After Main Content</h2>';
+//}
+//add_action( 'woocommerce_after_main_content', 'woo_single_product_after_main_content' );
+
+
+
+function woo_before_single_product_summary() {
+	echo '<p style="color:red;">Before Single Product Summary</p>';
 }
-add_action( 'woocommerce_after_add_to_cart_button', 'oblique_coffeeshop_single_product_add_to_cart_icon' );
+add_action( 'woocommerce_before_single_product_summary', 'woo_before_single_product_summary' );
 
+function woo_after_single_product_summary() {
+	echo '<p style="color:red;">After Single Product Summary</p>';
+}
+add_action( 'woocommerce_after_single_product_summary', 'woo_after_single_product_summary' );
 
+function woo_before_single_product() {
+	echo '<p style="color:red;">Before Single Product</p>';
+}
+add_action( 'woocommerce_before_single_product', 'woo_before_single_product' );
 
+function woo_after_single_product() {
+	echo '<p style="color:red;">After Single Product</p>';
+}
+add_action( 'woocommerce_after_single_product', 'woo_after_single_product' );
