@@ -188,6 +188,7 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
 		$custom .= '.single-product .single_add_to_cart_button { background-color: ' . esc_attr( $entry_titles ) . ' !important;}' . "\n";
 
+		$custom .= '.woocommerce div.product .woocommerce-tabs ul.tabs li.active a { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 	}
 

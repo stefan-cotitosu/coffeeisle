@@ -1023,32 +1023,56 @@ form.comment-form p label {
 }
 
 .woocommerce div.product .woocommerce-tabs {
-    display: table;
-    /*border: 1px solid;*/
+    border: 1px solid;
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs {
-    display: table-row;
-    /*border: 1px solid black;*/
+    padding: 0;
+    border-bottom: 1px solid;
+    margin: 0;
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs li {
-    display: table-cell;
-    /*border: 1px solid black;*/
+    display: inline-block;
+    background-color: inherit;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    padding: 14px 31px 10px 30px;
+    margin: 0;
+    border: none;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+    padding: 0;
+    margin: 0;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.description_tab {
+    border-right: 1px solid;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.reviews_tab {
+    border-left: 1px solid;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+    background-color: inherit;
+    border: none;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.description_tab a,
+.woocommerce div.product .woocommerce-tabs ul.tabs li.reviews_tab a {
+    font-family: 'Lora', serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 32px;
+    padding: 0;
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs:before {
     content: '';
     border: none;
-}
-
-.woocommerce div.product .woocommerce-tabs ul.tabs li {
-    background-color: inherit;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
-    padding: 0;
-    margin: 0;
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs li:before,
@@ -1061,30 +1085,7 @@ form.comment-form p label {
     -moz-box-shadow: none;
     box-shadow: none;
     border: none;
-}
-
-.woocommerce div.product .woocommerce-tabs ul.tabs li.description_tab {
-
-}
-
-.woocommerce div.product .woocommerce-tabs ul.tabs li.reviews_tab {
-
-}
-
-.woocommerce div.product .woocommerce-tabs ul.tabs li.active {
-    background-color: inherit;
-}
-
-.woocommerce div.product .woocommerce-tabs ul.tabs li.description_tab a {
-    color: red;
-}
-
-.woocommerce div.product .woocommerce-tabs ul.tabs li.reviews_tab a {
-    color: red;
-}
-
-.woocommerce div.product .woocommerce-tabs ul.tabs li.active a {
-    color: green;
+    border-color: inherit;
 }
 
 .woocommerce div.product .woocommerce-tabs div.woocommerce-Tabs-panel--description h2,
