@@ -193,6 +193,9 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 	// Body text color
     $body_text_color = get_theme_mod( 'body_text_color', '#8c8c8c' );
 	if ( ! empty( $body_text_color ) ) {
+
+	    $custom .= 'body { color: ' . esc_attr( $body_text_color ) . ' !important;}' . "\n";
+
 	    $custom .= '.single .comment-body .comment-metadata a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
 
         $custom .= '.single-sidebar .widget_categories ul li a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
@@ -208,6 +211,8 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.single-sidebar .widget_nav_menu ul li a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_recent_entries ul li a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
+
+		$custom .= '.woocommerce-page nav.navigation .page-numbers { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
     }
 
 	// Footer color
@@ -273,8 +278,13 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.product .post-bottom-svg { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
 		$custom .= '.woocommerce-page ul.products li.product a.add_to_cart_button { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+		$custom .= '.single-product form.cart p.single-product-add-cart-icon { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
 		$custom .= '.single-product .single_add_to_cart_button { color: ' . esc_attr( $entry_background ) . ' !important;}' . "\n";
+
+		$custom .= '.woocommerce-page ul.products li.product p.shop_page_add_cart_icon { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.woocommerce-page nav.navigation .current { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 	}
 
 	// Entry more
@@ -780,6 +790,9 @@ remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 // Remove drop down sort before loop
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
 
+// Remove description on category page
+remove_action('woocommerce_archive_description','woocommerce_taxonomy_archive_description',10);
+
 /**
  * Remove page title
  */
@@ -787,10 +800,6 @@ function oblique_coffeeshop_remove_woo_title(){
     return false;
 }
 add_filter( 'woocommerce_show_page_title', 'oblique_coffeeshop_remove_woo_title' );
-
-
-remove_action('woocommerce_archive_description','woocommerce_taxonomy_archive_description ',10);
-remove_action('woocommerce_archive_description','woocommerce_product_archive_description  ',10);
 
 /**
  * Add custom title on shop page
@@ -844,7 +853,15 @@ function oblique_coffeeshop_product_bottom_svg() { ?>
     </div>
     <?php
 }
-add_action( 'woocommerce_after_shop_loop_item', 'oblique_coffeeshop_product_bottom_svg' );
+add_action( 'woocommerce_after_shop_loop_item', 'oblique_coffeeshop_product_bottom_svg', 10 );
+
+/**
+ * Add cart icon on shop page
+ */
+function oblique_coffeeshop_shop_page_add_cart_icon() {
+	echo '<p class="shop_page_add_cart_icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></p>';
+}
+//add_action( 'woocommerce_after_shop_loop_item', 'oblique_coffeeshop_shop_page_add_cart_icon', 11 );
 
 /**
  * Number the number of products per row
@@ -855,18 +872,42 @@ function oblique_coffeeshop_products_per_row() {
 add_filter( 'loop_shop_columns', 'oblique_coffeeshop_products_per_row' );
 
 /**
- * Single Product Page
+ * Change pagination on shop page
  */
+remove_action( 'woocommerce_after_shop_loop', 'woocommerce_pagination', 10 );
+add_action( 'woocommerce_after_shop_loop', 'oblique_coffeeshop_custom_pagination', 10 );
+
+
+
+
+
+
 
 function woo_single_product_before_main_content() {
 	echo '<h2 style="color:red;">Before Main Content</h2>';
 }
-add_action( 'woocommerce_before_main_content', 'woo_single_product_before_main_content' );
+//add_action( 'woocommerce_before_main_content', 'woo_single_product_before_main_content' );
 
 function woo_single_product_after_main_content() {
 	echo '<h2 style="color:red;">After Main Content</h2>';
 }
-add_action( 'woocommerce_after_main_content', 'woo_single_product_after_main_content' );
+//add_action( 'woocommerce_after_main_content', 'woo_single_product_after_main_content' );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Change single product price position
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
@@ -889,8 +930,10 @@ add_action( 'woocommerce_before_add_to_cart_quantity', 'oblique_coffeeshop_singl
 /**
  * Add icon on add to cart button
  */
-function oblique_cpffeeshop_single_product_add_to_cart_icon() {
+function oblique_coffeeshop_single_product_add_to_cart_icon() {
     echo '<p class="single-product-add-cart-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i></p>';
 }
-add_action( 'woocommerce_after_add_to_cart_button', 'oblique_cpffeeshop_single_product_add_to_cart_icon' );
+add_action( 'woocommerce_after_add_to_cart_button', 'oblique_coffeeshop_single_product_add_to_cart_icon' );
+
+
 
