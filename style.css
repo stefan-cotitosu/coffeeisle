@@ -787,7 +787,8 @@ form.comment-form p label {
 
 /** WooCommerce style **/
 .woocommerce-page ul.products {
-    margin: 30px 0 0;
+    /*margin: 30px 0 0;*/
+    margin: 400px 0 0 0;
 }
 
 .product .post-svg {
@@ -897,6 +898,7 @@ form.comment-form p label {
     border-radius: 3px;
 }
 
+/* Single Product */
 .single-product .product .onsale {
     display: none;
 }
@@ -1028,7 +1030,7 @@ form.comment-form p label {
 
 .woocommerce div.product .woocommerce-tabs ul.tabs {
     padding: 0;
-    border-bottom: 1px solid;
+    /*border-bottom: 1px solid;*/
     margin: 0;
 }
 
@@ -1041,6 +1043,9 @@ form.comment-form p label {
     padding: 14px 31px 10px 30px;
     margin: 0;
     border: none;
+    float: left;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs li a {
@@ -1048,17 +1053,14 @@ form.comment-form p label {
     margin: 0;
 }
 
-.woocommerce div.product .woocommerce-tabs ul.tabs li.description_tab {
-    border-right: 1px solid;
-}
-
-.woocommerce div.product .woocommerce-tabs ul.tabs li.reviews_tab {
-    border-left: 1px solid;
-}
-
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
     background-color: inherit;
-    border: none;
+    border-bottom-color: inherit;
+    border-bottom: none;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li:last-of-type.active {
+    border-right: none;
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs li.description_tab a,
@@ -1088,6 +1090,12 @@ form.comment-form p label {
     border-color: inherit;
 }
 
+.woocommerce div.product .woocommerce-tabs div.woocommerce-Tabs-panel--description,
+.woocommerce div.product .woocommerce-tabs div.woocommerce-Tabs-panel--reviews {
+    padding: 30px 38px 29px 27px;
+    margin: 0;
+}
+
 .woocommerce div.product .woocommerce-tabs div.woocommerce-Tabs-panel--description h2,
 .woocommerce div.product .woocommerce-tabs div.woocommerce-Tabs-panel--reviews h2 {
     color: #333333;
@@ -1095,6 +1103,7 @@ form.comment-form p label {
     font-size: 20px;
     font-weight: 700;
     line-height: 26px;
+    margin: 0 0 30px;
 }
 
 .woocommerce div.product .woocommerce-tabs div.woocommerce-Tabs-panel--description p,
@@ -1102,7 +1111,155 @@ form.comment-form p label {
     font-family: 'Athiti', sans-serif;
     font-size: 15px;
     line-height: 23px;
+    margin: 0;
 }
+
+.woocommerce div.product .woocommerce-tabs ol.commentlist {
+    padding: 0;
+}
+
+.woocommerce #reviews #comments ol.commentlist li {
+    padding: 25px 94px 67px 25px;
+    margin: 0 0 27px;
+}
+
+.woocommerce #reviews #comments ol.commentlist li:nth-of-type(even) {
+    margin: 0 0 0 35px;
+}
+
+.woocommerce #reviews #comments ol.commentlist li div {
+    position: relative;
+}
+
+.woocommerce #reviews #comments ol.commentlist li img.avatar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    background: none;
+    border: none;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.woocommerce #reviews #comments ol.commentlist li .comment-text {
+    border: none;
+    padding: 0;
+    margin: 0 0 0 100px;
+}
+
+.woocommerce #reviews #comments ol.commentlist li .comment-text .woocommerce-review__author {
+    display: block;
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    line-height: 23px;
+    margin: 0 0 11px;
+}
+
+.woocommerce #reviews #comments ol.commentlist li .comment-text .woocommerce-review__dash {
+    display: none;
+}
+
+.woocommerce #reviews #comments ol.commentlist li .comment-text .woocommerce-review__published-date {
+    display: block;
+    font-family: 'Athiti', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 23px;
+    margin: 0 0 13px;
+}
+
+.woocommerce #reviews #comments ol.commentlist li .comment-text .description p {
+    margin: 0;
+}
+
+.woocommerce #review_form #respond {
+    margin: 54px 0 0;
+}
+
+.woocommerce #reviews #respond #reply-title {
+    display: block;
+    font-family: 'Lora', serif;
+    font-size: 30px;
+    line-height: 33.34px;
+    margin: 0 0 11px;
+}
+
+.woocommerce #review_form #respond p {
+    font-family: 'Athiti', sans-serif;
+    font-size: 15px;
+    line-height: 30px;
+    margin: 0;
+}
+
+.woocommerce #review_form .comment-form label {
+    margin: 20px 0 14px;
+}
+
+
+/* Related products */
+.related_products_title_wrapper {
+    position: relative;
+}
+
+.single-product div.related-title-top-svg {
+    bottom: 39px;
+
+    background-color: #fff;
+}
+
+.single-product h2.related_products_title {
+    font-family: 'Lora', serif;
+    font-size: 28px;
+    line-height: 40.55px;
+    text-align: center;
+    /*margin: 0;*/
+
+    margin: 200px 0 0;
+    color: #d1b586;
+    background-color: #fff;
+}
+
+.single-product div.related-title-bottom-svg {
+    bottom: -90px;
+
+    background-color: #fff
+}
+
+.single-product div.related-title-bottom-svg .related_title_bottom_svg_line {
+    stroke-width: 3;
+
+    stroke: #d1b586;
+}
+
+
+.single-product section.related h2 {
+    display: none;
+}
+
+.single-product section.related ul.products li.product {
+    width: 22%;
+}
+
+.single-product section.related ul.products li.product .post-bottom-svg {
+    bottom: -20px;
+}
+
+.single-product section.related ul.products li.product:nth-of-type(4n+2) {
+    margin-top: -3%;
+}
+
+.single-product section.related ul.products li.product:nth-of-type(4n+3) {
+    margin-top: -6%;
+}
+
+.single-product section.related ul.products li.product:nth-of-type(4n+4) {
+    margin-top: -9%;
+}
+
+
 
 /* Responsive */
 @media only screen and (max-width: 1199px) {

@@ -115,6 +115,8 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.woocommerce-page ul.products li.product a.add_to_cart_button:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
 		$custom .= '.single-product .single_add_to_cart_button:hover { background-color: ' . esc_attr( $primary_color ) . ' !important;}' . "\n";
+
+		$custom .= '.woocommerce #review_form #respond .form-submit input:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 	}
 
 	$entry_titles = get_theme_mod('entry_titles', '#d1b586' );
@@ -189,6 +191,15 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.single-product .single_add_to_cart_button { background-color: ' . esc_attr( $entry_titles ) . ' !important;}' . "\n";
 
 		$custom .= '.woocommerce div.product .woocommerce-tabs ul.tabs li.active a { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+		$custom .= '.woocommerce #reviews #comments ol.commentlist li .comment-text .woocommerce-review__author { color: ' .
+		           esc_attr( $entry_titles ) . ';}' . "\n";
+
+		$custom .= '.woocommerce .star-rating span { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+		$custom .= '.woocommerce #review_form #respond .form-submit input { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+        $custom .= '.woocommerce #reviews #respond #reply-title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 	}
 
@@ -287,6 +298,10 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.woocommerce-page ul.products li.product p.shop_page_add_cart_icon { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
 		$custom .= '.woocommerce-page nav.navigation .current { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.woocommerce #reviews #comments ol.commentlist li { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.woocommerce #review_form #respond .form-submit input { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 	}
 
 	// Entry more
@@ -889,6 +904,83 @@ function oblique_coffeeshop_single_product_quantity_title() {
 }
 add_action( 'woocommerce_before_add_to_cart_quantity', 'oblique_coffeeshop_single_product_quantity_title' );
 
+/**
+ * Change the number of related products
+ *
+ * posts_per_page - related products per page
+ * columns - number of columns for related products
+ */
+function oblique_coffeeshop_related_products( $args ) {
+
+    $args['posts_per_page'] = 4;
+    $args['columns'] = 4;
+
+    return $args;
+}
+add_filter( 'woocommerce_output_related_products_args', 'oblique_coffeeshop_related_products' );
+
+/**
+ * Related Products Title
+ */
+function oblique_coffeeshop_related_products_title() {
+    ?>
+    <div class="related_products_title_wrapper">
+        <div class="svg-container svg-block related-title-top-svg">
+                <?php do_action( 'related_products_title_before' ); ?>
+        </div>
+        <?php
+        echo '<h2 class="related_products_title">Suggested Items</h2>';
+        ?>
+        <div class="svg-container svg-block related-title-bottom-svg">
+            <?php do_action( 'related_products_title_after' ); ?>
+        </div>
+    </div>
+    <?php
+}
+add_action( 'woocommerce_after_single_product_summary', 'oblique_coffeeshop_related_products_title' );
+
+/**
+ * Related Products Title Top SVG
+ */
+function oblique_coffeeshop_related_title_top_svg() {
+	oblique_svg_3();
+}
+add_action( 'related_products_title_before', 'oblique_coffeeshop_related_title_top_svg' );
+
+/**
+ * Related Products Title Bottom SVG
+ */
+function oblique_coffeeshop_related_title_bottom_svg() {
+	echo '
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1890 150">
+			<g transform="translate(0,-902.36218)"/>
+			  <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"/>
+			  <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"/>
+			  <path d="m 1925,0 0,150 -1925,0"/>
+			  <line x1="1950" y1="0" x2="0" y2="150" width="100%" height="50" class="related_title_bottom_svg_line" />
+		</svg>
+	';
+}
+add_action( 'related_products_title_after', 'oblique_coffeeshop_related_title_bottom_svg' );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //function woo_single_product_before_main_content() {
 //	echo '<h2 style="color:red;">Before Main Content</h2>';
 //}
@@ -909,7 +1001,7 @@ add_action( 'woocommerce_before_single_product_summary', 'woo_before_single_prod
 function woo_after_single_product_summary() {
 	echo '<p style="color:red;">After Single Product Summary</p>';
 }
-add_action( 'woocommerce_after_single_product_summary', 'woo_after_single_product_summary' );
+//add_action( 'woocommerce_after_single_product_summary', 'woo_after_single_product_summary' );
 
 function woo_before_single_product() {
 	echo '<p style="color:red;">Before Single Product</p>';
