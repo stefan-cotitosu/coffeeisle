@@ -76,9 +76,11 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
 	$background_color = get_background_color();
 	if( !empty( $background_color ) ){
-		$custom .= 'div.svg-block{ fill: #'. esc_attr($background_color) .';}';
+		$custom .= 'div.svg-block{ fill: #'. esc_attr( $background_color ) .';}';
 
-		$custom .= '.single-sidebar .widget_calendar .calendar_wrap table td { background-color: ' . esc_attr($background_color) . ';}' . "\n";
+		$custom .= '.single-sidebar .widget_calendar .calendar_wrap table td { background-color: ' . esc_attr( $background_color ) . ';}' . "\n";
+
+		$custom .= '.single-product div.single_product_bottom_svg { background-color: ' . esc_attr( $background_color ) . ';}' . "\n";
 
     }
 
@@ -201,6 +203,12 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
         $custom .= '.woocommerce #reviews #respond #reply-title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
+        $custom .= '.single-product div.single_product_bottom_svg .single_product_bottom_svg_line { stroke: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+        $custom .= '.single-product h2.related_products_title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+        $custom .= '.single-product div.related-title-bottom-svg .related_title_bottom_svg_line { stroke: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
 	}
 
 	// Body text color
@@ -302,6 +310,20 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.woocommerce #reviews #comments ol.commentlist li { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
 		$custom .= '.woocommerce #review_form #respond .form-submit input { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.product .post-bottom-svg { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.single-product div.single_product_top_svg { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.single-product div.single_product_wrapper { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.single-product div.single_product_bottom_svg { fill:' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.single-product div.related-title-top-svg { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.single-product h2.related_products_title { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.single-product div.related-title-bottom-svg { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 	}
 
 	// Entry more

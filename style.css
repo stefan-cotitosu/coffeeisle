@@ -796,7 +796,6 @@ form.comment-form p label {
 
 .product .post-bottom-svg {
     bottom: -27px;
-    background-color: #ffffff;
 }
 
 .woocommerce ul.products li.product .onsale,
@@ -904,35 +903,21 @@ form.comment-form p label {
 
 .single-product div.single_product_top_svg {
     top: -90px;
-
-    background-color: #fff;
 }
 
 .single-product div.single_product_wrapper {
     position: relative;
     padding: 43px 93px 107px 95px;
-
-    background-color: #fff
 }
 
 .single-product div.single_product_bottom_svg {
     left: 0;
     bottom: -91px;
-
-
-    fill: #fff;
-    background-color: #f8f9fb;
 }
 
 .single-product div.single_product_bottom_svg .single_product_bottom_svg_line {
     stroke-width: 3;
-
-    stroke: #d1b586;
 }
-
-
-/*single_product_bottom_svg*/
-/*single_product_bottom_svg_line*/
 
 .single-product .product .onsale {
     display: none;
@@ -956,17 +941,14 @@ form.comment-form p label {
 }
 
 .single-product p.price {
-    /*color: #333333;*/
     margin: 0 0 30px 8px;
 }
 
 .single-product p.price del,
 .single-product p.price ins {
-    /*color: #333333;*/
 }
 
 .single-product .price .woocommerce-Price-amount {
-    /*color: #333333;*/
     position: relative;
     font-family: 'Lora', serif;
     font-weight: 700;
@@ -1065,7 +1047,6 @@ form.comment-form p label {
 
 .woocommerce div.product .woocommerce-tabs ul.tabs {
     padding: 0;
-    /*border-bottom: 1px solid;*/
     margin: 0;
 }
 
@@ -1233,7 +1214,6 @@ form.comment-form p label {
     margin: 20px 0 14px;
 }
 
-
 /* Related products */
 .related_products_title_wrapper {
     position: relative;
@@ -1241,8 +1221,6 @@ form.comment-form p label {
 
 .single-product div.related-title-top-svg {
     bottom: 39px;
-
-    background-color: #fff;
 }
 
 .single-product h2.related_products_title {
@@ -1251,22 +1229,14 @@ form.comment-form p label {
     line-height: 40.55px;
     text-align: center;
     margin: 200px 0 130px;
-
-
-    color: #d1b586;
-    background-color: #fff;
 }
 
 .single-product div.related-title-bottom-svg {
     bottom: -90px;
-
-    background-color: #fff
 }
 
 .single-product div.related-title-bottom-svg .related_title_bottom_svg_line {
     stroke-width: 3;
-
-    stroke: #d1b586;
 }
 
 .single-product section.related>h2 {
