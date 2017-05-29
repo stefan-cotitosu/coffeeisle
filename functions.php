@@ -896,6 +896,9 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 // Remove reviews on single product page
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
 
+// Remove upsells on single product page
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
+
 /**
  * Show quantity text before quantity form
  */
@@ -1048,9 +1051,9 @@ function woo_after_single_product_summary() {
 function woo_before_single_product() {
 	echo '<p style="color:red;">Before Single Product</p>';
 }
-add_action( 'woocommerce_before_single_product', 'woo_before_single_product' );
+//add_action( 'woocommerce_before_single_product', 'woo_before_single_product' );
 
 function woo_after_single_product() {
 	echo '<p style="color:red;">After Single Product</p>';
 }
-add_action( 'woocommerce_after_single_product', 'woo_after_single_product' );
+//add_action( 'woocommerce_after_single_product', 'woo_after_single_product' );
