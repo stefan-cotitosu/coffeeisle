@@ -920,10 +920,28 @@ function oblique_coffeeshop_related_products( $args ) {
 add_filter( 'woocommerce_output_related_products_args', 'oblique_coffeeshop_related_products' );
 
 /**
+ * Single Product Wrapper
+ */
+function oblique_coffeeshop_single_product_wrapper() {
+    ?>
+        <div class="svg-container svg-block single_product_top_svg">
+            <?php do_action( 'single_product_top_svg' ); ?>
+        </div>
+        <div class="single_product_wrapper">
+    <?php
+}
+add_action( 'woocommerce_before_single_product_summary', 'oblique_coffeeshop_single_product_wrapper' );
+
+/**
  * Related Products Title
  */
 function oblique_coffeeshop_related_products_title() {
     ?>
+        <div class="svg-container svg-block single_product_bottom_svg">
+            <?php do_action( 'single_product_bottom_svg' ); ?>
+        </div>
+    </div> <!-- Single Product Wrapper -->
+
     <div class="related_products_title_wrapper">
         <div class="svg-container svg-block related-title-top-svg">
                 <?php do_action( 'related_products_title_before' ); ?>
@@ -938,6 +956,30 @@ function oblique_coffeeshop_related_products_title() {
     <?php
 }
 add_action( 'woocommerce_after_single_product_summary', 'oblique_coffeeshop_related_products_title' );
+
+/**
+ * Single Product Top SVG
+ */
+function oblique_coffeeshop_single_product_top_svg() {
+	oblique_svg_3();
+}
+add_action( 'single_product_top_svg', 'oblique_coffeeshop_single_product_top_svg' );
+
+/**
+ * Single Product Bottom SVG
+ */
+function oblique_coffeeshop_single_product_bottom_svg() {
+	echo '
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1950 150">
+		  <g transform="translate(0,-902.36218)"/>
+		  <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z" />
+		  <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"/>
+		  <path d="M 0,150 0,0 1925,0"/>
+		  <line x1="1950" y1="0" x2="0" y2="150" width="100%" height="50" class="single_product_bottom_svg_line" />
+		</svg>
+	';
+}
+add_action( 'single_product_bottom_svg', 'oblique_coffeeshop_single_product_bottom_svg' );
 
 /**
  * Related Products Title Top SVG
@@ -996,7 +1038,7 @@ add_action( 'related_products_title_after', 'oblique_coffeeshop_related_title_bo
 function woo_before_single_product_summary() {
 	echo '<p style="color:red;">Before Single Product Summary</p>';
 }
-add_action( 'woocommerce_before_single_product_summary', 'woo_before_single_product_summary' );
+//add_action( 'woocommerce_before_single_product_summary', 'woo_before_single_product_summary' );
 
 function woo_after_single_product_summary() {
 	echo '<p style="color:red;">After Single Product Summary</p>';

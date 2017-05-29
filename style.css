@@ -899,6 +899,42 @@ form.comment-form p label {
 }
 
 /* Single Product */
+.single-product .product {
+    margin: 30px 0 0;
+}
+
+.single-product div.single_product_top_svg {
+    top: -90px;
+
+    background-color: #fff;
+}
+
+.single-product div.single_product_wrapper {
+    position: relative;
+    padding: 43px 93px 107px 95px;
+
+    background-color: #fff
+}
+
+.single-product div.single_product_bottom_svg {
+    left: 0;
+    bottom: -91px;
+
+
+    fill: #fff;
+    background-color: #f8f9fb;
+}
+
+.single-product div.single_product_bottom_svg .single_product_bottom_svg_line {
+    stroke-width: 3;
+
+    stroke: #d1b586;
+}
+
+
+/*single_product_bottom_svg*/
+/*single_product_bottom_svg_line*/
+
 .single-product .product .onsale {
     display: none;
 }
