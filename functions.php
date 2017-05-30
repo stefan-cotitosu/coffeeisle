@@ -82,6 +82,10 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
 		$custom .= '.single-product div.single_product_bottom_svg { background-color: #' . esc_attr( $background_color ) . ';}' . "\n";
 
+		$custom .= '.woocommerce-page div.woocommerce-info { background-color: #' . esc_attr( $background_color ) . ';}' . "\n";
+
+		$custom .= '.woocommerce-page div.woocommerce form.woocommerce-checkout div#payment { background: #' . esc_attr( $background_color ) . ';}' . "\n";
+
     }
 
     // Primary color
@@ -123,6 +127,16 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.woocommerce-cart div.cart_totals div.wc-proceed-to-checkout a:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
 		$custom .= '.woocommerce-cart form.woocommerce-cart-form input[type="submit"]:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+
+		$custom .= '.woocommerce-page div.woocommerce-message a.button:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+
+		$custom .= '.woocommerce-page form.woocommerce-form-login input[type="submit"]:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+
+		$custom .= '.woocommerce-cart p.return-to-shop a.button:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+
+		$custom .= '.woocommerce-page div.woocommerce form.woocommerce-checkout div#payment div.place-order input[type="submit"]:hover { background-color: ' .
+		           esc_attr( $primary_color ) . ';}' . "\n";
+		$custom .= '.woocommerce-page a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 	}
 
 	$entry_titles = get_theme_mod('entry_titles', '#d1b586' );
@@ -217,6 +231,27 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
         $custom .= '.woocommerce-cart form.woocommerce-cart-form input[type="submit"] { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
         $custom .= '.woocommerce-cart form.woocommerce-cart-form input[type="submit"]:disabled:hover { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+        $custom .= '.woocommerce-page div.woocommerce-message { border-top-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+        $custom .= '.woocommerce-page div.woocommerce-message:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+        $custom .= '.woocommerce-page div.woocommerce-message a.button { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+        $custom .= '.woocommerce-page form.woocommerce-form-login input[type="submit"] { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+        $custom .= '.woocommerce form .form-row .required { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+        $custom .= '.woocommerce-cart p.return-to-shop a.button { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+        $custom .= '.woocommerce-page div.woocommerce-info { border-top-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+        $custom .= '.woocommerce-page div.woocommerce-info:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+        $custom .= '.woocommerce-page div.woocommerce form.woocommerce-checkout div#payment ul.payment_methods { border-bottom: 1px solid ' .
+                   esc_attr( $entry_titles ) . ';}' . "\n";
+        $custom .= '.woocommerce-page div.woocommerce form.woocommerce-checkout div#payment ul.payment_methods li.woocommerce-info { border-top-color: ' .
+                   esc_attr( $entry_titles ) . ';}' . "\n";
+        $custom .= '.woocommerce-page div.woocommerce form.woocommerce-checkout div#payment div.place-order input[type="submit"] { background-color: ' .
+                   esc_attr( $entry_titles ) . ';}' . "\n";
+        $custom .= '.woocommerce-page div.woocommerce form.woocommerce-checkout div#payment ul.payment_methods li.woocommerce-info:before { color: ' .
+                   esc_attr( $entry_titles ) . ';}' . "\n";
 
 	}
 
@@ -350,6 +385,18 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.woocommerce-cart form.woocommerce-cart-form input[type="submit"]:disabled:hover { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
 		$custom .= '.woocommerce div.product .woocommerce-tabs ul.tabs li.active { border-bottom: 1px solid ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.woocommerce-page div.woocommerce-message a.button { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.woocommerce-page form.woocommerce-form-login input[type="submit"] { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.woocommerce-cart p.return-to-shop a.button { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.woocommerce-page div.woocommerce form.woocommerce-checkout div#payment div.place-order input[type="submit"] { color: ' .
+		           esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.woocommerce-page div.woocommerce form.woocommerce-checkout div#payment ul.payment_methods li.woocommerce-info { background-color: ' .
+		           esc_attr( $entry_background ) . ';}' . "\n";
 
 	}
 
