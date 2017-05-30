@@ -78,9 +78,9 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 	if( !empty( $background_color ) ){
 		$custom .= 'div.svg-block{ fill: #'. esc_attr( $background_color ) .';}';
 
-		$custom .= '.single-sidebar .widget_calendar .calendar_wrap table td { background-color: ' . esc_attr( $background_color ) . ';}' . "\n";
+		$custom .= '.single-sidebar .widget_calendar .calendar_wrap table td { background-color: #' . esc_attr( $background_color ) . ';}' . "\n";
 
-		$custom .= '.single-product div.single_product_bottom_svg { background-color: ' . esc_attr( $background_color ) . ';}' . "\n";
+		$custom .= '.single-product div.single_product_bottom_svg { background-color: #' . esc_attr( $background_color ) . ';}' . "\n";
 
     }
 
@@ -118,7 +118,7 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
 		$custom .= '.single-product .single_add_to_cart_button:hover { background-color: ' . esc_attr( $primary_color ) . ' !important;}' . "\n";
 
-		$custom .= '.woocommerce #review_form #respond .form-submit input:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+		$custom .= '.woocommerce #review_form #respond .form-submit input[type="submit"]:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 	}
 
 	$entry_titles = get_theme_mod('entry_titles', '#d1b586' );
@@ -199,7 +199,7 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
 		$custom .= '.woocommerce .star-rating span { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
-		$custom .= '.woocommerce #review_form #respond .form-submit input { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.woocommerce #review_form #respond .form-submit input[type="submit"] { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
         $custom .= '.woocommerce #reviews #respond #reply-title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
@@ -309,7 +309,7 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
 		$custom .= '.woocommerce #reviews #comments ol.commentlist li { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
-		$custom .= '.woocommerce #review_form #respond .form-submit input { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+		$custom .= '.woocommerce #review_form #respond .form-submit input[type="submit"] { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
 		$custom .= '.product .post-bottom-svg { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
@@ -324,6 +324,9 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.single-product h2.related_products_title { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
 		$custom .= '.single-product div.related-title-bottom-svg { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.woocommerce div.product .woocommerce-tabs ul.tabs li.active { border-bottom: 1px solid ' . esc_attr( $entry_background ) . ';}' . "\n";
+
 	}
 
 	// Entry more
