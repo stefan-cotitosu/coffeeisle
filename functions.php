@@ -119,6 +119,10 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.single-product .single_add_to_cart_button:hover { background-color: ' . esc_attr( $primary_color ) . ' !important;}' . "\n";
 
 		$custom .= '.woocommerce #review_form #respond .form-submit input[type="submit"]:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+
+		$custom .= '.woocommerce-cart div.cart_totals div.wc-proceed-to-checkout a:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+
+		$custom .= '.woocommerce-cart form.woocommerce-cart-form input[type="submit"]:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 	}
 
 	$entry_titles = get_theme_mod('entry_titles', '#d1b586' );
@@ -209,6 +213,11 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
         $custom .= '.single-product div.related-title-bottom-svg .related_title_bottom_svg_line { stroke: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
+        $custom .= '.woocommerce-cart div.cart_totals div.wc-proceed-to-checkout a { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+        $custom .= '.woocommerce-cart form.woocommerce-cart-form input[type="submit"] { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+        $custom .= '.woocommerce-cart form.woocommerce-cart-form input[type="submit"]:disabled:hover { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
 	}
 
 	// Body text color
@@ -234,6 +243,11 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.single-sidebar .widget_recent_entries ul li a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
 
 		$custom .= '.woocommerce-page nav.navigation .page-numbers { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
+
+		$custom .= '.woocommerce div.product .woocommerce-tabs { border: 1px solid ' . esc_attr( $body_text_color ) . ';}' . "\n";
+		$custom .= '.woocommerce div.product .woocommerce-tabs ul.tabs li { border: none; border-right: 1px solid ' . esc_attr( $body_text_color ) . ';}' . "\n";
+		$custom .= '.woocommerce div.product .woocommerce-tabs .woocommerce-Tabs-panel { border-top: 1px solid ' . esc_attr( $body_text_color ) . ';}' . "\n";
+
     }
 
 	// Footer color
@@ -324,6 +338,16 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.single-product h2.related_products_title { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
 		$custom .= '.single-product div.related-title-bottom-svg { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.woocommerce-cart div.cross-sells ul.products li.product div.post-svg { fill: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.woocommerce-cart div.cross-sells ul.products li.product div.post-bottom-svg { fill: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.woocommerce-cart div.cart_totals div.wc-proceed-to-checkout a { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.woocommerce-cart form.woocommerce-cart-form input[type="submit"] { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+		$custom .= '.woocommerce-cart form.woocommerce-cart-form input[type="submit"]:disabled { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+		$custom .= '.woocommerce-cart form.woocommerce-cart-form input[type="submit"]:disabled:hover { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
 		$custom .= '.woocommerce div.product .woocommerce-tabs ul.tabs li.active { border-bottom: 1px solid ' . esc_attr( $entry_background ) . ';}' . "\n";
 
@@ -834,6 +858,9 @@ remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 3
 
 // Remove description on category page
 remove_action('woocommerce_archive_description','woocommerce_taxonomy_archive_description',10);
+
+// Remove cross sells
+//remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 
 /**
  * Remove page title

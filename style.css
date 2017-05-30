@@ -990,7 +990,7 @@ form.comment-form p label {
 
 .single-product form.cart p.quantity-title {
     position: absolute;
-    top: 2%;
+    top: 1%;
     left: 0;
     display: inline-block;
     margin: 0;
@@ -1015,6 +1015,26 @@ form.comment-form p label {
     font-weight: 600;
     font-size: 15px;
     line-height: 16.67px;
+}
+
+.woocommerce div.product form.cart table.variations {
+    margin: 40px 0 0;
+}
+
+.woocommerce div.product form.cart table.variations td.label {
+    display: block;
+    color: #333333;
+    font-family: 'Athiti', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+    text-transform: capitalize;
+    padding: 4px 0 0;
+}
+
+.woocommerce div.product form.cart table.variations td.value {
+    display: block;
+    margin: 0;
 }
 
 .single-product form.cart .single-product-add-cart-icon {
@@ -1044,7 +1064,7 @@ form.comment-form p label {
 }
 
 .woocommerce div.product .woocommerce-tabs {
-    border: 1px solid;
+    /*border: 1px solid;*/
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs {
@@ -1060,8 +1080,8 @@ form.comment-form p label {
     border-radius: 0;
     padding: 14px 31px 10px 30px;
     margin: 0;
-    border: none;
-    border-right: 1px solid;
+    /*border: none;*/
+    /*border-right: 1px solid;*/
     float: left;
 }
 
@@ -1072,10 +1092,11 @@ form.comment-form p label {
 
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
     background-color: inherit;
+    /*border-bottom: 1px solid #fff;*/
 }
 
 .woocommerce div.product .woocommerce-tabs .woocommerce-Tabs-panel {
-    border-top: 1px solid;
+    /*border-top: 1px solid;*/
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs li.description_tab a,
@@ -1273,6 +1294,33 @@ form.comment-form p label {
     margin-top: -7.5%;
 }
 
+/* Cart Page */
+.woocommerce-cart header.entry-header h1.entry-title {
+    font-family: 'Lora', serif;
+    font-size: 35px;
+    line-height: 44px;
+}
+
+.woocommerce table.cart td.actions .input-text,
+.woocommerce-page #content table.cart td.actions .input-text,
+.woocommerce-page table.cart td.actions .input-text {
+    width: 105px;
+}
+
+.woocommerce-cart form.woocommerce-cart-form input[type="submit"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-family: 'Lora', serif;
+}
+
+.woocommerce-cart div.cart_totals div.wc-proceed-to-checkout a {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-family: 'Lora', serif;
+}
+
 /* Responsive */
 @media only screen and (max-width: 1199px) {
 
@@ -1338,6 +1386,7 @@ form.comment-form p label {
     .single-product h2.related_products_title {
         margin: 115px 0 100px;
     }
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -1393,6 +1442,7 @@ form.comment-form p label {
     .single-product h2.related_products_title {
         margin: 100px 0 70px;
     }
+
 }
 
 @media only screen and (max-width: 767px) {
@@ -1615,6 +1665,15 @@ form.comment-form p label {
 
     .single-product h2.related_products_title {
         margin: 45px 0 30px;
+    }
+
+    .woocommerce div.product form.cart table.variations td.label {
+        display: block;
+    }
+
+    .woocommerce div.product form.cart table.variations td.value {
+        display: block;
+        margin: 0;
     }
 
 }
