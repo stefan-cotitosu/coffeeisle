@@ -903,7 +903,8 @@ form.comment-form p label {
 }
 
 .single-product div.single_product_top_svg {
-    top: -90px;
+    position: relative;
+    top: 0;
 }
 
 .single-product div.single_product_wrapper {
@@ -913,7 +914,7 @@ form.comment-form p label {
 
 .single-product div.single_product_bottom_svg {
     left: 0;
-    bottom: -91px;
+    bottom: -90px;
 }
 
 .single-product div.single_product_bottom_svg .single_product_bottom_svg_line {
@@ -1237,7 +1238,7 @@ form.comment-form p label {
     font-size: 28px;
     line-height: 40.55px;
     text-align: center;
-    margin: 185px 0 130px;
+    margin: 185px 0 160px;
 }
 
 .single-product div.related-title-bottom-svg {
@@ -1279,20 +1280,20 @@ form.comment-form p label {
         bottom: -22px;
     }
 
-    .single-product div.single_product_top_svg {
-        top: -75px;
-    }
-
     .single-product div.single_product_bottom_svg {
         bottom: -74px;
     }
 
     .single-product div.related-title-bottom-svg {
-        bottom: -75px;
+        bottom: -74px;
     }
 
     .single-product section.related ul.products li.product .post-bottom-svg {
         bottom: -16px;
+    }
+
+    .single-product h2.related_products_title {
+        margin: 150px 0 130px;
     }
 
 }
@@ -1314,10 +1315,6 @@ form.comment-form p label {
         bottom: -16px;
     }
 
-    .single-product div.single_product_top_svg {
-        top: -56px;
-    }
-
     .single-product div.single_product_bottom_svg {
         bottom: -57px;
     }
@@ -1336,6 +1333,10 @@ form.comment-form p label {
 
     .woocommerce #reviews #comments ol.commentlist li {
         padding: 25px 25px 25px 0px;
+    }
+
+    .single-product h2.related_products_title {
+        margin: 115px 0 100px;
     }
 }
 
@@ -1361,10 +1362,6 @@ form.comment-form p label {
     .woocommerce ul.products li.product:nth-of-type(2n+2),
     .woocommerce-page ul.products li.product:nth-of-type(2n+2) {
         margin-top: -4.5%;
-    }
-
-    .single-product div.single_product_top_svg {
-        top: -57px;
     }
 
     .single-product div.single_product_bottom_svg {
@@ -1394,7 +1391,7 @@ form.comment-form p label {
     }
 
     .single-product h2.related_products_title {
-        margin: 90px 0 70px;
+        margin: 100px 0 70px;
     }
 }
 
@@ -1455,10 +1452,6 @@ form.comment-form p label {
         margin-top: -4.5%;
     }
 
-    .single-product div.single_product_top_svg {
-        top: -44px;
-    }
-
     .single-product div.single_product_bottom_svg {
         bottom: -43px;
     }
@@ -1514,10 +1507,6 @@ form.comment-form p label {
         padding: 25px 10px;
     }
 
-    .single-product div.single_product_top_svg {
-        top: -34px;
-    }
-
     .single-product div.single_product_bottom_svg {
         bottom: -33px;
     }
@@ -1547,6 +1536,10 @@ form.comment-form p label {
 
     .single-product div.single_product_wrapper {
         padding: 43px 30px 50px 30px;
+    }
+
+    .single-product h2.related_products_title {
+        margin: 65px 0 50px;
     }
 
 }
@@ -1608,10 +1601,6 @@ form.comment-form p label {
         padding: 25px 10px;
     }
 
-    .single-product div.single_product_top_svg {
-        top: -21px;
-    }
-
     .single-product div.single_product_bottom_svg {
         bottom: -21px;
     }
@@ -1622,6 +1611,10 @@ form.comment-form p label {
 
     .single-product section.related ul.products li.product {
         width: 100%;
+    }
+
+    .single-product h2.related_products_title {
+        margin: 45px 0 30px;
     }
 
 }
