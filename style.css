@@ -806,7 +806,6 @@ form.comment-form p label {
 }
 
 .woocommerce-page ul.products li.product .price {
-    color: #333333;
     text-align: center;
     margin-bottom: 19px;
     font-family: 'Lora', serif;
@@ -908,11 +907,6 @@ form.comment-form p label {
     margin: 0 0 38px;
 }
 
-.woocommerce div.product p.price,
-.woocommerce div.product span.price {
-    color: #333333;
-}
-
 .single-product p.price {
     margin: 0 0 30px 8px;
 }
@@ -965,7 +959,6 @@ form.comment-form p label {
     left: 0;
     display: inline-block;
     margin: 0;
-    color: #333333;
     font-family: 'Athiti', sans-serif;
     font-weight: 600;
     font-size: 15px;
@@ -979,7 +972,6 @@ form.comment-form p label {
     display: inline-block;
     float: none !important;
     margin: 0;
-    color: #333333;
 }
 
 .single-product form.cart div.quantity input {
@@ -994,7 +986,6 @@ form.comment-form p label {
 
 .woocommerce div.product form.cart table.variations td.label {
     display: block;
-    color: #333333;
     font-family: 'Athiti', sans-serif;
     font-weight: 600;
     font-size: 15px;
@@ -1094,7 +1085,6 @@ form.comment-form p label {
 
 .woocommerce div.product .woocommerce-tabs div.woocommerce-Tabs-panel--description h2,
 .woocommerce div.product .woocommerce-tabs div.woocommerce-Tabs-panel--reviews h2 {
-    color: #333333;
     font-family: 'Lora', serif;
     font-size: 20px;
     font-weight: 700;

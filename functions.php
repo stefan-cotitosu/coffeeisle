@@ -139,6 +139,32 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.woocommerce-page a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 	}
 
+	// Secondary Color
+    $secondary_color = get_theme_mod( 'secondary_color', '#333333' );
+	if ( ! empty( $secondary_color ) ) {
+
+        $custom .= '.woocommerce-page ul.products li.product .price { color: ' . esc_attr( $secondary_color ) . ';}' . "\n";
+
+        $custom .= '.woocommerce div.product p.price, .woocommerce div.product span.price { color: ' . esc_attr( $secondary_color ) . ';}' . "\n";
+        $custom .= '.single-product form.cart p.quantity-title { color: ' . esc_attr( $secondary_color ) . ';}' . "\n";
+        $custom .= '.single-product form.cart div.quantity { color: ' . esc_attr( $secondary_color ) . ';}' . "\n";
+        $custom .= '.woocommerce div.product form.cart table.variations td.label { color: ' . esc_attr( $secondary_color ) . ';}' . "\n";
+        $custom .= '.woocommerce div.product .woocommerce-tabs div.woocommerce-Tabs-panel--description h2 { color: ' . esc_attr( $secondary_color ) . ';}' . "\n";
+        $custom .= '.woocommerce div.product .woocommerce-tabs div.woocommerce-Tabs-panel--reviews h2 { color: ' . esc_attr( $secondary_color ) . ';}' . "\n";
+        $custom .= '.woocommerce div.product form.cart table.variations { color: ' . esc_attr( $secondary_color ) . ';}' . "\n";
+
+        $custom .= '.woocommerce-cart div.cross-sells>h2 { color: ' . esc_attr( $secondary_color ) . ';}' . "\n";
+        $custom .= '.woocommerce-cart div.cart_totals>h2 { color: ' . esc_attr( $secondary_color ) . ';}' . "\n";
+
+        $custom .= '.woocommerce-checkout div.woocommerce-billing-fields>h3 { color: ' . esc_attr( $secondary_color ) . ';}' . "\n";
+        $custom .= '.woocommerce-checkout div.woocommerce-additional-fields>h3 { color: ' . esc_attr( $secondary_color ) . ';}' . "\n";
+        $custom .= '.woocommerce-checkout form.woocommerce-checkout h3#order_review_heading { color: ' . esc_attr( $secondary_color ) . ';}' . "\n";
+
+        $custom .= '.woocommerce-account div.woocommerce>h2 { color: ' . esc_attr( $secondary_color ) . ';}' . "\n";
+
+    }
+
+    // Entry Color
 	$entry_titles = get_theme_mod('entry_titles', '#d1b586' );
 	if ( ! empty( $entry_titles ) ) {
 		$rgba 	= oblique_hex2rgba( $entry_titles, 0.3 );
@@ -468,6 +494,26 @@ function oblique_coffeeshop_customize_register( $wp_customize ) {
 		)
 	);
 
+	// Secondary Color
+	$wp_customize->add_setting(
+		'secondary_color',
+		array(
+			'default'           => '#333333',
+			'sanitize_callback' => 'sanitize_hex_color'
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'secondary_color',
+			array(
+				'label'     => esc_html__('Secondary color', 'oblique_coffeeshop'),
+				'section'   => 'colors',
+				'priority'  => 12
+			)
+		)
+	);
+
 }
 add_action( 'customize_register', 'oblique_coffeeshop_customize_register', 20 );
 
@@ -561,6 +607,31 @@ function oblique_coffeeshop_social_color() {
     return '#f8f9fb';
 }
 add_filter( 'oblique_social_color', 'oblique_coffeeshop_social_color' );
+
+/**
+ * Color
+ * Color darken or lighten
+ */
+function oblique_coffeeshop_darken_color($color, $filter) {
+
+	$filter = max(-255, min(255, $filter));
+
+	$color = str_replace('#', '', $color);
+	if (strlen($color) == 3) {
+		$color = str_repeat(substr($color,0,1), 2).str_repeat(substr($color,1,1), 2).str_repeat(substr($color,2,1), 2);
+	}
+
+	$color_rgb = str_split($color, 2);
+	$darken_color = '#';
+
+	foreach ($color_rgb as $rgb_pair) {
+		$rgb_pair   = hexdec($rgb_pair); // Convert to decimal
+		$rgb_pair   = max(0,min(255,$rgb_pair + $filter)); // Adjust color
+		$darken_color .= str_pad(dechex($rgb_pair), 2, '0', STR_PAD_LEFT); // Make two char hex code
+	}
+
+	return $darken_color;
+}
 
 /**
  * Image
@@ -1038,24 +1109,29 @@ add_action( 'woocommerce_before_single_product_summary', 'oblique_coffeeshop_sin
  * Related Products Title
  */
 function oblique_coffeeshop_related_products_title() {
+
+	global $product;
+	$related_products = wc_get_related_products( $product->get_id(), 1, $product->get_upsell_ids() );
+
     ?>
         <div class="svg-container svg-block single_product_bottom_svg">
             <?php do_action( 'single_product_bottom_svg' ); ?>
         </div>
     </div> <!-- Single Product Wrapper -->
 
+    <?php if( $related_products ) : ?>
     <div class="related_products_title_wrapper">
         <div class="svg-container svg-block related-title-top-svg">
                 <?php do_action( 'related_products_title_before' ); ?>
         </div>
-        <?php
-        echo '<h2 class="related_products_title">Suggested Items</h2>';
-        ?>
+        <h2 class="related_products_title"><?php echo __( 'Suggested Items', 'oblique_coffeeshop' ); ?></h2>
         <div class="svg-container svg-block related-title-bottom-svg">
             <?php do_action( 'related_products_title_after' ); ?>
         </div>
     </div>
     <?php
+    endif;
+
 }
 add_action( 'woocommerce_after_single_product_summary', 'oblique_coffeeshop_related_products_title' );
 
@@ -1156,3 +1232,6 @@ function woo_after_single_product() {
 	echo '<p style="color:red;">After Single Product</p>';
 }
 //add_action( 'woocommerce_after_single_product', 'woo_after_single_product' );
+
+
+
