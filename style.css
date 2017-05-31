@@ -836,6 +836,7 @@ form.comment-form p label {
     font-size: 12px;
 }
 
+.woocommerce-page ul.products li.product a.button,
 .woocommerce-page ul.products li.product a.add_to_cart_button {
     border: none;
     margin: 0;
@@ -1196,8 +1197,8 @@ form.comment-form p label {
 }
 
 .single-product div.related-title-top-svg {
-    bottom: 39px;
-    z-index: -1;
+    position: relative;
+    top: 90px;
 }
 
 .single-product h2.related_products_title {
@@ -1205,11 +1206,12 @@ form.comment-form p label {
     font-size: 28px;
     line-height: 40.55px;
     text-align: center;
-    margin: 185px 0 160px;
+    margin: 90px 0 40px;
 }
 
 .single-product div.related-title-bottom-svg {
-    bottom: -90px;
+    position: relative;
+    bottom: 40px;
 }
 
 .single-product div.related-title-bottom-svg .related_title_bottom_svg_line {
@@ -1320,16 +1322,20 @@ form.comment-form p label {
         bottom: -74px;
     }
 
+    .single-product div.related-title-top-svg {
+        top: 72px;
+    }
+
+    .single-product h2.related_products_title {
+        margin: 72px 0 30px;
+    }
+
     .single-product div.related-title-bottom-svg {
-        bottom: -74px;
+        bottom: 30px;
     }
 
     .single-product section.related ul.products li.product .post-bottom-svg {
         bottom: -16px;
-    }
-
-    .single-product h2.related_products_title {
-        margin: 150px 0 130px;
     }
 
 }
@@ -1355,8 +1361,16 @@ form.comment-form p label {
         bottom: -57px;
     }
 
+    .single-product div.related-title-top-svg {
+        top: 58px;
+    }
+
+    .single-product h2.related_products_title {
+        margin: 58px 0 10px;
+    }
+
     .single-product div.related-title-bottom-svg {
-        bottom: -57px;
+        bottom: 10px;
     }
 
     .single-product section.related ul.products li.product .post-bottom-svg {
@@ -1369,10 +1383,6 @@ form.comment-form p label {
 
     .woocommerce #reviews #comments ol.commentlist li {
         padding: 25px 25px 25px 0px;
-    }
-
-    .single-product h2.related_products_title {
-        margin: 115px 0 100px;
     }
 
 }
@@ -1405,8 +1415,16 @@ form.comment-form p label {
         bottom: -57px;
     }
 
+    .single-product div.related-title-top-svg {
+        top: 57px;
+    }
+
+    .single-product h2.related_products_title {
+        margin: 57px 0 0;
+    }
+
     .single-product div.related-title-bottom-svg {
-        bottom: -56px;
+        bottom: 0px;
     }
 
     .single-product section.related ul.products li.product .post-bottom-svg {
@@ -1425,10 +1443,6 @@ form.comment-form p label {
 
     .single-product section.related ul.products li.product:nth-of-type(2n+2) {
         margin-top: -4.5%;
-    }
-
-    .single-product h2.related_products_title {
-        margin: 100px 0 70px;
     }
 
 }
@@ -1494,8 +1508,16 @@ form.comment-form p label {
         bottom: -43px;
     }
 
+    .single-product div.related-title-top-svg {
+        top: 43px;
+    }
+
+    .single-product h2.related_products_title {
+        margin: 43px 0 -10px;
+    }
+
     .single-product div.related-title-bottom-svg {
-        bottom: -43px;
+        bottom: -10px;
     }
 
     .single-product section.related ul.products li.product .post-bottom-svg {
@@ -1549,8 +1571,16 @@ form.comment-form p label {
         bottom: -33px;
     }
 
+    .single-product div.related-title-top-svg {
+        top: 35px;
+    }
+
+    .single-product h2.related_products_title {
+        margin: 35px 0 -5px;
+    }
+
     .single-product div.related-title-bottom-svg {
-        bottom: -33px;
+        bottom: -5px;
     }
 
     .woocommerce div.product .woocommerce-tabs ul.tabs li {
@@ -1574,10 +1604,6 @@ form.comment-form p label {
 
     .single-product div.single_product_wrapper {
         padding: 43px 30px 50px 30px;
-    }
-
-    .single-product h2.related_products_title {
-        margin: 65px 0 50px;
     }
 
 }
@@ -1643,16 +1669,20 @@ form.comment-form p label {
         bottom: -21px;
     }
 
+    .single-product div.related-title-top-svg {
+        top: 25px;
+    }
+
+    .single-product h2.related_products_title {
+        margin: 25px 0 -25px;
+    }
+
     .single-product div.related-title-bottom-svg {
-        bottom: -21px;
+        bottom: -25px;
     }
 
     .single-product section.related ul.products li.product {
         width: 100%;
-    }
-
-    .single-product h2.related_products_title {
-        margin: 45px 0 30px;
     }
 
     .woocommerce div.product form.cart table.variations td.label {

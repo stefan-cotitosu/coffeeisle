@@ -119,8 +119,9 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.single-sidebar .widget_recent_entries ul li a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
 		$custom .= '.woocommerce-page ul.products li.product a.add_to_cart_button:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+		$custom .= '.woocommerce-page ul.products li.product a.button:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
-		$custom .= '.single-product .single_add_to_cart_button:hover { background-color: ' . esc_attr( $primary_color ) . ' !important;}' . "\n";
+		$custom .= '.woocommerce button.button.alt:hover, .single-product .single_add_to_cart_button:hover { background: ' . esc_attr( $primary_color ) . ' !important;}' . "\n";
 
 		$custom .= '.woocommerce #review_form #respond .form-submit input[type="submit"]:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
@@ -231,10 +232,13 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.woocommerce-page ul.products li.product h2.woocommerce-loop-product__title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= '.woocommerce-page ul.products li.product a.add_to_cart_button { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.woocommerce-page ul.products li.product a.button { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= '.single-product h1.product_title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
-		$custom .= '.single-product .single_add_to_cart_button { background-color: ' . esc_attr( $entry_titles ) . ' !important;}' . "\n";
+		//$custom .= '.single-product .single_add_to_cart_button { background-color: ' . esc_attr( $entry_titles ) . ' !important;}' . "\n";
+        $current_selector = '.single-product .single_add_to_cart_button, .woocommerce button.button.alt';
+        $custom .= oblique_coffeeshop_gradient_on_button( $current_selector, $entry_titles );
 
 		$custom .= '.woocommerce div.product .woocommerce-tabs ul.tabs li.active a { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
@@ -375,6 +379,7 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
 		$custom .= '.woocommerce-page ul.products li.product a.add_to_cart_button { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 		$custom .= '.single-product form.cart p.single-product-add-cart-icon { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+		$custom .= '.woocommerce-page ul.products li.product a.button { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
 		$custom .= '.single-product .single_add_to_cart_button { color: ' . esc_attr( $entry_background ) . ' !important;}' . "\n";
 
@@ -423,6 +428,8 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
 		$custom .= '.woocommerce-page div.woocommerce form.woocommerce-checkout div#payment ul.payment_methods li.woocommerce-info { background-color: ' .
 		           esc_attr( $entry_background ) . ';}' . "\n";
+
+
 
 	}
 
@@ -631,6 +638,28 @@ function oblique_coffeeshop_darken_color($color, $filter) {
 	}
 
 	return $darken_color;
+}
+
+/**
+ * Color
+ * Apply gradient on buttons
+ *
+ * @param $selector - background-color
+ * @param $color - -darken/lighten color filter
+ */
+function oblique_coffeeshop_gradient_on_button( $selector, $color ) {
+
+	$btn_gradient_style = '';
+
+	$new_color = oblique_coffeeshop_darken_color( $color, 10 );
+
+	$btn_gradient_style .= $selector . ' { background: ' .$color . ';' . "\n";
+	$btn_gradient_style .= ' background: -moz-linear-gradient(top, ' . $color . ' 0%, ' . $new_color . ' 100%);' . "\n";
+	$btn_gradient_style .= ' background: -webkit-linear-gradient(top, ' . $color . ' 0%,' . $new_color . ' 100%);' . "\n";
+	$btn_gradient_style .= ' background: linear-gradient(to bottom, ' . $color . ' 0%,' . $new_color. ' 100%);' . "\n";
+	$btn_gradient_style .= " filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='" . $color . "', endColorstr='" . $new_color . "',GradientType=0 ); }" . "\n";
+
+	return $btn_gradient_style;
 }
 
 /**
@@ -1182,56 +1211,4 @@ function oblique_coffeeshop_related_title_bottom_svg() {
 	';
 }
 add_action( 'related_products_title_after', 'oblique_coffeeshop_related_title_bottom_svg' );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//function woo_single_product_before_main_content() {
-//	echo '<h2 style="color:red;">Before Main Content</h2>';
-//}
-//add_action( 'woocommerce_before_main_content', 'woo_single_product_before_main_content' );
-
-//function woo_single_product_after_main_content() {
-//	echo '<h2 style="color:red;">After Main Content</h2>';
-//}
-//add_action( 'woocommerce_after_main_content', 'woo_single_product_after_main_content' );
-
-
-
-function woo_before_single_product_summary() {
-	echo '<p style="color:red;">Before Single Product Summary</p>';
-}
-//add_action( 'woocommerce_before_single_product_summary', 'woo_before_single_product_summary' );
-
-function woo_after_single_product_summary() {
-	echo '<p style="color:red;">After Single Product Summary</p>';
-}
-//add_action( 'woocommerce_after_single_product_summary', 'woo_after_single_product_summary' );
-
-function woo_before_single_product() {
-	echo '<p style="color:red;">Before Single Product</p>';
-}
-//add_action( 'woocommerce_before_single_product', 'woo_before_single_product' );
-
-function woo_after_single_product() {
-	echo '<p style="color:red;">After Single Product</p>';
-}
-//add_action( 'woocommerce_after_single_product', 'woo_after_single_product' );
-
-
 
