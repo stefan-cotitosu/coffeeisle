@@ -99,3 +99,30 @@ function oblique_coffeeshop_get_woo_categories( $placeholder = true ) {
 	$oblique_coffeeshop_prod_categories_array['none'] = esc_html__( 'None', 'oblique-coffeeshop' );
 	return $oblique_coffeeshop_prod_categories_array;
 }
+
+/**
+ * Display alt shop page category name
+ */
+function oblique_coffeeshop_display_woo_cat_title( $woo_cat_name ) {
+
+    ?>
+
+    <div class="svg-container svg-block alt_shop_cat_title_top_svg">
+		<?php oblique_svg_3(); ?>
+    </div>
+    <h2 class="alt_shop_cat_title"><?php echo $woo_cat_name; ?></h2>
+    <div class="svg-container svg-block alt_shop_cat_title_bottom_svg">
+		<?php
+		echo '
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1890 150">
+			<g transform="translate(0,-902.36218)"/>
+			  <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"/>
+			  <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"/>
+			  <path d="m 1925,0 0,150 -1925,0"/>
+			  <line x1="1950" y1="0" x2="0" y2="150" width="100%" height="50" class="alt_shop_cat_title_bottom_svg_line" />
+		</svg>';
+        ?>
+    </div>
+
+    <?php
+}

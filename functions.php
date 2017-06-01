@@ -281,8 +281,10 @@ function oblique_coffeeshop_custom_styles( $custom ) {
         $custom .= '.single-product div.single_product_bottom_svg .single_product_bottom_svg_line { stroke: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
         $custom .= '.single-product h2.related_products_title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+        $custom .= '.woocommerce-page h2.alt_shop_cat_title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
         $custom .= '.single-product div.related-title-bottom-svg .related_title_bottom_svg_line { stroke: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+        $custom .= '.woocommerce-page div.alt_shop_cat_title_bottom_svg .alt_shop_cat_title_bottom_svg_line { stroke: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
         $custom .= '.woocommerce-cart div.cart_totals div.wc-proceed-to-checkout a { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
@@ -445,10 +447,13 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.single-product div.single_product_bottom_svg { fill:' . esc_attr( $entry_background ) . ';}' . "\n";
 
 		$custom .= '.single-product div.related-title-top-svg { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+		$custom .= '.woocommerce-page div.alt_shop_cat_title_top_svg { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
 		$custom .= '.single-product h2.related_products_title { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+		$custom .= '.woocommerce-page h2.alt_shop_cat_title { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
 		$custom .= '.single-product div.related-title-bottom-svg { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+		$custom .= '.woocommerce-page div.alt_shop_cat_title_bottom_svg { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
 		$custom .= '.woocommerce-cart div.cross-sells ul.products li.product div.post-svg { fill: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
@@ -1261,3 +1266,4 @@ add_action( 'related_products_title_after', 'oblique_coffeeshop_related_title_bo
 
 // Include template for alt shop page
 require_once get_stylesheet_directory() . '/woocommerce_template/functions.php';
+

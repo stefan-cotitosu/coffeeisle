@@ -14,9 +14,11 @@ get_header(); ?>
 		<?php
 
 		$section_1 = get_theme_mod('oblique_coffeeshop_featured_products_category');
-//		if( $term = get_term_by( 'id', $section_1, 'product_cat' ) ){
-//			var_dump($term->name);
-//		}
+
+		if( $category_name = get_term_by( 'id', $section_1, 'product_cat' ) ){
+			//var_dump($category_name->name);
+			oblique_coffeeshop_display_woo_cat_title( $category_name->name );
+		}
 
 		oblique_coffeeshop_display_woo_cat( $section_1 ); ?>
 	</div>

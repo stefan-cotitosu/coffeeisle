@@ -1180,11 +1180,13 @@ form.comment-form p label {
     position: relative;
 }
 
+.woocommerce-page div.alt_shop_cat_title_top_svg,
 .single-product div.related-title-top-svg {
     position: relative;
     top: 90px;
 }
 
+.woocommerce-page h2.alt_shop_cat_title,
 .single-product h2.related_products_title {
     font-family: 'Lora', serif;
     font-size: 28px;
@@ -1193,11 +1195,13 @@ form.comment-form p label {
     margin: 90px 0 40px;
 }
 
+.woocommerce-page div.alt_shop_cat_title_bottom_svg,
 .single-product div.related-title-bottom-svg {
     position: relative;
     bottom: 40px;
 }
 
+.woocommerce-page div.alt_shop_cat_title_bottom_svg .alt_shop_cat_title_bottom_svg_line,
 .single-product div.related-title-bottom-svg .related_title_bottom_svg_line {
     stroke-width: 3;
 }
@@ -1306,14 +1310,17 @@ form.comment-form p label {
         bottom: -74px;
     }
 
+    .woocommerce-page div.alt_shop_cat_title_top_svg,
     .single-product div.related-title-top-svg {
         top: 72px;
     }
 
+    .woocommerce-page h2.alt_shop_cat_title,
     .single-product h2.related_products_title {
         margin: 72px 0 30px;
     }
 
+    .woocommerce-page div.alt_shop_cat_title_bottom_svg,
     .single-product div.related-title-bottom-svg {
         bottom: 30px;
     }
@@ -1345,14 +1352,17 @@ form.comment-form p label {
         bottom: -57px;
     }
 
+    .woocommerce-page div.alt_shop_cat_title_top_svg,
     .single-product div.related-title-top-svg {
         top: 58px;
     }
 
+    .woocommerce-page h2.alt_shop_cat_title,
     .single-product h2.related_products_title {
         margin: 58px 0 10px;
     }
 
+    .woocommerce-page div.alt_shop_cat_title_bottom_svg,
     .single-product div.related-title-bottom-svg {
         bottom: 10px;
     }
@@ -1399,14 +1409,17 @@ form.comment-form p label {
         bottom: -57px;
     }
 
+    .woocommerce-page div.alt_shop_cat_title_top_svg,
     .single-product div.related-title-top-svg {
         top: 57px;
     }
 
+    .woocommerce-page h2.alt_shop_cat_title,
     .single-product h2.related_products_title {
         margin: 57px 0 0;
     }
 
+    .woocommerce-page div.alt_shop_cat_title_bottom_svg,
     .single-product div.related-title-bottom-svg {
         bottom: 0px;
     }
@@ -1492,14 +1505,17 @@ form.comment-form p label {
         bottom: -43px;
     }
 
+    .woocommerce-page div.alt_shop_cat_title_top_svg,
     .single-product div.related-title-top-svg {
         top: 43px;
     }
 
+    .woocommerce-page h2.alt_shop_cat_title,
     .single-product h2.related_products_title {
         margin: 43px 0 -10px;
     }
 
+    .woocommerce-page div.alt_shop_cat_title_bottom_svg,
     .single-product div.related-title-bottom-svg {
         bottom: -10px;
     }
@@ -1555,14 +1571,17 @@ form.comment-form p label {
         bottom: -33px;
     }
 
+    .woocommerce-page div.alt_shop_cat_title_top_svg,
     .single-product div.related-title-top-svg {
         top: 35px;
     }
 
+    .woocommerce-page h2.alt_shop_cat_title,
     .single-product h2.related_products_title {
         margin: 35px 0 -5px;
     }
 
+    .woocommerce-page div.alt_shop_cat_title_bottom_svg,
     .single-product div.related-title-bottom-svg {
         bottom: -5px;
     }
@@ -1653,14 +1672,17 @@ form.comment-form p label {
         bottom: -21px;
     }
 
+    .woocommerce-page div.alt_shop_cat_title_top_svg,
     .single-product div.related-title-top-svg {
         top: 25px;
     }
 
+    .woocommerce-page h2.alt_shop_cat_title,
     .single-product h2.related_products_title {
         margin: 25px 0 -25px;
     }
 
+    .woocommerce-page div.alt_shop_cat_title_bottom_svg,
     .single-product div.related-title-bottom-svg {
         bottom: -25px;
     }
