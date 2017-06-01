@@ -94,7 +94,13 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= 'div.entry-meta a:hover, h2.entry-title a:hover, div.widget-area a:hover, nav.social-navigation li a:hover, a.entry-content-link:hover { color:' . esc_attr( $primary_color ) . ';}' . "\n";
 		$rgba 	= oblique_hex2rgba( $primary_color, 0.3 );
 
+		//$custom .= 'a:hover { color: ' . esc_attr( $primary_color ) . ' !important;}' . "\n";
+
+        $custom .= '.home article.post div.post-inner a.entry-content-link:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+
 		$custom .= '.page .contact-details-list a:hover { color:' . esc_attr( $primary_color ) . ';}' . "\n";
+
+		$custom .= '.page div.comments-area ol.comment-list li.comment div.reply a.comment-reply-link:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
 		$custom .= '.entry-thumb:after { background-color:' . esc_attr( $rgba ) . ';}' . "\n";
 		$custom .= '.comment-form .form-submit input[type="submit"]:hover { background-color:' . esc_attr( $primary_color ) . ';}' . "\n";
@@ -137,7 +143,15 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
 		$custom .= '.woocommerce-page div.woocommerce form.woocommerce-checkout div#payment div.place-order input[type="submit"]:hover { background-color: ' .
 		           esc_attr( $primary_color ) . ';}' . "\n";
-		$custom .= '.woocommerce-page a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+
+		$custom .= '.woocommerce-page ul.products li.product a.added_to_cart:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+
+		$custom .= '.woocommerce-page form.woocomerce-form p.lost_password a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+
+		$custom .= '.woocommerce-page div.woocommerce-message a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+
+		$custom .= '.woocommerce-page div.woocommerce-info a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+
 	}
 
 	// Secondary Color
@@ -169,6 +183,11 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 	$entry_titles = get_theme_mod('entry_titles', '#d1b586' );
 	if ( ! empty( $entry_titles ) ) {
 		$rgba 	= oblique_hex2rgba( $entry_titles, 0.3 );
+
+		//$custom .= 'a { color: ' . esc_attr( $entry_titles ) . ' !important;}' . "\n";
+
+        $custom .= '.home article.post div.post-inner a.entry-content-link { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
 		$custom .= 'div.entry-thumb:after { background-color:' . esc_attr( $rgba ) . ';}' . "\n";
 
 		$custom .= '.pirate-forms-submit-button { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
@@ -176,11 +195,15 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.page div.entry-content li:first-of-type { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
         $custom .= '.page .contact-details-list a { color:' . esc_attr( $entry_titles ) . ';}' . "\n";
 
+        $custom .= '.page div.comments-area ol.comment-list li.comment div.reply a.comment-reply-link { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
 		$custom .= '.single_post_bottom_svg { stroke: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= '.comment-respond h3 { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
-		$custom .= 'h2.entry-title, h2.entry-title a, .entry-content a.entry-content-link { color:' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= 'h2.entry-title, h2.entry-title a, .entry-content a.entry-content-link { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		//$custom .= '.home div.post-inner div.entry-content>a.entry-content-link { color: ' . esc_attr( $entry_titles ) . ' !important;}' . "\n";
+
 	    $custom .= 'line.post-bottom-svg-line { stroke: '. esc_attr( $entry_titles ) . ';}' . "\n";
 	    $custom .= 'div.nav-links .current { background-color:'. esc_attr( $entry_titles ). ';}' . "\n";
 
@@ -192,6 +215,8 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.single a { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= '.single h2.comments-title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+        $custom .= '.page-header .page-title { color: ' . esc_attr( $entry_titles ) . ' !important;}' . "\n";
 
 		$custom .= '.single .comment-body .comment-author { color:' . esc_attr( $entry_titles ) . ';}' . "\n";
 
@@ -228,6 +253,8 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.page h2.comments-title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= '.page .comment-body .comment-author .fn { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+		$custom .= '.archive_title_svg { stroke: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= '.woocommerce-page ul.products li.product h2.woocommerce-loop-product__title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
@@ -283,6 +310,14 @@ function oblique_coffeeshop_custom_styles( $custom ) {
         $custom .= '.woocommerce-page div.woocommerce form.woocommerce-checkout div#payment ul.payment_methods li.woocommerce-info:before { color: ' .
                    esc_attr( $entry_titles ) . ';}' . "\n";
 
+        $custom .= '.woocommerce-page ul.products li.product a.added_to_cart { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+        $custom .= '.woocommerce-page form.woocomerce-form p.lost_password a { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+        $custom .= '.woocommerce-page div.woocommerce-message a { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+        $custom .= '.woocommerce-page div.woocommerce-info a { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
 	}
 
 	// Body text color
@@ -290,6 +325,10 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 	if ( ! empty( $body_text_color ) ) {
 
 	    $custom .= 'body { color: ' . esc_attr( $body_text_color ) . ' !important;}' . "\n";
+
+	    $custom .= 'form.comment-form p label { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
+
+	    $custom .= 'nav.posts-navigation div.nav-links .page-numbers { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
 
 	    $custom .= '.single .comment-body .comment-metadata a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
 
@@ -356,6 +395,8 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
 		$custom .= '.single-sidebar .widget_tag_cloud .tagcloud a:hover { color:  ' . esc_attr( $entry_background ) . ';}' . "\n";
 
+		$custom .= 'nav.posts-navigation div.nav-links .current { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
 		$custom .= '.page .hentry {background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
 		$custom .= '.page .single-post-svg {fill: ' . esc_attr( $entry_background ) . ' !important;}' . "\n";
@@ -366,11 +407,15 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
 		$custom .= '.page .comment-form input { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
+		$custom .= '.comment-form .form-submit input[type="submit"] { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
 		$custom .= '.page .comment-form textarea { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
 		$custom .= '.archive .page-header { background-color:' . esc_attr( $entry_background ) . ';}' . "\n";
 
 		$custom .= '.archive div.svg-container.svg-block.page-header-svg { fill:' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.woocommerce-page ul.products li.product a.button { color: ' . esc_attr( $entry_background ) . ' !important;}' . "\n";
 
 		$custom .= '.woocommerce ul.products li.product,' . ' .woocommerce-page ul.products li.product ' .
                    '{ background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
@@ -429,17 +474,19 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.woocommerce-page div.woocommerce form.woocommerce-checkout div#payment ul.payment_methods li.woocommerce-info { background-color: ' .
 		           esc_attr( $entry_background ) . ';}' . "\n";
 
+		$custom .= '.woocommerce-cart div.cart_totals div.wc-proceed-to-checkout a:hover { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
 
 
 	}
 
-	// Entry more
-	$entry_more_color = get_theme_mod( 'entry_more', '#d1b586');
-	if ( ! empty( $entry_more_color ) ) {
-		$custom .= '.entry-content-link { color:' . esc_attr( $entry_more_color ) . ';}' . "\n";
-
-		$custom .= '.entry-content-link:hover { color:' . esc_attr( $entry_more_color ) . ';}' . "\n";
-	}
+//	// Entry more
+//	$entry_more_color = get_theme_mod( 'entry_more', '#d1b586');
+//	if ( ! empty( $entry_more_color ) ) {
+//		$custom .= '.entry-content-link { color:' . esc_attr( $entry_more_color ) . ';}' . "\n";
+//
+//		$custom .= '.entry-content-link:hover { color:' . esc_attr( $entry_more_color ) . ';}' . "\n";
+//	}
 
 	// Menu icon/leave color
     $menu_icon_color = get_theme_mod( 'menu_icon_color', '#f8f9fb' );
@@ -1212,3 +1259,5 @@ function oblique_coffeeshop_related_title_bottom_svg() {
 }
 add_action( 'related_products_title_after', 'oblique_coffeeshop_related_title_bottom_svg' );
 
+// Include template for alt shop page
+require_once get_stylesheet_directory() . '/woocommerce_template/functions.php';

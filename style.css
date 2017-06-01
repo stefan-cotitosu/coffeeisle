@@ -17,11 +17,6 @@ body {
     font-family: 'Lora', serif;
 }
 
-.entry-title a,
-a {
-    color: #d1b586;
-}
-
 .grid-layout .hentry{
     width: 525px;
 }
@@ -29,7 +24,6 @@ a {
 .grid-layout .hentry:nth-of-type(3) .post-svg {
     margin-top: initial;
 }
-
 
 .svg-block {
     fill: #f8f9fb;
@@ -130,10 +124,6 @@ h2.entry-title a {
     text-align: center;
 }
 
-.site-main .posts-navigation a {
-    color: #8c8c8c;
-}
-
 .nav-links .prev,
 .nav-links .next {
     font-family: 'Lora', serif;
@@ -200,13 +190,8 @@ footer.site-footer {
     background-color: #fcfdff;
 }
 
-.page-header .page-title {
-    color: #d1b586;
-}
-
 .archive_title_svg {
     stroke-width: 3;
-    stroke: #d1b586;
 }
 
 div.svg-container.svg-block.page-header-svg {
@@ -269,7 +254,6 @@ header.page-header h1.page-title {
 
 .single_post_bottom_svg {
     stroke-width: 3;
-    stroke: #d1b586;
 }
 
 .contact-details-container {
