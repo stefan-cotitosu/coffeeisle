@@ -94,17 +94,16 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= 'div.entry-meta a:hover, h2.entry-title a:hover, div.widget-area a:hover, nav.social-navigation li a:hover, a.entry-content-link:hover { color:' . esc_attr( $primary_color ) . ';}' . "\n";
 		$rgba 	= oblique_hex2rgba( $primary_color, 0.3 );
 
-		//$custom .= 'a:hover { color: ' . esc_attr( $primary_color ) . ' !important;}' . "\n";
-
-        $custom .= '.home article.post div.post-inner a.entry-content-link:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+		$custom .= '.home article.post div.post-inner a.entry-content-link:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
 		$custom .= '.page .contact-details-list a:hover { color:' . esc_attr( $primary_color ) . ';}' . "\n";
 
 		$custom .= '.page div.comments-area ol.comment-list li.comment div.reply a.comment-reply-link:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
 		$custom .= '.entry-thumb:after { background-color:' . esc_attr( $rgba ) . ';}' . "\n";
-		$custom .= '.comment-form .form-submit input[type="submit"]:hover { background-color:' . esc_attr( $primary_color ) . ';}' . "\n";
-		$custom .= '.comment-form .form-submit input[type="submit"]:hover { border: 1px solid' . esc_attr( $primary_color ) . ';}' . "\n";
+
+		$current_selector = '.comment-form .form-submit input[type="submit"]:hover';
+        $custom .=  oblique_coffeeshop_gradient_on_button( $current_selector, $primary_color );
 
 		$custom .= '.single a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
@@ -125,24 +124,30 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.single-sidebar .widget_recent_entries ul li a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
 		$custom .= '.woocommerce-page ul.products li.product a.add_to_cart_button:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
-		$custom .= '.woocommerce-page ul.products li.product a.button:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+
+        $current_selector = '.woocommerce-page ul.products li.product a.button:hover';
+        $custom .= oblique_coffeeshop_gradient_on_button( $current_selector, $primary_color );
 
 		$custom .= '.woocommerce button.button.alt:hover, .single-product .single_add_to_cart_button:hover { background: ' . esc_attr( $primary_color ) . ' !important;}' . "\n";
 
 		$custom .= '.woocommerce #review_form #respond .form-submit input[type="submit"]:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
-		$custom .= '.woocommerce-cart div.cart_totals div.wc-proceed-to-checkout a:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+        $current_selector = '.woocommerce-cart div.cart_totals div.wc-proceed-to-checkout a:hover';
+        $custom .= oblique_coffeeshop_gradient_on_button( $current_selector, $primary_color );
 
-		$custom .= '.woocommerce-cart form.woocommerce-cart-form input[type="submit"]:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+        $current_selector = '.woocommerce-cart form.woocommerce-cart-form input[type="submit"]:hover';
+        $custom .= oblique_coffeeshop_gradient_on_button( $current_selector, $primary_color );
 
-		$custom .= '.woocommerce-page div.woocommerce-message a.button:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+		$current_selector = '.woocommerce-page div.woocommerce-message a.button:hover';
+		$custom .= oblique_coffeeshop_gradient_on_button( $current_selector, $primary_color );
 
-		$custom .= '.woocommerce-page form.woocommerce-form-login input[type="submit"]:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+		$current_selector = '.woocommerce-page form.woocommerce-form-login input[type="submit"]:hover';
+        $custom .= oblique_coffeeshop_gradient_on_button( $current_selector, $primary_color );
 
 		$custom .= '.woocommerce-cart p.return-to-shop a.button:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
-		$custom .= '.woocommerce-page div.woocommerce form.woocommerce-checkout div#payment div.place-order input[type="submit"]:hover { background-color: ' .
-		           esc_attr( $primary_color ) . ';}' . "\n";
+        $current_selector = '.woocommerce-page div.woocommerce form.woocommerce-checkout div#payment div.place-order input[type="submit"]:hover';
+        $custom .= oblique_coffeeshop_gradient_on_button( $current_selector, $primary_color );
 
 		$custom .= '.woocommerce-page ul.products li.product a.added_to_cart:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
@@ -151,6 +156,8 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.woocommerce-page div.woocommerce-message a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
 		$custom .= '.woocommerce-page div.woocommerce-info a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+
+		$custom .= '.woocommerce-page form.woocommerce-cart-form a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
 	}
 
@@ -184,8 +191,6 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 	if ( ! empty( $entry_titles ) ) {
 		$rgba 	= oblique_hex2rgba( $entry_titles, 0.3 );
 
-		//$custom .= 'a { color: ' . esc_attr( $entry_titles ) . ' !important;}' . "\n";
-
         $custom .= '.home article.post div.post-inner a.entry-content-link { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= 'div.entry-thumb:after { background-color:' . esc_attr( $rgba ) . ';}' . "\n";
@@ -202,13 +207,12 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.comment-respond h3 { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= 'h2.entry-title, h2.entry-title a, .entry-content a.entry-content-link { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
-		//$custom .= '.home div.post-inner div.entry-content>a.entry-content-link { color: ' . esc_attr( $entry_titles ) . ' !important;}' . "\n";
 
 	    $custom .= 'line.post-bottom-svg-line { stroke: '. esc_attr( $entry_titles ) . ';}' . "\n";
 	    $custom .= 'div.nav-links .current { background-color:'. esc_attr( $entry_titles ). ';}' . "\n";
 
-        $custom .= '.comment-form .form-submit input[type="submit"] { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
-		$custom .= '.comment-form .form-submit input[type="submit"] { border: 1px solid ' . esc_attr( $entry_titles ) . ';}' . "\n";
+        $current_selector = '.comment-form .form-submit input[type="submit"]';
+        $custom .= oblique_coffeeshop_gradient_on_button( $current_selector, $entry_titles );
 
 		$custom .= '.single_page_post_svg { stroke:' . esc_attr( $entry_titles ) . ';}' . "\n";
 
@@ -259,11 +263,12 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.woocommerce-page ul.products li.product h2.woocommerce-loop-product__title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= '.woocommerce-page ul.products li.product a.add_to_cart_button { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
-		$custom .= '.woocommerce-page ul.products li.product a.button { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+		$current_selector = '.woocommerce-page ul.products li.product a.button';
+		$custom .= oblique_coffeeshop_gradient_on_button( $current_selector, $entry_titles );
 
 		$custom .= '.single-product h1.product_title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
-		//$custom .= '.single-product .single_add_to_cart_button { background-color: ' . esc_attr( $entry_titles ) . ' !important;}' . "\n";
         $current_selector = '.single-product .single_add_to_cart_button, .woocommerce button.button.alt';
         $custom .= oblique_coffeeshop_gradient_on_button( $current_selector, $entry_titles );
 
@@ -286,16 +291,21 @@ function oblique_coffeeshop_custom_styles( $custom ) {
         $custom .= '.single-product div.related-title-bottom-svg .related_title_bottom_svg_line { stroke: ' . esc_attr( $entry_titles ) . ';}' . "\n";
         $custom .= '.woocommerce-page div.alt_shop_cat_title_bottom_svg .alt_shop_cat_title_bottom_svg_line { stroke: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
-        $custom .= '.woocommerce-cart div.cart_totals div.wc-proceed-to-checkout a { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+        $current_selector = '.woocommerce-cart div.cart_totals div.wc-proceed-to-checkout a';
+        $custom .= oblique_coffeeshop_gradient_on_button( $current_selector, $entry_titles );
 
-        $custom .= '.woocommerce-cart form.woocommerce-cart-form input[type="submit"] { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
         $custom .= '.woocommerce-cart form.woocommerce-cart-form input[type="submit"]:disabled:hover { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+        $current_selector = '.woocommerce-cart form.woocommerce-cart-form input[type="submit"]';
+        $custom .= oblique_coffeeshop_gradient_on_button( $current_selector, $entry_titles );
 
         $custom .= '.woocommerce-page div.woocommerce-message { border-top-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
         $custom .= '.woocommerce-page div.woocommerce-message:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
-        $custom .= '.woocommerce-page div.woocommerce-message a.button { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
-        $custom .= '.woocommerce-page form.woocommerce-form-login input[type="submit"] { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+        $current_selector = '.woocommerce-page div.woocommerce-message a.button';
+        $custom .= oblique_coffeeshop_gradient_on_button( $current_selector, $entry_titles );
+
+        $current_selector = '.woocommerce-page form.woocommerce-form-login input[type="submit"]';
+        $custom .= oblique_coffeeshop_gradient_on_button( $current_selector, $entry_titles );
 
         $custom .= '.woocommerce form .form-row .required { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
@@ -307,10 +317,11 @@ function oblique_coffeeshop_custom_styles( $custom ) {
                    esc_attr( $entry_titles ) . ';}' . "\n";
         $custom .= '.woocommerce-page div.woocommerce form.woocommerce-checkout div#payment ul.payment_methods li.woocommerce-info { border-top-color: ' .
                    esc_attr( $entry_titles ) . ';}' . "\n";
-        $custom .= '.woocommerce-page div.woocommerce form.woocommerce-checkout div#payment div.place-order input[type="submit"] { background-color: ' .
-                   esc_attr( $entry_titles ) . ';}' . "\n";
+
         $custom .= '.woocommerce-page div.woocommerce form.woocommerce-checkout div#payment ul.payment_methods li.woocommerce-info:before { color: ' .
                    esc_attr( $entry_titles ) . ';}' . "\n";
+        $current_selector = '.woocommerce-page div.woocommerce form.woocommerce-checkout div#payment div.place-order input[type="submit"]';
+        $custom .= oblique_coffeeshop_gradient_on_button( $current_selector, $entry_titles );
 
         $custom .= '.woocommerce-page ul.products li.product a.added_to_cart { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
@@ -319,6 +330,8 @@ function oblique_coffeeshop_custom_styles( $custom ) {
         $custom .= '.woocommerce-page div.woocommerce-message a { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
         $custom .= '.woocommerce-page div.woocommerce-info a { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+        $custom .= '.woocommerce-page form.woocommerce-cart-form a { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 	}
 
@@ -481,17 +494,7 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
 		$custom .= '.woocommerce-cart div.cart_totals div.wc-proceed-to-checkout a:hover { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
-
-
 	}
-
-//	// Entry more
-//	$entry_more_color = get_theme_mod( 'entry_more', '#d1b586');
-//	if ( ! empty( $entry_more_color ) ) {
-//		$custom .= '.entry-content-link { color:' . esc_attr( $entry_more_color ) . ';}' . "\n";
-//
-//		$custom .= '.entry-content-link:hover { color:' . esc_attr( $entry_more_color ) . ';}' . "\n";
-//	}
 
 	// Menu icon/leave color
     $menu_icon_color = get_theme_mod( 'menu_icon_color', '#f8f9fb' );
@@ -703,7 +706,7 @@ function oblique_coffeeshop_gradient_on_button( $selector, $color ) {
 
 	$btn_gradient_style = '';
 
-	$new_color = oblique_coffeeshop_darken_color( $color, 10 );
+	$new_color = oblique_coffeeshop_darken_color( $color, 1 );
 
 	$btn_gradient_style .= $selector . ' { background: ' .$color . ';' . "\n";
 	$btn_gradient_style .= ' background: -moz-linear-gradient(top, ' . $color . ' 0%, ' . $new_color . ' 100%);' . "\n";
