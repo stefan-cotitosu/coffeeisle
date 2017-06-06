@@ -566,7 +566,6 @@ form.comment-form p label {
 }
 
 .single-sidebar .widget_calendar .calendar_wrap table caption {
-    background-color: #d1b586;
     font-family: 'Lora', serif;
     font-size: 20px;
     font-weight: 700;
@@ -1269,6 +1268,32 @@ form.comment-form p label {
     font-family: 'Lora', serif;
     font-size: 15px;
     line-height: 15px;
+}
+
+/* Checkout Page */
+.woocommerce-page div.woocommerce-checkout-review-order table.woocommerce-checkout-review-order-table {
+    background-color: #ffffff;
+}
+
+.woocommerce-page div.woocommerce-billing-fields__field-wrapper p.validate-phone input[type="tel"] {
+    padding: 13px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border-width: 1px;
+}
+
+.woocommerce-page div.woocommerce-account-fields label.woocommerce-form__label input.woocommerce-form__input {
+    top: 4px;
+}
+
+.woocommerce-page div.woocommerce-account-fields label.woocommerce-form__label span {
+    margin-left: 20px;
+}
+
+.woocommerce-error, .woocommerce-info, .woocommerce-message,
+.woocommerce-page div.woocommerce form.woocommerce-checkout div#payment {
+    background-color: #ffffff;
 }
 
 /* Product added to cart message */
