@@ -110,6 +110,8 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.single .comment-body .reply a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget .search-submit:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+		$custom .= '.single-sidebar .widget .search-submit:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+		$custom .= '.single-sidebar .widget .search-submit:hover { border: 1px solid ' . oblique_coffeeshop_darken_color( $primary_color, 10 ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_categories ul li a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
@@ -233,6 +235,8 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.single-sidebar .widget_calendar .calendar_wrap table caption { background: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget .search-submit { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.single-sidebar .widget .search-submit { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.single-sidebar .widget .search-submit { border: 1px solid ' . oblique_coffeeshop_darken_color( $entry_titles, 10 ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_categories ul li:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 

@@ -547,18 +547,38 @@ form.comment-form p label {
 }
 
 /* Search */
-.single-sidebar .widget .search-submit {
-    display: inline;
-    margin: 0;
+.single-sidebar .widget form.search-form {
+    position: relative;
 }
 
 .single-sidebar .widget .search-form label {
+    position: relative;
     margin: 0;
+    width: 100%;
+    overflow: hidden;
 }
 
-.single-sidebar .widget .search-field::placeholder {
-   content: "Search";
+.single-sidebar .widget .search-form label::after {
+    position: absolute;
+    top: 6px;
+    right: 25px;
+    z-index: 5;
+    content: "\f002";
+    font-family: FontAwesome, 'sans-serif';
+    font-size: 25px;
+    color: #ffffff;
 }
+
+.single-sidebar .widget .search-submit {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 13px;
+    margin: 0;
+    background-color: rgba(129, 215, 66, 1);
+}
+
 
 /* Calendar */
 .single-sidebar .widget_calendar .calendar_wrap table {
