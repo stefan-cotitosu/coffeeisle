@@ -76,7 +76,11 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
 	$background_color = get_background_color();
 	if( !empty( $background_color ) ){
+
 		$custom .= 'div.svg-block{ fill: #'. esc_attr( $background_color ) .';}';
+
+        $custom .= '.search div.search-title-top-svg { fill: #' . esc_attr( $background_color ) . ';}' . "\n";
+        $custom .= '.search div.search-title-bottom-svg { fill: #' . esc_attr( $background_color ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_calendar .calendar_wrap table td { background-color: #' . esc_attr( $background_color ) . ';}' . "\n";
 
@@ -97,6 +101,8 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.home article.post div.post-inner a.entry-content-link:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
 		$custom .= '.page .contact-details-list a:hover { color:' . esc_attr( $primary_color ) . ';}' . "\n";
+
+		$custom .= '.archive .post-inner a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
 		$custom .= '.page div.comments-area ol.comment-list li.comment div.reply a.comment-reply-link:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
@@ -195,6 +201,8 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$rgba 	= oblique_hex2rgba( $entry_titles, 0.3 );
 
         $custom .= '.home article.post div.post-inner a.entry-content-link { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+        $custom .= '.archive .post-inner a { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= 'div.entry-thumb:after { background-color:' . esc_attr( $rgba ) . ';}' . "\n";
 
@@ -436,6 +444,10 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.archive .page-header { background-color:' . esc_attr( $entry_background ) . ';}' . "\n";
 
 		$custom .= '.archive div.svg-container.svg-block.page-header-svg { fill:' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.search div.search-title-top-svg { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+		$custom .= '.search header.page-header { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+		$custom .= '.search div.search-title-bottom-svg { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
 		$custom .= '.woocommerce-page ul.products li.product a.button { color: ' . esc_attr( $entry_background ) . ' !important;}' . "\n";
 
@@ -801,7 +813,7 @@ add_action( 'oblique_post_bottom_svg', 'svg_new' );
  * Svg
  * Archive page title svg
  */
-function oblique_archive_title_svg() {
+function oblique_coffeeshop_archive_title_svg() {
 	echo '<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1950 150">
 		  <g transform="translate(0,-902.36218)"/>
 		  <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z" />
@@ -810,7 +822,42 @@ function oblique_archive_title_svg() {
 		  <line x1="1950" y1="0" x2="0" y2="150" width="100%" height="50" class="archive_title_svg" />
     </svg>';
 }
-add_action( 'oblique_archive_title_bottom_svg', 'oblique_archive_title_svg' );
+add_action( 'oblique_archive_title_bottom_svg', 'oblique_coffeeshop_archive_title_svg' );
+
+/**
+ * Svg
+ * Search Results Page title top svg
+ */
+function oblique_coffeeshop_search_title_top_svg() {
+    ?>
+	<div class="svg-container svg-block search-title-top-svg">
+        <?php oblique_svg_3(); ?>
+    </div>
+    <?php
+}
+add_action( 'oblique_search_before_title', 'oblique_coffeeshop_search_title_top_svg' );
+
+/**
+ * Svg
+ * Search Results Page title bottom svg
+ */
+function oblique_search_title_bottom_svg() {
+	?>
+    <div class="svg-container svg-block search-title-bottom-svg">
+		<?php
+		echo '
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1890 150">
+			<g transform="translate(0,-902.36218)"/>
+			  <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"/>
+			  <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"/>
+			  <path d="m 1925,0 0,150 -1925,0"/>
+			  <line x1="1890" y1="0" x2="0" y2="150" width="100%" height="50" class="archive_title_svg" />
+		</svg>';
+        ?>
+    </div>
+	<?php
+}
+add_action( 'oblique_search_after_title', 'oblique_search_title_bottom_svg' );
 
 /**
  * Post

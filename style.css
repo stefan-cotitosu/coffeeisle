@@ -208,6 +208,23 @@ header.page-header h1.page-title {
     line-height: 44px;
 }
 
+/* Search results page */
+.search div.search-title-top-svg {
+    position: relative;
+}
+
+.search div.search-title-bottom-svg {
+    position: relative;
+}
+
+.search article:first-of-type {
+    margin-top: 50px;
+}
+
+.search article h2 {
+    text-align: left;
+}
+
 /* Contact page */
 .page .hentry {
     padding: 26px 95px 121px;
@@ -560,13 +577,24 @@ form.comment-form p label {
 
 .single-sidebar .widget .search-form label::after {
     position: absolute;
-    top: 6px;
-    right: 25px;
+    top: 7px;
+    right: 27px;
     z-index: 5;
     content: "\f002";
     font-family: FontAwesome, 'sans-serif';
-    font-size: 25px;
+    font-size: 20px;
     color: #ffffff;
+    pointer-events: none;
+}
+
+.single-sidebar .widget .search-form label input.search-field {
+    padding: 11px 0px 9px 10px;
+}
+
+.single-sidebar .widget .search-form label input.search-field::placeholder {
+    font-family: 'Athiti', sans-serif;
+    font-size: 15px;
+    line-height: 21px;
 }
 
 .single-sidebar .widget .search-submit {
@@ -574,11 +602,26 @@ form.comment-form p label {
     position: absolute;
     top: 0;
     right: 0;
-    padding: 13px;
+    padding: 10px;
     margin: 0;
     background-color: rgba(129, 215, 66, 1);
 }
 
+/* Drop Down */
+.single-sidebar .widget select {
+    width: 100%;
+    padding: 11px 0px 9px 10px;
+    font-family: 'Athiti', sans-serif;
+    font-size: 15px;
+    line-height: 21px;
+}
+
+.single-sidebar .widget_categories label.screen-reader-text:after {
+    content: "\f107";
+    font-family: FontAwesome, 'sans-serif';
+    font-size: 25px;
+    color: #000;
+}
 
 /* Calendar */
 .single-sidebar .widget_calendar .calendar_wrap table {
@@ -648,6 +691,10 @@ form.comment-form p label {
 }
 
 .single-sidebar .widget_calendar .calendar_wrap table tfoot td.pad {
+    display: none;
+}
+
+.single-sidebar .widget_calendar .calendar_wrap table td.pad {
     display: none;
 }
 
