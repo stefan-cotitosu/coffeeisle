@@ -362,6 +362,8 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
 	    $custom .= '.single .comment-body .comment-metadata a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
 
+	    $custom .= '.single-sidebar .widget select { color: ' . esc_attr( $body_text_color ) . ' !important;}' . "\n";
+
         $custom .= '.single-sidebar .widget_categories ul li a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
 
         $custom .= '.single-sidebar .widget_tag_cloud .tagcloud a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
@@ -375,6 +377,8 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.single-sidebar .widget_nav_menu ul li a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_recent_entries ul li a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
+
+		$custom .= '.single-sidebar .widget .search-form label input.search-field::placeholder { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
 
 		$custom .= '.woocommerce-page nav.navigation .page-numbers { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
 

@@ -592,10 +592,12 @@ form.comment-form p label {
 }
 
 .single-sidebar .widget .search-form label input.search-field::placeholder {
+    content: "Bla";
     font-family: 'Athiti', sans-serif;
     font-size: 15px;
     line-height: 21px;
-}
+    font-weight: 400;
+ }
 
 .single-sidebar .widget .search-submit {
     display: inline-block;
@@ -614,6 +616,7 @@ form.comment-form p label {
     font-family: 'Athiti', sans-serif;
     font-size: 15px;
     line-height: 21px;
+    border-color: #ebebeb;
 }
 
 .single-sidebar .widget_categories label.screen-reader-text:after {
