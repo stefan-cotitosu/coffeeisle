@@ -50,17 +50,61 @@ function oblique_coffeeshop_alt_woo_register( $wp_customize ) {
 		'priority'    => apply_filters( 'oblique_coffeeshop_section_priority', 15, 'oblique_coffeeshop_featured_products' ),
 	) );
 
-	$wp_customize->add_setting( 'oblique_coffeeshop_featured_products_category',
+	$wp_customize->add_setting( 'oblique_coffeeshop_featured_products_category_1',
 		array(
 			'default'           => '-',
 		)
 	);
-
 	$wp_customize->add_control(
-		'oblique_coffeeshop_featured_products_category',
+		'oblique_coffeeshop_featured_products_category_1',
 		array(
 			'type' => 'select',
-			'label' => esc_html__( 'Products category', 'oblique-coffeeshop' ),
+			'label' => esc_html__( 'Products first category', 'oblique-coffeeshop' ),
+			'section' => 'oblique_coffeeshop_featured_products',
+			'choices' => oblique_coffeeshop_get_woo_categories( true ),
+		)
+	);
+
+	$wp_customize->add_setting( 'oblique_coffeeshop_offer_product_category',
+		array(
+			'default'           => '-',
+		)
+	);
+	$wp_customize->add_control(
+		'oblique_coffeeshop_offer_product_category',
+		array(
+			'type' => 'select',
+			'label' => esc_html__( 'Offer product category', 'oblique-coffeeshop' ),
+			'section' => 'oblique_coffeeshop_featured_products',
+			'choices' => oblique_coffeeshop_get_woo_categories( true ),
+		)
+	);
+
+	$wp_customize->add_setting( 'oblique_coffeeshop_featured_products_category_2',
+		array(
+			'default'           => '-',
+		)
+	);
+	$wp_customize->add_control(
+		'oblique_coffeeshop_featured_products_category_2',
+		array(
+			'type' => 'select',
+			'label' => esc_html__( 'Products second category', 'oblique-coffeeshop' ),
+			'section' => 'oblique_coffeeshop_featured_products',
+			'choices' => oblique_coffeeshop_get_woo_categories( true ),
+		)
+	);
+
+	$wp_customize->add_setting( 'oblique_coffeeshop_featured_products_category_3',
+		array(
+			'default'           => '-',
+		)
+	);
+	$wp_customize->add_control(
+		'oblique_coffeeshop_featured_products_category_3',
+		array(
+			'type' => 'select',
+			'label' => esc_html__( 'Products third category', 'oblique-coffeeshop' ),
 			'section' => 'oblique_coffeeshop_featured_products',
 			'choices' => oblique_coffeeshop_get_woo_categories( true ),
 		)
@@ -126,3 +170,5 @@ function oblique_coffeeshop_display_woo_cat_title( $woo_cat_name ) {
 
     <?php
 }
+
+
