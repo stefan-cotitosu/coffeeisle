@@ -1429,19 +1429,87 @@ form.comment-form p label {
     line-height: 15px;
 }
 
-/* Alt Shop Template */
-ul.offer_product {
-    padding: 0;
+/* Alt Shop Template Special Offer */
+div.alt-shop-special-offer-top-svg {
+    position: relative;
+    top: 85px;
+
+    fill: #fff;
+    background-color: rgba(255,255,255,0);
+}
+
+div.alt-shop-special-offer-bottom-svg {
+    position: relative;
+    bottom: 152px;
+    fill-opacity: 1;
+
+    background-color: rgba(255,255,255,0);
+    fill: #fff;
+
+}
+
+div.offer-product-wrapper {
+
+}
+
+div.offer-product-wrapper img {
+    display: inline-block;
+    height: 610px;
+}
+
+div.offer-product-wrapper div.offer-product-inner {
+    display: inline-block;
+    margin: 9px 0 48px 106px;
+}
+
+div.offer-product-wrapper div.offer-product-inner h2.offer-product-special-offer {
+    font-family: 'Lora', serif;
+    font-size: 45px;
+    line-height: 45px;
+    margin: 0 0 13px;
+}
+
+div.offer-product-wrapper div.offer-product-inner h3.offer-product-title {
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    line-height: 41px;
+    margin: 0 0 22px;
+}
+
+div.offer-product-wrapper div.offer-product-inner div.offer-product-price {
+    margin: 0 0 27px;
+}
+
+div.offer-product-wrapper div.offer-product-inner div.offer-product-price del {
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    line-height: 41px;
+    margin: 0 16px 0 0;
+}
+
+div.offer-product-wrapper div.offer-product-inner div.offer-product-price ins {
+    font-family: 'Lora', serif;
+    font-size: 35px;
+    line-height: 41px;
     margin: 0;
-    width: 100%;
 }
 
-ul.offer_product li div.svg-container {
-    display: none;
+div.offer-product-wrapper div.offer-product-inner a.add_to_cart_button {
+    display: inline-block;
+    font-family: 'Lora', serif;
+    font-size: 15px;
+    line-height: 15px;
+    padding: 15px 32px 16px 31px;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
-ul.offer_product li span.onsale {
-    display: none;
+div.offer-product-wrapper div.offer-product-inner a.add_to_cart_button:before {
+    content: "\f07a";
+    font-family: FontAwesome, 'sans-serif';
+    margin-right: 3px;
 }
 
 /* Alt Shop Template Blog Section */
@@ -1646,6 +1714,19 @@ div.alt-shop-blog-small {
 
     .woocommerce #reviews #comments ol.commentlist li {
         padding: 25px 25px 25px 0px;
+    }
+
+    .page div.alt-shop-blog-large article.hentry div.post-svg {
+        margin-bottom: -7.9%;
+    }
+
+    div.alt-shop-blog-large,
+    div.alt-shop-blog-small {
+        padding: 0;
+    }
+
+    div.alt-shop-blog-small article.hentry div.entry-thumb img {
+        width: 100%;
     }
 
 }

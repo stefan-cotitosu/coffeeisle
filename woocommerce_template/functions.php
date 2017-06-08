@@ -208,20 +208,24 @@ function oblique_coffeeshop_display_offer_product( $cat_ids_array ) {
 
     if ( $product_offer_loop->have_posts() ) {
         ?>
-            <ul class="products offer_product">
+
         <?php
             do_action( 'oblique_coffeeshop_before_offer_product' );
             while ( $product_offer_loop->have_posts() ) {
                 $product_offer_loop->the_post();
-                wc_get_template_part( 'content', 'product' );
+
+	            get_template_part('content','offer-product');
+
+                //echo get_the_title();
+             	//echo get_the_post_thumbnail( $product_offer_loop->post->ID, 'shop_catalog' );
+               // wc_get_template_part( 'content', 'product' );
             }
             wp_reset_postdata();
             do_action( 'oblique_coffeeshop_after_offer_product' );
         ?>
-            </ul>
+
         <?php
     }
-
 }
 
 /**
@@ -229,14 +233,7 @@ function oblique_coffeeshop_display_offer_product( $cat_ids_array ) {
  */
 function oblique_coffeeshop_display_alt_shop_blog_section() {
 
-//    $category_list_args = array(
-//            'type' => 'post'
-//    );
-//    $posts_category_list = get_categories( $category_list_args );
-//    var_dump($posts_category_list);
-
     // Blog title
-
     ?>
     <div class="svg-container svg-block alt-shop-blog-title-top-svg">
         <?php oblique_svg_3(); ?>
@@ -280,13 +277,11 @@ function oblique_coffeeshop_display_alt_shop_blog_section() {
             }
         }
 
-
         endwhile;
 
         wp_reset_postdata();
 
     endif;
-
 }
 
 // Change the Blog Section large post thumbnail size

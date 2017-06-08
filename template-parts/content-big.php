@@ -2,7 +2,7 @@
 /**
  * The template used for displaying large post on Alt Shop Page, Blog section
  *
- * @package Oblique
+ * @package Oblique Coffeeshop
  */
 ?>
 <div class="col-md-8 alt-shop-blog-large">
