@@ -71,7 +71,6 @@ body {
     padding: 47px 55px 20px;
 }
 
-
 .entry-thumb:after{
     background-color: rgba(209, 181, 194, 0.4);
 }
@@ -183,6 +182,42 @@ footer.site-footer {
     font-size: 11.25px;
     text-align: center;
     padding:  0 0 25px;
+}
+
+/* blog */
+.blog article.hentry div.post-inner {
+    padding: 43px 56px 16px 38px;
+}
+
+.blog article.hentry div.post-inner header.entry-header {
+    margin: 0 0 21px;
+}
+
+.blog article.hentry div.post-inner header.entry-header h2.entry-title {
+    font-family: 'Lora', serif;
+    font-size: 35px;
+    line-height: 35px;
+    margin: 0 0 15px;
+}
+
+.blog article.hentry div.post-inner header.entry-header div.entry-meta {
+    font-family: 'Athiti', sans-serif;
+    font-size: 15px;
+    line-height: 35px;
+    margin: 0;
+}
+
+.blog article.hentry div.post-inner div.entry-content {
+    font-family: 'Athiti', sans-serif;
+    font-size: 15px;
+    line-height: 35px;
+    margin: 0 0 49px;
+}
+
+.blog article.hentry div.post-inner a.entry-content-link {
+    font-family: 'Lora', serif;
+    font-size: 15px;
+    line-height: 23px;
 }
 
 /* archive.php */
@@ -1428,10 +1463,11 @@ div.alt-shop-blog-title-bottom-svg {
 
 div.alt-shop-blog-large,
 div.alt-shop-blog-small {
-    margin-top: 60px;
+    margin-top: 0;
 }
 
 div.alt-shop-blog-large {
+    margin-top: 32px;
     padding-left: 0;
 }
 
