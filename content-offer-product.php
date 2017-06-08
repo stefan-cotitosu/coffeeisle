@@ -5,12 +5,12 @@
 * @package Oblique Coffeeshop
 */
 ?>
-
+<div class="special-offer-wrapper">
 <div class="svg-container svg-block alt-shop-special-offer-top-svg">
 	<?php oblique_svg_3(); ?>
 </div>
 <div class="offer-product-wrapper">
-	<?php echo get_the_post_thumbnail(); ?>
+	<?php the_post_thumbnail( 'coti' ); ?>
 	<div class="offer-product-inner">
 		<h2 class="offer-product-special-offer">Special Offer</h2>
 		<h3 class="offer-product-title"><?php echo get_the_title(); ?></h3>
@@ -24,4 +24,5 @@
 </div>
 <div class="svg-container svg-block alt-shop-special-offer-bottom-svg">
 	<?php oblique_svg_1(); ?>
+</div>
 </div>

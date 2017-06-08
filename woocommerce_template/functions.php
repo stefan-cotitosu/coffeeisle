@@ -290,3 +290,8 @@ function oblique_coffeeshop_alt_shop_blog_large_thumb_size() {
     add_image_size( 'oblique-coffeeshop-blog-large-thumb', 745 );
 }
 add_action( 'after_setup_theme', 'oblique_coffeeshop_alt_shop_blog_large_thumb_size', 15 );
+
+function oblique_coffeeshop_special_offer_thumbnail() {
+    add_image_size( 'coti', 700, 700 );
+}
+add_action( 'after_setup_theme', 'oblique_coffeeshop_special_offer_thumbnail', 15 );

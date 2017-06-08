@@ -1430,31 +1430,40 @@ form.comment-form p label {
 }
 
 /* Alt Shop Template Special Offer */
-div.alt-shop-special-offer-top-svg {
+div.special-offer-wrapper {
     position: relative;
-    top: 85px;
+}
+
+div.alt-shop-special-offer-top-svg {
+    position: absolute;
+    top: 0;
+    /*top: 151px;*/
 
     fill: #fff;
+    fill: #f8f9fb;
     background-color: rgba(255,255,255,0);
 }
 
 div.alt-shop-special-offer-bottom-svg {
-    position: relative;
-    bottom: 152px;
+    position: absolute;
+    bottom: 0;
+    /*bottom: 151px;*/
     fill-opacity: 1;
 
     background-color: rgba(255,255,255,0);
     fill: #fff;
-
+    fill: #f8f9fb;
 }
 
 div.offer-product-wrapper {
-
+    /*background-color: #fff;*/
+    text-align: center;
+    background: url('images/special-offer-background.png');
 }
 
 div.offer-product-wrapper img {
     display: inline-block;
-    height: 610px;
+    /*height: 700px;*/
 }
 
 div.offer-product-wrapper div.offer-product-inner {
