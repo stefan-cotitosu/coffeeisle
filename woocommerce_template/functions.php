@@ -4,11 +4,16 @@
  * Display products from category
  * @param $ids_array - category for the products to be shown
  */
-function oblique_coffeeshop_display_woo_cat( $ids_array ) {
+function oblique_coffeeshop_display_woo_cat( $ids_array, $posts_per_page = null ) {
+
+    $default_posts_per_page = 3;
+    if ( !empty($posts_per_page) ) {
+        $default_posts_per_page = $posts_per_page;
+    }
 
 	$args = array(
 		'post_type' => 'product',
-		'posts_per_page' => apply_filters( 'oblique_coffeeshop_cat_item_number', 3),
+		'posts_per_page' => $default_posts_per_page,
 		'meta_query'     => array(
 			array(
 				'key' => '_thumbnail_id',
@@ -32,7 +37,9 @@ function oblique_coffeeshop_display_woo_cat( $ids_array ) {
 		while ( $loop->have_posts() ) {
 			$loop->the_post();
 			wc_get_template_part( 'content', 'product' );
-		} ?>
+		}
+	    wp_reset_postdata();
+		?>
     </ul>
 	<?php
 	}
@@ -171,4 +178,120 @@ function oblique_coffeeshop_display_woo_cat_title( $woo_cat_name ) {
     <?php
 }
 
+/**
+ * Offer Product Display
+ */
+function oblique_coffeeshop_display_offer_product( $cat_ids_array ) {
 
+    $params = array(
+            'post_type'         => 'product',
+            'posts_per_page'    => 1,
+            'meta_query'        => array(
+                    array(
+                            'key' => '_thumbnail_id'
+                    )
+            )
+    );
+
+    if ( ! empty( $cat_ids_array ) ) {
+
+        $params['tax_query'] = array(
+                array(
+                        'taxonomy'  => 'product_cat',
+                        'field'     => 'term_id',
+                        'terms'     => $cat_ids_array
+                )
+        );
+    }
+
+    $product_offer_loop = new WP_Query( $params );
+
+    if ( $product_offer_loop->have_posts() ) {
+        ?>
+            <ul class="products offer_product">
+        <?php
+            do_action( 'oblique_coffeeshop_before_offer_product' );
+            while ( $product_offer_loop->have_posts() ) {
+                $product_offer_loop->the_post();
+                wc_get_template_part( 'content', 'product' );
+            }
+            wp_reset_postdata();
+            do_action( 'oblique_coffeeshop_after_offer_product' );
+        ?>
+            </ul>
+        <?php
+    }
+
+}
+
+/**
+ * Blog Section on Alt Shop Template
+ */
+function oblique_coffeeshop_display_alt_shop_blog_section() {
+
+//    $category_list_args = array(
+//            'type' => 'post'
+//    );
+//    $posts_category_list = get_categories( $category_list_args );
+//    var_dump($posts_category_list);
+
+    // Blog title
+
+    ?>
+    <div class="svg-container svg-block alt-shop-blog-title-top-svg">
+        <?php oblique_svg_3(); ?>
+    </div>
+    <h2 class="alt-shop-blog-title">Blog</h2>
+    <div class="svg-container svg-block alt-shop-blog-title-bottom-svg">
+        <?php echo '
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1890 150">
+            <g transform="translate(0,-902.36218)"/>
+            <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"/>
+            <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"/>
+            <path d="m 1925,0 0,150 -1925,0"/>
+            <line x1="1890" y1="0" x2="0" y2="150" width="100%" height="50" class="archive_title_svg" />
+        </svg>';?>
+    </div>
+    <?php
+
+    $loop = new WP_Query( array(
+        'posts_per_page' => 3,
+        'ignore_sticky_posts' => true,
+    ) );
+
+    if ( $loop->have_posts() ) :
+
+        $i = 0;
+        $has_col = 0;
+	    while ( $loop->have_posts() ) : $loop->the_post();
+
+        if ( $i==0 ) {
+            get_template_part('template-parts/content', 'big');
+	        $i++;
+        } else {
+            if( $has_col == 0 ) {
+                echo '<div class="col-md-4 alt-shop-blog-small">';
+                $has_col = 1;
+            }
+	        get_template_part('content' );
+            $i++;
+            if( $i == 3 ) {
+                echo '</div><!-- /.col-md-4 -->';
+            }
+        }
+
+
+        endwhile;
+
+        wp_reset_postdata();
+
+    endif;
+
+}
+
+// Change the Blog Section large post thumbnail size
+function oblique_coffeeshop_alt_shop_blog_large_thumb_size() {
+    remove_image_size( 'oblique-entry-thumb' );
+    add_image_size( 'oblique-coffeeshop-blog-large-thumb', 745 );
+}
+add_action( 'after_setup_theme', 'oblique_coffeeshop_alt_shop_blog_large_thumb_size', 15 );

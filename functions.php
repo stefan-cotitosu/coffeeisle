@@ -168,6 +168,9 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
 		$custom .= '.woocommerce-page form.woocommerce-cart-form a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
+		$custom .= '.page div.alt-shop-blog-large article.hentry a.entry-content-link:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+		$custom .= '.page div.alt-shop-blog-small article.hentry a.entry-content-link:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+
 	}
 
 	// Secondary Color
@@ -195,7 +198,7 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
     }
 
-    // Entry Color
+    // Entry Titles Color
 	$entry_titles = get_theme_mod('entry_titles', '#d1b586' );
 	if ( ! empty( $entry_titles ) ) {
 		$rgba 	= oblique_hex2rgba( $entry_titles, 0.3 );
@@ -347,6 +350,11 @@ function oblique_coffeeshop_custom_styles( $custom ) {
         $custom .= '.woocommerce-page div.woocommerce-info a { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
         $custom .= '.woocommerce-page form.woocommerce-cart-form a { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+        $custom .= 'h2.alt-shop-blog-title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+        $custom .= '.page div.alt-shop-blog-large article.hentry a.entry-content-link { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+        $custom .= '.page div.alt-shop-blog-small article.hentry a.entry-content-link { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 	}
 
@@ -513,6 +521,10 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		           esc_attr( $entry_background ) . ';}' . "\n";
 
 		$custom .= '.woocommerce-cart div.cart_totals div.wc-proceed-to-checkout a:hover { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= 'div.alt-shop-blog-title-top-svg { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+		$custom .= 'h2.alt-shop-blog-title { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+		$custom .= 'div.alt-shop-blog-title-bottom-svg { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
 	}
 

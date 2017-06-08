@@ -1394,6 +1394,144 @@ form.comment-form p label {
     line-height: 15px;
 }
 
+/* Alt Shop Template */
+ul.offer_product {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+ul.offer_product li div.svg-container {
+    display: none;
+}
+
+ul.offer_product li span.onsale {
+    display: none;
+}
+
+/* Alt Shop Template Blog Section */
+div.alt-shop-blog-title-top-svg {
+    position: relative;
+}
+
+h2.alt-shop-blog-title {
+    font-family: 'Lora', serif;
+    font-size: 28px;
+    line-height: 40.55px;
+    text-align: center;
+    margin: 0;
+}
+
+div.alt-shop-blog-title-bottom-svg {
+    position: relative;
+}
+
+div.alt-shop-blog-large,
+div.alt-shop-blog-small {
+    margin-top: 60px;
+}
+
+div.alt-shop-blog-large {
+    padding-left: 0;
+}
+
+.page div.alt-shop-blog-large article.hentry {
+    padding: 0;
+}
+
+.page div.alt-shop-blog-large article.hentry div.post-svg {
+    margin-bottom: -8%;
+}
+
+.page div.alt-shop-blog-large article.hentry div.post-inner header.entry-header {
+    text-align: left;
+}
+
+div.alt-shop-blog-small {
+    padding-right: 0;
+}
+
+.page div.alt-shop-blog-large article.hentry div.post-inner {
+    padding: 40px 45px 15px 19px;
+}
+
+.page div.alt-shop-blog-large article.hentry div.post-inner header.entry-header {
+    margin: 0 0 32px;
+}
+
+.page div.alt-shop-blog-large article.hentry div.post-inner header.entry-header h2.entry-title {
+    font-family: 'Lora', serif;
+    font-size: 28px;
+    line-height: 35px;
+    margin: 0 0 27px;
+}
+
+.page div.alt-shop-blog-large article.hentry div.post-inner header.entry-header div.entry-meta {
+    font-family: 'Athiti', sans-serif;
+    font-size: 17px;
+    line-height:40px;
+    margin: 0;
+}
+
+.page div.alt-shop-blog-large article.hentry div.post-inner div.entry-content {
+    font-family: 'Athiti', sans-serif;
+    font-size: 15px;
+    line-height: 23px;
+    margin: 0 0 31px;
+}
+
+.page div.alt-shop-blog-large article.hentry div.post-inner a.entry-content-link {
+    display: block;
+    font-family: 'Lora', serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 23px;
+    margin: 0 0 56px;
+}
+
+.page div.alt-shop-blog-small article.hentry {
+    padding: 0;
+}
+
+.page div.alt-shop-blog-small article.hentry div.post-inner {
+    padding: 26px 26px 9px 28px;
+}
+
+.page div.alt-shop-blog-small article.hentry div.post-inner header.entry-header {
+    text-align: left;
+    margin: 0 0 22px;
+}
+
+.page div.alt-shop-blog-small article.hentry div.post-inner header.entry-header h2.entry-title {
+    font-family: 'Lora', serif;
+    font-size: 28px;
+    line-height: 26px;
+    margin: 0 0 16px;
+}
+
+.page div.alt-shop-blog-small article.hentry div.post-inner header.entry-header div.entry-meta {
+    font-family: 'Athiti', sans-serif;
+    font-size: 15px;
+    line-height: 35px;
+    margin: 0;
+}
+
+.page div.alt-shop-blog-small article.hentry div.post-inner div.entry-content {
+    font-family: 'Athiti', sans-serif;
+    font-size: 15px;
+    line-height: 35px;
+    margin: 0 0 20px;
+}
+
+.page div.alt-shop-blog-small article.hentry div.post-inner a.entry-content-link {
+    display: block;
+    font-family: 'Lora', serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 15px;
+    margin: 0 0 30px;
+}
+
 /* Responsive */
 @media only screen and (max-width: 1199px) {
 
