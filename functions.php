@@ -16,6 +16,14 @@ if ( get_stylesheet() !== get_template() ) {
 }
 
 /**
+ * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
+ */
+function oblique_coffeeshop_customize_preview_js() {
+	wp_enqueue_script( 'oblique_coffeeshop_customizer', get_stylesheet_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '1.0.0', true );
+}
+add_action( 'customize_preview_init', 'oblique_coffeeshop_customize_preview_js' );
+
+/**
  * Google Fonts
  */
 function oblique_coffeeshop_include_google_fonts() {
@@ -1374,3 +1382,18 @@ add_action( 'related_products_title_after', 'oblique_coffeeshop_related_title_bo
 // Include template for alt shop page
 require_once get_stylesheet_directory() . '/woocommerce_template/functions.php';
 
+/**
+ * Header Search
+ * Before
+ */
+function oblique_coffeeshop_before_header_search() {
+
+}
+
+/**
+ * Header Search
+ * After
+ */
+function oblique_coffeeshop_after_eader_search() {
+
+}

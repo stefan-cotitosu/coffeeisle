@@ -42,8 +42,13 @@ body {
     text-align: right;
 }
 
-.sidebar-toggle {
+/*.sidebar-toggle {*/
+    /*position: absolute;*/
+/*}*/
+.blog .sidebar-toggle {
     position: absolute;
+    top: 35px;
+    left: 395px;
 }
 
 .social-navigation {
