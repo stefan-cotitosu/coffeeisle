@@ -207,26 +207,22 @@ function oblique_coffeeshop_display_offer_product( $cat_ids_array ) {
     $product_offer_loop = new WP_Query( $params );
 
     if ( $product_offer_loop->have_posts() ) {
-        ?>
-
-        <?php
             do_action( 'oblique_coffeeshop_before_offer_product' );
             while ( $product_offer_loop->have_posts() ) {
                 $product_offer_loop->the_post();
 
-	            get_template_part('content','offer-product');
-
-                //echo get_the_title();
-             	//echo get_the_post_thumbnail( $product_offer_loop->post->ID, 'shop_catalog' );
-               // wc_get_template_part( 'content', 'product' );
+	            get_template_part('template-parts/content','offer-product');
             }
             wp_reset_postdata();
             do_action( 'oblique_coffeeshop_after_offer_product' );
-        ?>
-
-        <?php
     }
 }
+
+// Set Special Offer Thumbnail size
+function oblique_coffeeshop_special_offer_thumbnail() {
+	add_image_size( 'coti', 700, 700 );
+}
+add_action( 'after_setup_theme', 'oblique_coffeeshop_special_offer_thumbnail', 15 );
 
 /**
  * Blog Section on Alt Shop Template
@@ -290,8 +286,3 @@ function oblique_coffeeshop_alt_shop_blog_large_thumb_size() {
     add_image_size( 'oblique-coffeeshop-blog-large-thumb', 745 );
 }
 add_action( 'after_setup_theme', 'oblique_coffeeshop_alt_shop_blog_large_thumb_size', 15 );
-
-function oblique_coffeeshop_special_offer_thumbnail() {
-    add_image_size( 'coti', 700, 700 );
-}
-add_action( 'after_setup_theme', 'oblique_coffeeshop_special_offer_thumbnail', 15 );

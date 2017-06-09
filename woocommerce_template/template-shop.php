@@ -37,7 +37,6 @@ get_header(); ?>
             if( $category_name = get_term_by( 'id', $section_2, 'product_cat' ) ) {
                 oblique_coffeeshop_display_woo_cat_title( $category_name->name );
             }
-
             oblique_coffeeshop_display_woo_cat( $section_2 ); ?>
 
             <?php
@@ -45,7 +44,6 @@ get_header(); ?>
             if( $category_name = get_term_by( 'id', $section_3, 'product_cat' ) ) {
                 oblique_coffeeshop_display_woo_cat_title( $category_name->name );
             }
-            //add_filter( 'oblique_coffeeshop_cat_item_number', 4 );
             oblique_coffeeshop_display_woo_cat( $section_3 ); ?>
 
             <!-- TODO: Display 3 Blog Posts -->
