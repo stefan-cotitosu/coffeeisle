@@ -220,7 +220,7 @@ function oblique_coffeeshop_display_offer_product( $cat_ids_array ) {
 
 // Set Special Offer Thumbnail size
 function oblique_coffeeshop_special_offer_thumbnail() {
-	add_image_size( 'coti', 700, 700 );
+	add_image_size( 'special_offer_thumbnail_size', 700, 700, true );
 }
 add_action( 'after_setup_theme', 'oblique_coffeeshop_special_offer_thumbnail', 15 );
 

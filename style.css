@@ -1511,6 +1511,22 @@ div.offer-product-wrapper div.offer-product-inner a.add_to_cart_button:before {
     margin-right: 3px;
 }
 
+
+div.special-offer-inner-wrapper {
+    display: table;
+    width: 100%;
+}
+
+div.offer-product-thumbnail-wrapper,
+div.offer-product-inner {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+
+
+
 /* Alt Shop Template Blog Section */
 div.alt-shop-blog-title-top-svg {
     position: relative;

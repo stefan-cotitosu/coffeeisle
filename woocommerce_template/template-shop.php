@@ -22,7 +22,6 @@ get_header(); ?>
     </div><!-- #primary -->
 </div><!-- container content-wrapper -->
 
-	<!-- TODO: Display product -->
     <?php
     $offer_product_category = get_theme_mod( 'oblique_coffeeshop_offer_product_category' );
     oblique_coffeeshop_display_offer_product( $offer_product_category );
@@ -46,11 +45,10 @@ get_header(); ?>
             }
             oblique_coffeeshop_display_woo_cat( $section_3 ); ?>
 
-            <!-- TODO: Display 3 Blog Posts -->
             <?php oblique_coffeeshop_display_alt_shop_blog_section(); ?>
 
         </div><!-- #main -->
     </div><!-- #primary -->
 
-
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>
