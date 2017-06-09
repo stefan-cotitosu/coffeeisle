@@ -90,6 +90,9 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
 		$custom .= '.woocommerce-page div.woocommerce form.woocommerce-checkout div#payment { background: #' . esc_attr( $background_color ) . ';}' . "\n";
 
+		$custom .= 'div.alt-shop-special-offer-top-svg { fill: #' . esc_attr( $background_color ) . ';}' . "\n";
+		$custom .= 'div.alt-shop-special-offer-bottom-svg { fill: #' . esc_attr( $background_color ) . ';}' . "\n";
+
     }
 
     // Primary color

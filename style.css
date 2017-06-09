@@ -296,7 +296,7 @@ header.page-header h1.page-title {
 .page div.entry-content li:first-of-type {
     font-family: 'Lora', serif;
     font-size: 20px;
-    line-height: 20.8px;
+    line-height: 21px;
     margin: 0 0 20px;
 }
 
@@ -492,7 +492,7 @@ form.comment-form p label {
     background-color: inherit;
     font-family: 'Lora', serif;
     font-size: 30px;
-    line-height: 34.66px;
+    line-height: 35px;
     text-transform: capitalize;
     border: none;
     padding: 0;
@@ -623,7 +623,7 @@ form.comment-form p label {
 }
 
 .single-sidebar .widget .search-form label input.search-field {
-    padding: 11px 0px 9px 10px;
+    padding: 11px 0 9px 10px;
 }
 
 .single-sidebar .widget .search-form label input.search-field::placeholder {
@@ -647,7 +647,7 @@ form.comment-form p label {
 /* Drop Down */
 .single-sidebar .widget select {
     width: 100%;
-    padding: 11px 0px 9px 10px;
+    padding: 11px 0 9px 10px;
     font-family: 'Athiti', sans-serif;
     font-size: 15px;
     line-height: 21px;
@@ -1009,7 +1009,7 @@ form.comment-form p label {
     font-family: 'Lora', serif;
     font-weight: 700;
     font-size: 22px;
-    line-height: 40.55px;
+    line-height: 41px;
 }
 
 .single-product .price del {
@@ -1066,7 +1066,7 @@ form.comment-form p label {
 .single-product form.cart div.quantity input {
     font-weight: 600;
     font-size: 15px;
-    line-height: 16.67px;
+    line-height: 17px;
 }
 
 .woocommerce div.product form.cart table.variations {
@@ -1254,7 +1254,7 @@ form.comment-form p label {
     display: block;
     font-family: 'Lora', serif;
     font-size: 30px;
-    line-height: 33.34px;
+    line-height: 33px;
     margin: 0 0 11px;
 }
 
@@ -1294,7 +1294,7 @@ form.comment-form p label {
 .single-product h2.related_products_title {
     font-family: 'Lora', serif;
     font-size: 28px;
-    line-height: 40.55px;
+    line-height: 41px;
     text-align: center;
     margin: 90px 0 40px;
 }
@@ -1437,33 +1437,23 @@ div.special-offer-wrapper {
 div.alt-shop-special-offer-top-svg {
     position: absolute;
     top: 0;
-    /*top: 151px;*/
-
-    fill: #fff;
-    fill: #f8f9fb;
     background-color: rgba(255,255,255,0);
 }
 
 div.alt-shop-special-offer-bottom-svg {
     position: absolute;
     bottom: 0;
-    /*bottom: 151px;*/
     fill-opacity: 1;
-
     background-color: rgba(255,255,255,0);
-    fill: #fff;
-    fill: #f8f9fb;
 }
 
 div.offer-product-wrapper {
-    /*background-color: #fff;*/
     text-align: center;
     background: url('images/special-offer-background.png');
 }
 
 div.offer-product-wrapper img {
     display: inline-block;
-    /*height: 700px;*/
 }
 
 div.offer-product-wrapper div.offer-product-inner {
@@ -1529,7 +1519,7 @@ div.alt-shop-blog-title-top-svg {
 h2.alt-shop-blog-title {
     font-family: 'Lora', serif;
     font-size: 28px;
-    line-height: 40.55px;
+    line-height: 41px;
     text-align: center;
     margin: 0;
 }
@@ -1675,12 +1665,19 @@ div.alt-shop-blog-small {
         bottom: -16px;
     }
 
+    div.offer-product-wrapper div.offer-product-inner {
+        margin: 9px 15px 48px;
+    }
 }
 
 @media only screen and (max-width: 1024px) {
 
     .top-bar {
         padding: 10px 15px;
+    }
+
+    div.offer-product-wrapper div.offer-product-inner {
+        margin: 9px auto 48px;
     }
 }
 
@@ -1722,7 +1719,7 @@ div.alt-shop-blog-small {
     }
 
     .woocommerce #reviews #comments ol.commentlist li {
-        padding: 25px 25px 25px 0px;
+        padding: 25px 25px 25px 0;
     }
 
     .page div.alt-shop-blog-large article.hentry div.post-svg {
@@ -1738,6 +1735,13 @@ div.alt-shop-blog-small {
         width: 100%;
     }
 
+    div.offer-product-wrapper div.offer-product-inner {
+        margin: 25px auto 60px;
+    }
+
+    div.offer-product-wrapper img {
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -1780,7 +1784,7 @@ div.alt-shop-blog-small {
 
     .woocommerce-page div.alt_shop_cat_title_bottom_svg,
     .single-product div.related-title-bottom-svg {
-        bottom: 0px;
+        bottom: 0;
     }
 
     .single-product section.related ul.products li.product .post-bottom-svg {
@@ -1800,7 +1804,6 @@ div.alt-shop-blog-small {
     .single-product section.related ul.products li.product:nth-of-type(2n+2) {
         margin-top: -4.5%;
     }
-
 }
 
 @media only screen and (max-width: 767px) {
@@ -1913,7 +1916,6 @@ div.alt-shop-blog-small {
     .single-product div.single_product_wrapper {
         padding: 43px 60px 70px 60px;
     }
-
 }
 
 @media only screen and (max-width: 600px) {
@@ -1967,7 +1969,6 @@ div.alt-shop-blog-small {
     .single-product div.single_product_wrapper {
         padding: 43px 30px 50px 30px;
     }
-
 }
 
 @media only screen and (max-width: 460px) {
@@ -2058,6 +2059,4 @@ div.alt-shop-blog-small {
         display: block;
         margin: 0;
     }
-
 }
-
