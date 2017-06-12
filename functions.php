@@ -142,6 +142,9 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
 		$custom .= '.single-sidebar .widget_recent_entries ul li a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
+		$current_selector = '.single-sidebar .widget select:hover';
+		$custom .= oblique_coffeeshop_sidebar_dropdown( $current_selector, $primary_color );
+
 		$custom .= '.woocommerce-page ul.products li.product a.add_to_cart_button:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
         $current_selector = '.woocommerce-page ul.products li.product a.button:hover';
@@ -287,6 +290,9 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
 		$custom .= '.single-sidebar .widget_calendar .calendar_wrap table td a { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
+		$current_selector = '.single-sidebar .widget select';
+		$custom .= oblique_coffeeshop_sidebar_dropdown( $current_selector, $entry_titles );
+
 		$custom .= '.page h2.comments-title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= '.page .comment-body .comment-author .fn { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
@@ -376,8 +382,6 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
         $custom .= 'div.offer-product-wrapper div.offer-product-inner div.offer-product-price ins { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
-//        $current_selector = 'div.offer-product-wrapper div.offer-product-inner a.add_to_cart_button';
-//        $custom .= oblique_coffeeshop_gradient_on_button( $current_selector, $entry_titles );
         $custom .= 'div.offer-product-wrapper div.offer-product-inner a.add_to_cart_button { background-color:' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 	}
@@ -788,6 +792,32 @@ function oblique_coffeeshop_gradient_on_button( $selector, $color ) {
 	$btn_gradient_style .= " filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='" . $color . "', endColorstr='" . $new_color . "',GradientType=0 ); }" . "\n";
 
 	return $btn_gradient_style;
+}
+
+/**
+ * Color
+ * Apply style on Sidebar Dropdowns
+ */
+function oblique_coffeeshop_sidebar_dropdown( $selector, $bg_color ) {
+
+    $custom_style = '';
+
+	$custom_style .= $selector . " { background: linear-gradient(45deg, transparent 50%, #fff 50%), linear-gradient(134deg, #fff 50%, transparent 50%), linear-gradient(to right, " . $bg_color . ", ". $bg_color .");";
+
+    $custom_style .= "\n";
+    $custom_style .= 'background-position: calc(100% - 36px) calc(1em + -2px), calc(100% - 25px) calc(1em + -2px), 100% 0;' . "\n";
+
+    $custom_style .= 'background-size: 11px 20px, 11px 20px, 4.5em 3.5em;' . "\n";
+    $custom_style .= 'background-repeat: no-repeat;' . "\n";
+
+    $custom_style .= 'border-radius: 0;' . "\n";
+    $custom_style .= 'margin: 0;' . "\n";
+    $custom_style .= '-webkit-box-sizing: border-box;' . "\n";
+    $custom_style .= '-moz-box-sizing: border-box;' . "\n";
+    $custom_style .= 'box-sizing: border-box;' . "\n";
+    $custom_style .= '-webkit-appearance: none; }' . "\n";
+
+    return $custom_style;
 }
 
 /**
