@@ -1,9 +1,12 @@
 <?php
-add_action( 'wp_enqueue_scripts', 'child_enqueue_styles',99);
+add_action( 'wp_enqueue_scripts', 'child_enqueue_styles' );
 function child_enqueue_styles() {
     $parent_style = 'parent-style';
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
-    wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( $parent_style ) );
+
+    //wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( $parent_style ) );
+
+    wp_enqueue_script( 'oblique-coffeeshop-script', get_stylesheet_directory_uri() . '/js/scripts.js');
 }
 if ( get_stylesheet() !== get_template() ) {
     add_filter( 'pre_update_option_theme_mods_' . get_stylesheet(), function ( $value, $old_value ) {
@@ -1409,17 +1412,12 @@ add_action( 'related_products_title_after', 'oblique_coffeeshop_related_title_bo
 require_once get_stylesheet_directory() . '/woocommerce_template/functions.php';
 
 /**
- * Header Search
- * Before
+ * Header Search Icon
  */
-function oblique_coffeeshop_before_header_search() {
-
+function oblique_coffeeshop_search_icon() {
+    ?>
+    <div class="nav_search_icon">
+    </div>
+    <?php
 }
-
-/**
- * Header Search
- * After
- */
-function oblique_coffeeshop_after_eader_search() {
-
-}
+add_action( 'oblique_nav_search', 'oblique_coffeeshop_search_icon' );

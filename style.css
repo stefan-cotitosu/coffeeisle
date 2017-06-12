@@ -45,27 +45,61 @@ body {
 /*.sidebar-toggle {*/
     /*position: absolute;*/
 /*}*/
-.blog .sidebar-toggle {
-    position: absolute;
-    top: 35px;
-    left: 395px;
-}
+/*.blog .sidebar-toggle {*/
+    /*position: absolute;*/
+    /*top: 35px;*/
+    /*left: 395px;*/
+/*}*/
 
 .social-navigation {
+    float: right;
     position: relative;
     z-index: 100;
     top: 8px;
     right: 0;
 }
 
+.nav_search_icon {
+    position: relative;
+    display: inline-block;
+    float: right;
+    width: 20px;
+    height: 20px;
+    margin: 3px 10px 0 0;
+}
+
+.nav_search_icon:after {
+    position: absolute;
+    cursor: pointer;
+    top: 10px;
+    right: 0;
+    content: "\f002";
+    font-family: FontAwesome, 'sans-serif';
+    font-size: 20px;
+    color: #fff;
+    z-index: 9999;
+}
+
 .header-search {
+    float: right;
     position: relative;
     z-index: 100;
     top: 8px;
+    margin-top: 8px;
+}
+
+.header-search .search-field:focus {
+    outline: none;
 }
 
 .header-search .search-field {
-    width: auto;
+    width: 0;
+    padding: 0;
+}
+
+.header-search .search-field.search-field-opened {
+    width: 130px;
+    padding: 5px 10px;
 }
 
 .site-title  a:hover {
@@ -1527,10 +1561,6 @@ div.offer-product-inner {
     vertical-align: middle;
 }
 
-
-
-
-
 /* Alt Shop Template Blog Section */
 div.alt-shop-blog-title-top-svg {
     position: relative;
@@ -1837,10 +1867,6 @@ div.alt-shop-blog-small {
         padding: 10px 15px;
     }
 
-    .top-bar .header-search {
-        display: block;
-    }
-
     .contact-details-list {
         display: table-cell;
         padding: 0 15px 20px;
@@ -1940,8 +1966,13 @@ div.alt-shop-blog-small {
 
 @media only screen and (max-width: 600px) {
 
-    .top-bar .header-search {
+    .header-search {
         display: block;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        text-align: center;
     }
 
     .site-footer div.site-info {
@@ -1999,10 +2030,6 @@ div.alt-shop-blog-small {
 
     .top-bar {
         text-align: center;
-    }
-
-    .top-bar .header-search {
-        display: block;
     }
 
     .grid-layout .hentry {
