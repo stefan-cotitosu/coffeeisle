@@ -182,8 +182,6 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 		$custom .= '.page div.alt-shop-blog-large article.hentry a.entry-content-link:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 		$custom .= '.page div.alt-shop-blog-small article.hentry a.entry-content-link:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
-//		$current_selector = 'div.offer-product-wrapper div.offer-product-inner a.add_to_cart_button:hover';
-//		$custom .= oblique_coffeeshop_gradient_on_button( $current_selector, $primary_color );
         $custom .= 'div.offer-product-wrapper div.offer-product-inner a.add_to_cart_button:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
 	}
@@ -449,9 +447,7 @@ function oblique_coffeeshop_custom_styles( $custom ) {
 
 		$custom .= '.single .reply a { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
-		$custom .= '.single .comment-form input, .single .comment-form textarea { background-color: ' .
-                   esc_attr( $entry_background ) .
-                   ';}' . "\n";
+		$custom .= '.single .comment-form input, .single .comment-form textarea { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_calendar .calendar_wrap table { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
