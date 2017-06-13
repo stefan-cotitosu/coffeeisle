@@ -7,6 +7,273 @@
  */
 
 /**
+ * WooCommerce
+ */
+// Remove pages navigation
+remove_action( 'woocommerce_before_main_content','woocommerce_breadcrumb', 20, 0 );
+
+// Remove sorting results after loop
+remove_action( 'woocommerce_after_shop_loop', 'woocommerce_result_count', 20 );
+
+// Remove sorting results before loop
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+
+// Remove drop down sort before loop
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+
+// Remove description on category page
+remove_action( 'woocommerce_archive_description','woocommerce_taxonomy_archive_description',10 );
+
+/**
+ * Remove page title
+ *
+ * @since 1.0.0
+ */
+function coffeeisle_remove_woo_title() {
+	return false;
+}
+add_filter( 'woocommerce_show_page_title', 'coffeeisle_remove_woo_title' );
+
+/**
+ * Add custom title on shop page
+ * title between svg
+ *
+ * @since 1.0.0
+ */
+function coffeeisle_shop_title() {
+
+	do_action( 'oblique_archive_title_top_svg' ); ?>
+
+    <header class="page-header">
+        <h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
+    </header><!-- .page-header -->
+	<?php
+
+	/**
+	 * WooCommerce_archive_description hook.
+	 *
+	 * @hooked woocommerce_taxonomy_archive_description - 10
+	 * @hooked woocommerce_product_archive_description - 10
+	 */
+	do_action( 'woocommerce_archive_description' ); ?>
+
+    <div class="svg-container svg-block page-header-svg">
+		<?php do_action( 'oblique_archive_title_bottom_svg' ); ?>
+    </div>
+	<?php
+
+}
+add_action( 'woocommerce_before_main_content', 'coffeeisle_shop_title', 40 );
+
+// Remove product rating on shop page
+remove_action( 'woocommerce_after_shop_loop_item_title','woocommerce_template_loop_rating', 5 );
+
+/**
+ * Adding top svg for item on shop page
+ *
+ * @since 1.0.0
+ */
+function coffeeisle_product_top_svg() {
+	?>
+    <div class="svg-container post-svg svg-block">
+		<?php echo oblique_svg_3(); ?>
+    </div>
+	<?php
+}
+add_action( 'woocommerce_before_shop_loop_item', 'coffeeisle_product_top_svg', 5 );
+
+/**
+ * Adding bottom svg for item on shop page
+ *
+ * @since 1.0.0
+ */
+function coffeeisle_product_bottom_svg() {
+	?>
+    <div class="svg-container post-bottom-svg svg-block">
+		<?php echo svg_new(); ?>
+    </div>
+	<?php
+}
+add_action( 'woocommerce_after_shop_loop_item', 'coffeeisle_product_bottom_svg', 10 );
+
+/**
+ * Number the number of products per row
+ *
+ * @since 1.0.0
+ */
+function coffeeisle_products_per_row() {
+	return 3;
+}
+add_filter( 'loop_shop_columns', 'coffeeisle_products_per_row' );
+
+/**
+ * Change pagination on shop page
+ */
+remove_action( 'woocommerce_after_shop_loop', 'woocommerce_pagination', 10 );
+add_action( 'woocommerce_after_shop_loop', 'coffeeisle_custom_pagination', 10 );
+
+// Change single product price position
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 25 );
+
+// Remove categories information from single product page
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+
+// Remove reviews on single product page
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
+
+// Remove upsells on single product page
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
+
+/**
+ * Show quantity text before quantity form
+ *
+ * @since 1.0.0
+ */
+function coffeeisle_single_product_quantity_title() {
+	echo '<p class="quantity-title">Quantity</p>';
+}
+add_action( 'woocommerce_before_add_to_cart_quantity', 'coffeeisle_single_product_quantity_title' );
+
+/**
+ * Change the number of related products
+ *
+ * Variables:
+ * posts_per_page - related products per page
+ * columns - number of columns for related products
+ *
+ * @since 1.0.0
+ */
+function coffeeisle_related_products( $args ) {
+
+	$args['posts_per_page'] = 4;
+	$args['columns'] = 4;
+
+	return $args;
+}
+add_filter( 'woocommerce_output_related_products_args', 'coffeeisle_related_products' );
+
+/**
+ * Single Product Wrapper
+ *
+ * @since 1.0.0
+ */
+function coffeeisle_single_product_wrapper() {
+	?>
+    <div class="svg-container svg-block single_product_top_svg">
+		<?php do_action( 'single_product_top_svg' ); ?>
+    </div>
+    <div class="single_product_wrapper">
+	<?php
+}
+add_action( 'woocommerce_before_single_product_summary', 'coffeeisle_single_product_wrapper' );
+
+/**
+ * Related Products Title
+ *
+ * @since 1.0.0
+ */
+function coffeeisle_related_products_title() {
+
+	global $product;
+	$related_products = wc_get_related_products( $product->get_id(), 1, $product->get_upsell_ids() );
+
+	?>
+    <div class="svg-container svg-block single_product_bottom_svg">
+		<?php do_action( 'single_product_bottom_svg' ); ?>
+    </div>
+    </div> <!-- Single Product Wrapper -->
+
+	<?php if ( $related_products ) : ?>
+        <div class="related_products_title_wrapper">
+            <div class="svg-container svg-block related-title-top-svg">
+				<?php do_action( 'related_products_title_before' ); ?>
+            </div>
+            <h2 class="related_products_title"><?php echo esc_html__( 'Suggested Items', 'coffeeisle' ); ?></h2>
+            <div class="svg-container svg-block related-title-bottom-svg">
+				<?php do_action( 'related_products_title_after' ); ?>
+            </div>
+        </div>
+		<?php
+	endif;
+
+}
+add_action( 'woocommerce_after_single_product_summary', 'coffeeisle_related_products_title' );
+
+/**
+ * Single Product Top SVG
+ *
+ * @since 1.0.0
+ */
+function coffeeisle_single_product_top_svg() {
+	oblique_svg_3();
+}
+add_action( 'single_product_top_svg', 'coffeeisle_single_product_top_svg' );
+
+/**
+ * Single Product Bottom SVG
+ *
+ * @since 1.0.0
+ */
+function coffeeisle_single_product_bottom_svg() {
+	echo '
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1950 150">
+		  <g transform="translate(0,-902.36218)"/>
+		  <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z" />
+		  <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"/>
+		  <path d="M 0,150 0,0 1925,0"/>
+		  <line x1="1950" y1="0" x2="0" y2="150" width="100%" height="50" class="single_product_bottom_svg_line" />
+		</svg>
+	';
+}
+add_action( 'single_product_bottom_svg', 'coffeeisle_single_product_bottom_svg' );
+
+/**
+ * Related Products Title Top SVG
+ *
+ * @since 1.0.0
+ */
+function coffeeisle_related_title_top_svg() {
+	oblique_svg_3();
+}
+add_action( 'related_products_title_before', 'coffeeisle_related_title_top_svg' );
+
+/**
+ * Related Products Title Bottom SVG
+ *
+ * @since 1.0.0
+ */
+function coffeeisle_related_title_bottom_svg() {
+	echo '
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1890 150">
+			<g transform="translate(0,-902.36218)"/>
+			  <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"/>
+			  <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"/>
+			  <path d="m 1925,0 0,150 -1925,0"/>
+			  <line x1="1950" y1="0" x2="0" y2="150" width="100%" height="50" class="related_title_bottom_svg_line" />
+		</svg>
+	';
+}
+add_action( 'related_products_title_after', 'coffeeisle_related_title_bottom_svg' );
+
+/**
+ * Header Search Icon
+ *
+ * @since 1.0.0
+ */
+function coffeeisle_search_icon() {
+	?>
+    <div class="nav_search_icon">
+    </div>
+	<?php
+}
+add_action( 'oblique_nav_search', 'coffeeisle_search_icon' );
+
+/**
+ * Alt Shop Page template
+ */
+
+/**
  * Display products from category
  *
  * @param $ids_array - category for the products to be shown
