@@ -1,15 +1,23 @@
 <?php
+/**
+ * WooCommerce functions used in child theme.
+ *
+ * @package coffeeisle
+ * @since 1.0.0
+ */
 
 /**
  * Display products from category
+ *
  * @param $ids_array - category for the products to be shown
+ * @since 1.0.0
  */
-function oblique_coffeeshop_display_woo_cat( $ids_array, $posts_per_page = null ) {
+function coffeeisle_display_woo_cat( $ids_array, $posts_per_page = null ) {
 
-    $default_posts_per_page = 3;
-    if ( !empty($posts_per_page) ) {
-        $default_posts_per_page = $posts_per_page;
-    }
+	$default_posts_per_page = 3;
+	if ( ! empty( $posts_per_page ) ) {
+		$default_posts_per_page = $posts_per_page;
+	}
 
 	$args = array(
 		'post_type' => 'product',
@@ -20,7 +28,7 @@ function oblique_coffeeshop_display_woo_cat( $ids_array, $posts_per_page = null 
 			),
 		),
 	);
-	if( !empty( $ids_array ) ){
+	if ( ! empty( $ids_array ) ) {
 		$args['tax_query'] = array(
 			array(
 				'taxonomy' => 'product_cat',
@@ -33,14 +41,14 @@ function oblique_coffeeshop_display_woo_cat( $ids_array, $posts_per_page = null 
 	$loop = new WP_Query( $args );
 
 	if ( $loop->have_posts() ) { ?>
-    <ul class="products"> <?php
-		while ( $loop->have_posts() ) {
-			$loop->the_post();
-			wc_get_template_part( 'content', 'product' );
-		}
-	    wp_reset_postdata();
+	<ul class="products"> <?php
+	while ( $loop->have_posts() ) {
+		$loop->the_post();
+		wc_get_template_part( 'content', 'product' );
+	}
+		wp_reset_postdata();
 		?>
-    </ul>
+	</ul>
 	<?php
 	}
 }
@@ -48,77 +56,79 @@ function oblique_coffeeshop_display_woo_cat( $ids_array, $posts_per_page = null 
 /**
  * Adding control for selecting category
  * Products from this category will be listed in the section
+ *
  * @param $wp_customize
+ * @since 1.0.0
  */
-function oblique_coffeeshop_alt_woo_register( $wp_customize ) {
+function coffeeisle_alt_woo_register( $wp_customize ) {
 
-	$wp_customize->add_section( 'oblique_coffeeshop_featured_products', array(
-		'title'       => esc_html__( 'Featured products', 'oblique-coffeeshop' ),
-		'priority'    => apply_filters( 'oblique_coffeeshop_section_priority', 15, 'oblique_coffeeshop_featured_products' ),
+	$wp_customize->add_section( 'coffeeisle_featured_products', array(
+		'title'       => esc_html__( 'Featured products', 'coffeeisle' ),
+		'priority'    => apply_filters( 'coffeeisle_section_priority', 15, 'coffeeisle_featured_products' ),
 	) );
 
-	$wp_customize->add_setting( 'oblique_coffeeshop_featured_products_category_1',
+	$wp_customize->add_setting( 'coffeeisle_featured_products_category_1',
 		array(
 			'default'           => '-',
 		)
 	);
 	$wp_customize->add_control(
-		'oblique_coffeeshop_featured_products_category_1',
+		'coffeeisle_featured_products_category_1',
 		array(
 			'type' => 'select',
-			'label' => esc_html__( 'Products first category', 'oblique-coffeeshop' ),
-			'section' => 'oblique_coffeeshop_featured_products',
-			'choices' => oblique_coffeeshop_get_woo_categories( true ),
+			'label' => esc_html__( 'Products first category', 'coffeeisle' ),
+			'section' => 'coffeeisle_featured_products',
+			'choices' => coffeeisle_get_woo_categories( true ),
 		)
 	);
 
-	$wp_customize->add_setting( 'oblique_coffeeshop_offer_product_category',
+	$wp_customize->add_setting( 'coffeeisle_offer_product_category',
 		array(
 			'default'           => '-',
 		)
 	);
 	$wp_customize->add_control(
-		'oblique_coffeeshop_offer_product_category',
+		'coffeeisle_offer_product_category',
 		array(
 			'type' => 'select',
-			'label' => esc_html__( 'Offer product category', 'oblique-coffeeshop' ),
-			'section' => 'oblique_coffeeshop_featured_products',
-			'choices' => oblique_coffeeshop_get_woo_categories( true ),
+			'label' => esc_html__( 'Offer product category', 'coffeeisle' ),
+			'section' => 'coffeeisle_featured_products',
+			'choices' => coffeeisle_get_woo_categories( true ),
 		)
 	);
 
-	$wp_customize->add_setting( 'oblique_coffeeshop_featured_products_category_2',
+	$wp_customize->add_setting( 'coffeeisle_featured_products_category_2',
 		array(
 			'default'           => '-',
 		)
 	);
 	$wp_customize->add_control(
-		'oblique_coffeeshop_featured_products_category_2',
+		'coffeeisle_featured_products_category_2',
 		array(
 			'type' => 'select',
-			'label' => esc_html__( 'Products second category', 'oblique-coffeeshop' ),
-			'section' => 'oblique_coffeeshop_featured_products',
-			'choices' => oblique_coffeeshop_get_woo_categories( true ),
+			'label' => esc_html__( 'Products second category', 'coffeeisle' ),
+			'section' => 'coffeeisle_featured_products',
+			'choices' => coffeeisle_get_woo_categories( true ),
 		)
 	);
 
-	$wp_customize->add_setting( 'oblique_coffeeshop_featured_products_category_3',
+	$wp_customize->add_setting( 'coffeeisle_featured_products_category_3',
 		array(
 			'default'           => '-',
 		)
 	);
 	$wp_customize->add_control(
-		'oblique_coffeeshop_featured_products_category_3',
+		'coffeeisle_featured_products_category_3',
 		array(
 			'type' => 'select',
-			'label' => esc_html__( 'Products third category', 'oblique-coffeeshop' ),
-			'section' => 'oblique_coffeeshop_featured_products',
-			'choices' => oblique_coffeeshop_get_woo_categories( true ),
+			'label' => esc_html__( 'Products third category', 'coffeeisle' ),
+			'section' => 'coffeeisle_featured_products',
+			'choices' => coffeeisle_get_woo_categories( true ),
 		)
 	);
 
 }
-add_action( 'customize_register', 'oblique_coffeeshop_alt_woo_register', 20 );
+add_action( 'customize_register', 'coffeeisle_alt_woo_register', 20 );
 
 /**
  * Categories to be displayed in customizer
@@ -126,43 +136,46 @@ add_action( 'customize_register', 'oblique_coffeeshop_alt_woo_register', 20 );
  * @param bool $placeholder
  *
  * @return array
+ * @since 1.0.0
  */
-function oblique_coffeeshop_get_woo_categories( $placeholder = true ) {
+function coffeeisle_get_woo_categories( $placeholder = true ) {
 
-	$oblique_coffeeshop_prod_categories_array = $placeholder === true ? array(
-		'-' => esc_html__( 'Select category','oblique-coffeeshop' ),
+	$coffeeisle_prod_categories_array = $placeholder === true ? array(
+		'-' => esc_html__( 'Select category','coffeeisle' ),
 	) : array();
 	if ( ! class_exists( 'WooCommerce' ) ) {
-		return $oblique_coffeeshop_prod_categories_array;
+		return $coffeeisle_prod_categories_array;
 	}
-	$oblique_coffeeshop_prod_categories = get_categories( array(
+	$coffeeisle_prod_categories = get_categories( array(
 		'taxonomy' => 'product_cat',
 		'hide_empty' => 0,
 		'title_li' => '',
 	) );
-	if ( ! empty( $oblique_coffeeshop_prod_categories ) ) {
-		foreach ( $oblique_coffeeshop_prod_categories as $oblique_coffeeshop_prod_cat ) {
-			if ( ! empty( $oblique_coffeeshop_prod_cat->term_id ) && ! empty( $oblique_coffeeshop_prod_cat->name ) ) {
-				$oblique_coffeeshop_prod_categories_array[ $oblique_coffeeshop_prod_cat->term_id ] = $oblique_coffeeshop_prod_cat->name;
+	if ( ! empty( $coffeeisle_prod_categories ) ) {
+		foreach ( $coffeeisle_prod_categories as $coffeeisle_prod_cat ) {
+			if ( ! empty( $coffeeisle_prod_cat->term_id ) && ! empty( $coffeeisle_prod_cat->name ) ) {
+				$coffeeisle_prod_categories_array[ $coffeeisle_prod_cat->term_id ] = $coffeeisle_prod_cat->name;
 			}
 		}
 	}
-	$oblique_coffeeshop_prod_categories_array['none'] = esc_html__( 'None', 'oblique-coffeeshop' );
-	return $oblique_coffeeshop_prod_categories_array;
+	$coffeeisle_prod_categories_array['none'] = esc_html__( 'None', 'coffeeisle' );
+	return $coffeeisle_prod_categories_array;
 }
 
 /**
  * Display alt shop page category name
+ *
+ * @since 1.0.0
  */
-function oblique_coffeeshop_display_woo_cat_title( $woo_cat_name ) {
+function coffeeisle_display_woo_cat_title( $woo_cat_name ) {
 
-    ?>
+	?>
 
-    <div class="svg-container svg-block alt_shop_cat_title_top_svg">
+	<div class="svg-container svg-block alt_shop_cat_title_top_svg">
 		<?php oblique_svg_3(); ?>
-    </div>
-    <h2 class="alt_shop_cat_title"><?php echo $woo_cat_name; ?></h2>
-    <div class="svg-container svg-block alt_shop_cat_title_bottom_svg">
+	</div>
+	<h2 class="alt_shop_cat_title"><?php echo $woo_cat_name; ?></h2>
+	<div class="svg-container svg-block alt_shop_cat_title_bottom_svg">
 		<?php
 		echo '
 		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1890 150">
@@ -172,71 +185,78 @@ function oblique_coffeeshop_display_woo_cat_title( $woo_cat_name ) {
 			  <path d="m 1925,0 0,150 -1925,0"/>
 			  <line x1="1950" y1="0" x2="0" y2="150" width="100%" height="50" class="alt_shop_cat_title_bottom_svg_line" />
 		</svg>';
-        ?>
-    </div>
+		?>
+	</div>
 
-    <?php
+	<?php
 }
 
 /**
  * Offer Product Display
+ *
+ * @since 1.0.0
  */
-function oblique_coffeeshop_display_offer_product( $cat_ids_array ) {
+function coffeeisle_display_offer_product( $cat_ids_array ) {
 
-    $params = array(
-            'post_type'         => 'product',
-            'posts_per_page'    => 1,
-            'meta_query'        => array(
-                    array(
-                            'key' => '_thumbnail_id'
-                    )
-            )
-    );
+	$params = array(
+			'post_type'         => 'product',
+			'posts_per_page'    => 1,
+			'meta_query'        => array(
+					array(
+							'key' => '_thumbnail_id',
+					),
+			),
+	);
 
-    if ( ! empty( $cat_ids_array ) ) {
+	if ( ! empty( $cat_ids_array ) ) {
 
-        $params['tax_query'] = array(
-                array(
-                        'taxonomy'  => 'product_cat',
-                        'field'     => 'term_id',
-                        'terms'     => $cat_ids_array
-                )
-        );
-    }
+		$params['tax_query'] = array(
+				array(
+						'taxonomy'  => 'product_cat',
+						'field'     => 'term_id',
+						'terms'     => $cat_ids_array,
+				),
+		);
+	}
 
-    $product_offer_loop = new WP_Query( $params );
+	$product_offer_loop = new WP_Query( $params );
 
-    if ( $product_offer_loop->have_posts() ) {
-            do_action( 'oblique_coffeeshop_before_offer_product' );
-            while ( $product_offer_loop->have_posts() ) {
-                $product_offer_loop->the_post();
+	if ( $product_offer_loop->have_posts() ) {
+			do_action( 'coffeeisle_before_offer_product' );
+		while ( $product_offer_loop->have_posts() ) {
+			$product_offer_loop->the_post();
 
-	            get_template_part('template-parts/content','offer-product');
-            }
-            wp_reset_postdata();
-            do_action( 'oblique_coffeeshop_after_offer_product' );
-    }
+			get_template_part( 'template-parts/content','offer-product' );
+		}
+			wp_reset_postdata();
+			do_action( 'coffeeisle_after_offer_product' );
+	}
 }
 
-// Set Special Offer Thumbnail size
-function oblique_coffeeshop_special_offer_thumbnail() {
+/** Set Special Offer Thumbnail size
+ *
+ * @since 1.0.0
+ */
+function coffeeisle_special_offer_thumbnail() {
 	add_image_size( 'special_offer_thumbnail_size', 700, 700, true );
 }
-add_action( 'after_setup_theme', 'oblique_coffeeshop_special_offer_thumbnail', 15 );
+add_action( 'after_setup_theme', 'coffeeisle_special_offer_thumbnail', 15 );
 
 /**
  * Blog Section on Alt Shop Template
+ *
+ * @since 1.0.0
  */
-function oblique_coffeeshop_display_alt_shop_blog_section() {
+function coffeeisle_display_alt_shop_blog_section() {
 
-    // Blog title
-    ?>
-    <div class="svg-container svg-block alt-shop-blog-title-top-svg">
-        <?php oblique_svg_3(); ?>
-    </div>
-    <h2 class="alt-shop-blog-title">Blog</h2>
-    <div class="svg-container svg-block alt-shop-blog-title-bottom-svg">
-        <?php echo '
+	// Blog title
+	?>
+	<div class="svg-container svg-block alt-shop-blog-title-top-svg">
+		<?php oblique_svg_3(); ?>
+	</div>
+	<h2 class="alt-shop-blog-title">Blog</h2>
+	<div class="svg-container svg-block alt-shop-blog-title-bottom-svg">
+		<?php echo '
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1890 150">
             <g transform="translate(0,-902.36218)"/>
             <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"/>
@@ -244,45 +264,49 @@ function oblique_coffeeshop_display_alt_shop_blog_section() {
             <path d="m 1925,0 0,150 -1925,0"/>
             <line x1="1890" y1="0" x2="0" y2="150" width="100%" height="50" class="archive_title_svg" />
         </svg>';?>
-    </div>
-    <?php
+	</div>
+	<?php
 
-    $loop = new WP_Query( array(
-        'posts_per_page' => 3,
-        'ignore_sticky_posts' => true,
-    ) );
+	$loop = new WP_Query( array(
+		'posts_per_page' => 3,
+		'ignore_sticky_posts' => true,
+	) );
 
-    if ( $loop->have_posts() ) :
+	if ( $loop->have_posts() ) :
 
-        $i = 0;
-        $has_col = 0;
-	    while ( $loop->have_posts() ) : $loop->the_post();
+		$i = 0;
+		$has_col = 0;
+		while ( $loop->have_posts() ) : $loop->the_post();
 
-        if ( $i==0 ) {
-            get_template_part('template-parts/content', 'big');
-	        $i++;
-        } else {
-            if( $has_col == 0 ) {
-                echo '<div class="col-md-4 alt-shop-blog-small">';
-                $has_col = 1;
-            }
-	        get_template_part('content' );
-            $i++;
-            if( $i == 3 ) {
-                echo '</div><!-- /.col-md-4 -->';
-            }
-        }
+			if ( $i == 0 ) {
+				get_template_part( 'template-parts/content', 'big' );
+				$i++;
+			} else {
+				if ( $has_col == 0 ) {
+					echo '<div class="col-md-4 alt-shop-blog-small">';
+					$has_col = 1;
+				}
+				get_template_part( 'content' );
+				$i++;
+				if ( $i == 3 ) {
+					echo '</div><!-- /.col-md-4 -->';
+				}
+			}
 
-        endwhile;
+		endwhile;
 
-        wp_reset_postdata();
+		wp_reset_postdata();
 
-    endif;
+	endif;
 }
 
-// Change the Blog Section large post thumbnail size
-function oblique_coffeeshop_alt_shop_blog_large_thumb_size() {
-    remove_image_size( 'oblique-entry-thumb' );
-    add_image_size( 'oblique-coffeeshop-blog-large-thumb', 745 );
+/**
+ * Change the Blog Section large post thumbnail size
+ *
+ * @since 1.0.0
+ */
+function coffeeisle_alt_shop_blog_large_thumb_size() {
+	remove_image_size( 'oblique-entry-thumb' );
+	add_image_size( 'coffeeisle-blog-large-thumb', 745 );
 }
-add_action( 'after_setup_theme', 'oblique_coffeeshop_alt_shop_blog_large_thumb_size', 15 );
+add_action( 'after_setup_theme', 'coffeeisle_alt_shop_blog_large_thumb_size', 15 );

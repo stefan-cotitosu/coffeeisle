@@ -1,0 +1,31 @@
+{
+  "name": "coffeeisle",
+  "nicename": "Oblique CoffeeShop",
+  "version": "1.0.0",
+  "description": "Oblique Coffeeshop childtheme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stefan-cotitosu/coffeeisle.git"
+  },
+  "keywords": [
+    "wordpress-theme"
+  ],
+  "theme": {
+    "textdomain": "coffeeisle"
+  },
+  "author": "Stefan Cotitosu <stefan@themeisle.com>",
+  "license": "GPL-2.0+",
+  "bugs": {
+    "url": "https://github.com/stefan-cotitosu/coffeeisle.git"
+  },
+  "pot": {
+    "reportmsgidbugsto": "https://github.com/stefan-cotitosu/coffeeisle/issues",
+    "languageteam": "Stefan <stefan@themeisle.com>",
+    "lasttranslator": "Stefan <stefan@themeisle.com>"
+  },
+  "devDependencies": {
+    "grunt-theme-fleet": "codeinwp/grunt-theme-fleet",
+    "load-project-config": "~0.2.0"
+  },
+  "wraithSlug":["coffeeisle"]
+}

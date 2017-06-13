@@ -1,0 +1,158 @@
+# Copyright (C) 2017 Stefan Cotitosu
+# This file is distributed under the same license as the Coffeeisle package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Coffeeisle 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/stefan-cotitosu/coffeeisle/issues\n"
+"POT-Creation-Date: 2017-06-13 10:40:09+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Stefan <stefan@themeisle.com>\n"
+"Language-Team: Stefan <stefan@themeisle.com>\n"
+"X-Generator: grunt-wp-i18n 0.5.4\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Country: United States\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-Bookmarks: \n"
+"X-Textdomain-Support: yes\n"
+
+#: functions.php:638
+msgid "Top&amp;bottom padding for the branding. Default: 300px"
+msgstr ""
+
+#: functions.php:653
+msgid "Entry background"
+msgstr ""
+
+#: functions.php:673
+msgid "Secondary color"
+msgstr ""
+
+#: functions.php:905
+msgid "Keep Reading &rarr;"
+msgstr ""
+
+#: functions.php:918
+msgid "Continue reading &hellip;"
+msgstr ""
+
+#: functions.php:1033
+#. translators: used between list items, there is a space after the comma
+msgid ", "
+msgstr ""
+
+#: functions.php:1048
+msgid "&copy Copyright 2016"
+msgstr ""
+
+#: functions.php:1050
+msgid "Coffeeisle Shop Theme"
+msgstr ""
+
+#: functions.php:1052
+msgid "All Rights Reserved."
+msgstr ""
+
+#: functions.php:1070
+msgid "Posts navigation"
+msgstr ""
+
+#: functions.php:1078
+msgid "Prev"
+msgstr ""
+
+#: functions.php:1079
+msgid "Next"
+msgstr ""
+
+#: functions.php:1120
+msgid "Leave us a Message"
+msgstr ""
+
+#: functions.php:1125
+msgid "Submit"
+msgstr ""
+
+#: functions.php:1128
+msgid "Name"
+msgstr ""
+
+#: functions.php:1132
+msgid "Email"
+msgstr ""
+
+#: functions.php:1136
+msgid "Subject"
+msgstr ""
+
+#: functions.php:1141
+msgid "Comment"
+msgstr ""
+
+#: functions.php:1242
+msgid "Single Sidebar"
+msgstr ""
+
+#: functions.php:1451
+msgid "Suggested Items"
+msgstr ""
+
+#: template-parts/content-big.php:43
+msgid "Pages:"
+msgstr ""
+
+#: woocommerce_template/functions.php:66
+msgid "Featured products"
+msgstr ""
+
+#: woocommerce_template/functions.php:79
+msgid "Products first category"
+msgstr ""
+
+#: woocommerce_template/functions.php:94
+msgid "Offer product category"
+msgstr ""
+
+#: woocommerce_template/functions.php:109
+msgid "Products second category"
+msgstr ""
+
+#: woocommerce_template/functions.php:124
+msgid "Products third category"
+msgstr ""
+
+#: woocommerce_template/functions.php:144
+msgid "Select category"
+msgstr ""
+
+#: woocommerce_template/functions.php:161
+msgid "None"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Coffeeisle"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "todo:add link to demo."
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "todo:add description ( talk with adelina )"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Stefan Cotitosu"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Alt Shop Template"
+msgstr ""
