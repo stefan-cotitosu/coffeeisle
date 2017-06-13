@@ -1,11 +1,11 @@
 <?php
 /**
- * Hestia functions and definitions
+ * Coffeeisle functions and definitions
  *
  * Set up the theme and provides some helper functions.
  *
  * @package coffeeisle
- * @since Oblique Coffeeshop 1.0
+ * @since Coffeeisle 1.0
  */
 
 /**
