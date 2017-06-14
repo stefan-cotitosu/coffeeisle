@@ -113,6 +113,7 @@ function coffeeisle_custom_styles( $custom ) {
 		$custom .= '.search div.search-title-bottom-svg { fill: #' . esc_attr( $background_color ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_calendar .calendar_wrap table td { background-color: #' . esc_attr( $background_color ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_calendar .calendar_wrap table td { background-color: #' . esc_attr( $background_color ) . ';}' . "\n";
 
 		$custom .= '.single-product div.single_product_bottom_svg { background-color: #' . esc_attr( $background_color ) . ';}' . "\n";
 
@@ -151,20 +152,31 @@ function coffeeisle_custom_styles( $custom ) {
 		$custom .= '.single-sidebar .widget .search-submit:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 		$custom .= '.single-sidebar .widget .search-submit:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 		$custom .= '.single-sidebar .widget .search-submit:hover { border: 1px solid ' . coffeeisle_darken_color( $primary_color, 10 ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget .search-submit:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget .search-submit:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget .search-submit:hover { border: 1px solid ' . coffeeisle_darken_color( $primary_color, 10 ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_categories ul li a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_categories ul li a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_archive ul li a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_archive ul li a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_pages ul li a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_pages ul li a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_meta ul li a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_meta ul li a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_nav_menu ul li a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_nav_menu ul li a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_recent_entries ul li a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_recent_entries ul li a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
 		$current_selector = '.single-sidebar .widget select:hover';
+		$custom .= coffeeisle_sidebar_dropdown( $current_selector, $primary_color );
+		$current_selector = '.header-widgets .widget select:hover';
 		$custom .= coffeeisle_sidebar_dropdown( $current_selector, $primary_color );
 
 		$custom .= '.woocommerce-page ul.products li.product a.add_to_cart_button:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
@@ -285,34 +297,52 @@ function coffeeisle_custom_styles( $custom ) {
 
 		$custom .= '.single-sidebar .widget .widget-title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 		$custom .= '.single-sidebar .widget_calendar .calendar_wrap table caption { background: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget .widget-title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_calendar .calendar_wrap table caption { background: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget .search-submit { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 		$custom .= '.single-sidebar .widget .search-submit { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 		$custom .= '.single-sidebar .widget .search-submit { border: 1px solid ' . coffeeisle_darken_color( $entry_titles, 10 ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget .search-submit { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget .search-submit { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget .search-submit { border: 1px solid ' . coffeeisle_darken_color( $entry_titles, 10 ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_categories ul li:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_categories ul li:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_categories ul li { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_categories ul li { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_tag_cloud .tagcloud a:hover { color: #ffffff; background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_tag_cloud .tagcloud a:hover { color: #ffffff; background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_archive ul li:before, .single-sidebar .widget_archive ul li { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_archive ul li:before, .single-sidebar .widget_archive ul li { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_pages ul li:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_pages ul li:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_meta ul li:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_meta ul li:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_nav_menu ul li:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_nav_menu ul li:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_recent_entries ul li:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_recent_entries ul li:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_rss ul li:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_rss ul li:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_recent_comments ul li:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_recent_comments ul li:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_calendar .calendar_wrap table td a { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_calendar .calendar_wrap table td a { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$current_selector = '.single-sidebar .widget select';
+		$custom .= coffeeisle_sidebar_dropdown( $current_selector, $entry_titles );
+		$current_selector = '.header-widgets .widget select';
 		$custom .= coffeeisle_sidebar_dropdown( $current_selector, $entry_titles );
 
 		$custom .= '.page h2.comments-title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
@@ -421,22 +451,33 @@ function coffeeisle_custom_styles( $custom ) {
 		$custom .= '.single .comment-body .comment-metadata a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget select { color: ' . esc_attr( $body_text_color ) . ' !important;}' . "\n";
+		$custom .= '.header-widgets .widget select { color: ' . esc_attr( $body_text_color ) . ' !important;}' . "\n";
+
+		$custom .= '.header-widgets, .header-widgets a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_categories ul li a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_categories ul li a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_tag_cloud .tagcloud a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_tag_cloud .tagcloud a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_archive ul li a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_archive ul li a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_pages ul li a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_pages ul li a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_meta ul li a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_meta ul li a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_nav_menu ul li a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_nav_menu ul li a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_recent_entries ul li a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_recent_entries ul li a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget .search-form label input.search-field::placeholder { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget .search-form label input.search-field::placeholder { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
 
 		$custom .= '.woocommerce-page nav.navigation .page-numbers { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
 
@@ -476,14 +517,19 @@ function coffeeisle_custom_styles( $custom ) {
 		$custom .= '.single .comment-form input, .single .comment-form textarea { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_calendar .calendar_wrap table { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_calendar .calendar_wrap table { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_calendar .calendar_wrap table caption { color:  ' . esc_attr( $entry_background ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_calendar .calendar_wrap table caption { color:  ' . esc_attr( $entry_background ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_calendar .calendar_wrap table td a { color:  ' . esc_attr( $entry_background ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_calendar .calendar_wrap table td a { color:  ' . esc_attr( $entry_background ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_tag_cloud .tagcloud a { background-color:  ' . esc_attr( $entry_background ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_tag_cloud .tagcloud a { background-color:  ' . esc_attr( $entry_background ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_tag_cloud .tagcloud a:hover { color:  ' . esc_attr( $entry_background ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_tag_cloud .tagcloud a:hover { color:  ' . esc_attr( $entry_background ) . ';}' . "\n";
 
 		$custom .= 'nav.posts-navigation div.nav-links .current { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 

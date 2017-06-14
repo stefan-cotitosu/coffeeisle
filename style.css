@@ -4,7 +4,7 @@
  Description: todo:add description ( talk with adelina )
  Author: Stefan Cotitosu
  URI: https://www.themeisle.com/
- Template: oblique
+ Template: oblique-pro
  Version: 1.0.0
  */
 
@@ -616,11 +616,23 @@ form.comment-form p label {
 }
 
 /* Widget */
+.header-widgets .widget,
 .single-sidebar .widget {
 	margin: 0 0 30px;
 }
 
+.header-widgets .widget ul li {
+	text-align: left;
+}
+
+/* Widget Title */
+.header-widgets .widget .widget-title,
+.single-sidebar .widget .widget-title {
+	text-align: left;
+}
+
 /* Sidebar */
+.header-widgets .widget .widget-title,
 .single-sidebar .widget .widget-title {
 	margin: 0 0 25px;
 	font-family: "Lora", serif;
@@ -629,10 +641,12 @@ form.comment-form p label {
 }
 
 /* Search */
+.header-widgets .widget form.search-form,
 .single-sidebar .widget form.search-form {
 	position: relative;
 }
 
+.header-widgets .widget .search-form label,
 .single-sidebar .widget .search-form label {
 	overflow: hidden;
 	position: relative;
@@ -640,6 +654,7 @@ form.comment-form p label {
 	margin: 0;
 }
 
+.header-widgets .widget .search-form label::after,
 .single-sidebar .widget .search-form label::after {
 	position: absolute;
 	z-index: 5;
@@ -652,10 +667,12 @@ form.comment-form p label {
 	pointer-events: none;
 }
 
+.header-widgets .widget .search-form label input.search-field,
 .single-sidebar .widget .search-form label input.search-field {
 	padding: 11px 0 9px 10px;
 }
 
+.header-widgets .widget .search-form label input.search-field::-webkit-input-placeholder,
 .single-sidebar .widget .search-form label input.search-field::-webkit-input-placeholder {
 	font-family: "Athiti", sans-serif;
 	font-size: 15px;
@@ -664,6 +681,7 @@ form.comment-form p label {
 	content: "Bla";
 }
 
+.header-widgets .widget .search-form label input.search-field::-moz-placeholder,
 .single-sidebar .widget .search-form label input.search-field::-moz-placeholder {
 	font-family: "Athiti", sans-serif;
 	font-size: 15px;
@@ -672,6 +690,7 @@ form.comment-form p label {
 	content: "Bla";
 }
 
+.header-widgets .widget .search-form label input.search-field:-ms-input-placeholder,
 .single-sidebar .widget .search-form label input.search-field:-ms-input-placeholder {
 	font-family: "Athiti", sans-serif;
 	font-size: 15px;
@@ -680,6 +699,7 @@ form.comment-form p label {
 	content: "Bla";
 }
 
+.header-widgets .widget .search-form label input.search-field::placeholder,
 .single-sidebar .widget .search-form label input.search-field::placeholder {
 	font-family: "Athiti", sans-serif;
 	font-size: 15px;
@@ -688,6 +708,7 @@ form.comment-form p label {
 	content: "Bla";
 }
 
+.header-widgets .widget .search-submit,
 .single-sidebar .widget .search-submit {
 	display: inline-block;
 	position: absolute;
@@ -698,6 +719,7 @@ form.comment-form p label {
 }
 
 /* Drop Down */
+.header-widgets .widget select,
 .single-sidebar .widget select {
 	width: 100%;
 	padding: 11px 0 9px 10px;
@@ -707,6 +729,7 @@ form.comment-form p label {
 	line-height: 21px;
 }
 
+.header-widgets .widget_categories label.screen-reader-text:after,
 .single-sidebar .widget_categories label.screen-reader-text:after {
 	color: #000;
 	font-family: FontAwesome, "sans-serif";
@@ -715,10 +738,12 @@ form.comment-form p label {
 }
 
 /* Calendar */
+.header-widgets .widget_calendar .calendar_wrap table,
 .single-sidebar .widget_calendar .calendar_wrap table {
 	position: relative;
 }
 
+.header-widgets .widget_calendar .calendar_wrap table caption,
 .single-sidebar .widget_calendar .calendar_wrap table caption {
 	padding: 15px 0 17px;
 	font-family: "Lora", serif;
@@ -726,16 +751,19 @@ form.comment-form p label {
 	font-weight: 700;
 }
 
+.header-widgets .widget_calendar .calendar_wrap table thead,
 .single-sidebar .widget_calendar .calendar_wrap table thead {
 	display: block;
 	margin: 21px 0 19px;
 }
 
+.header-widgets .widget_calendar .calendar_wrap table tbody,
 .single-sidebar .widget_calendar .calendar_wrap table tbody {
 	display: block;
 	padding: 0 7px 7px;
 }
 
+.header-widgets .widget_calendar .calendar_wrap table th,
 .single-sidebar .widget_calendar .calendar_wrap table th {
 	display: inline-block;
 	width: 44px;
@@ -745,6 +773,7 @@ form.comment-form p label {
 	text-align: center;
 }
 
+.header-widgets .widget_calendar .calendar_wrap table td,
 .single-sidebar .widget_calendar .calendar_wrap table td {
 	display: inline-block;
 	position: relative;
@@ -756,6 +785,7 @@ form.comment-form p label {
 	text-align: center;
 }
 
+.header-widgets .widget_calendar .calendar_wrap table td a,
 .single-sidebar .widget_calendar .calendar_wrap table td a {
 	display: block;
 	position: absolute;
@@ -765,6 +795,7 @@ form.comment-form p label {
 	padding: 11px;
 }
 
+.header-widgets .widget_calendar .calendar_wrap td#prev,
 .single-sidebar .widget_calendar .calendar_wrap td#prev {
 	position: absolute;
 	top: 0;
@@ -773,6 +804,7 @@ form.comment-form p label {
 	margin: 9px 0 0;
 }
 
+.header-widgets .widget_calendar .calendar_wrap td#next,
 .single-sidebar .widget_calendar .calendar_wrap td#next {
 	position: absolute;
 	top: 0;
@@ -781,15 +813,18 @@ form.comment-form p label {
 	margin: 9px 0 0;
 }
 
+.header-widgets .widget_calendar .calendar_wrap table tfoot td.pad,
 .single-sidebar .widget_calendar .calendar_wrap table tfoot td.pad {
 	display: none;
 }
 
+.header-widgets .widget_calendar .calendar_wrap table td.pad,
 .single-sidebar .widget_calendar .calendar_wrap table td.pad {
 	display: none;
 }
 
 /* Tags */
+.header-widgets .widget_tag_cloud .tagcloud a,
 .single-sidebar .widget_tag_cloud .tagcloud a {
 	display: inline-block;
 	margin: 5px;
@@ -797,89 +832,107 @@ form.comment-form p label {
 }
 
 /* Archive List */
+.header-widgets .widget_archive ul,
 .single-sidebar .widget_archive ul {
 	list-style-type: none;
 }
 
+.header-widgets .widget_archive ul li:before,
 .single-sidebar .widget_archive ul li:before {
 	float: left;
 	content: "\25C6";
 }
 
+.header-widgets .widget_archive ul li,
 .single-sidebar .widget_archive ul li {
 	text-align: right;
 }
 
+.header-widgets .widget_archive ul li a,
 .single-sidebar .widget_archive ul li a {
 	float: left;
 }
 
 /* Pages */
+.header-widgets .widget_pages ul,
 .single-sidebar .widget_pages ul {
 	list-style-type: none;
 }
 
+.header-widgets .widget_pages ul li:before,
 .single-sidebar .widget_pages ul li:before {
 	content: "\25C6";
 }
 
 /* Meta */
+.header-widgets .widget_meta ul,
 .single-sidebar .widget_meta ul {
 	padding: 0;
 	list-style-type: none;
 }
 
+.header-widgets .widget_meta ul li:before,
 .single-sidebar .widget_meta ul li:before {
 	margin-right: 4px;
 	content: "\25C6";
 }
 
 /* Nav Menu */
+.header-widgets .widget_nav_menu ul,
 .single-sidebar .widget_nav_menu ul {
 	list-style-type: none;
 }
 
+.header-widgets .widget_nav_menu ul li:before,
 .single-sidebar .widget_nav_menu ul li:before {
 	margin-right: 4px;
 	content: "\25C6";
 }
 
 /* Widget Recent Entries */
+.header-widgets .widget_recent_entries ul,
 .single-sidebar .widget_recent_entries ul {
 	list-style-type: none;
 }
 
+.header-widgets .widget_recent_entries ul li:before,
 .single-sidebar .widget_recent_entries ul li:before {
 	margin-right: 4px;
 	content: "\25C6";
 }
 
 /* RSS */
+.header-widgets .widget_rss ul,
 .single-sidebar .widget_rss ul {
 	padding: 0;
 	list-style-type: none;
 }
 
+.header-widgets .widget_rss ul li:before,
 .single-sidebar .widget_rss ul li:before {
 	margin-right: 4px;
 	content: "\25C6";
 }
 
 /* Categories List */
+.header-widgets .widget_categories ul,
 .single-sidebar .widget_categories ul {
 	list-style-type: none;
 }
 
+.header-widgets .widget_categories ul li,
 .single-sidebar .widget_categories ul li {
 	clear: both;
 	text-align: right;
 }
 
+.header-widgets .widget_categories ul li:before,
 .single-sidebar .widget_categories ul li:before {
 	float: left;
 	content: "\25C6";
 }
 
+.header-widgets .widget_categories ul li a,
 .single-sidebar .widget_categories ul li a {
 	display: block;
 	float: left;
@@ -889,10 +942,12 @@ form.comment-form p label {
 }
 
 /* Recent Comments */
+.header-widgets .widget_recent_comments ul,
 .single-sidebar .widget_recent_comments ul {
 	list-style-type: none;
 }
 
+.header-widgets .widget_recent_comments ul li:before,
 .single-sidebar .widget_recent_comments ul li:before {
 	margin-right: 4px;
 	content: "\25C6";
