@@ -9,6 +9,22 @@
  */
 
 /**
+ * Check if parent theme is free or pro version
+ */
+function coffeeisle_compatibility_with_pro_features() {
+	$theme = wp_get_theme();
+	if ( is_child_theme() ) {
+		$parent_theme = $theme->parent()->get( 'Name' );
+		if ( $parent_theme == 'Oblique Pro' ) {
+			return true;
+		} elseif ( $parent_theme == 'Oblique' ) {
+			return false;
+		}
+	}
+	return false;
+}
+
+/**
  * Enqueue stylesheets and scripts
  *
  * @since 1.0.0
@@ -68,7 +84,9 @@ function remove_actions() {
 	remove_action( 'oblique_nav_container', 'oblique_nav_svg_container' );
 
 	// Footer credits
-	remove_action( 'oblique_footer', 'oblique_footer_credits' );
+	if ( ! coffeeisle_compatibility_with_pro_features() ) {
+		remove_action( 'oblique_footer', 'oblique_footer_credits' );
+	}
 
 	// Index posts navigation
 	remove_action( 'oblique_posts_navigation', 'oblique_posts_navigation' );
@@ -485,7 +503,7 @@ function coffeeisle_custom_styles( $custom ) {
 		$custom .= '.woocommerce div.product .woocommerce-tabs ul.tabs li { border: none; border-right: 1px solid ' . esc_attr( $body_text_color ) . ';}' . "\n";
 		$custom .= '.woocommerce div.product .woocommerce-tabs .woocommerce-Tabs-panel { border-top: 1px solid ' . esc_attr( $body_text_color ) . ';}' . "\n";
 
-	}
+	}// End if().
 
 	// Footer color
 	$footer_background_color = get_theme_mod( 'footer_background', '#ffffff' );
@@ -1091,13 +1109,15 @@ function oblique_posted_on() {
  * @since 1.0.0
  */
 function coffeeisle_footer_credits() {
-	echo esc_html__( '&copy Copyright 2016', 'coffeeisle' );
+	echo esc_html__( '© Copyright 2016', 'coffeeisle' );
 	echo '<span class="sep"> | </span>';
 	echo esc_html__( 'Coffeeisle Shop Theme', 'coffeeisle' );
 	echo '<span class="sep"> | </span>';
 	echo esc_html__( 'All Rights Reserved.', 'coffeeisle' );
 }
-add_action( 'oblique_footer', 'coffeeisle_footer_credits' );
+if ( ! coffeeisle_compatibility_with_pro_features() ) {
+	add_action( 'oblique_footer', 'coffeeisle_footer_credits' );
+}
 
 /**
  * Posts Navigation

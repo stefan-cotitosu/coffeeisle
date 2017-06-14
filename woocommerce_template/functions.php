@@ -44,9 +44,9 @@ function coffeeisle_shop_title() {
 
 	do_action( 'oblique_archive_title_top_svg' ); ?>
 
-    <header class="page-header">
-        <h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
-    </header><!-- .page-header -->
+	<header class="page-header">
+		<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
+	</header><!-- .page-header -->
 	<?php
 
 	/**
@@ -57,9 +57,9 @@ function coffeeisle_shop_title() {
 	 */
 	do_action( 'woocommerce_archive_description' ); ?>
 
-    <div class="svg-container svg-block page-header-svg">
+	<div class="svg-container svg-block page-header-svg">
 		<?php do_action( 'oblique_archive_title_bottom_svg' ); ?>
-    </div>
+	</div>
 	<?php
 
 }
@@ -75,9 +75,9 @@ remove_action( 'woocommerce_after_shop_loop_item_title','woocommerce_template_lo
  */
 function coffeeisle_product_top_svg() {
 	?>
-    <div class="svg-container post-svg svg-block">
+	<div class="svg-container post-svg svg-block">
 		<?php echo oblique_svg_3(); ?>
-    </div>
+	</div>
 	<?php
 }
 add_action( 'woocommerce_before_shop_loop_item', 'coffeeisle_product_top_svg', 5 );
@@ -89,9 +89,9 @@ add_action( 'woocommerce_before_shop_loop_item', 'coffeeisle_product_top_svg', 5
  */
 function coffeeisle_product_bottom_svg() {
 	?>
-    <div class="svg-container post-bottom-svg svg-block">
+	<div class="svg-container post-bottom-svg svg-block">
 		<?php echo svg_new(); ?>
-    </div>
+	</div>
 	<?php
 }
 add_action( 'woocommerce_after_shop_loop_item', 'coffeeisle_product_bottom_svg', 10 );
@@ -160,10 +160,10 @@ add_filter( 'woocommerce_output_related_products_args', 'coffeeisle_related_prod
  */
 function coffeeisle_single_product_wrapper() {
 	?>
-    <div class="svg-container svg-block single_product_top_svg">
+	<div class="svg-container svg-block single_product_top_svg">
 		<?php do_action( 'single_product_top_svg' ); ?>
-    </div>
-    <div class="single_product_wrapper">
+	</div>
+	<div class="single_product_wrapper">
 	<?php
 }
 add_action( 'woocommerce_before_single_product_summary', 'coffeeisle_single_product_wrapper' );
@@ -179,21 +179,21 @@ function coffeeisle_related_products_title() {
 	$related_products = wc_get_related_products( $product->get_id(), 1, $product->get_upsell_ids() );
 
 	?>
-    <div class="svg-container svg-block single_product_bottom_svg">
+	<div class="svg-container svg-block single_product_bottom_svg">
 		<?php do_action( 'single_product_bottom_svg' ); ?>
-    </div>
-    </div> <!-- Single Product Wrapper -->
+	</div>
+	</div> <!-- Single Product Wrapper -->
 
 	<?php if ( $related_products ) : ?>
-        <div class="related_products_title_wrapper">
-            <div class="svg-container svg-block related-title-top-svg">
+		<div class="related_products_title_wrapper">
+			<div class="svg-container svg-block related-title-top-svg">
 				<?php do_action( 'related_products_title_before' ); ?>
-            </div>
-            <h2 class="related_products_title"><?php echo esc_html__( 'Suggested Items', 'coffeeisle' ); ?></h2>
-            <div class="svg-container svg-block related-title-bottom-svg">
+			</div>
+			<h2 class="related_products_title"><?php echo esc_html__( 'Suggested Items', 'coffeeisle' ); ?></h2>
+			<div class="svg-container svg-block related-title-bottom-svg">
 				<?php do_action( 'related_products_title_after' ); ?>
-            </div>
-        </div>
+			</div>
+		</div>
 		<?php
 	endif;
 
@@ -263,8 +263,8 @@ add_action( 'related_products_title_after', 'coffeeisle_related_title_bottom_svg
  */
 function coffeeisle_search_icon() {
 	?>
-    <div class="nav_search_icon">
-    </div>
+	<div class="nav_search_icon">
+	</div>
 	<?php
 }
 add_action( 'oblique_nav_search', 'coffeeisle_search_icon' );
