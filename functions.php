@@ -135,10 +135,6 @@ function coffeeisle_custom_styles( $custom ) {
 
 		$custom .= '.single-product div.single_product_bottom_svg { background-color: #' . esc_attr( $background_color ) . ';}' . "\n";
 
-		$custom .= '.woocommerce-page div.woocommerce-info { background-color: #' . esc_attr( $background_color ) . ';}' . "\n";
-
-		$custom .= '.woocommerce-page div.woocommerce form.woocommerce-checkout div#payment { background: #' . esc_attr( $background_color ) . ';}' . "\n";
-
 		$custom .= 'div.alt-shop-special-offer-top-svg { fill: #' . esc_attr( $background_color ) . ';}' . "\n";
 		$custom .= 'div.alt-shop-special-offer-bottom-svg { fill: #' . esc_attr( $background_color ) . ';}' . "\n";
 
@@ -423,8 +419,7 @@ function coffeeisle_custom_styles( $custom ) {
 
 		$custom .= '.woocommerce-page div.woocommerce-info { border-top-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 		$custom .= '.woocommerce-page div.woocommerce-info:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
-		$custom .= '.woocommerce-page div.woocommerce form.woocommerce-checkout div#payment ul.payment_methods { border-bottom: 1px solid ' .
-				   esc_attr( $entry_titles ) . ';}' . "\n";
+
 		$custom .= '.woocommerce-page div.woocommerce form.woocommerce-checkout div#payment ul.payment_methods li.woocommerce-info { border-top-color: ' .
 				   esc_attr( $entry_titles ) . ';}' . "\n";
 
@@ -442,6 +437,10 @@ function coffeeisle_custom_styles( $custom ) {
 		$custom .= '.woocommerce-page div.woocommerce-info a { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= '.woocommerce-page form.woocommerce-cart-form a { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+		$custom .= '.woocommerce-cart header.entry-header h1.entry-title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.woocommerce-checkout header.entry-header h1.entry-title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.woocommerce-account header.entry-header h1.entry-title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= 'h2.alt-shop-blog-title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 

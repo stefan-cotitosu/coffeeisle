@@ -1516,6 +1516,14 @@ form.comment-form p label {
 	background-color: #fff;
 }
 
+.woocommerce-page div.woocommerce-info {
+    background-color: #fff;
+}
+
+.woocommerce-checkout #payment ul.payment_methods {
+    border: none;
+}
+
 /* Product added to cart message */
 .woocommerce-page div.woocommerce-message a.button {
 	margin: 0;
