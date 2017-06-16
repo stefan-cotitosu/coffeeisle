@@ -956,16 +956,7 @@ add_filter( 'oblique_custom_header_args', 'coffeeisle_header_image' );
 function coffeeisle_post_thumbnail_size() {
 	remove_image_size( 'oblique-entry-thumb' );
 	add_image_size( 'oblique-entry-thumb', 525 );
-
-	/* Shop Page */
-	remove_action( 'woocommerce_before_main_content', 'oblique_shop_title', 40 );
-	add_action( 'woocommerce_before_shop_loop_item', 'oblique_product_top_svg', 5 );
-	add_action( 'woocommerce_after_shop_loop_item', 'oblique_product_bottom_svg', 10 );
-
-	/* Single Product Page */
-	remove_action( 'oblique_single_product_bottom_svg', 'oblique_svg_5' );
-	remove_action( 'oblique_related_products_title_after', 'oblique_svg_5' );
-}
+    }
 add_action( 'after_setup_theme', 'coffeeisle_post_thumbnail_size', 15 );
 
 /**

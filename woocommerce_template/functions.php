@@ -9,6 +9,23 @@
 /**
  * WooCommerce
  */
+/**
+ * Replace parent theme functions binded to woo hooks
+ *
+ * @since 1.0.0
+ */
+function coffeeisle_remove_woo_functions() {
+	/* Shop Page */
+	remove_action( 'woocommerce_before_main_content', 'oblique_shop_title', 40 );
+	add_action( 'woocommerce_before_shop_loop_item', 'oblique_product_top_svg', 5 );
+	add_action( 'woocommerce_after_shop_loop_item', 'oblique_product_bottom_svg', 10 );
+
+	/* Single Product Page */
+	remove_action( 'oblique_single_product_bottom_svg', 'oblique_svg_5' );
+	remove_action( 'oblique_related_products_title_after', 'oblique_svg_5' );
+}
+add_action( 'after_setup_theme', 'coffeeisle_remove_woo_functions', 15 );
+
 // Remove pages navigation
 remove_action( 'woocommerce_before_main_content','woocommerce_breadcrumb', 20, 0 );
 
@@ -124,16 +141,6 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 
 // Remove upsells on single product page
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
-
-/**
- * Show quantity text before quantity form
- *
- * @since 1.0.0
- */
-function coffeeisle_single_product_quantity_title() {
-	echo '<p class="quantity-title">Quantity</p>';
-}
-add_action( 'woocommerce_before_add_to_cart_quantity', 'coffeeisle_single_product_quantity_title' );
 
 /**
  * Change the number of related products

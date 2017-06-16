@@ -1062,7 +1062,6 @@ form.comment-form p label {
 	font-family: "Lora", serif;
 	font-size: 15px;
 	line-height: 15px;
-
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
@@ -1164,31 +1163,22 @@ form.comment-form p label {
 	position: relative;
 }
 
-.single-product form.cart p.quantity-title {
-	display: inline-block;
-	position: absolute;
-	top: 1%;
-	left: 0;
-	margin: 0;
-	font-family: "Athiti", sans-serif;
-	font-size: 15px;
-	font-weight: 600;
-	line-height: 22px;
+.woocommerce div.product form.cart div.quantity {
+    display: block;
+    float: none;
 }
 
-.single-product form.cart div.quantity {
-	display: inline-block;
-	float: none !important;
-	position: absolute;
-	top: 0;
-	left: 69px;
-	margin: 0;
+.woocommerce div.product form.cart div.quantity:before {
+    content: 'Quantity';
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 22px;
 }
 
-.single-product form.cart div.quantity input {
-	font-size: 15px;
-	font-weight: 600;
-	line-height: 17px;
+.woocommerce div.product form.cart div.quantity input {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 17px;
 }
 
 .woocommerce div.product form.cart table.variations {
