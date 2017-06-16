@@ -154,63 +154,6 @@ function coffeeisle_related_products( $args ) {
 add_filter( 'woocommerce_output_related_products_args', 'coffeeisle_related_products' );
 
 /**
- * Single Product Wrapper
- *
- * @since 1.0.0
- */
-function coffeeisle_single_product_wrapper() {
-	?>
-	<div class="svg-container svg-block single_product_top_svg">
-		<?php do_action( 'single_product_top_svg' ); ?>
-	</div>
-	<div class="single_product_wrapper">
-	<?php
-}
-add_action( 'woocommerce_before_single_product_summary', 'coffeeisle_single_product_wrapper' );
-
-/**
- * Related Products Title
- *
- * @since 1.0.0
- */
-function coffeeisle_related_products_title() {
-
-	global $product;
-	$related_products = wc_get_related_products( $product->get_id(), 1, $product->get_upsell_ids() );
-
-	?>
-	<div class="svg-container svg-block single_product_bottom_svg">
-		<?php do_action( 'single_product_bottom_svg' ); ?>
-	</div>
-	</div> <!-- Single Product Wrapper -->
-
-	<?php if ( $related_products ) : ?>
-		<div class="related_products_title_wrapper">
-			<div class="svg-container svg-block related-title-top-svg">
-				<?php do_action( 'related_products_title_before' ); ?>
-			</div>
-			<h2 class="related_products_title"><?php echo esc_html__( 'Suggested Items', 'coffeeisle' ); ?></h2>
-			<div class="svg-container svg-block related-title-bottom-svg">
-				<?php do_action( 'related_products_title_after' ); ?>
-			</div>
-		</div>
-		<?php
-	endif;
-
-}
-add_action( 'woocommerce_after_single_product_summary', 'coffeeisle_related_products_title' );
-
-/**
- * Single Product Top SVG
- *
- * @since 1.0.0
- */
-function coffeeisle_single_product_top_svg() {
-	oblique_svg_3();
-}
-add_action( 'single_product_top_svg', 'coffeeisle_single_product_top_svg' );
-
-/**
  * Single Product Bottom SVG
  *
  * @since 1.0.0
@@ -226,17 +169,7 @@ function coffeeisle_single_product_bottom_svg() {
 		</svg>
 	';
 }
-add_action( 'single_product_bottom_svg', 'coffeeisle_single_product_bottom_svg' );
-
-/**
- * Related Products Title Top SVG
- *
- * @since 1.0.0
- */
-function coffeeisle_related_title_top_svg() {
-	oblique_svg_3();
-}
-add_action( 'related_products_title_before', 'coffeeisle_related_title_top_svg' );
+add_action( 'oblique_single_product_bottom_svg', 'coffeeisle_single_product_bottom_svg' );
 
 /**
  * Related Products Title Bottom SVG
@@ -254,7 +187,7 @@ function coffeeisle_related_title_bottom_svg() {
 		</svg>
 	';
 }
-add_action( 'related_products_title_after', 'coffeeisle_related_title_bottom_svg' );
+add_action( 'oblique_related_products_title_after', 'coffeeisle_related_title_bottom_svg' );
 
 /**
  * Header Search Icon

@@ -675,7 +675,7 @@ function coffeeisle_custom_styles( $custom ) {
 	}
 
 	// Sidebar color
-	$sidebar_color = get_theme_mod( 'sidebar_color', '#000000' );
+	$sidebar_color = get_theme_mod( 'sidebar_color', '#f9f9f9' );
 	if ( ! empty( $sidebar_color ) ) {
 
 		$custom .= 'div.widget-area-visible, div.widget-area-visible a { color: ' . esc_attr( $sidebar_color ) . ';}' . "\n";
@@ -957,9 +957,14 @@ function coffeeisle_post_thumbnail_size() {
 	remove_image_size( 'oblique-entry-thumb' );
 	add_image_size( 'oblique-entry-thumb', 525 );
 
+	/* Shop Page */
 	remove_action( 'woocommerce_before_main_content', 'oblique_shop_title', 40 );
 	add_action( 'woocommerce_before_shop_loop_item', 'oblique_product_top_svg', 5 );
 	add_action( 'woocommerce_after_shop_loop_item', 'oblique_product_bottom_svg', 10 );
+
+	/* Single Product Page */
+	remove_action( 'oblique_single_product_bottom_svg', 'oblique_svg_5' );
+	remove_action( 'oblique_related_products_title_after', 'oblique_svg_5' );
 }
 add_action( 'after_setup_theme', 'coffeeisle_post_thumbnail_size', 15 );
 
