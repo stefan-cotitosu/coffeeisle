@@ -17,8 +17,7 @@
 function coffeeisle_remove_woo_functions() {
 	/* Shop Page */
 	remove_action( 'woocommerce_before_main_content', 'oblique_shop_title', 40 );
-	add_action( 'woocommerce_before_shop_loop_item', 'oblique_product_top_svg', 5 );
-	add_action( 'woocommerce_after_shop_loop_item', 'oblique_product_bottom_svg', 10 );
+	remove_action( 'woocommerce_after_shop_loop_item', 'oblique_product_bottom_svg', 10 );
 
 	/* Single Product Page */
 	remove_action( 'oblique_single_product_bottom_svg', 'oblique_svg_5' );
@@ -86,20 +85,6 @@ add_action( 'woocommerce_before_main_content', 'coffeeisle_shop_title', 40 );
 remove_action( 'woocommerce_after_shop_loop_item_title','woocommerce_template_loop_rating', 5 );
 
 /**
- * Adding top svg for item on shop page
- *
- * @since 1.0.0
- */
-function coffeeisle_product_top_svg() {
-	?>
-	<div class="svg-container post-svg svg-block">
-		<?php echo oblique_svg_3(); ?>
-	</div>
-	<?php
-}
-add_action( 'woocommerce_before_shop_loop_item', 'coffeeisle_product_top_svg', 5 );
-
-/**
  * Adding bottom svg for item on shop page
  *
  * @since 1.0.0
@@ -107,7 +92,7 @@ add_action( 'woocommerce_before_shop_loop_item', 'coffeeisle_product_top_svg', 5
 function coffeeisle_product_bottom_svg() {
 	?>
 	<div class="svg-container post-bottom-svg svg-block">
-		<?php echo svg_new(); ?>
+		<?php svg_new(); ?>
 	</div>
 	<?php
 }
