@@ -13,6 +13,17 @@ body {
 	font-family: "Athiti", sans-serif;
 }
 
+a:focus {
+	text-decoration: none;
+	outline: none;
+}
+
+h1.site-title a:hover,
+h1.site-title a:focus {
+	text-decoration: none;
+	outline: none;
+}
+
 .entry-title,
 .entry-meta {
 	font-family: "Lora", serif;
@@ -1030,6 +1041,10 @@ form.comment-form p label {
 	text-align: center;
 }
 
+.woocommerce-page ul.products li.product h2.woocommerce-loop-product__title:focus {
+	outline: none;
+}
+
 .woocommerce-page ul.products li.product .price {
 	margin-bottom: 19px;
 	font-family: "Lora", serif;
@@ -1226,6 +1241,10 @@ form.comment-form p label {
 	line-height: 15px;
 }
 
+.single-product button.single_add_to_cart_button:focus {
+	outline: none;
+}
+
 .single-product button.single_add_to_cart_button:before {
 	margin-right: 3px;
 	font-family: FontAwesome, "sans-serif";
@@ -1386,6 +1405,10 @@ form.comment-form p label {
 	line-height: 15px;
 }
 
+.woocommerce #review_form #respond .form-submit input[type="submit"]:focus {
+	outline: none;
+}
+
 .woocommerce #review_form .comment-form label {
 	margin: 20px 0 14px;
 }
@@ -1472,10 +1495,13 @@ form.comment-form p label {
 
 .woocommerce-cart form.woocommerce-cart-form input[type="submit"] {
 	font-family: "Lora", serif;
-
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
+}
+
+.woocommerce-cart form.woocommerce-cart-form input[type="submit"]:focus {
+	outline: none;
 }
 
 .woocommerce-cart div.cart_totals div.wc-proceed-to-checkout a {
@@ -1532,6 +1558,10 @@ form.comment-form p label {
     border: none;
 }
 
+.woocommerce #payment #place_order, .woocommerce-page #payment #place_order:focus {
+	outline: none;
+}
+
 /* Product added to cart message */
 .woocommerce-page div.woocommerce-message a.button {
 	margin: 0;
@@ -1555,6 +1585,10 @@ form.comment-form p label {
 	font-family: "Lora", serif;
 	font-size: 15px;
 	line-height: 15px;
+}
+
+.woocommerce-page form.woocommerce-form-login input[type="submit"]:focus {
+	outline: none;
 }
 
 /* Alt Shop Template */

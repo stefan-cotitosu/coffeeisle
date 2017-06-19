@@ -675,7 +675,7 @@ function coffeeisle_custom_styles( $custom ) {
 	}
 
 	// Sidebar background
-	$sidebar_background = get_theme_mod( 'sidebar_bg', '#ffffff' );
+	$sidebar_background = get_theme_mod( 'sidebar_bg', '#17191B' );
 	if ( ! empty( $sidebar_background ) ) {
 
 		$custom .= 'div.widget-area-visible { background: ' . esc_attr( $sidebar_background ) . ';}' . "\n";
