@@ -97,9 +97,6 @@ function remove_actions() {
 	// Content single post bottom svg
 	remove_action( 'oblique_single_post_bottom_svg', 'oblique_single_post_bottom_svg' );
 
-	// Single post navigation
-	remove_action( 'oblique_single_post_navigation', 'oblique_single_post_navigation' );
-
 	// Single page post bottom svg
 	remove_action( 'oblique_single_page_post_svg', 'oblique_single_page_post_svg' );
 
@@ -162,6 +159,9 @@ function coffeeisle_custom_styles( $custom ) {
 		$custom .= '.single a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
 		$custom .= '.single .comment-body .reply a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+
+		$custom .= '.single-post nav.post-navigation div.nav-previous:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+		$custom .= '.single-post nav.post-navigation div.nav-next:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget .search-submit:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 		$custom .= '.single-sidebar .widget .search-submit:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
@@ -467,6 +467,9 @@ function coffeeisle_custom_styles( $custom ) {
 
 		$custom .= '.single .comment-body .comment-metadata a { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
 
+		$custom .= '.single-post nav.post-navigation div.nav-previous { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
+		$custom .= '.single-post nav.post-navigation div.nav-next { color: ' . esc_attr( $body_text_color ) . ';}' . "\n";
+
 		$custom .= '.single-sidebar .widget select { color: ' . esc_attr( $body_text_color ) . ' !important;}' . "\n";
 		$custom .= '.header-widgets .widget select { color: ' . esc_attr( $body_text_color ) . ' !important;}' . "\n";
 
@@ -532,6 +535,11 @@ function coffeeisle_custom_styles( $custom ) {
 		$custom .= '.single .reply a { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
 		$custom .= '.single .comment-form input, .single .comment-form textarea { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.single-post nav.post-navigation div.nav-previous { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+		$custom .= '.single-post nav.post-navigation div.nav-next { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+		$custom .= '.single-post nav.post-navigation div.nav-previous:hover { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+		$custom .= '.single-post nav.post-navigation div.nav-next:hover { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_calendar .calendar_wrap table { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 		$custom .= '.header-widgets .widget_calendar .calendar_wrap table { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";

@@ -525,6 +525,14 @@ form.comment-form p label {
 	margin-bottom: 33px;
 }
 
+.single-post nav.post-navigation div.nav-previous a,
+.single-post nav.post-navigation div.nav-next a,
+.single-post nav.post-navigation div.nav-previous a:hover,
+.single-post nav.post-navigation div.nax-next a:hover {
+	color: inherit;
+	background-color: inherit;
+}
+
 /* Single page with comments */
 .single h2.comments-title {
 	margin: 58px 0 37px;
