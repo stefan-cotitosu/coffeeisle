@@ -2,7 +2,8 @@
 /**
  * The template used for displaying large post on Alt Shop Page, Blog section
  *
- * @package Oblique Coffeeshop
+ * @package Cooffeesile
+ * @since 1.0.0
  */
 ?>
 <div class="col-md-8 alt-shop-blog-large">

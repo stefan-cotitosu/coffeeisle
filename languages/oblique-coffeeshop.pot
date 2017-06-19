@@ -59,7 +59,7 @@ msgid "%s Copyright 2016"
 msgstr ""
 
 #: functions.php:993
-msgid "Oblique Coffeeshop Blog Theme"
+msgid "Coffeeisle Blog Theme"
 msgstr ""
 
 #: functions.php:995

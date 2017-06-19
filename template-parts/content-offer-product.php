@@ -2,7 +2,8 @@
 /**
  * The template used for displaying Offer Product on Alt Shop Page, Blog section
  *
- * @package Oblique Coffeeshop
+ * @package Coffeesile
+ * @since 1.0.0
  */
 ?>
 <div class="special-offer-wrapper">

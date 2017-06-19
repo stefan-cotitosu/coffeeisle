@@ -1,8 +1,8 @@
 {
   "name": "coffeeisle",
-  "nicename": "Oblique CoffeeShop",
+  "nicename": "Coffeeisle",
   "version": "1.0.0",
-  "description": "Oblique Coffeeshop childtheme",
+  "description": "Coffeeisle childtheme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/stefan-cotitosu/coffeeisle.git"
