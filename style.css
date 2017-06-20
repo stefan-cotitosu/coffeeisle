@@ -1675,6 +1675,13 @@ div.offer-product-wrapper div.offer-product-inner div.offer-product-price {
 	margin: 0 0 27px;
 }
 
+div.offer-product-wrapper div.offer-product-inner div.offer-product-price span.woocommerce-Price-amount {
+	margin: 0;
+	font-family: "Lora", serif;
+	font-size: 35px;
+	line-height: 41px;
+}
+
 div.offer-product-wrapper div.offer-product-inner div.offer-product-price del {
 	margin: 0 16px 0 0;
 	font-family: "Lora", serif;
