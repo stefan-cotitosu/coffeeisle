@@ -457,6 +457,9 @@ function coffeeisle_custom_styles( $custom ) {
 
 		$custom .= 'div.offer-product-wrapper div.offer-product-inner a.added_to_cart { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
+		$custom .= '.woocommerce-error { border-top-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.woocommerce-error::before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
 	}// End if().
 
 	// Body text color

@@ -1566,6 +1566,15 @@ form.comment-form p label {
 	outline: none;
 }
 
+ul.woocommerce-error:before {
+    top: 0;
+    left: 0;
+}
+
+ul.woocommerce-error li:first-of-type {
+    margin-left: 20px !important;
+}
+
 /* Product added to cart message */
 .woocommerce-page div.woocommerce-message a.button {
 	margin: 0;
