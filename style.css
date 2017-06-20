@@ -1689,6 +1689,11 @@ div.offer-product-wrapper div.offer-product-inner a.add_to_cart_button:before {
 	content: "\f07a";
 }
 
+div.offer-product-wrapper div.offer-product-inner a.added_to_cart {
+    display: block;
+    margin: 0.5em auto 0;
+}
+
 div.special-offer-inner-wrapper {
 	display: table;
 	width: 100%;

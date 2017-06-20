@@ -235,6 +235,8 @@ function coffeeisle_custom_styles( $custom ) {
 
 		$custom .= 'div.offer-product-wrapper div.offer-product-inner a.add_to_cart_button:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
+		$custom .= 'div.offer-product-wrapper div.offer-product-inner a.added_to_cart:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+
 	}// End if().
 
 	// Secondary Color
@@ -452,6 +454,8 @@ function coffeeisle_custom_styles( $custom ) {
 		$custom .= 'div.offer-product-wrapper div.offer-product-inner div.offer-product-price ins { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= 'div.offer-product-wrapper div.offer-product-inner a.add_to_cart_button { background-color:' . esc_attr( $entry_titles ) . ';}' . "\n";
+
+		$custom .= 'div.offer-product-wrapper div.offer-product-inner a.added_to_cart { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 	}// End if().
 
