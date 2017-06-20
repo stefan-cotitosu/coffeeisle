@@ -467,6 +467,8 @@ function coffeeisle_custom_styles( $custom ) {
 		$custom .= '.woocommerce-error { border-top-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 		$custom .= '.woocommerce-error::before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
+		$custom .= '.sticky .post-bottom-svg { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
 	}// End if().
 
 	// Body text color
