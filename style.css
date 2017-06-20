@@ -1076,8 +1076,13 @@ form.comment-form p label {
 .woocommerce-page ul.products li.product .price .woocommerce-Price-amount .woocommerce-Price-currencySymbol {
 	position: absolute;
 	top: -4px;
-	left: -14%;
+	left: -2px;
 	font-size: 12px;
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
 }
 
 .woocommerce-page ul.products li.product a.button,
