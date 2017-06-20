@@ -645,6 +645,8 @@ function coffeeisle_custom_styles( $custom ) {
 		$custom .= 'h2.alt-shop-blog-title { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 		$custom .= 'div.alt-shop-blog-title-bottom-svg { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
+		$custom .= '.need-woocommerce { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
 		$custom .= 'div.offer-product-wrapper div.offer-product-inner a.add_to_cart_button { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 		$custom .= 'div.offer-product-wrapper div.offer-product-inner a.add_to_cart_button:hover { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
@@ -1339,4 +1341,6 @@ function coffeeisle_sidebar_on_single() {
 add_action( 'oblique_single_sidebar', 'coffeeisle_sidebar_on_single' );
 
 // Include template for alt shop page
-require_once get_stylesheet_directory() . '/woocommerce_template/functions.php';
+if( class_exists( 'WooCommerce' ) ) {
+    require_once get_stylesheet_directory() . '/woocommerce_template/functions.php';
+}

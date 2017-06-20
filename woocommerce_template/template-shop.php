@@ -7,7 +7,11 @@
  * @package coffeeisle
  * @since 1.0
  */
-get_header(); ?>
+
+get_header();
+
+if ( class_exists( 'WooCommerce' ) ) :
+?>
 
 	<div id="primary" class="content-area woocommerce-page woocommerce">
 		<div id="main" class="site-main" role="main">
@@ -51,6 +55,13 @@ get_header(); ?>
 
 		</div><!-- #main -->
 	</div><!-- #primary -->
+
+<?php
+else: ?>
+    <a href="<?php echo esc_attr( 'https://wordpress.org/plugins/woocommerce/' ); ?>" target="_blank"><h2 class="need-woocommerce"><?php echo esc_html__( 'Please install WooCommerce plugin' ); ?></h2></a>
+
+<?php
+endif; ?>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

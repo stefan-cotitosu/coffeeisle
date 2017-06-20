@@ -1597,6 +1597,12 @@ form.comment-form p label {
 }
 
 /* Alt Shop Template */
+.need-woocommerce {
+	font-family: "Athiti", sans-serif;
+	font-size: 35px;
+	line-height: 44px;
+}
+
 .page-template-template-shop ul.products {
     margin: 4.5em 0 0;
 }
