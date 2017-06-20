@@ -196,7 +196,6 @@ function coffeeisle_display_woo_cat( $ids_array, $posts_per_page = null ) {
  * Adding control for selecting category
  * Products from this category will be listed in the section
  *
- * @param $wp_customize
  * @since 1.0.0
  */
 function coffeeisle_alt_woo_register( $wp_customize ) {

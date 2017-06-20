@@ -10,6 +10,8 @@
 
 /**
  * Check if parent theme is free or pro version
+ *
+ * @since 1.0.0
  */
 function coffeeisle_compatibility_with_pro_features() {
 	$theme = wp_get_theme();
@@ -115,7 +117,6 @@ add_action( 'after_setup_theme', 'remove_actions' );
 /**
  * Dynamic styles
  *
- * @param $custom
  * @since 1.0.0
  */
 function coffeeisle_custom_styles( $custom ) {
