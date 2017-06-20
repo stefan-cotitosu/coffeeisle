@@ -219,6 +219,22 @@ function coffeeisle_alt_woo_register( $wp_customize ) {
 			'choices' => coffeeisle_get_woo_categories( true ),
 		)
 	);
+	$wp_customize->add_setting( 'coffeeisle_number_of_featured_products_category_1',
+        array(
+            'default' => '3'
+        )
+    );
+	$wp_customize->add_control( 'coffeeisle_number_of_featured_products_category_1',
+        array(
+	        'type'          => 'number',
+            'section'       => 'coffeeisle_featured_products',
+            'label'         => __( 'Number of products from first category', 'coffeeisle' ),
+            'input_attrs'   => array(
+                    'min'   => 1,
+                    'max'   => 30,
+                    'step'  => 1,
+        ),
+    ) );
 
 	$wp_customize->add_setting( 'coffeeisle_offer_product_category',
 		array(
@@ -249,6 +265,22 @@ function coffeeisle_alt_woo_register( $wp_customize ) {
 			'choices' => coffeeisle_get_woo_categories( true ),
 		)
 	);
+	$wp_customize->add_setting( 'coffeeisle_number_of_featured_products_category_2',
+		array(
+			'default' => '3'
+		)
+	);
+	$wp_customize->add_control( 'coffeeisle_number_of_featured_products_category_2',
+		array(
+			'type'          => 'number',
+			'section'       => 'coffeeisle_featured_products',
+			'label'         => __( 'Number of products from second category', 'coffeeisle' ),
+			'input_attrs'   => array(
+				'min'   => 1,
+				'max'   => 30,
+				'step'  => 1
+			)
+		) );
 
 	$wp_customize->add_setting( 'coffeeisle_featured_products_category_3',
 		array(
@@ -264,6 +296,22 @@ function coffeeisle_alt_woo_register( $wp_customize ) {
 			'choices' => coffeeisle_get_woo_categories( true ),
 		)
 	);
+	$wp_customize->add_setting( 'coffeeisle_number_of_featured_products_category_3',
+		array(
+			'default' => '3'
+		)
+	);
+	$wp_customize->add_control( 'coffeeisle_number_of_featured_products_category_3',
+		array(
+			'type'          => 'number',
+			'section'       => 'coffeeisle_featured_products',
+			'label'         => __( 'Number of products from third category', 'coffeeisle' ),
+			'input_attrs'   => array(
+				'min'   => 1,
+				'max'   => 30,
+				'step'  => 1
+			)
+		) );
 
 	$wp_customize->add_setting( 'coffeeisle_hide_blog_on_alt_shop',
         array(

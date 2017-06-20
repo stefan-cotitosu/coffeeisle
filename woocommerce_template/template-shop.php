@@ -21,7 +21,8 @@ if ( class_exists( 'WooCommerce' ) ) :
 			if ( $category_name ) {
 				coffeeisle_display_woo_cat_title( $category_name->name );
 			}
-			coffeeisle_display_woo_cat( $section_1 ); ?>
+			$number_of_posts_in_first_category = get_theme_mod( 'coffeeisle_number_of_featured_products_category_1' );
+			coffeeisle_display_woo_cat( $section_1, $number_of_posts_in_first_category ); ?>
 		</div><!-- #main -->
 	</div><!-- #primary -->
 </div><!-- container content-wrapper -->
@@ -41,7 +42,8 @@ if ( class_exists( 'WooCommerce' ) ) :
 			if ( $category_name ) {
 				coffeeisle_display_woo_cat_title( $category_name->name );
 			}
-			coffeeisle_display_woo_cat( $section_2 ); ?>
+			$number_of_posts_in_second_category = get_theme_mod( 'coffeeisle_number_of_featured_products_category_2' );
+			coffeeisle_display_woo_cat( $section_2, $number_of_posts_in_second_category ); ?>
 
 			<?php
 			$section_3 = get_theme_mod( 'coffeeisle_featured_products_category_3' );
@@ -49,7 +51,8 @@ if ( class_exists( 'WooCommerce' ) ) :
 			if ( $category_name ) {
 				coffeeisle_display_woo_cat_title( $category_name->name );
 			}
-			coffeeisle_display_woo_cat( $section_3 ); ?>
+			$number_of_posts_in_third_category = get_theme_mod( 'coffeeisle_number_of_featured_products_category_3' );
+			coffeeisle_display_woo_cat( $section_3, $number_of_posts_in_third_category ); ?>
 
             <?php
             $hide_blog_on_alt = get_theme_mod( 'coffeeisle_hide_blog_on_alt_shop' );
