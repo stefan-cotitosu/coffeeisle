@@ -51,7 +51,12 @@ if ( class_exists( 'WooCommerce' ) ) :
 			}
 			coffeeisle_display_woo_cat( $section_3 ); ?>
 
-			<?php coffeeisle_display_alt_shop_blog_section(); ?>
+            <?php
+            $hide_blog_on_alt = get_theme_mod( 'coffeeisle_hide_blog_on_alt_shop' );
+            if ( ! $hide_blog_on_alt ) {
+	            coffeeisle_display_alt_shop_blog_section();
+            }
+            ?>
 
 		</div><!-- #main -->
 	</div><!-- #primary -->
