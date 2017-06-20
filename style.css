@@ -1015,17 +1015,17 @@ form.comment-form p label {
 
 .woocommerce ul.products li.product:nth-of-type(3n+1),
 .woocommerce-page ul.products li.product:nth-of-type(3n+1) {
-    margin-top: 0;
+	margin-top: 67px;
 }
 
 .woocommerce ul.products li.product:nth-of-type(3n+2),
 .woocommerce-page ul.products li.product:nth-of-type(3n+2) {
-	margin-top: -33px;
+	margin-top: 33px;
 }
 
 .woocommerce ul.products li.product:nth-of-type(3n+3),
 .woocommerce-page ul.products li.product:nth-of-type(3n+3) {
-	margin-top: -67px;
+	margin-top: 0;
 }
 
 .woocommerce-page ul.products li.product .woocommerce-LoopProduct-link img {
@@ -1034,7 +1034,7 @@ form.comment-form p label {
 
 .woocommerce-page ul.products li.product h2.woocommerce-loop-product__title {
 	margin: 0 auto 10px;
-	padding: 0;
+	padding: 0.5em 1em;
 	font-family: "Lora", serif;
 	font-size: 20px;
 	line-height: 35px;
@@ -1094,6 +1094,11 @@ form.comment-form p label {
 	margin-right: 3px;
     font-family: FontAwesome, "sans-serif";
     content: "\f07a";
+}
+
+.woocommerce-page ul.products li.product a.added_to_cart {
+	display: block;
+	margin: 0.5em auto 0;
 }
 
 .woocommerce-page nav.navigation {
@@ -1458,22 +1463,22 @@ form.comment-form p label {
 
 .woocommerce section.related ul.products li.product:nth-of-type(4n+1),
 .woocommerce-page section.related ul.products li.product:nth-of-type(4n+1) {
-    margin-top: 0;
+	margin-top: 73px;
 }
 
 .woocommerce section.related ul.products li.product:nth-of-type(4n+2),
 .woocommerce-page section.related ul.products li.product:nth-of-type(4n+2) {
-    margin-top: -24px;
+	margin-top: 48px;
 }
 
 .woocommerce section.related ul.products li.product:nth-of-type(4n+3),
 .woocommerce-page section.related ul.products li.product:nth-of-type(4n+3) {
-    margin-top: -48px;
+	margin-top: 24px;
 }
 
 .woocommerce section.related ul.products li.product:nth-of-type(4n+4),
 .woocommerce-page section.related ul.products li.product:nth-of-type(4n+4) {
-    margin-top: -73px;
+	margin-top: 0;
 }
 
 .single-product section.related {
@@ -1821,15 +1826,15 @@ div.alt-shop-blog-small {
 	}
     .woocommerce ul.products li.product:nth-of-type(3n+1),
     .woocommerce-page ul.products li.product:nth-of-type(3n+1) {
-        margin-top: 0;
+		margin-top: 56px;
     }
     .woocommerce ul.products li.product:nth-of-type(3n+2),
     .woocommerce-page ul.products li.product:nth-of-type(3n+2) {
-        margin-top: -28px;
+		margin-top: 28px;
     }
     .woocommerce ul.products li.product:nth-of-type(3n+3),
     .woocommerce-page ul.products li.product:nth-of-type(3n+3) {
-        margin-top: -56px;
+		margin-top: 0;
     }
 	.product .post-bottom-svg {
 		bottom: -22px;
@@ -1851,19 +1856,19 @@ div.alt-shop-blog-small {
 	}
     .woocommerce section.related ul.products li.product:nth-of-type(4n+1),
     .woocommerce-page section.related ul.products li.product:nth-of-type(4n+1) {
-        margin-top: 0;
+		margin-top: 60px;
     }
     .woocommerce section.related ul.products li.product:nth-of-type(4n+2),
     .woocommerce-page section.related ul.products li.product:nth-of-type(4n+2) {
-        margin-top: -20px;
+		margin-top: 40px;
     }
     .woocommerce section.related ul.products li.product:nth-of-type(4n+3),
     .woocommerce-page section.related ul.products li.product:nth-of-type(4n+3) {
-        margin-top: -40px;
+		margin-top: 20px;
     }
     .woocommerce section.related ul.products li.product:nth-of-type(4n+4),
     .woocommerce-page section.related ul.products li.product:nth-of-type(4n+4) {
-        margin-top: -60px;
+		margin-top: 0;
     }
     .woocommerce section.related ul.products li.product div.post-bottom-svg,
     .woocommerce-page section.related ul.products li.product div.post-bottom-svg {
@@ -1896,15 +1901,15 @@ div.alt-shop-blog-small {
 	}
     .woocommerce ul.products li.product:nth-of-type(3n+1),
     .woocommerce-page ul.products li.product:nth-of-type(3n+1) {
-        margin-top: 0;
+		margin-top: 42px;
     }
     .woocommerce ul.products li.product:nth-of-type(3n+2),
     .woocommerce-page ul.products li.product:nth-of-type(3n+2) {
-        margin-top: -21px;
+		margin-top: 21px;
     }
     .woocommerce ul.products li.product:nth-of-type(3n+3),
     .woocommerce-page ul.products li.product:nth-of-type(3n+3) {
-        margin-top: -42px;
+		margin-top: 0;
     }
 	.product .post-bottom-svg {
 		bottom: -16px;
@@ -1935,19 +1940,19 @@ div.alt-shop-blog-small {
 	}
     .woocommerce section.related ul.products li.product:nth-of-type(4n+1),
     .woocommerce-page section.related ul.products li.product:nth-of-type(4n+1) {
-        margin-top: 0;
+		margin-top: 51px;
     }
     .woocommerce section.related ul.products li.product:nth-of-type(4n+2),
     .woocommerce-page section.related ul.products li.product:nth-of-type(4n+2) {
-        margin-top: -17px;
+		margin-top: 34px;
     }
     .woocommerce section.related ul.products li.product:nth-of-type(4n+3),
     .woocommerce-page section.related ul.products li.product:nth-of-type(4n+3) {
-        margin-top: -34px;
+		margin-top: 17px;
     }
     .woocommerce section.related ul.products li.product:nth-of-type(4n+4),
     .woocommerce-page section.related ul.products li.product:nth-of-type(4n+4) {
-        margin-top: -51px;
+		margin-top: 0;
     }
     .woocommerce section.related ul.products li.product div.post-bottom-svg,
     .woocommerce-page section.related ul.products li.product div.post-bottom-svg {
@@ -1990,11 +1995,11 @@ div.alt-shop-blog-small {
 	}
     .woocommerce ul.products li.product:nth-of-type(2n+1),
     .woocommerce-page ul.products li.product:nth-of-type(2n+1) {
-        margin-top: 0;
+		margin-top: 30px;
     }
 	.woocommerce ul.products li.product:nth-of-type(2n+2),
 	.woocommerce-page ul.products li.product:nth-of-type(2n+2) {
-		margin-top: -30px;
+		margin-top: 0;
 	}
 	.single-product div.single_product_bottom_svg {
 		bottom: -57px;
@@ -2029,11 +2034,11 @@ div.alt-shop-blog-small {
     }
     .woocommerce section.related ul.products li.product:nth-of-type(2n+1),
     .woocommerce-page section.related ul.products li.product:nth-of-type(2n+1) {
-        margin-top: 0;
+		margin-top: 33px;
     }
     .woocommerce section.related ul.products li.product:nth-of-type(2n+2),
     .woocommerce-page section.related ul.products li.product:nth-of-type(2n+2) {
-        margin-top: -33px;
+		margin-top: 0;
     }
 }
 @media only screen and (max-width: 767px) {
@@ -2077,11 +2082,11 @@ div.alt-shop-blog-small {
 	}
     .woocommerce ul.products li.product:nth-of-type(2n+1),
     .woocommerce-page ul.products li.product:nth-of-type(2n+1) {
-        margin-top: 0;
+		margin-top: 27px;
     }
 	.woocommerce ul.products li.product:nth-of-type(2n+2),
 	.woocommerce-page ul.products li.product:nth-of-type(2n+2) {
-		margin-top: -27px;
+		margin-top: 0;
 	}
 	.single-product div.single_product_bottom_svg {
 		bottom: -43px;
@@ -2106,11 +2111,11 @@ div.alt-shop-blog-small {
 	}
     .woocommerce section.related ul.products li.product:nth-of-type(2n+1),
     .woocommerce-page section.related ul.products li.product:nth-of-type(2n+1) {
-        margin-top: 0;
+		margin-top: 27px;
     }
     .woocommerce section.related ul.products li.product:nth-of-type(2n+2),
     .woocommerce-page section.related ul.products li.product:nth-of-type(2n+2) {
-        margin-top: -27px;
+		margin-top: 0;
     }
     .woocommerce section.related ul.products li.product div.post-bottom-svg,
     .woocommerce-page section.related ul.products li.product div.post-bottom-svg {
@@ -2150,11 +2155,11 @@ div.alt-shop-blog-small {
 	}
     .woocommerce ul.products li.product:nth-of-type(2n+1),
     .woocommerce-page ul.products li.product:nth-of-type(2n+1) {
-        margin-top: 0;
+		margin-top: 21px;
     }
     .woocommerce ul.products li.product:nth-of-type(2n+2),
     .woocommerce-page ul.products li.product:nth-of-type(2n+2) {
-        margin-top: -21px;
+		margin-top: 0;
     }
 	.woocommerce-page div.alt_shop_cat_title_top_svg,
 	.single-product div.related-title-top-svg {
@@ -2188,11 +2193,11 @@ div.alt-shop-blog-small {
 	}
     .woocommerce section.related ul.products li.product:nth-of-type(2n+1),
     .woocommerce-page section.related ul.products li.product:nth-of-type(2n+1) {
-        margin-top: 0;
+		margin-top: 21px;
     }
     .woocommerce section.related ul.products li.product:nth-of-type(2n+2),
     .woocommerce-page section.related ul.products li.product:nth-of-type(2n+2) {
-        margin-top: -21px;
+		margin-top: 0;
     }
 }
 @media only screen and (max-width: 460px) {
