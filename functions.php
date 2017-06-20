@@ -164,6 +164,8 @@ function coffeeisle_custom_styles( $custom ) {
 
 		$custom .= '.single .comment-body .reply a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
+		$custom .= '.single .comment-body .comment-author a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+
 		$custom .= '.single-post nav.post-navigation div.nav-previous:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 		$custom .= '.single-post nav.post-navigation div.nav-next:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
@@ -310,10 +312,11 @@ function coffeeisle_custom_styles( $custom ) {
 		$custom .= '.page-header .page-title { color: ' . esc_attr( $entry_titles ) . ' !important;}' . "\n";
 
 		$custom .= '.single .comment-body .comment-author { color:' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.single .comment-body .comment-author a { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= '.single .comment-body .reply a { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
-		$custom .= '.single .comment-list .comment:nth-of-type(even) { border-left: 2px solid ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.single .comment-list>.comment:nth-of-type(even) { border-left: 2px solid ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget .widget-title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 		$custom .= '.single-sidebar .widget_calendar .calendar_wrap table caption { background: ' . esc_attr( $entry_titles ) . ';}' . "\n";
