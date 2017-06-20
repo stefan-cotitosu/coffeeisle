@@ -1511,7 +1511,6 @@ form.comment-form p label {
 
 .woocommerce-cart div.cart_totals div.wc-proceed-to-checkout a {
 	font-family: "Lora", serif;
-
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
@@ -1536,7 +1535,7 @@ form.comment-form p label {
 
 .woocommerce-page div.woocommerce-billing-fields__field-wrapper p.validate-phone input[type="tel"] {
 	padding: 13px;
-	border-width: 1px;
+	border: 1px solid #ebebeb;
 	border-radius: 3px;
 }
 
