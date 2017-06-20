@@ -1340,6 +1340,19 @@ function coffeeisle_sidebar_on_single() {
 }
 add_action( 'oblique_single_sidebar', 'coffeeisle_sidebar_on_single' );
 
+/**
+ * Header Search Icon
+ *
+ * @since 1.0.0
+ */
+function coffeeisle_search_icon() {
+	?>
+    <div class="nav_search_icon">
+    </div>
+	<?php
+}
+add_action( 'oblique_nav_search', 'coffeeisle_search_icon' );
+
 // Include template for alt shop page
 if( class_exists( 'WooCommerce' ) ) {
     require_once get_stylesheet_directory() . '/woocommerce_template/functions.php';

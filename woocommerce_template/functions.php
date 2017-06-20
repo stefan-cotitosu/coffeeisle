@@ -7,9 +7,6 @@
  */
 
 /**
- * WooCommerce
- */
-/**
  * Replace parent theme functions binded to woo hooks
  *
  * @since 1.0.0
@@ -24,31 +21,6 @@ function coffeeisle_remove_woo_functions() {
 	remove_action( 'oblique_related_products_title_after', 'oblique_svg_5' );
 }
 add_action( 'after_setup_theme', 'coffeeisle_remove_woo_functions', 15 );
-
-// Remove pages navigation
-remove_action( 'woocommerce_before_main_content','woocommerce_breadcrumb', 20, 0 );
-
-// Remove sorting results after loop
-remove_action( 'woocommerce_after_shop_loop', 'woocommerce_result_count', 20 );
-
-// Remove sorting results before loop
-remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
-
-// Remove drop down sort before loop
-remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
-
-// Remove description on category page
-remove_action( 'woocommerce_archive_description','woocommerce_taxonomy_archive_description',10 );
-
-/**
- * Remove page title
- *
- * @since 1.0.0
- */
-function coffeeisle_remove_woo_title() {
-	return false;
-}
-add_filter( 'woocommerce_show_page_title', 'coffeeisle_remove_woo_title' );
 
 /**
  * Add custom title on shop page
@@ -81,9 +53,6 @@ function coffeeisle_shop_title() {
 }
 add_action( 'woocommerce_before_main_content', 'coffeeisle_shop_title', 40 );
 
-// Remove product rating on shop page
-remove_action( 'woocommerce_after_shop_loop_item_title','woocommerce_template_loop_rating', 5 );
-
 /**
  * Adding bottom svg for item on shop page
  *
@@ -114,18 +83,8 @@ add_filter( 'loop_shop_columns', 'coffeeisle_products_per_row' );
 remove_action( 'woocommerce_after_shop_loop', 'woocommerce_pagination', 10 );
 add_action( 'woocommerce_after_shop_loop', 'coffeeisle_custom_pagination', 10 );
 
-// Change single product price position
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
-add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 25 );
-
 // Remove categories information from single product page
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
-
-// Remove reviews on single product page
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
-
-// Remove upsells on single product page
-remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
 
 /**
  * Change the number of related products
@@ -181,18 +140,6 @@ function coffeeisle_related_title_bottom_svg() {
 }
 add_action( 'oblique_related_products_title_after', 'coffeeisle_related_title_bottom_svg' );
 
-/**
- * Header Search Icon
- *
- * @since 1.0.0
- */
-function coffeeisle_search_icon() {
-	?>
-	<div class="nav_search_icon">
-	</div>
-	<?php
-}
-add_action( 'oblique_nav_search', 'coffeeisle_search_icon' );
 
 /**
  * Alt Shop Page template
