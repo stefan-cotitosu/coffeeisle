@@ -83,6 +83,9 @@ function remove_actions() {
 	// Header svg
 	remove_action( 'oblique_nav_container', 'oblique_nav_svg_container' );
 
+	// Blog post bottom svg
+	remove_action('oblique_post_bottom_svg','oblique_svg_1');
+
 	// Footer credits
 	if ( ! coffeeisle_compatibility_with_pro_features() ) {
 		remove_action( 'oblique_footer', 'oblique_footer_credits' );

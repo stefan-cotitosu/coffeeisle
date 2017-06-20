@@ -242,6 +242,10 @@ footer.site-footer {
 	padding: 43px 56px 16px 38px;
 }
 
+.blog article.hentry div.no-thumb {
+    padding: 70px 56px 16px 38px;
+}
+
 .blog article.hentry div.post-inner header.entry-header {
 	margin: 0 0 21px;
 }
@@ -1746,7 +1750,7 @@ div.alt-shop-blog-large {
 }
 
 .page div.alt-shop-blog-large article.hentry div.post-svg {
-	margin-bottom: -8%;
+	/*margin-bottom: -8%;*/
 }
 
 .page div.alt-shop-blog-large article.hentry div.post-inner header.entry-header {
@@ -1759,6 +1763,10 @@ div.alt-shop-blog-small {
 
 .page div.alt-shop-blog-large article.hentry div.post-inner {
 	padding: 40px 45px 15px 19px;
+}
+
+.page div.alt-shop-blog-large article.hentry div.no-thumb {
+    padding: 80px 45px 15px 19px;
 }
 
 .page div.alt-shop-blog-large article.hentry div.post-inner header.entry-header {
@@ -1801,6 +1809,10 @@ div.alt-shop-blog-small {
 
 .page div.alt-shop-blog-small article.hentry div.post-inner {
 	padding: 26px 26px 9px 28px;
+}
+
+.page div.alt-shop-blog-small article.hentry div.no-thumb {
+    padding: 55px 26px 9px 28px;
 }
 
 .page div.alt-shop-blog-small article.hentry div.post-inner header.entry-header {
