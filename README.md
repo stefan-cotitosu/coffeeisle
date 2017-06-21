@@ -19,5 +19,5 @@ CoffeeIsle is a classy WordPress theme for online shops and blogging. It has a b
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License.  
   
 images/header.jpg  
-https://pixabay.com/en/photos/download/coffee-shop-1081713_1920.jpg
+https://pixabay.com/en/photos/download/coffee-1399801_1920.jpg
 
