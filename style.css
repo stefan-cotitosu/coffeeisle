@@ -698,6 +698,14 @@ form.comment-form p label {
 .header-widgets .widget .search-form label input.search-field,
 .single-sidebar .widget .search-form label input.search-field {
 	padding: 11px 0 9px 10px;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+
+.header-widgets .widget .search-form label input.search-field:focus,
+.single-sidebar .widget .search-form label input.search-field:focus {
+	outline: none;
 }
 
 .header-widgets .widget .search-form label input.search-field::-webkit-input-placeholder,
@@ -1201,6 +1209,10 @@ form.comment-form p label {
 	line-height: 17px;
 }
 
+.woocommerce div.product form.cart div.quantity input:focus {
+	outline: none;
+}
+
 .woocommerce div.product form.cart table.variations {
 	margin: 40px 0 0;
 }
@@ -1392,6 +1404,10 @@ form.comment-form p label {
 	font-family: "Athiti", sans-serif;
 	font-size: 15px;
 	line-height: 30px;
+}
+
+.woocommerce #review_form #respond .comment-form textarea#comment:focus {
+	outline: none;
 }
 
 .woocommerce #review_form #respond .form-submit input[type="submit"] {
