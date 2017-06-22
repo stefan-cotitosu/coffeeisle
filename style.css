@@ -1207,6 +1207,9 @@ form.comment-form p label {
 	font-size: 15px;
 	font-weight: 600;
 	line-height: 17px;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
 }
 
 .woocommerce div.product form.cart div.quantity input:focus {
