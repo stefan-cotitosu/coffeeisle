@@ -1851,6 +1851,9 @@ div.alt-shop-blog-small {
 	.sidebar-toggle {
 		left: 200px;
 	}
+	.sidebar-toggled {
+		left: 382px;
+	}
 	.header-widgets .widget_calendar .calendar_wrap table,
 	.single-sidebar .widget_calendar .calendar_wrap table {
 		border-spacing: 3px 4px;
@@ -1933,6 +1936,9 @@ div.alt-shop-blog-small {
 	}
 	.sidebar-toggle {
 		left: 100px;
+	}
+	.sidebar-toggled {
+		left: 382px;
 	}
 	.header-widgets .widget_calendar .calendar_wrap table th,
 	.single-sidebar .widget_calendar .calendar_wrap table th {
@@ -2178,6 +2184,9 @@ div.alt-shop-blog-small {
 	.sidebar-toggle {
 		left: 35px;
 	}
+	.sidebar-toggled {
+		left: 382px;
+	}
 	.header-search {
 		display: block;
 		position: absolute;
@@ -2242,6 +2251,10 @@ div.alt-shop-blog-small {
 @media only screen and (max-width: 460px) {
 	.sidebar-toggle {
 		left: 15px;
+	}
+	.sidebar-toggled {
+		left: auto;
+		right: 30px;
 	}
 	.top-bar {
 		text-align: center;
