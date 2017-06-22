@@ -365,7 +365,7 @@ function coffeeisle_custom_styles( $custom ) {
 		$custom .= '.single-sidebar .widget_recent_comments ul li:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 		$custom .= '.header-widgets .widget_recent_comments ul li:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
-        $custom .= '.header-widgets .widget_calendar .calendar_wrap table td#today { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_calendar .calendar_wrap table td#today { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 		$custom .= '.single-sidebar .widget_calendar .calendar_wrap table td#today { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$current_selector = '.single-sidebar .widget select';

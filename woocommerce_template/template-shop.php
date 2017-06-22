@@ -54,19 +54,19 @@ if ( class_exists( 'WooCommerce' ) ) :
 			$number_of_posts_in_third_category = get_theme_mod( 'coffeeisle_number_of_featured_products_category_3' );
 			coffeeisle_display_woo_cat( $section_3, $number_of_posts_in_third_category ); ?>
 
-            <?php
-            $hide_blog_on_alt = get_theme_mod( 'coffeeisle_hide_blog_on_alt_shop' );
-            if ( ! $hide_blog_on_alt ) {
-	            coffeeisle_display_alt_shop_blog_section();
-            }
-            ?>
+			<?php
+			$hide_blog_on_alt = get_theme_mod( 'coffeeisle_hide_blog_on_alt_shop' );
+			if ( ! $hide_blog_on_alt ) {
+				coffeeisle_display_alt_shop_blog_section();
+			}
+			?>
 
 		</div><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
-else: ?>
-    <a href="<?php echo esc_attr( 'https://wordpress.org/plugins/woocommerce/' ); ?>" target="_blank"><h2 class="need-woocommerce"><?php echo esc_html__( 'Please install WooCommerce plugin' ); ?></h2></a>
+else : ?>
+	<a href="<?php echo esc_attr( 'https://wordpress.org/plugins/woocommerce/' ); ?>" target="_blank"><h2 class="need-woocommerce"><?php echo esc_html__( 'Please install WooCommerce plugin', 'coffeeisle' ); ?></h2></a>
 
 <?php
 endif; ?>

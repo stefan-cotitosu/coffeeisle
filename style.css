@@ -339,10 +339,10 @@ header.page-header h1.page-title {
 }
 
 .page div.entry-content p {
+	margin: 0 0 60px;
 	font-family: "Athiti", sans-serif;
 	font-size: 15px;
 	line-height: 23px;
-	margin: 0 0 60px;
 }
 
 .page div.entry-content ul {
@@ -698,8 +698,6 @@ form.comment-form p label {
 .header-widgets .widget .search-form label input.search-field,
 .single-sidebar .widget .search-form label input.search-field {
 	padding: 11px 0 9px 10px;
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
 	border-radius: 0;
 }
 
@@ -777,10 +775,10 @@ form.comment-form p label {
 .header-widgets .widget_calendar .calendar_wrap table,
 .single-sidebar .widget_calendar .calendar_wrap table {
 	display: block;
-	max-width: 100%;
 	position: relative;
-	border-collapse: separate;
+	max-width: 100%;
 	border-spacing: 10px 10px;
+	border-collapse: separate;
 }
 
 .header-widgets .widget_calendar .calendar_wrap table caption,
@@ -1204,12 +1202,10 @@ form.comment-form p label {
 }
 
 .woocommerce div.product form.cart div.quantity input {
+	border-radius: 0;
 	font-size: 15px;
 	font-weight: 600;
 	line-height: 17px;
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0;
 }
 
 .woocommerce div.product form.cart div.quantity input:focus {
@@ -2217,9 +2213,9 @@ div.alt-shop-blog-small {
 	.site-footer div.site-info {
 		padding: 25px 10px;
 	}
-    .single .hentry {
-        padding: 20px 60px 45px;
-    }
+	.single .hentry {
+		padding: 20px 60px 45px;
+	}
 	.single-product div.single_product_bottom_svg {
 		bottom: -33px;
 	}
@@ -2275,8 +2271,8 @@ div.alt-shop-blog-small {
 		left: 15px;
 	}
 	.sidebar-toggled {
-		left: auto;
 		right: 30px;
+		left: auto;
 	}
 	.top-bar {
 		text-align: center;

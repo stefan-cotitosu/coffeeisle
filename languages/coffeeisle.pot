@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Coffeeisle 1.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/stefan-cotitosu/coffeeisle/issues\n"
-"POT-Creation-Date: 2017-06-14 14:23:55+00:00\n"
+"POT-Creation-Date: 2017-06-22 13:41:46+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,117 +24,137 @@ msgstr ""
 "X-Poedit-Bookmarks: \n"
 "X-Textdomain-Support: yes\n"
 
-#: functions.php:702
+#: functions.php:745
 msgid "Top&amp;bottom padding for the branding. Default: 300px"
 msgstr ""
 
-#: functions.php:717
+#: functions.php:760
 msgid "Entry background"
 msgstr ""
 
-#: functions.php:737
+#: functions.php:780
 msgid "Secondary color"
 msgstr ""
 
-#: functions.php:969
+#: functions.php:1012
 msgid "Keep Reading &rarr;"
 msgstr ""
 
-#: functions.php:982
+#: functions.php:1025
 msgid "Continue reading &hellip;"
 msgstr ""
 
-#: functions.php:1097
+#: functions.php:1140
 #. translators: used between list items, there is a space after the comma
 msgid ", "
 msgstr ""
 
-#: functions.php:1112
-msgid "&copy Copyright 2016"
+#: functions.php:1155
+msgid "© Copyright 2016"
 msgstr ""
 
-#: functions.php:1114
+#: functions.php:1157
 msgid "Coffeeisle Shop Theme"
 msgstr ""
 
-#: functions.php:1116
+#: functions.php:1159
 msgid "All Rights Reserved."
 msgstr ""
 
-#: functions.php:1136
+#: functions.php:1179
 msgid "Posts navigation"
 msgstr ""
 
-#: functions.php:1144
+#: functions.php:1187
 msgid "Prev"
 msgstr ""
 
-#: functions.php:1145
+#: functions.php:1188
 msgid "Next"
 msgstr ""
 
-#: functions.php:1186
+#: functions.php:1229
 msgid "Leave us a Message"
 msgstr ""
 
-#: functions.php:1191
+#: functions.php:1234
 msgid "Submit"
 msgstr ""
 
-#: functions.php:1194
+#: functions.php:1237
 msgid "Name"
 msgstr ""
 
-#: functions.php:1198
+#: functions.php:1241
 msgid "Email"
 msgstr ""
 
-#: functions.php:1202
+#: functions.php:1245
 msgid "Subject"
 msgstr ""
 
-#: functions.php:1207
+#: functions.php:1250
 msgid "Comment"
 msgstr ""
 
-#: functions.php:1308
+#: functions.php:1351
 msgid "Single Sidebar"
 msgstr ""
 
-#: template-parts/content-big.php:43
+#: template-parts/content-big.php:44
 msgid "Pages:"
 msgstr ""
 
-#: woocommerce_template/functions.php:192
-msgid "Suggested Items"
+#: template-parts/content-offer-product.php:25
+msgid "Special Offer"
 msgstr ""
 
-#: woocommerce_template/functions.php:333
+#: woocommerce_template/functions.php:204
 msgid "Featured products"
 msgstr ""
 
-#: woocommerce_template/functions.php:346
+#: woocommerce_template/functions.php:217
 msgid "Products first category"
 msgstr ""
 
-#: woocommerce_template/functions.php:361
+#: woocommerce_template/functions.php:231
+msgid "Number of products from first category"
+msgstr ""
+
+#: woocommerce_template/functions.php:248
 msgid "Offer product category"
 msgstr ""
 
-#: woocommerce_template/functions.php:376
+#: woocommerce_template/functions.php:263
 msgid "Products second category"
 msgstr ""
 
-#: woocommerce_template/functions.php:391
+#: woocommerce_template/functions.php:277
+msgid "Number of products from second category"
+msgstr ""
+
+#: woocommerce_template/functions.php:294
 msgid "Products third category"
 msgstr ""
 
-#: woocommerce_template/functions.php:411
+#: woocommerce_template/functions.php:308
+msgid "Number of products from third category"
+msgstr ""
+
+#: woocommerce_template/functions.php:325
+msgid "Hide Blog section on Alt Template Shop"
+msgstr ""
+
+#: woocommerce_template/functions.php:343
 msgid "Select category"
 msgstr ""
 
-#: woocommerce_template/functions.php:428
+#: woocommerce_template/functions.php:360
 msgid "None"
+msgstr ""
+
+#: woocommerce_template/template-shop.php:69
+msgid "Please install WooCommerce plugin"
 msgstr ""
 
 #. Theme Name of the plugin/theme
@@ -142,11 +162,23 @@ msgid "Coffeeisle"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "todo:add link to demo."
+msgid "http://dev-coffeeisle.pantheonsite.io/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "todo:add description ( talk with adelina )"
+msgid ""
+"CoffeeIsle is a classy WordPress theme for online shops and blogging. It "
+"has a beautiful, unique interface providing a full-width parallax header, "
+"oblique post shapes, and a slide-out menu. The store section follows the "
+"same design lines, each product being displayed in a nice oblique form. The "
+"theme was built with e-commerce (WooCommerce) in mind, that's why it comes "
+"with an alternative shop page which you can use on your site in case you "
+"like it better than the default template. As for the features, CoffeeIsle "
+"is responsive, WPML ready, SEO friendly, and easy to customize. It also has "
+"social icons, custom fonts, video post format, and multiple color schemes: "
+"you can use 3 different colors at the same time to create beautiful "
+"contrasts - background, post/product boxes, and the oblique line under each "
+"entry in the shop and blog pages."
 msgstr ""
 
 #. Author of the plugin/theme

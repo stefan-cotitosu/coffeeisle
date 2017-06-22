@@ -220,21 +220,21 @@ function coffeeisle_alt_woo_register( $wp_customize ) {
 		)
 	);
 	$wp_customize->add_setting( 'coffeeisle_number_of_featured_products_category_1',
-        array(
-            'default' => '3'
-        )
-    );
+		array(
+			'default' => '3',
+		)
+	);
 	$wp_customize->add_control( 'coffeeisle_number_of_featured_products_category_1',
-        array(
-	        'type'          => 'number',
-            'section'       => 'coffeeisle_featured_products',
-            'label'         => __( 'Number of products from first category', 'coffeeisle' ),
-            'input_attrs'   => array(
-                    'min'   => 1,
-                    'max'   => 30,
-                    'step'  => 1,
-        ),
-    ) );
+		array(
+			'type'          => 'number',
+			'section'       => 'coffeeisle_featured_products',
+			'label'         => __( 'Number of products from first category', 'coffeeisle' ),
+			'input_attrs'   => array(
+					'min'   => 1,
+					'max'   => 30,
+					'step'  => 1,
+		),
+	) );
 
 	$wp_customize->add_setting( 'coffeeisle_offer_product_category',
 		array(
@@ -267,7 +267,7 @@ function coffeeisle_alt_woo_register( $wp_customize ) {
 	);
 	$wp_customize->add_setting( 'coffeeisle_number_of_featured_products_category_2',
 		array(
-			'default' => '3'
+			'default' => '3',
 		)
 	);
 	$wp_customize->add_control( 'coffeeisle_number_of_featured_products_category_2',
@@ -278,9 +278,9 @@ function coffeeisle_alt_woo_register( $wp_customize ) {
 			'input_attrs'   => array(
 				'min'   => 1,
 				'max'   => 30,
-				'step'  => 1
-			)
-		) );
+				'step'  => 1,
+			),
+	) );
 
 	$wp_customize->add_setting( 'coffeeisle_featured_products_category_3',
 		array(
@@ -298,7 +298,7 @@ function coffeeisle_alt_woo_register( $wp_customize ) {
 	);
 	$wp_customize->add_setting( 'coffeeisle_number_of_featured_products_category_3',
 		array(
-			'default' => '3'
+			'default' => '3',
 		)
 	);
 	$wp_customize->add_control( 'coffeeisle_number_of_featured_products_category_3',
@@ -309,23 +309,23 @@ function coffeeisle_alt_woo_register( $wp_customize ) {
 			'input_attrs'   => array(
 				'min'   => 1,
 				'max'   => 30,
-				'step'  => 1
-			)
-		) );
+				'step'  => 1,
+			),
+	) );
 
 	$wp_customize->add_setting( 'coffeeisle_hide_blog_on_alt_shop',
-        array(
-                'default'       => 0
-        )
-    );
+		array(
+				'default'       => 0,
+		)
+	);
 	$wp_customize->add_control(
-        'coffeeisle_hide_blog_on_alt_shop',
-        array(
-                'type'      => 'checkbox',
-                'label'     => __('Hide Blog section on Alt Template Shop', 'coffeeisle' ),
-                'section'   => 'coffeeisle_featured_products'
-        )
-    );
+		'coffeeisle_hide_blog_on_alt_shop',
+		array(
+				'type'      => 'checkbox',
+				'label'     => __( 'Hide Blog section on Alt Template Shop', 'coffeeisle' ),
+				'section'   => 'coffeeisle_featured_products',
+		)
+	);
 }
 add_action( 'customize_register', 'coffeeisle_alt_woo_register', 20 );
 
