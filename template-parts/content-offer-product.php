@@ -1,6 +1,6 @@
 <?php
 /**
- * The template used for displaying Offer Product on Alt Shop Page, Blog section
+ * The template used for displaying Special Offer Product on Alt Shop Page
  *
  * @package Coffeesile
  * @since 1.0.0

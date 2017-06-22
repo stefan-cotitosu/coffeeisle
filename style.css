@@ -712,34 +712,6 @@ form.comment-form p label {
 	font-size: 15px;
 	font-weight: 400;
 	line-height: 21px;
-	content: "Bla";
-}
-
-.header-widgets .widget .search-form label input.search-field::-moz-placeholder,
-.single-sidebar .widget .search-form label input.search-field::-moz-placeholder {
-	font-family: "Athiti", sans-serif;
-	font-size: 15px;
-	font-weight: 400;
-	line-height: 21px;
-	content: "Bla";
-}
-
-.header-widgets .widget .search-form label input.search-field:-ms-input-placeholder,
-.single-sidebar .widget .search-form label input.search-field:-ms-input-placeholder {
-	font-family: "Athiti", sans-serif;
-	font-size: 15px;
-	font-weight: 400;
-	line-height: 21px;
-	content: "Bla";
-}
-
-.header-widgets .widget .search-form label input.search-field::placeholder,
-.single-sidebar .widget .search-form label input.search-field::placeholder {
-	font-family: "Athiti", sans-serif;
-	font-size: 15px;
-	font-weight: 400;
-	line-height: 21px;
-	content: "Bla";
 }
 
 .header-widgets .widget .search-submit,

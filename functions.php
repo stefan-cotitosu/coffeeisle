@@ -70,10 +70,8 @@ function coffeeisle_include_google_fonts() {
 add_action( 'wp_enqueue_scripts', 'coffeeisle_include_google_fonts' );
 
 /**
- * Remove functions from the parrent theme
+ * Remove functions from the parent theme
  * That are replaced with child theme function
- * Because Child theme is loaded before the parrent theme
- * after_setup_theme
  *
  * @since 1.0.0
  */
@@ -713,14 +711,12 @@ function coffeeisle_custom_styles( $custom ) {
 	// Sidebar background
 	$sidebar_background = get_theme_mod( 'sidebar_bg', '#17191B' );
 	if ( ! empty( $sidebar_background ) ) {
-
 		$custom .= 'div.widget-area-visible { background: ' . esc_attr( $sidebar_background ) . ';}' . "\n";
 	}
 
 	// Sidebar color
 	$sidebar_color = get_theme_mod( 'sidebar_color', '#f9f9f9' );
 	if ( ! empty( $sidebar_color ) ) {
-
 		$custom .= 'div.widget-area-visible, div.widget-area-visible a { color: ' . esc_attr( $sidebar_color ) . ';}' . "\n";
 
 		$custom .= 'div.widget-area-visible nav.sidebar-nav div.slicknav_menu ul.slicknav_nav li.menu-item { border-bottom: 1px solid ' . esc_attr( $sidebar_color ) . ';}' . '\n';
@@ -733,7 +729,7 @@ add_action( 'wp_enqueue_scripts', 'coffeeisle_custom_styles', 20 );
 
 /**
  * Customizer
- * Register main controls in customize
+ * Register main controls in customizer
  * Set default values in the customizer
  *
  * @since 1.0.0
@@ -789,7 +785,7 @@ add_action( 'customize_register', 'coffeeisle_customize_register', 20 );
 
 /**
  * Color
- * Background default color filter
+ * Background default color
  *
  * @since 1.0.0
  */
@@ -801,7 +797,7 @@ add_filter( 'oblique_custom_background_args', 'coffeeisle_background_filter' );
 
 /**
  * Color
- * Primary default color filter
+ * Primary default color
  *
  * @since 1.0.0
  */
@@ -980,7 +976,7 @@ function coffeeisle_sidebar_dropdown( $selector, $bg_color ) {
 /**
  * Image
  * Changing the header image
- * same location, same image name as the parrent
+ * same location, same image name as the parent
  *
  * @since 1.0.0
  */
@@ -1085,7 +1081,7 @@ add_action( 'oblique_search_before_title', 'coffeeisle_search_title_top_svg' );
  *
  * @since 1.0.0
  */
-function oblique_search_title_bottom_svg() {
+function coffeeisle_search_title_bottom_svg() {
 	?>
 	<div class="svg-container svg-block search-title-bottom-svg">
 		<?php
@@ -1101,7 +1097,7 @@ function oblique_search_title_bottom_svg() {
 	</div>
 	<?php
 }
-add_action( 'oblique_search_after_title', 'oblique_search_title_bottom_svg' );
+add_action( 'oblique_search_after_title', 'coffeeisle_search_title_bottom_svg' );
 
 /**
  * Post
@@ -1152,7 +1148,7 @@ function oblique_posted_on() {
  * @since 1.0.0
  */
 function coffeeisle_footer_credits() {
-	echo esc_html__( '© Copyright 2016', 'coffeeisle' );
+	echo esc_html__( '© Copyright 2017', 'coffeeisle' );
 	echo '<span class="sep"> | </span>';
 	echo esc_html__( 'Coffeeisle Shop Theme', 'coffeeisle' );
 	echo '<span class="sep"> | </span>';
@@ -1261,13 +1257,13 @@ add_filter( 'oblique_comments_args','coffeeisle_comments_template' );
  *
  * @since 1.0.0
  */
-function wpb_move_comment_field_to_bottom( $fields ) {
+function coffeeisle_move_comment_field_to_bottom( $fields ) {
 	$comment_field = $fields['comment'];
 	unset( $fields['comment'] );
 	$fields['comment'] = $comment_field;
 	return $fields;
 }
-add_filter( 'comment_form_fields', 'wpb_move_comment_field_to_bottom' );
+add_filter( 'comment_form_fields', 'coffeeisle_move_comment_field_to_bottom' );
 
 /**
  * SVG
@@ -1305,9 +1301,9 @@ add_filter( 'oblique_post_tags_message', 'coffeeisle_post_tags_message' );
  * @since 1.0.0
  */
 function coffeeisle_comments_title_text() {
-	echo '<h2 class="comments-title">';
-	echo 'Comments';
-	echo '</h2>';
+	?>
+	<h2 class="comments-title"><?php echo esc_html__( 'Comments', 'coffeeisle' ); ?></h2>
+	<?php
 }
 add_action( 'oblique_comments_title', 'coffeeisle_comments_title_text' );
 

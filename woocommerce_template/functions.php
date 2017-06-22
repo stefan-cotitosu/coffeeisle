@@ -7,7 +7,7 @@
  */
 
 /**
- * Replace parent theme functions binded to woo hooks
+ * Replace parent theme functions bound to woo hooks
  *
  * @since 1.0.0
  */
@@ -21,37 +21,6 @@ function coffeeisle_remove_woo_functions() {
 	remove_action( 'oblique_related_products_title_after', 'oblique_svg_5' );
 }
 add_action( 'after_setup_theme', 'coffeeisle_remove_woo_functions', 15 );
-
-/**
- * Add custom title on shop page
- * title between svg
- *
- * @since 1.0.0
- */
-function coffeeisle_shop_title() {
-
-	do_action( 'oblique_archive_title_top_svg' ); ?>
-
-	<header class="page-header">
-		<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
-	</header><!-- .page-header -->
-	<?php
-
-	/**
-	 * WooCommerce_archive_description hook.
-	 *
-	 * @hooked woocommerce_taxonomy_archive_description - 10
-	 * @hooked woocommerce_product_archive_description - 10
-	 */
-	do_action( 'woocommerce_archive_description' ); ?>
-
-	<div class="svg-container svg-block page-header-svg">
-		<?php do_action( 'oblique_archive_title_bottom_svg' ); ?>
-	</div>
-	<?php
-
-}
-add_action( 'woocommerce_before_main_content', 'coffeeisle_shop_title', 40 );
 
 /**
  * Adding bottom svg for item on shop page
@@ -68,7 +37,7 @@ function coffeeisle_product_bottom_svg() {
 add_action( 'woocommerce_after_shop_loop_item', 'coffeeisle_product_bottom_svg', 10 );
 
 /**
- * Number the number of products per row
+ * Set the number of products per row
  *
  * @since 1.0.0
  */
@@ -195,6 +164,8 @@ function coffeeisle_display_woo_cat( $ids_array, $posts_per_page = null ) {
 /**
  * Adding control for selecting category
  * Products from this category will be listed in the section
+ * Choose category for special offer product
+ * Hide Blog section on alt shop template
  *
  * @since 1.0.0
  */
@@ -391,7 +362,7 @@ function coffeeisle_display_woo_cat_title( $woo_cat_name ) {
 }
 
 /**
- * Offer Product Display
+ * Special Offer Product Display
  *
  * @since 1.0.0
  */
