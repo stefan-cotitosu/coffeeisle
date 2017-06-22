@@ -147,6 +147,8 @@ function coffeeisle_custom_styles( $custom ) {
 		$custom .= 'div.entry-meta a:hover, h2.entry-title a:hover, div.widget-area a:hover, nav.social-navigation li a:hover, a.entry-content-link:hover { color:' . esc_attr( $primary_color ) . ';}' . "\n";
 		$rgba 	= oblique_hex2rgba( $primary_color, 0.3 );
 
+		$custom .= '.nav_search_icon:hover:after { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
+
 		$custom .= '.home article.post div.post-inner a.entry-content-link:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
 		$custom .= '.page .contact-details-list a:hover { color:' . esc_attr( $primary_color ) . ';}' . "\n";
@@ -323,6 +325,11 @@ function coffeeisle_custom_styles( $custom ) {
 		$custom .= '.header-widgets .widget .widget-title { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 		$custom .= '.header-widgets .widget_calendar .calendar_wrap table caption { background: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
+		$custom .= '.header-widgets .widget_calendar .calendar_wrap td#prev { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.single-sidebar .widget_calendar .calendar_wrap td#prev { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_calendar .calendar_wrap td#next { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.single-sidebar .widget_calendar .calendar_wrap td#next { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+
 		$custom .= '.single-sidebar .widget .search-submit { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 		$custom .= '.single-sidebar .widget .search-submit { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 		$custom .= '.single-sidebar .widget .search-submit { border: 1px solid ' . coffeeisle_darken_color( $entry_titles, 10 ) . ';}' . "\n";
@@ -360,8 +367,8 @@ function coffeeisle_custom_styles( $custom ) {
 		$custom .= '.single-sidebar .widget_recent_comments ul li:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 		$custom .= '.header-widgets .widget_recent_comments ul li:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
-		$custom .= '.single-sidebar .widget_calendar .calendar_wrap table td a { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
-		$custom .= '.header-widgets .widget_calendar .calendar_wrap table td a { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+        $custom .= '.header-widgets .widget_calendar .calendar_wrap table td#today { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
+		$custom .= '.single-sidebar .widget_calendar .calendar_wrap table td#today { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
 		$current_selector = '.single-sidebar .widget select';
 		$custom .= coffeeisle_sidebar_dropdown( $current_selector, $entry_titles );
@@ -563,8 +570,18 @@ function coffeeisle_custom_styles( $custom ) {
 		$custom .= '.single-sidebar .widget_calendar .calendar_wrap table caption { color:  ' . esc_attr( $entry_background ) . ';}' . "\n";
 		$custom .= '.header-widgets .widget_calendar .calendar_wrap table caption { color:  ' . esc_attr( $entry_background ) . ';}' . "\n";
 
-		$custom .= '.single-sidebar .widget_calendar .calendar_wrap table td a { color:  ' . esc_attr( $entry_background ) . ';}' . "\n";
-		$custom .= '.header-widgets .widget_calendar .calendar_wrap table td a { color:  ' . esc_attr( $entry_background ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_calendar .calendar_wrap table td#today { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+		$custom .= '.single-sidebar .widget_calendar .calendar_wrap table td#today { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.header-widgets .widget_calendar .calendar_wrap table tfoot td.pad { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+		$custom .= '.single-sidebar .widget_calendar .calendar_wrap table tfoot td.pad { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_calendar .calendar_wrap table td.pad { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+		$custom .= '.single-sidebar .widget_calendar .calendar_wrap table td.pad { background-color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+
+		$custom .= '.header-widgets .widget_calendar .calendar_wrap td#prev a { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+		$custom .= '.single-sidebar .widget_calendar .calendar_wrap td#prev a { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget_calendar .calendar_wrap td#next a { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
+		$custom .= '.single-sidebar .widget_calendar .calendar_wrap td#next a { color: ' . esc_attr( $entry_background ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_tag_cloud .tagcloud a { background-color:  ' . esc_attr( $entry_background ) . ';}' . "\n";
 		$custom .= '.header-widgets .widget_tag_cloud .tagcloud a { background-color:  ' . esc_attr( $entry_background ) . ';}' . "\n";
