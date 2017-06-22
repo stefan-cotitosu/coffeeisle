@@ -2217,6 +2217,9 @@ div.alt-shop-blog-small {
 	.site-footer div.site-info {
 		padding: 25px 10px;
 	}
+    .single .hentry {
+        padding: 20px 60px 45px;
+    }
 	.single-product div.single_product_bottom_svg {
 		bottom: -33px;
 	}
