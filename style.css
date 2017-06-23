@@ -25,7 +25,7 @@ h1.site-title a:focus {
 }
 
 .site-logo {
-	max-width: 250px;
+	max-width: 250px !important;
 }
 
 .entry-title,
