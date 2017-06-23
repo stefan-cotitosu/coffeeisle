@@ -13,7 +13,6 @@
  */
 function coffeeisle_remove_woo_functions() {
 	/* Shop Page */
-	remove_action( 'woocommerce_before_main_content', 'oblique_shop_title', 40 );
 	remove_action( 'woocommerce_after_shop_loop_item', 'oblique_product_bottom_svg', 10 );
 
 	/* Single Product Page */
