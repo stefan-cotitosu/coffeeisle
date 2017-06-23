@@ -37,6 +37,15 @@ h1.site-title a:focus {
 	margin-top: initial;
 }
 
+.sticky .post-bottom-svg svg {
+	margin-top: 1px;
+	margin-right: -1px;
+}
+
+.post-svg svg {
+	margin-left: -1px;
+}
+
 .svg-block {
 	fill: #f8f9fb;
 }
@@ -1841,6 +1850,12 @@ div.alt-shop-blog-small {
 	.sidebar-toggled {
 		left: 382px;
 	}
+	.grid-layout .hentry {
+		width: 440px;
+	}
+	.grid-layout .hentry:nth-of-type(2n+2) {
+		left: 1px;
+	}
 	.header-widgets .widget_calendar .calendar_wrap table,
 	.single-sidebar .widget_calendar .calendar_wrap table {
 		border-spacing: 3px 4px;
@@ -1926,6 +1941,12 @@ div.alt-shop-blog-small {
 	}
 	.sidebar-toggled {
 		left: 382px;
+	}
+	.grid-layout .hentry {
+		width: 330px;
+	}
+	.grid-layout .hentry:nth-of-type(2n+2) {
+		left: 1px;
 	}
 	.header-widgets .widget_calendar .calendar_wrap table th,
 	.single-sidebar .widget_calendar .calendar_wrap table th {
@@ -2089,6 +2110,10 @@ div.alt-shop-blog-small {
 	.top-bar {
 		top: 29px;
 		padding: 10px 15px;
+	}
+	.grid-layout .hentry {
+		display: block;
+		margin-top: 10px;
 	}
 	.contact-details-list {
 		display: table-cell;
