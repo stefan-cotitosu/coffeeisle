@@ -46,14 +46,6 @@ h1.site-title a:focus {
 	margin-left: -1px;
 }
 
-.svg-block {
-	fill: #f8f9fb;
-}
-
-.read-more {
-	background-color: #d1b586;
-}
-
 .top-bar {
 	position: absolute;
 	top: 0;
@@ -427,6 +419,7 @@ form.comment-form p label {
 
 .form-submit input[type="submit"] {
 	padding: 14px 54px 15px 55px;
+	border-radius: 0;
 }
 
 .page h2.comments-title {
@@ -731,6 +724,7 @@ form.comment-form p label {
 	right: 0;
 	margin: 0;
 	padding: 10px;
+	border-radius: 0;
 }
 
 /* Drop Down */
@@ -964,6 +958,11 @@ form.comment-form p label {
 	bottom: -27px;
 }
 
+.woocommerce ul.products li.product .post-svg svg {
+	margin-top: -1px;
+	margin-left: -4px;
+}
+
 .woocommerce ul.products li.product .onsale,
 .woocommerce-page ul.products li.product .onsale {
 	display: none;
@@ -1096,6 +1095,9 @@ form.comment-form p label {
 .single-product div.single_product_top_svg {
 	position: relative;
 	top: 0;
+}
+.single-product div.single_product_top_svg svg {
+	margin-left: -2px;
 }
 
 .single-product div.single_product_wrapper {
@@ -1417,6 +1419,11 @@ form.comment-form p label {
 	top: 90px;
 }
 
+.woocommerce-page div.alt_shop_cat_title_top_svg svg,
+.single-product div.related-title-top-svg svg {
+	margin-left: -2px;
+}
+
 .woocommerce-page h2.alt_shop_cat_title,
 .single-product h2.related_products_title {
 	margin: 90px 0 40px;
@@ -1616,6 +1623,10 @@ div.alt-shop-special-offer-top-svg {
 	position: absolute;
 	top: 0;
 	background-color: rgba(255,255,255,0);
+}
+
+div.alt-shop-special-offer-top-svg svg {
+	margin-top: -1px;
 }
 
 div.alt-shop-special-offer-bottom-svg {
