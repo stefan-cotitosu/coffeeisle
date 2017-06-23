@@ -24,6 +24,10 @@ h1.site-title a:focus {
 	text-decoration: none;
 }
 
+.site-logo {
+	max-width: 250px;
+}
+
 .entry-title,
 .entry-meta {
 	font-family: "Lora", serif;
