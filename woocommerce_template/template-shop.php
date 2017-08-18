@@ -22,7 +22,8 @@ if ( class_exists( 'WooCommerce' ) ) :
 				coffeeisle_display_woo_cat_title( $category_name->name );
 			}
 			$number_of_posts_in_first_category = get_theme_mod( 'coffeeisle_number_of_featured_products_category_1' );
-			coffeeisle_display_woo_cat( $section_1, $number_of_posts_in_first_category ); ?>
+			coffeeisle_display_woo_cat( $section_1, $number_of_posts_in_first_category );
+			?>
 		</div><!-- #main -->
 	</div><!-- #primary -->
 </div><!-- container content-wrapper -->
@@ -43,7 +44,8 @@ if ( class_exists( 'WooCommerce' ) ) :
 				coffeeisle_display_woo_cat_title( $category_name->name );
 			}
 			$number_of_posts_in_second_category = get_theme_mod( 'coffeeisle_number_of_featured_products_category_2' );
-			coffeeisle_display_woo_cat( $section_2, $number_of_posts_in_second_category ); ?>
+			coffeeisle_display_woo_cat( $section_2, $number_of_posts_in_second_category );
+			?>
 
 			<?php
 			$section_3 = get_theme_mod( 'coffeeisle_featured_products_category_3' );
@@ -52,7 +54,8 @@ if ( class_exists( 'WooCommerce' ) ) :
 				coffeeisle_display_woo_cat_title( $category_name->name );
 			}
 			$number_of_posts_in_third_category = get_theme_mod( 'coffeeisle_number_of_featured_products_category_3' );
-			coffeeisle_display_woo_cat( $section_3, $number_of_posts_in_third_category ); ?>
+			coffeeisle_display_woo_cat( $section_3, $number_of_posts_in_third_category );
+			?>
 
 			<?php
 			$hide_blog_on_alt = get_theme_mod( 'coffeeisle_hide_blog_on_alt_shop' );
@@ -65,11 +68,13 @@ if ( class_exists( 'WooCommerce' ) ) :
 	</div><!-- #primary -->
 
 <?php
-else : ?>
+else :
+?>
 	<a href="<?php echo esc_attr( 'https://wordpress.org/plugins/woocommerce/' ); ?>" target="_blank"><h2 class="need-woocommerce"><?php echo esc_html__( 'Please install WooCommerce plugin', 'coffeeisle' ); ?></h2></a>
 
 <?php
-endif; ?>
+endif;
+?>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

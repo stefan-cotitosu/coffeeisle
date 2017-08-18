@@ -2,6 +2,7 @@ language: php
 
 ##  PHP versions to test  against
 php:
+    - "7.1"
     - "7.0"
     - "5.6"
     - "5.5"
@@ -34,7 +35,7 @@ before_script:
     - mysql -e 'CREATE DATABASE wordpress_test;' -uroot
 
      ## install PHPCS and Wordpress standards
-    - pear install pear/PHP_CodeSniffer
+    - pear install pear/PHP_CodeSniffer-2.9.0
     - mkdir wordpress-coding-standards && curl -L https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/archive/master.tar.gz | tar xz --strip-components=1 -C wordpress-coding-standards
     - phpenv rehash
     - phpcs --config-set installed_paths $WP_DEVELOP_DIR/wordpress-coding-standards

@@ -27,7 +27,12 @@
 		<?php
 			$coffeeisle_offer_product_price = $product->get_price_html();
 		?>
-		<div class="offer-product-price"><?php if ( ! empty( $coffeeisle_offer_product_price ) ) { echo wp_kses_post( $coffeeisle_offer_product_price ); } ?></div>
+		<div class="offer-product-price">
+		<?php
+		if ( ! empty( $coffeeisle_offer_product_price ) ) {
+			echo wp_kses_post( $coffeeisle_offer_product_price ); }
+?>
+</div>
 		</a>
 		<?php woocommerce_template_loop_add_to_cart(); ?>
 	</div>

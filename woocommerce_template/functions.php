@@ -16,11 +16,11 @@
  */
 function coffeeisle_sanitize_checkbox( $input ) {
 
-    if ( $input == 1 ) {
-        return 1;
-    } else {
-        return '';
-    }
+	if ( $input == 1 ) {
+		return 1;
+	} else {
+		return '';
+	}
 }
 
 /**
@@ -33,12 +33,12 @@ function coffeeisle_sanitize_checkbox( $input ) {
  */
 function coffeeisle_sanitize_category_dropdown( $input ) {
 
-    $cat = get_category_by_slug( $input );
+	$cat = get_category_by_slug( $input );
 
-    if ( empty( $cat ) ) {
-        return 'all';
-    }
-    return $input;
+	if ( empty( $cat ) ) {
+		return 'all';
+	}
+	return $input;
 }
 
 /**
@@ -182,8 +182,10 @@ function coffeeisle_display_woo_cat( $ids_array, $posts_per_page = null ) {
 
 	$loop = new WP_Query( $args );
 
-	if ( $loop->have_posts() ) { ?>
-	<ul class="products"> <?php
+	if ( $loop->have_posts() ) {
+	?>
+	<ul class="products"> 
+	<?php
 	while ( $loop->have_posts() ) {
 		$loop->the_post();
 		wc_get_template_part( 'content', 'product' );
@@ -205,15 +207,18 @@ function coffeeisle_display_woo_cat( $ids_array, $posts_per_page = null ) {
  */
 function coffeeisle_alt_woo_register( $wp_customize ) {
 
-	$wp_customize->add_section( 'coffeeisle_featured_products', array(
-		'title'       => esc_html__( 'Featured products', 'coffeeisle' ),
-		'priority'    => apply_filters( 'coffeeisle_section_priority', 15, 'coffeeisle_featured_products' ),
-	) );
+	$wp_customize->add_section(
+		'coffeeisle_featured_products', array(
+			'title'       => esc_html__( 'Featured products', 'coffeeisle' ),
+			'priority'    => apply_filters( 'coffeeisle_section_priority', 15, 'coffeeisle_featured_products' ),
+		)
+	);
 
-	$wp_customize->add_setting( 'coffeeisle_featured_products_category_1',
+	$wp_customize->add_setting(
+		'coffeeisle_featured_products_category_1',
 		array(
 			'default'           => '-',
-            'sanitize_callback' => 'coffeeisle_sanitize_category_dropdown',
+			'sanitize_callback' => 'coffeeisle_sanitize_category_dropdown',
 		)
 	);
 	$wp_customize->add_control(
@@ -225,25 +230,29 @@ function coffeeisle_alt_woo_register( $wp_customize ) {
 			'choices' => coffeeisle_get_woo_categories( true ),
 		)
 	);
-	$wp_customize->add_setting( 'coffeeisle_number_of_featured_products_category_1',
+	$wp_customize->add_setting(
+		'coffeeisle_number_of_featured_products_category_1',
 		array(
 			'default' => '3',
 			'sanitize_callback' => 'absint',
 		)
 	);
-	$wp_customize->add_control( 'coffeeisle_number_of_featured_products_category_1',
+	$wp_customize->add_control(
+		'coffeeisle_number_of_featured_products_category_1',
 		array(
 			'type'          => 'number',
 			'section'       => 'coffeeisle_featured_products',
 			'label'         => __( 'Number of products from first category', 'coffeeisle' ),
 			'input_attrs'   => array(
-					'min'   => 1,
-					'max'   => 30,
-					'step'  => 1,
-		),
-	) );
+				'min'   => 1,
+				'max'   => 30,
+				'step'  => 1,
+			),
+		)
+	);
 
-	$wp_customize->add_setting( 'coffeeisle_offer_product_category',
+	$wp_customize->add_setting(
+		'coffeeisle_offer_product_category',
 		array(
 			'default'           => '-',
 			'sanitize_callback' => 'coffeeisle_sanitize_category_dropdown',
@@ -259,7 +268,8 @@ function coffeeisle_alt_woo_register( $wp_customize ) {
 		)
 	);
 
-	$wp_customize->add_setting( 'coffeeisle_featured_products_category_2',
+	$wp_customize->add_setting(
+		'coffeeisle_featured_products_category_2',
 		array(
 			'default'           => '-',
 			'sanitize_callback' => 'coffeeisle_sanitize_category_dropdown',
@@ -274,13 +284,15 @@ function coffeeisle_alt_woo_register( $wp_customize ) {
 			'choices' => coffeeisle_get_woo_categories( true ),
 		)
 	);
-	$wp_customize->add_setting( 'coffeeisle_number_of_featured_products_category_2',
+	$wp_customize->add_setting(
+		'coffeeisle_number_of_featured_products_category_2',
 		array(
 			'default' => '3',
 			'sanitize_callback' => 'absint',
 		)
 	);
-	$wp_customize->add_control( 'coffeeisle_number_of_featured_products_category_2',
+	$wp_customize->add_control(
+		'coffeeisle_number_of_featured_products_category_2',
 		array(
 			'type'          => 'number',
 			'section'       => 'coffeeisle_featured_products',
@@ -290,9 +302,11 @@ function coffeeisle_alt_woo_register( $wp_customize ) {
 				'max'   => 30,
 				'step'  => 1,
 			),
-	) );
+		)
+	);
 
-	$wp_customize->add_setting( 'coffeeisle_featured_products_category_3',
+	$wp_customize->add_setting(
+		'coffeeisle_featured_products_category_3',
 		array(
 			'default'           => '-',
 			'sanitize_callback' => 'coffeeisle_sanitize_category_dropdown',
@@ -307,13 +321,15 @@ function coffeeisle_alt_woo_register( $wp_customize ) {
 			'choices' => coffeeisle_get_woo_categories( true ),
 		)
 	);
-	$wp_customize->add_setting( 'coffeeisle_number_of_featured_products_category_3',
+	$wp_customize->add_setting(
+		'coffeeisle_number_of_featured_products_category_3',
 		array(
 			'default' => '3',
 			'sanitize_callback' => 'absint',
 		)
 	);
-	$wp_customize->add_control( 'coffeeisle_number_of_featured_products_category_3',
+	$wp_customize->add_control(
+		'coffeeisle_number_of_featured_products_category_3',
 		array(
 			'type'          => 'number',
 			'section'       => 'coffeeisle_featured_products',
@@ -323,20 +339,22 @@ function coffeeisle_alt_woo_register( $wp_customize ) {
 				'max'   => 30,
 				'step'  => 1,
 			),
-	) );
+		)
+	);
 
-	$wp_customize->add_setting( 'coffeeisle_hide_blog_on_alt_shop',
+	$wp_customize->add_setting(
+		'coffeeisle_hide_blog_on_alt_shop',
 		array(
-            'default'       => 0,
-            'sanitize_callback' => 'coffeeisle_sanitize_checkbox',
+			'default'       => 0,
+			'sanitize_callback' => 'coffeeisle_sanitize_checkbox',
 		)
 	);
 	$wp_customize->add_control(
 		'coffeeisle_hide_blog_on_alt_shop',
 		array(
-				'type'      => 'checkbox',
-				'label'     => __( 'Hide Blog section on Alt Template Shop', 'coffeeisle' ),
-				'section'   => 'coffeeisle_featured_products',
+			'type'      => 'checkbox',
+			'label'     => __( 'Hide Blog section on Alt Template Shop', 'coffeeisle' ),
+			'section'   => 'coffeeisle_featured_products',
 		)
 	);
 }
@@ -358,11 +376,13 @@ function coffeeisle_get_woo_categories( $placeholder = true ) {
 	if ( ! class_exists( 'WooCommerce' ) ) {
 		return $coffeeisle_prod_categories_array;
 	}
-	$coffeeisle_prod_categories = get_categories( array(
-		'taxonomy' => 'product_cat',
-		'hide_empty' => 0,
-		'title_li' => '',
-	) );
+	$coffeeisle_prod_categories = get_categories(
+		array(
+			'taxonomy' => 'product_cat',
+			'hide_empty' => 0,
+			'title_li' => '',
+		)
+	);
 	if ( ! empty( $coffeeisle_prod_categories ) ) {
 		foreach ( $coffeeisle_prod_categories as $coffeeisle_prod_cat ) {
 			if ( ! empty( $coffeeisle_prod_cat->term_id ) && ! empty( $coffeeisle_prod_cat->name ) ) {
@@ -411,24 +431,24 @@ function coffeeisle_display_woo_cat_title( $woo_cat_name ) {
 function coffeeisle_display_offer_product( $cat_ids_array ) {
 
 	$params = array(
-			'post_type'         => 'product',
-			'posts_per_page'    => 1,
-			'orderby'           => rand,
-			'meta_query'        => array(
-					array(
-							'key' => '_thumbnail_id',
-					),
+		'post_type'         => 'product',
+		'posts_per_page'    => 1,
+		'orderby'           => rand,
+		'meta_query'        => array(
+			array(
+				'key' => '_thumbnail_id',
 			),
+		),
 	);
 
 	if ( ! empty( $cat_ids_array ) ) {
 
 		$params['tax_query'] = array(
-				array(
-						'taxonomy'  => 'product_cat',
-						'field'     => 'term_id',
-						'terms'     => $cat_ids_array,
-				),
+			array(
+				'taxonomy'  => 'product_cat',
+				'field'     => 'term_id',
+				'terms'     => $cat_ids_array,
+			),
 		);
 	}
 
@@ -469,27 +489,32 @@ function coffeeisle_display_alt_shop_blog_section() {
 	</div>
 	<h2 class="alt-shop-blog-title">Blog</h2>
 	<div class="svg-container svg-block alt-shop-blog-title-bottom-svg">
-		<?php echo '
+		<?php
+		echo '
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1890 150">
             <g transform="translate(0,-902.36218)"/>
             <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"/>
             <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"/>
             <path d="m 1925,0 0,150 -1925,0"/>
             <line x1="1890" y1="0" x2="0" y2="150" width="100%" height="50" class="archive_title_svg" />
-        </svg>';?>
+        </svg>';
+?>
 	</div>
 	<?php
 
-	$loop = new WP_Query( array(
-		'posts_per_page' => 3,
-		'ignore_sticky_posts' => true,
-	) );
+	$loop = new WP_Query(
+		array(
+			'posts_per_page' => 3,
+			'ignore_sticky_posts' => true,
+		)
+	);
 
 	if ( $loop->have_posts() ) :
 
 		$i = 0;
 		$has_col = 0;
-		while ( $loop->have_posts() ) : $loop->the_post();
+		while ( $loop->have_posts() ) :
+			$loop->the_post();
 
 			if ( $i == 0 ) {
 				get_template_part( 'template-parts/content', 'big' );

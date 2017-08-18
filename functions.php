@@ -39,13 +39,17 @@ function child_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'child_enqueue_styles' );
 if ( get_stylesheet() !== get_template() ) {
-	add_filter( 'pre_update_option_theme_mods_' . get_stylesheet(), function ( $value, $old_value ) {
-		update_option( 'theme_mods_' . get_template(), $value );
-		return $old_value; // prevent update to child theme mods
-	}, 10, 2 );
-	add_filter( 'pre_option_theme_mods_' . get_stylesheet(), function ( $default ) {
-		return get_option( 'theme_mods_' . get_template(), $default );
-	} );
+	add_filter(
+		'pre_update_option_theme_mods_' . get_stylesheet(), function ( $value, $old_value ) {
+			update_option( 'theme_mods_' . get_template(), $value );
+			return $old_value; // prevent update to child theme mods
+		}, 10, 2
+	);
+	add_filter(
+		'pre_option_theme_mods_' . get_stylesheet(), function ( $default ) {
+			return get_option( 'theme_mods_' . get_template(), $default );
+		}
+	);
 }
 
 /**
@@ -143,7 +147,7 @@ function coffeeisle_custom_styles( $custom ) {
 	$primary_color = get_theme_mod( 'primary_color', '#925D34' );
 	if ( ! empty( $primary_color ) ) {
 		$custom .= 'div.entry-meta a:hover, h2.entry-title a:hover, div.widget-area a:hover, nav.social-navigation li a:hover, a.entry-content-link:hover { color:' . esc_attr( $primary_color ) . ';}' . "\n";
-		$rgba 	= oblique_hex2rgba( $primary_color, 0.3 );
+		$rgba   = oblique_hex2rgba( $primary_color, 0.3 );
 
 		$custom .= '.home article.post div.post-inner a.entry-content-link:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
@@ -274,7 +278,7 @@ function coffeeisle_custom_styles( $custom ) {
 	// Entry Titles Color
 	$entry_titles = get_theme_mod( 'entry_titles', '#d1b586' );
 	if ( ! empty( $entry_titles ) ) {
-		$rgba 	= oblique_hex2rgba( $entry_titles, 0.3 );
+		$rgba   = oblique_hex2rgba( $entry_titles, 0.3 );
 
 		$custom .= '.home article.post div.post-inner a.entry-content-link { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
@@ -1020,7 +1024,8 @@ function coffeeisle_post_link_to_single() {
 		<a href="<?php the_permalink(); ?>" class="entry-content-link">
 			<?php echo apply_filters( 'oblique_post_read_more' , esc_html__( 'Continue reading &hellip;','coffeeisle' ) ); ?>
 		</a>
-	<?php endif;
+	<?php
+	endif;
 }
 add_action( 'oblique_post_entry_content_bottom', 'coffeeisle_post_link_to_single' );
 
@@ -1111,7 +1116,8 @@ function oblique_posted_on() {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 	}
 
-	$time_string = sprintf( $time_string,
+	$time_string = sprintf(
+		$time_string,
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() ),
 		esc_attr( get_the_modified_date( 'c' ) ),
@@ -1228,7 +1234,8 @@ function coffeeisle_comments_template() {
 		'title_reply_before' => '<h3>',
 		'title_reply_after' => '</h3>',
 		'label_submit' => esc_html__( 'Submit', 'coffeeisle' ),
-		'fields' => apply_filters( 'comment_form_default_fields', array(
+		'fields' => apply_filters(
+			'comment_form_default_fields', array(
 				'author' =>
 				'<p class="comment-form-author"><label for="author">' . esc_html__( 'Name', 'coffeeisle' ) . '</label><input id="author" name="author" type="text" value="' .
 				esc_attr( $commenter['comment_author'] ) . '" size ="30" ' . esc_html( $aria_req ) . '/></p>',
@@ -1241,7 +1248,8 @@ function coffeeisle_comments_template() {
 				'<p class="comment-form-url"><label for="url">' . esc_html__( 'Subject','coffeeisle' ) . '</label><input id="url" name="url" type="text" value="' .
 				esc_attr( $commenter['comment_author_url'] ) . '" /></p>',
 
-		) ),
+			)
+		),
 		'comment_field' =>
 		'<p class="comment-form-comment"><label for="comment">' . esc_html__( 'Comment', 'coffeeisle' ) . '</label><textarea id="comment" name="comment" cols="45" rows="15" placeholder="' .
 		'" aria-required="true"></textarea></p>',
@@ -1313,12 +1321,14 @@ add_action( 'oblique_comments_title', 'coffeeisle_comments_title_text' );
  * @since 1.0.0
  */
 function coffeeisle_comments_list() {
-	wp_list_comments( array(
-		'style'      => 'ol',
-		'short_ping' => true,
-		'avatar_size' => 60,
-		'reply_text' => 'Reply',
-	) );
+	wp_list_comments(
+		array(
+			'style'      => 'ol',
+			'short_ping' => true,
+			'avatar_size' => 60,
+			'reply_text' => 'Reply',
+		)
+	);
 }
 add_action( 'oblique_comments_list', 'coffeeisle_comments_list' );
 
@@ -1343,14 +1353,16 @@ add_filter( 'oblique_main_classes', 'coffeeisle_main_classes' );
  * @since 1.0.0
  */
 function coffeeisle_single_sidebar() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Single Sidebar', 'coffeeisle' ),
-		'id'            => 'single-sidebar',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Single Sidebar', 'coffeeisle' ),
+			'id'            => 'single-sidebar',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
 }
 add_action( 'widgets_init', 'coffeeisle_single_sidebar' );
 
@@ -1361,7 +1373,8 @@ add_action( 'widgets_init', 'coffeeisle_single_sidebar' );
  * @since 1.0.0
  */
 function coffeeisle_sidebar_on_single() {
-	if ( is_active_sidebar( 'single-sidebar' ) ) : ?>
+	if ( is_active_sidebar( 'single-sidebar' ) ) :
+	?>
 		<aside id="secondary" class="col-md-4 single-sidebar" role="complementary">
 			<?php dynamic_sidebar( 'single-sidebar' ); ?>
 		</aside><!-- .sidebar .widget-area -->

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Coffeeisle 1.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/stefan-cotitosu/coffeeisle/issues\n"
-"POT-Creation-Date: 2017-06-23 13:14:38+00:00\n"
+"POT-Creation-Date: 2017-08-18 11:47:27+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,88 +24,88 @@ msgstr ""
 "X-Poedit-Bookmarks: \n"
 "X-Textdomain-Support: yes\n"
 
-#: functions.php:741
+#: functions.php:745
 msgid "Top&amp;bottom padding for the branding. Default: 300px"
 msgstr ""
 
-#: functions.php:756
+#: functions.php:760
 msgid "Entry background"
 msgstr ""
 
-#: functions.php:776
+#: functions.php:780
 msgid "Secondary color"
 msgstr ""
 
-#: functions.php:1008
+#: functions.php:1012
 msgid "Keep Reading &rarr;"
 msgstr ""
 
-#: functions.php:1021
+#: functions.php:1025
 msgid "Continue reading &hellip;"
 msgstr ""
 
-#: functions.php:1136
+#: functions.php:1142
 #. translators: used between list items, there is a space after the comma
 msgid ", "
 msgstr ""
 
-#: functions.php:1151
+#: functions.php:1157
 msgid "© Copyright 2017"
 msgstr ""
 
-#: functions.php:1153
+#: functions.php:1159
 msgid "Coffeeisle Shop Theme"
 msgstr ""
 
-#: functions.php:1155
+#: functions.php:1161
 msgid "All Rights Reserved."
 msgstr ""
 
-#: functions.php:1175
+#: functions.php:1181
 msgid "Posts navigation"
 msgstr ""
 
-#: functions.php:1183
+#: functions.php:1189
 msgid "Prev"
 msgstr ""
 
-#: functions.php:1184
+#: functions.php:1190
 msgid "Next"
 msgstr ""
 
-#: functions.php:1225
+#: functions.php:1231
 msgid "Leave us a Message"
 msgstr ""
 
-#: functions.php:1230
+#: functions.php:1236
 msgid "Submit"
 msgstr ""
 
-#: functions.php:1233
+#: functions.php:1240
 msgid "Name"
 msgstr ""
 
-#: functions.php:1237
+#: functions.php:1244
 msgid "Email"
 msgstr ""
 
-#: functions.php:1241
+#: functions.php:1248
 msgid "Subject"
 msgstr ""
 
-#: functions.php:1246
+#: functions.php:1254
 msgid "Comment"
 msgstr ""
 
-#: functions.php:1305
+#: functions.php:1313
 msgid "Comments"
 msgstr ""
 
-#: functions.php:1347
+#: functions.php:1358
 msgid "Single Sidebar"
 msgstr ""
 
-#: template-parts/content-big.php:44
+#: template-parts/content-big.php:45
 msgid "Pages:"
 msgstr ""
 
@@ -113,51 +113,51 @@ msgstr ""
 msgid "Special Offer"
 msgstr ""
 
-#: woocommerce_template/functions.php:175
+#: woocommerce_template/functions.php:212
 msgid "Featured products"
 msgstr ""
 
-#: woocommerce_template/functions.php:188
+#: woocommerce_template/functions.php:228
 msgid "Products first category"
 msgstr ""
 
-#: woocommerce_template/functions.php:202
+#: woocommerce_template/functions.php:245
 msgid "Number of products from first category"
 msgstr ""
 
-#: woocommerce_template/functions.php:219
+#: woocommerce_template/functions.php:265
 msgid "Offer product category"
 msgstr ""
 
-#: woocommerce_template/functions.php:234
+#: woocommerce_template/functions.php:282
 msgid "Products second category"
 msgstr ""
 
-#: woocommerce_template/functions.php:248
+#: woocommerce_template/functions.php:299
 msgid "Number of products from second category"
 msgstr ""
 
-#: woocommerce_template/functions.php:265
+#: woocommerce_template/functions.php:319
 msgid "Products third category"
 msgstr ""
 
-#: woocommerce_template/functions.php:279
+#: woocommerce_template/functions.php:336
 msgid "Number of products from third category"
 msgstr ""
 
-#: woocommerce_template/functions.php:296
+#: woocommerce_template/functions.php:356
 msgid "Hide Blog section on Alt Template Shop"
 msgstr ""
 
-#: woocommerce_template/functions.php:314
+#: woocommerce_template/functions.php:374
 msgid "Select category"
 msgstr ""
 
-#: woocommerce_template/functions.php:331
+#: woocommerce_template/functions.php:393
 msgid "None"
 msgstr ""
 
-#: woocommerce_template/template-shop.php:69
+#: woocommerce_template/template-shop.php:73
 msgid "Please install WooCommerce plugin"
 msgstr ""
 
