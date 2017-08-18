@@ -17,8 +17,8 @@
 	<?php oblique_svg_3(); ?>
 </div>
 <div class="offer-product-wrapper">
-	<a href="<?php echo esc_attr( $current_product_url ); ?>">
-	<?php the_post_thumbnail( 'special_offer_thumbnail_size' ); ?>
+	<a href="<?php echo esc_url( $current_product_url ); ?>">
+	<?php the_post_thumbnail( 'coffeeisle_special_offer_thumbnail_size' ); ?>
 	</a>
 	<div class="offer-product-inner">
 		<a href="<?php echo esc_attr( $current_product_url ); ?>">
