@@ -5,7 +5,7 @@
  * Set up the theme and provides some helper functions.
  *
  * @package coffeeisle
- * @since Coffeeisle 1.0
+ * @since Coffeeisle 1.0.0
  */
 
 /**
@@ -29,28 +29,20 @@ function coffeeisle_compatibility_with_pro_features() {
 /**
  * Enqueue stylesheets and scripts
  *
- * @since 1.0.0
+ * @since 1.0.1
  */
-function coffeeisle_enqueue_styles() {
-	$parent_style = 'coffeeisle-parent-style';
-	wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
-	wp_enqueue_script( 'coffeeisle-script', get_stylesheet_directory_uri() . '/js/scripts.js' );
-}
-add_action( 'wp_enqueue_scripts', 'coffeeisle_enqueue_styles' );
-if ( get_stylesheet() !== get_template() ) {
-	add_filter(
-		'pre_update_option_theme_mods_' . get_stylesheet(), function ( $value, $old_value ) {
-			update_option( 'theme_mods_' . get_template(), $value );
-			return $old_value; // prevent update to child theme mods
-		}, 10, 2
-	);
-	add_filter(
-		'pre_option_theme_mods_' . get_stylesheet(), function ( $default ) {
-			return get_option( 'theme_mods_' . get_template(), $default );
-		}
-	);
-}
+if ( ! function_exists( 'coffeeisle_child_parent_css' ) ) :
+	function coffeeisle_child_parent_css() {
+		wp_enqueue_style( 'coffeeisle_child_parent_css', trailingslashit( get_template_directory_uri() ) . 'style.css' );
+
+		wp_enqueue_script( 'coffeeisle-script', get_stylesheet_directory_uri() . '/js/scripts.js' );
+	}
+endif;
+add_action( 'wp_enqueue_scripts', 'coffeeisle_child_parent_css', 10 );
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.

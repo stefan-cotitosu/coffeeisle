@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Coffeeisle 1.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/stefan-cotitosu/coffeeisle/issues\n"
-"POT-Creation-Date: 2017-08-20 07:58:43+00:00\n"
+"POT-Creation-Date: 2017-08-20 09:09:25+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,84 +24,84 @@ msgstr ""
 "X-Poedit-Bookmarks: \n"
 "X-Textdomain-Support: yes\n"
 
-#: functions.php:745
+#: functions.php:737
 msgid "Top&amp;bottom padding for the branding. Default: 300px"
 msgstr ""
 
-#: functions.php:760
+#: functions.php:752
 msgid "Entry background"
 msgstr ""
 
-#: functions.php:780
+#: functions.php:772
 msgid "Secondary color"
 msgstr ""
 
-#: functions.php:1012
+#: functions.php:1004
 msgid "Keep Reading &rarr;"
 msgstr ""
 
-#: functions.php:1025
+#: functions.php:1017
 msgid "Continue reading &hellip;"
 msgstr ""
 
-#: functions.php:1142
+#: functions.php:1134
 #. translators: used between list items, there is a space after the comma
 msgid ", "
 msgstr ""
 
-#: functions.php:1157
+#: functions.php:1149
 msgid "Coffeeisle Shop Theme"
 msgstr ""
 
-#: functions.php:1159
+#: functions.php:1151
 msgid "© Copyright 2017"
 msgstr ""
 
-#: functions.php:1161
+#: functions.php:1153
 msgid "All Rights Reserved."
 msgstr ""
 
-#: functions.php:1181
+#: functions.php:1173
 msgid "Posts navigation"
 msgstr ""
 
-#: functions.php:1189
+#: functions.php:1181
 msgid "Prev"
 msgstr ""
 
-#: functions.php:1190
+#: functions.php:1182
 msgid "Next"
 msgstr ""
 
-#: functions.php:1231
+#: functions.php:1223
 msgid "Leave us a Message"
 msgstr ""
 
-#: functions.php:1236
+#: functions.php:1228
 msgid "Submit"
 msgstr ""
 
-#: functions.php:1240
+#: functions.php:1232
 msgid "Name"
 msgstr ""
 
-#: functions.php:1244
+#: functions.php:1236
 msgid "Email"
 msgstr ""
 
-#: functions.php:1248
+#: functions.php:1240
 msgid "Subject"
 msgstr ""
 
-#: functions.php:1254
+#: functions.php:1246
 msgid "Comment"
 msgstr ""
 
-#: functions.php:1313
+#: functions.php:1305
 msgid "Comments"
 msgstr ""
 
-#: functions.php:1358
+#: functions.php:1350
 msgid "Single Sidebar"
 msgstr ""
 
