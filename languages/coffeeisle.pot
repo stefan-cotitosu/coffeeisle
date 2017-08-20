@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Coffeeisle 1.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/stefan-cotitosu/coffeeisle/issues\n"
-"POT-Creation-Date: 2017-08-18 11:47:27+00:00\n"
+"POT-Creation-Date: 2017-08-20 07:58:43+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -50,11 +50,11 @@ msgid ", "
 msgstr ""
 
 #: functions.php:1157
-msgid "© Copyright 2017"
+msgid "Coffeeisle Shop Theme"
 msgstr ""
 
 #: functions.php:1159
-msgid "Coffeeisle Shop Theme"
+msgid "© Copyright 2017"
 msgstr ""
 
 #: functions.php:1161
@@ -117,43 +117,43 @@ msgstr ""
 msgid "Featured products"
 msgstr ""
 
-#: woocommerce_template/functions.php:228
+#: woocommerce_template/functions.php:227
 msgid "Products first category"
 msgstr ""
 
-#: woocommerce_template/functions.php:245
+#: woocommerce_template/functions.php:244
 msgid "Number of products from first category"
 msgstr ""
 
-#: woocommerce_template/functions.php:265
+#: woocommerce_template/functions.php:263
 msgid "Offer product category"
 msgstr ""
 
-#: woocommerce_template/functions.php:282
+#: woocommerce_template/functions.php:279
 msgid "Products second category"
 msgstr ""
 
-#: woocommerce_template/functions.php:299
+#: woocommerce_template/functions.php:296
 msgid "Number of products from second category"
 msgstr ""
 
-#: woocommerce_template/functions.php:319
+#: woocommerce_template/functions.php:315
 msgid "Products third category"
 msgstr ""
 
-#: woocommerce_template/functions.php:336
+#: woocommerce_template/functions.php:332
 msgid "Number of products from third category"
 msgstr ""
 
-#: woocommerce_template/functions.php:356
+#: woocommerce_template/functions.php:352
 msgid "Hide Blog section on Alt Template Shop"
 msgstr ""
 
-#: woocommerce_template/functions.php:374
+#: woocommerce_template/functions.php:370
 msgid "Select category"
 msgstr ""
 
-#: woocommerce_template/functions.php:393
+#: woocommerce_template/functions.php:389
 msgid "None"
 msgstr ""
 

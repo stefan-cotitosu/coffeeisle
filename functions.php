@@ -31,13 +31,13 @@ function coffeeisle_compatibility_with_pro_features() {
  *
  * @since 1.0.0
  */
-function child_enqueue_styles() {
-	$parent_style = 'parent-style';
+function coffeeisle_enqueue_styles() {
+	$parent_style = 'coffeeisle-parent-style';
 	wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
 
 	wp_enqueue_script( 'coffeeisle-script', get_stylesheet_directory_uri() . '/js/scripts.js' );
 }
-add_action( 'wp_enqueue_scripts', 'child_enqueue_styles' );
+add_action( 'wp_enqueue_scripts', 'coffeeisle_enqueue_styles' );
 if ( get_stylesheet() !== get_template() ) {
 	add_filter(
 		'pre_update_option_theme_mods_' . get_stylesheet(), function ( $value, $old_value ) {
@@ -79,7 +79,7 @@ add_action( 'wp_enqueue_scripts', 'coffeeisle_include_google_fonts' );
  *
  * @since 1.0.0
  */
-function remove_actions() {
+function coffeeisle_remove_actions() {
 
 	// Post read more
 	remove_action( 'oblique_link_to_single', 'oblique_post_link_to_single' );
@@ -114,7 +114,7 @@ function remove_actions() {
 	remove_action( 'oblique_comments_list', 'oblique_comments_list' );
 
 }
-add_action( 'after_setup_theme', 'remove_actions' );
+add_action( 'after_setup_theme', 'coffeeisle_remove_actions' );
 
 /**
  * Dynamic styles
@@ -1035,7 +1035,7 @@ add_action( 'oblique_post_entry_content_bottom', 'coffeeisle_post_link_to_single
  *
  * @since 1.0.0
  */
-function svg_new() {
+function coffeeisle_svg_new() {
 	echo '
 		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1890 150">
 			<g transform="translate(0,-902.36218)"/>
@@ -1046,7 +1046,7 @@ function svg_new() {
 		</svg>
 	';
 }
-add_action( 'oblique_post_bottom_svg', 'svg_new' );
+add_action( 'oblique_post_bottom_svg', 'coffeeisle_svg_new' );
 
 /**
  * Svg
@@ -1154,9 +1154,9 @@ function oblique_posted_on() {
  * @since 1.0.0
  */
 function coffeeisle_footer_credits() {
-	echo esc_html__( '© Copyright 2017', 'coffeeisle' );
-	echo '<span class="sep"> | </span>';
 	echo esc_html__( 'Coffeeisle Shop Theme', 'coffeeisle' );
+	echo '<span class="sep"> | </span>';
+	echo esc_html__( '© Copyright 2017', 'coffeeisle' );
 	echo '<span class="sep"> | </span>';
 	echo esc_html__( 'All Rights Reserved.', 'coffeeisle' );
 }
