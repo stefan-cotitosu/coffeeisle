@@ -136,10 +136,11 @@ function coffeeisle_custom_styles( $custom ) {
 	}
 
 	// Primary color
-	$primary_color = get_theme_mod( 'primary_color', '#925D34' );
+	$primary_color = esc_html( get_theme_mod( 'primary_color', '#925D34' ) );
 	if ( ! empty( $primary_color ) ) {
 		$custom .= 'div.entry-meta a:hover, h2.entry-title a:hover, div.widget-area a:hover, nav.social-navigation li a:hover, a.entry-content-link:hover { color:' . esc_attr( $primary_color ) . ';}' . "\n";
 		$rgba   = oblique_hex2rgba( $primary_color, 0.3 );
+        $darken_color = esc_html( coffeeisle_darken_color( $primary_color, 10 ) );
 
 		$custom .= '.home article.post div.post-inner a.entry-content-link:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 
@@ -165,10 +166,10 @@ function coffeeisle_custom_styles( $custom ) {
 
 		$custom .= '.single-sidebar .widget .search-submit:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 		$custom .= '.single-sidebar .widget .search-submit:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
-		$custom .= '.single-sidebar .widget .search-submit:hover { border: 1px solid ' . coffeeisle_darken_color( $primary_color, 10 ) . ';}' . "\n";
+		$custom .= '.single-sidebar .widget .search-submit:hover { border: 1px solid ' . esc_attr( $darken_color ) . ';}' . "\n";
 		$custom .= '.header-widgets .widget .search-submit:hover { background-color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 		$custom .= '.header-widgets .widget .search-submit:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
-		$custom .= '.header-widgets .widget .search-submit:hover { border: 1px solid ' . coffeeisle_darken_color( $primary_color, 10 ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget .search-submit:hover { border: 1px solid ' . esc_attr( $darken_color ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_categories ul li a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
 		$custom .= '.header-widgets .widget_categories ul li a:hover { color: ' . esc_attr( $primary_color ) . ';}' . "\n";
@@ -268,9 +269,10 @@ function coffeeisle_custom_styles( $custom ) {
 	}
 
 	// Entry Titles Color
-	$entry_titles = get_theme_mod( 'entry_titles', '#d1b586' );
+	$entry_titles = esc_html( get_theme_mod( 'entry_titles', '#d1b586' ) );
 	if ( ! empty( $entry_titles ) ) {
 		$rgba   = oblique_hex2rgba( $entry_titles, 0.3 );
+		$darken_color = esc_html( coffeeisle_darken_color( $entry_titles, 10 ) );
 
 		$custom .= '.home article.post div.post-inner a.entry-content-link { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 
@@ -324,10 +326,10 @@ function coffeeisle_custom_styles( $custom ) {
 
 		$custom .= '.single-sidebar .widget .search-submit { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 		$custom .= '.single-sidebar .widget .search-submit { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
-		$custom .= '.single-sidebar .widget .search-submit { border: 1px solid ' . coffeeisle_darken_color( $entry_titles, 10 ) . ';}' . "\n";
+		$custom .= '.single-sidebar .widget .search-submit { border: 1px solid ' . esc_attr( $darken_color ) . ';}' . "\n";
 		$custom .= '.header-widgets .widget .search-submit { background-color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 		$custom .= '.header-widgets .widget .search-submit { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
-		$custom .= '.header-widgets .widget .search-submit { border: 1px solid ' . coffeeisle_darken_color( $entry_titles, 10 ) . ';}' . "\n";
+		$custom .= '.header-widgets .widget .search-submit { border: 1px solid ' . esc_attr( $darken_color ) . ';}' . "\n";
 
 		$custom .= '.single-sidebar .widget_categories ul li:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
 		$custom .= '.header-widgets .widget_categories ul li:before { color: ' . esc_attr( $entry_titles ) . ';}' . "\n";
@@ -1148,7 +1150,7 @@ function oblique_posted_on() {
 function coffeeisle_footer_credits() {
 	echo esc_html__( 'Coffeeisle Shop Theme', 'coffeeisle' );
 	echo '<span class="sep"> | </span>';
-	echo esc_html__( '© Copyright 2017', 'coffeeisle' );
+	printf( __('&copy; %s', 'coffeeisle'), esc_html__( 'Copyright 2017', 'coffeeisle') );
 	echo '<span class="sep"> | </span>';
 	echo esc_html__( 'All Rights Reserved.', 'coffeeisle' );
 }
@@ -1180,7 +1182,7 @@ function coffeeisle_custom_pagination() {
 				'mid_size' => 1,
 				'prev_text' => esc_html__( 'Prev', 'coffeeisle' ),
 				'next_text' => esc_html__( 'Next', 'coffeeisle' ),
-				'screen_reader_text' => 'Posts navigation',
+				'screen_reader_text' => esc_html__('Posts navigation', 'coffeeisle' ),
 			)
 		);
 
@@ -1290,7 +1292,8 @@ add_action( 'oblique_single_page_post_svg', 'coffeeisle_single_page_post_svg' );
  * @since 1.0.0
  */
 function coffeeisle_post_tags_message() {
-	$args = 'Tags: %1$s';
+
+	$args = esc_html__( 'Tags: %1$s', 'coffeeisle' );
 	return $args;
 }
 add_filter( 'oblique_post_tags_message', 'coffeeisle_post_tags_message' );

@@ -218,6 +218,7 @@ function coffeeisle_alt_woo_register( $wp_customize ) {
 		'coffeeisle_featured_products_category_1',
 		array(
 			'default'           => '-',
+            'sanitize_callback' => 'coffeeisle_sanitize_woo_cat'
 		)
 	);
 	$wp_customize->add_control(
@@ -254,6 +255,7 @@ function coffeeisle_alt_woo_register( $wp_customize ) {
 		'coffeeisle_offer_product_category',
 		array(
 			'default'           => '-',
+			'sanitize_callback' => 'coffeeisle_sanitize_woo_cat',
 		)
 	);
 	$wp_customize->add_control(
@@ -270,6 +272,7 @@ function coffeeisle_alt_woo_register( $wp_customize ) {
 		'coffeeisle_featured_products_category_2',
 		array(
 			'default'           => '-',
+			'sanitize_callback' => 'coffeeisle_sanitize_woo_cat',
 		)
 	);
 	$wp_customize->add_control(
@@ -306,6 +309,7 @@ function coffeeisle_alt_woo_register( $wp_customize ) {
 		'coffeeisle_featured_products_category_3',
 		array(
 			'default'           => '-',
+			'sanitize_callback' => 'coffeeisle_sanitize_woo_cat',
 		)
 	);
 	$wp_customize->add_control(
@@ -532,6 +536,20 @@ function coffeeisle_display_alt_shop_blog_section() {
 		wp_reset_postdata();
 
 	endif;
+}
+
+/**
+ * Sanitize for drop down category on Featured products
+ *
+ * @since 1.0.1
+ * @return string
+ */
+function coffeeisle_sanitize_woo_cat( $input ){
+    $woo_cats = coffeeisle_get_woo_categories( true );
+    if( array_key_exists( $input, $woo_cats ) ){
+        return $input;
+    }
+    return '-';
 }
 
 /**
