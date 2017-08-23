@@ -9,7 +9,7 @@
 
 <?php
 	global $product;
-	$current_product_url = get_permalink( $product->id );
+	$current_product_url = get_permalink( $product->get_id() );
 ?>
 
 <div class="special-offer-wrapper">

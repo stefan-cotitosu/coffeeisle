@@ -433,7 +433,7 @@ function coffeeisle_display_offer_product( $cat_ids_array ) {
 	$params = array(
 		'post_type'         => 'product',
 		'posts_per_page'    => 1,
-		'orderby'           => rand,
+		'orderby'           => 'rand',
 		'meta_query'        => array(
 			array(
 				'key' => '_thumbnail_id',
