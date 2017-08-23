@@ -1150,6 +1150,7 @@ function oblique_posted_on() {
 function coffeeisle_footer_credits() {
 	echo esc_html__( 'Coffeeisle Shop Theme', 'coffeeisle' );
 	echo '<span class="sep"> | </span>';
+	/* Translators: Copyright message */
 	printf( __('&copy; %s', 'coffeeisle'), esc_html__( 'Copyright 2017', 'coffeeisle') );
 	echo '<span class="sep"> | </span>';
 	echo esc_html__( 'All Rights Reserved.', 'coffeeisle' );
@@ -1293,6 +1294,7 @@ add_action( 'oblique_single_page_post_svg', 'coffeeisle_single_page_post_svg' );
  */
 function coffeeisle_post_tags_message() {
 
+    /* Translators: Post Tags */
 	$args = esc_html__( 'Tags: %1$s', 'coffeeisle' );
 	return $args;
 }
